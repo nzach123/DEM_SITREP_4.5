@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13822e13b81e39caee3bb3334c48d152cc2c826d22cdcec4c3d45710e7542b94
-size 452
+extends Control
+
+signal acknowledged
+
+@onready var explanation_label: Label = $Panel/VBoxContainer/MarginContainer/ExplanationLabel
+@onready var acknowledge_button: Button = $Panel/VBoxContainer/AcknowledgeButton
+
+func _ready() -> void:
+	acknowledge_button.pressed.connect(_on_acknowledge_pressed)
+
+func set_explanation(text_content: String) -> void:
+	explanation_label.text = text_content
+
+func _on_acknowledge_pressed() -> void:
+	acknowledged.emit()
