@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://ny7xs18h2srr"]
 
-[ext_resource type="Script" path="res://src/scripts/MatchingGame.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://ch615e2txaar4" path="res://src/scripts/MatchingGame.gd" id="1_script"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_header"]
 [ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_body"]
 [ext_resource type="Texture2D" uid="uid://bjyxhtpo5etq0" path="res://assets/ui/images/MapBackground.jpg" id="4_bg"]
@@ -83,7 +83,7 @@ layout_mode = 2
 [node name="RoundLabel" type="Label" parent="MarginContainer/VBoxContainer/Header"]
 layout_mode = 2
 theme = ExtResource("2_header")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 64
 text = "ROUND 1/3"
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/Header"]
@@ -94,7 +94,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme = ExtResource("2_header")
 theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 72
 text = "60"
 
 [node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/Header"]
@@ -104,7 +104,7 @@ size_flags_horizontal = 3
 [node name="LivesLabel" type="Label" parent="MarginContainer/VBoxContainer/Header"]
 layout_mode = 2
 theme = ExtResource("2_header")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 64
 text = "LIVES: 3"
 
 [node name="Content" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -113,13 +113,13 @@ size_flags_vertical = 3
 theme_override_constants/separation = 50
 
 [node name="LeftCol" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content"]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Content/LeftCol"]
 layout_mode = 2
 theme = ExtResource("2_header")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "TERMS"
 horizontal_alignment = 1
 
@@ -135,7 +135,7 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Content/RightCol"]
 layout_mode = 2
 theme = ExtResource("2_header")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "DEFINITIONS"
 horizontal_alignment = 1
 
@@ -154,7 +154,7 @@ custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 theme = ExtResource("3_body")
 theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 42
 text = "QUIT"
 
 [node name="SubmitButton" type="Button" parent="MarginContainer/VBoxContainer/Footer"]
@@ -162,7 +162,7 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme = ExtResource("3_body")
 theme_override_colors/font_color = Color(0.4, 1, 0.4, 1)
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 42
 text = "SUBMIT MATCHES"
 
 [node name="FeedbackLayer" type="Control" parent="."]

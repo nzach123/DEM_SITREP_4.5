@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6b1fac646571da3ab70982ab9e932fb9749e8dada5d83244043cd0c3af29a390
-size 1557
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dmi3jf6jonyoq"]
+
+[ext_resource type="FontFile" uid="uid://t86c8t2o1y50" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_l4r5r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4r5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4r5r"]
+bg_color = Color(0.2, 1, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5nl2"]
+bg_color = Color(0, 0.0666667, 0, 1)
+border_width_left = 3
+border_width_top = 5
+border_width_right = 3
+border_width_bottom = 5
+border_color = Color(0.2, 1, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnodi"]
+bg_color = Color(0.882736, 1, 0.871287, 1)
+
+[resource]
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0.822991, 0, 1)
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_l4r5r")
+Button/styles/focus = SubResource("StyleBoxEmpty_l4r5r")
+Button/styles/hover = SubResource("StyleBoxFlat_l4r5r")
+Button/styles/normal = SubResource("StyleBoxFlat_s5nl2")
+Button/styles/pressed = SubResource("StyleBoxFlat_jnodi")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 15
+Label/font_sizes/font_size = 50
+Label/fonts/font = ExtResource("1_l4r5r")
+ProgressBar/font_sizes/font_size = 40
+ProgressBar/fonts/font = ExtResource("1_l4r5r")
