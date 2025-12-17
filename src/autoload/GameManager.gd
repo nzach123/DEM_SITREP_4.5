@@ -63,9 +63,8 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		var current_scene = get_tree().current_scene
-		# Prevent pausing in the Main Menu or Splash Screen
-		if current_scene.name != "MainMenu" and current_scene.name != "SplashScreen":
+		# Prevent pausing in the Main Menu
+		if get_tree().current_scene.name != "MainMenu":
 			toggle_pause()
 
 func toggle_pause() -> void:
