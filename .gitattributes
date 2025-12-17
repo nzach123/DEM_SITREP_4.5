@@ -1,57 +1,22 @@
-# Set default behavior to automatic normalization
-* text=auto
-
-# Godot specific text files (Force these to be treated as text)
-*.tscn text
-*.tres text
-*.gd text
-*.godot text
-*.cfg text
-*.md text
-*.json text
-*.uid text
-*.gdshader text
-*.import text
-*.gitignore text
-
-# BINARY ASSETS - Git LFS
-# These files will be stored in LFS, keeping your repo lean.
-# Images
+# Image Formats
 *.png filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
 *.tga filter=lfs diff=lfs merge=lfs -text
 *.bmp filter=lfs diff=lfs merge=lfs -text
 *.psd filter=lfs diff=lfs merge=lfs -text
-*.aseprite filter=lfs diff=lfs merge=lfs -text
-*.ase filter=lfs diff=lfs merge=lfs -text
-# 3D Models
-*.glb filter=lfs diff=lfs merge=lfs -text
-*.gltf filter=lfs diff=lfs merge=lfs -text
-*.blend filter=lfs diff=lfs merge=lfs -text
-*.fbx filter=lfs diff=lfs merge=lfs -text
-*.obj filter=lfs diff=lfs merge=lfs -text
-# Audio
+
+# Audio Formats
 *.wav filter=lfs diff=lfs merge=lfs -text
 *.ogg filter=lfs diff=lfs merge=lfs -text
 *.mp3 filter=lfs diff=lfs merge=lfs -text
-# Fonts
-*.ttf filter=lfs diff=lfs merge=lfs -text
-*.otf filter=lfs diff=lfs merge=lfs -text
-*.woff filter=lfs diff=lfs merge=lfs -text
-*.woff2 filter=lfs diff=lfs merge=lfs -text
 
-# Binary Godot files or cache (Keep as LFS if tracked)
-/.godot/editor/favorite_properties filter=lfs diff=lfs merge=lfs -text
-/.godot/editor/favorites filter=lfs diff=lfs merge=lfs -text
-/.godot/editor/filesystem_cache10 filter=lfs diff=lfs merge=lfs -text
-/.godot/editor/filesystem_update4 filter=lfs diff=lfs merge=lfs -text
-*.ctex filter=lfs diff=lfs merge=lfs -text
-*.md5 filter=lfs diff=lfs merge=lfs -text
-*.fontdata filter=lfs diff=lfs merge=lfs -text
-*.oggvorbisstr filter=lfs diff=lfs merge=lfs -text
-*.sample filter=lfs diff=lfs merge=lfs -text
-*.cache filter=lfs diff=lfs merge=lfs -text
-*.bin filter=lfs diff=lfs merge=lfs -text
-*.gitkeep filter=lfs diff=lfs merge=lfs -text
-/.godot/editor/recent_dirs filter=lfs diff=lfs merge=lfs -text
+# 3D Formats
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.glb filter=lfs diff=lfs merge=lfs -text
+
+# Godot Binary Formats (Only if you use them)
+*.scn filter=lfs diff=lfs merge=lfs -text
+*.res filter=lfs diff=lfs merge=lfs -text
