@@ -1,4 +1,5 @@
 extends Control
+class_name SplashScreen
 
 const LOAD_SCENE = preload("res://src/scenes/MainMenu.tscn")
 @export var in_time: float = 0.5
@@ -34,6 +35,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event.is_pressed():
+		accept_event()
 		_change_scene()
 
 func _change_scene() -> void:
