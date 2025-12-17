@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8x7x6x5x4x3"]
+[gd_scene load_steps=6 format=3 uid="uid://b8x7x6x5x4x3"]
 
 [ext_resource type="Script" uid="uid://d0lcvfakxfa22" path="res://src/scripts/PauseMenu.gd" id="1_script"]
-[ext_resource type="FontFile" uid="uid://t86c8t2o1y50" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_header_font"]
+[ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_b12r5"]
+[ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_2yth3"]
 [ext_resource type="FontFile" uid="uid://t86c8t2o1y50" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_button_font"]
 [ext_resource type="AudioStream" uid="uid://birxw6w2ehuby" path="res://assets/audio/sfx/ClickSFX/click_001.ogg" id="4_sfx"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 100
-visible = false
 script = ExtResource("1_script")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -27,46 +27,51 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MenuRoot" type="VBoxContainer" parent="CenterContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/MenuRoot"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_header_font")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("2_b12r5")
+theme_override_font_sizes/font_size = 90
 text = "PAUSED"
 horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="CenterContainer/MenuRoot"]
 layout_mode = 2
+theme = ExtResource("3_2yth3")
 theme_override_fonts/font = ExtResource("3_button_font")
 text = "Resume"
 
 [node name="Restart" type="Button" parent="CenterContainer/MenuRoot"]
 layout_mode = 2
+theme = ExtResource("3_2yth3")
 theme_override_fonts/font = ExtResource("3_button_font")
 text = "Restart"
 
 [node name="Options" type="Button" parent="CenterContainer/MenuRoot"]
 layout_mode = 2
+theme = ExtResource("3_2yth3")
 theme_override_fonts/font = ExtResource("3_button_font")
 text = "Options"
 
 [node name="Quit" type="Button" parent="CenterContainer/MenuRoot"]
 layout_mode = 2
+theme = ExtResource("3_2yth3")
 theme_override_fonts/font = ExtResource("3_button_font")
-text = "Quit to Main Menu"
+text = "Main Menu"
 
 [node name="OptionsRoot" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/OptionsRoot"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_button_font")
+theme = ExtResource("2_b12r5")
 text = "Master Volume"
 horizontal_alignment = 1
 
 [node name="VolumeSlider" type="HSlider" parent="CenterContainer/OptionsRoot"]
+modulate = Color(0.7892527, 0.9999996, 0.99643785, 1)
 layout_mode = 2
 max_value = 1.0
 step = 0.05
@@ -74,7 +79,8 @@ value = 1.0
 
 [node name="Back" type="Button" parent="CenterContainer/OptionsRoot"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_button_font")
+theme = ExtResource("3_2yth3")
+theme_override_font_sizes/font_size = 32
 text = "Back"
 
 [node name="ClickSFX" type="AudioStreamPlayer" parent="."]

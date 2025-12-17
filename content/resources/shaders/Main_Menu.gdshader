@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb92bb31d679f8f16f4c91ff34a40f1aa7d807f8ca1bb9a32c878f2b5ac7789d
-size 573
+shader_type canvas_item;
+
+// The amount of blur (LOD level). 
+// 0.0 is sharp, 5.0 is very blurry.
+uniform float lod: hint_range(0.0, 5.0) = 2.0;
+
+// Access the screen texture. 
+// 'filter_linear_mipmap' is CRITICAL for the hardware blur to work.
+uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+    // textureLod samples a lower-resolution version (mipmap) of the screen
+    vec4 color = textureLod(screen_texture, SCREEN_UV, lod);
+    
+    // Optional: Add a tint (e.g., darken the background slightly)
+    COLOR = color;
+}

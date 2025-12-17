@@ -1,3 +1,68 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d998a2410c273650f185430fd29b87a3bc2cfc616738020a7d63c7674d4dc56
-size 2660
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://b152vv4v1kumc"]
+
+[ext_resource type="FontFile" uid="uid://t86c8t2o1y50" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_loh6t"]
+[ext_resource type="FontFile" uid="uid://cedo7st30x8j6" path="res://assets/fonts/Montserrat-VariableFont_wght.ttf" id="1_wbsuu"]
+[ext_resource type="Texture2D" uid="uid://ck57xqgw5tcia" path="res://assets/ui/container_ui/button_square_blue_a.png" id="2_wbsuu"]
+[ext_resource type="Texture2D" uid="uid://dhu2x8mbwapw1" path="res://assets/ui/container_ui/panel_square_blue_a.png" id="3_y8sgn"]
+
+[sub_resource type="FontVariation" id="FontVariation_m17ut"]
+base_font = ExtResource("1_wbsuu")
+variation_opentype = {
+2003265652: 600
+}
+spacing_glyph = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4r5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4r5r"]
+content_margin_left = 25.0
+content_margin_right = 25.0
+bg_color = Color(0.37, 1, 0.979, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8hlue"]
+content_margin_left = 25.0
+content_margin_right = 25.0
+texture = ExtResource("2_wbsuu")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnodi"]
+content_margin_left = 25.0
+content_margin_right = 25.0
+bg_color = Color(0.85622, 1, 0.987348, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_wbsuu"]
+base_font = ExtResource("1_wbsuu")
+variation_opentype = {
+2003265652: 600
+}
+spacing_glyph = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbsuu"]
+texture = ExtResource("3_y8sgn")
+texture_margin_left = 8.0
+texture_margin_top = 9.0
+texture_margin_right = 8.0
+texture_margin_bottom = 9.0
+
+[resource]
+default_font_size = 0
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.00403789, 0.120397, 0.198028, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.0104239, 0.219051, 0.343497, 1)
+Button/font_sizes/font_size = 38
+Button/fonts/font = SubResource("FontVariation_m17ut")
+Button/styles/focus = SubResource("StyleBoxEmpty_l4r5r")
+Button/styles/hover = SubResource("StyleBoxFlat_l4r5r")
+Button/styles/normal = SubResource("StyleBoxTexture_8hlue")
+Button/styles/pressed = SubResource("StyleBoxFlat_jnodi")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 34
+Label/fonts/font = SubResource("FontVariation_wbsuu")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_wbsuu")
+ProgressBar/font_sizes/font_size = 40
+ProgressBar/fonts/font = ExtResource("1_loh6t")
