@@ -1,0 +1,1025 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "source": "DEM Analysis and Acronym Glossary (Alberta/Canadian Context)",
+    "description": "Definition dataset for a matching minigame focusing on Disaster and Emergency Management (DEM), covering acronyms, frameworks, agencies, and core concepts with a focus on Canadian and Albertan legislation and operations.",
+    "all_categories": [
+      "Governance & Agencies",
+      "Frameworks & Systems",
+      "Risk & Planning",
+      "Operations & Tactics",
+      "Psychosocial & Health",
+      "Infrastructure & Economy",
+      "International & Humanitarian",
+      "Core Concepts"
+    ],
+    "all_tags": [
+      "alberta",
+      "provincial",
+      "federal",
+      "municipal",
+      "agency",
+      "legislation",
+      "coordination",
+      "command_control",
+      "ics",
+      "planning",
+      "risk_assessment",
+      "mitigation",
+      "preparedness",
+      "response",
+      "recovery",
+      "business_continuity",
+      "critical_infrastructure",
+      "psychology",
+      "mental_health",
+      "resilience",
+      "military",
+      "international",
+      "un",
+      "humanitarian",
+      "tactical",
+      "strategic",
+      "search_and_rescue",
+      "hazards"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "CON_01",
+      "term": "Shift from Response to Reduction",
+      "definition": "The evolution of the field from 'Disaster Management' (reactive response/recovery) to 'Disaster Risk Reduction' (proactive mitigation/prevention). Hazards may be inevitable, but disasters are socially constructed and preventable.",
+      "category": "Core Concepts",
+      "tags": ["evolution", "theory", "drr", "mitigation", "prevention"],
+      "related_terms": ["DRR", "DM", "Whole of Society Approach"]
+    },
+    {
+      "id": "CON_02",
+      "term": "Whole of Society Approach",
+      "definition": "A collaborative network model that rejects government-centric 'Command and Control' in favor of integrating the private sector, NGOs, and individual citizens (partners) into resilience planning.",
+      "category": "Core Concepts",
+      "tags": ["collaboration", "theory", "partnerships", "resilience"],
+      "related_terms": ["NGO", "NPO", "Shift from Response to Reduction"]
+    },
+    {
+      "id": "CON_03",
+      "term": "Psychological Safety",
+      "definition": "An operational asset in DEM training. Includes tools like 'Green Zone' leadership and understanding the 'Mental Health Continuum' to maintain cognitive function and decision-making in high-stress environments.",
+      "category": "Psychosocial & Health",
+      "tags": ["mental_health", "leadership", "decision_making", "psychology"],
+      "related_terms": ["R2MR", "PFA", "CISM"]
+    },
+    {
+      "id": "CON_04",
+      "term": "Bottom-Up Doctrine",
+      "definition": "The Canadian legislative structure where emergency capacity scales up from the Individual -> Municipal -> Provincial -> Federal. The province acts as the critical gateway for federal aid requests.",
+      "category": "Governance & Agencies",
+      "tags": ["legislation", "canada", "hierarchy", "jurisdiction", "federal", "provincial"],
+      "related_terms": ["AEMA", "PSC", "DFAA"]
+    },
+    {
+      "id": "AEMA",
+      "term": "AEMA",
+      "definition": "Alberta Emergency Management Agency. The provincial agency responsible for the coordination, collaboration, and oversight of prevention, preparedness, response, and recovery activities in Alberta.",
+      "category": "Governance & Agencies",
+      "tags": ["alberta", "provincial", "agency", "coordination", "governance"],
+      "related_terms": ["PSC", "DEM", "AIMS"]
+    },
+    {
+      "id": "AHIMT",
+      "term": "AHIMT",
+      "definition": "All-Hazards Incident Management Team. A multi-agency team deployed to manage major incidents that extend beyond one operational period.",
+      "category": "Operations & Tactics",
+      "tags": ["tactical", "response", "personnel", "multi_agency"],
+      "related_terms": ["ICS", "IMT"]
+    },
+    {
+      "id": "AHRA",
+      "term": "AHRA",
+      "definition": "All-Hazards Risk Assessment. A federal process used by Public Safety Canada to identify and prioritize risks based on their likelihood and impact.",
+      "category": "Risk & Planning",
+      "tags": ["federal", "risk_assessment", "planning", "prevention"],
+      "related_terms": ["PSC", "THIRA", "HRVA"]
+    },
+    {
+      "id": "AIIMS",
+      "term": "AIIMS",
+      "definition": "Australasian Inter-service Incident Management System. An incident management framework used primarily in Australia, similar to ICS.",
+      "category": "Frameworks & Systems",
+      "tags": ["international", "framework", "command_control"],
+      "related_terms": ["ICS", "AIMS"]
+    },
+    {
+      "id": "AIMS",
+      "term": "AIMS",
+      "definition": "Alberta Incident Management System. The mandated command and control framework for local authorities in Alberta, built upon ICS principles to ensuring interoperability during provincial responses.",
+      "category": "Frameworks & Systems",
+      "tags": ["alberta", "framework", "command_control", "provincial", "legislation"],
+      "related_terms": ["ICS", "AEMA", "LAEMR"]
+    },
+    {
+      "id": "AIR",
+      "term": "AIR",
+      "definition": "Ad Hoc Incident Review. An immediate, informal check-in led by a leader after a stressful event to acknowledge the situation and support the team.",
+      "category": "Psychosocial & Health",
+      "tags": ["mental_health", "debriefing", "leadership", "psychology"],
+      "related_terms": ["CISD", "CISM"]
+    },
+    {
+      "id": "BCM",
+      "term": "BCM",
+      "definition": "Business Continuity Management. The holistic management process that identifies potential threats to an organization and the impacts to business operations.",
+      "category": "Infrastructure & Economy",
+      "tags": ["business_continuity", "planning", "risk_assessment", "private_sector"],
+      "related_terms": ["BCP", "BIA", "COOP"]
+    },
+    {
+      "id": "BCP",
+      "term": "BCP",
+      "definition": "Business Continuity Plan. A document outlining how an organization will continue to function during and after an emergency.",
+      "category": "Infrastructure & Economy",
+      "tags": ["business_continuity", "planning", "documentation"],
+      "related_terms": ["BCM", "BIA", "COOP"]
+    },
+    {
+      "id": "BIA",
+      "term": "BIA",
+      "definition": "Business Impact Analysis. A process to identify and evaluate the potential effects of business interruptions on critical business operations.",
+      "category": "Infrastructure & Economy",
+      "tags": ["business_continuity", "analysis", "risk_assessment"],
+      "related_terms": ["BCP", "BCM"]
+    },
+    {
+      "id": "CAF",
+      "term": "CAF",
+      "definition": "Canadian Armed Forces. The military force of Canada, often requested by provinces (via the Federal Government) to assist in large-scale domestic disasters (Operation LENTUS).",
+      "category": "Governance & Agencies",
+      "tags": ["federal", "military", "response", "resources"],
+      "related_terms": ["PSC", "AEMA"]
+    },
+    {
+      "id": "CAIP",
+      "term": "CAIP",
+      "definition": "Capability Improvement Process. A method used to review government responses to exercises and events to ensure continuous improvement.",
+      "category": "Risk & Planning",
+      "tags": ["review", "learning", "government", "improvement"],
+      "related_terms": ["CIFER", "SPR"]
+    },
+    {
+      "id": "CBRNE",
+      "term": "CBRNE",
+      "definition": "Chemical, Biological, Radiological, Nuclear, and Explosives. An acronym used to describe a specific category of intentional or accidental hazards involving these dangerous materials.",
+      "category": "Operations & Tactics",
+      "tags": ["hazards", "response", "specialized", "tactical"],
+      "related_terms": ["HAZMAT", "TIMS"]
+    },
+    {
+      "id": "CCG",
+      "term": "CCG",
+      "definition": "Canadian Coast Guard. A federal agency responsible for maritime search and rescue and marine environmental response.",
+      "category": "Governance & Agencies",
+      "tags": ["federal", "search_and_rescue", "marine", "agency"],
+      "related_terms": ["SAR", "CAF"]
+    },
+    {
+      "id": "CCS",
+      "term": "CCS",
+      "definition": "Civil Contingencies Secretariat. The UK government body responsible for emergency planning and resilience (roughly analogous to Public Safety Canada).",
+      "category": "International & Humanitarian",
+      "tags": ["international", "uk", "agency", "governance"],
+      "related_terms": ["PSC", "FEMA"]
+    },
+    {
+      "id": "CEMA",
+      "term": "CEMA",
+      "definition": "Calgary Emergency Management Agency. The municipal agency responsible for disaster planning and coordination in the City of Calgary.",
+      "category": "Governance & Agencies",
+      "tags": ["municipal", "alberta", "agency", "city"],
+      "related_terms": ["AEMA", "DEM", "MEP"]
+    },
+    {
+      "id": "CHE",
+      "term": "CHE",
+      "definition": "Complex Humanitarian Emergency. A humanitarian crisis in a country, region, or society where there is total or considerable breakdown of authority resulting from internal or external conflict.",
+      "category": "International & Humanitarian",
+      "tags": ["international", "humanitarian", "conflict", "crisis"],
+      "related_terms": ["OCHA", "UN"]
+    },
+    {
+      "id": "CI",
+      "term": "CI",
+      "definition": "Critical Infrastructure. Processes, systems, facilities, technologies, networks, assets, and services essential to the health, safety, security, or economic well-being of Canadians.",
+      "category": "Infrastructure & Economy",
+      "tags": ["critical_infrastructure", "federal", "assets", "security"],
+      "related_terms": ["OCIPEP", "PSC"]
+    },
+    {
+      "id": "CIFER",
+      "term": "CIFER",
+      "definition": "Continuous Improvement of Federal Event Response. A program within the Government Operations Centre to track strategic recommendations from after-action reports.",
+      "category": "Risk & Planning",
+      "tags": ["federal", "improvement", "review", "strategic"],
+      "related_terms": ["GOC", "CAIP"]
+    },
+    {
+      "id": "CISD",
+      "term": "CISD",
+      "definition": "Critical Incident Stress Debriefing. A specific, 7-phase group crisis intervention tool designed to mitigate acute stress in emergency responders; it is a component of CISM.",
+      "category": "Psychosocial & Health",
+      "tags": ["mental_health", "intervention", "responder_safety", "psychology"],
+      "related_terms": ["CISM", "PTSD", "AIR"]
+    },
+    {
+      "id": "CISM",
+      "term": "CISM",
+      "definition": "Critical Incident Stress Management. A comprehensive, integrated, multi-component crisis intervention system.",
+      "category": "Psychosocial & Health",
+      "tags": ["mental_health", "system", "intervention", "psychology"],
+      "related_terms": ["CISD", "PFA"]
+    },
+    {
+      "id": "CMT",
+      "term": "CMT",
+      "definition": "Crisis Management Team. A team designated to handle the reputational and strategic aspects of a crisis for an organization.",
+      "category": "Operations & Tactics",
+      "tags": ["strategic", "reputation", "management", "private_sector"],
+      "related_terms": ["BCP", "EOC"]
+    },
+    {
+      "id": "COOP",
+      "term": "COOP",
+      "definition": "Continuity of Operations Plan. Similar to a BCP, focusing on restoring essential functions of an organization (often used in government contexts).",
+      "category": "Infrastructure & Economy",
+      "tags": ["business_continuity", "government", "planning", "resilience"],
+      "related_terms": ["BCP", "BCM"]
+    },
+    {
+      "id": "COP",
+      "term": "COP",
+      "definition": "Common Operating Picture. A single display of relevant information (operational status, resources, situation) shared by more than one command/coordination center to facilitate collaborative planning.",
+      "category": "Operations & Tactics",
+      "tags": ["coordination", "situational_awareness", "communication", "technology"],
+      "related_terms": ["EOC", "ICS", "ECC"]
+    },
+    {
+      "id": "CPTED",
+      "term": "CPTED",
+      "definition": "Crime Prevention Through Environmental Design. A multi-disciplinary approach to deterring criminal behavior through environmental design.",
+      "category": "Core Concepts",
+      "tags": ["prevention", "design", "security", "mitigation"],
+      "related_terms": ["mitigation"]
+    },
+    {
+      "id": "CSA",
+      "term": "CSA",
+      "definition": "Canadian Standards Association (CSA Group). A non-profit organization that develops standards, including CSA Z1600 (Emergency and Continuity Management Program).",
+      "category": "Governance & Agencies",
+      "tags": ["standards", "canada", "non_profit", "regulation"],
+      "related_terms": ["Z1600", "ISO"]
+    },
+    {
+      "id": "CSZ",
+      "term": "CSZ",
+      "definition": "Cascadia Subduction Zone. A major geological fault line off the coast of British Columbia capable of producing catastrophic earthquakes and tsunamis.",
+      "category": "Risk & Planning",
+      "tags": ["hazards", "earthquake", "geology", "bc"],
+      "related_terms": ["EMBC", "NRCan"]
+    },
+    {
+      "id": "DEM",
+      "term": "DEM",
+      "definition": "Director of Emergency Management. The individual appointed by a local authority (municipality) in Alberta to direct and control emergency response. Also refers to Disaster and Emergency Management as a field.",
+      "category": "Governance & Agencies",
+      "tags": ["alberta", "municipal", "leadership", "legislation", "role"],
+      "related_terms": ["AEMA", "MEP", "SOLE"]
+    },
+    {
+      "id": "DEPP",
+      "term": "DEPP",
+      "definition": "Disasters and Emergencies Preparedness Programme. An international program (UK-funded) aimed at strengthening humanitarian capacity at the local level.",
+      "category": "International & Humanitarian",
+      "tags": ["international", "preparedness", "humanitarian", "capacity_building"],
+      "related_terms": ["NGO", "UN"]
+    },
+    {
+      "id": "DFA",
+      "term": "DFA",
+      "definition": "Disaster Financial Assistance. Provincial programs that provide financial assistance for uninsurable loss and damage caused by disasters.",
+      "category": "Recovery & Finance",
+      "tags": ["finance", "recovery", "provincial", "aid"],
+      "related_terms": ["DFAA", "FDAI"]
+    },
+    {
+      "id": "DFAA",
+      "term": "DFAA",
+      "definition": "Disaster Financial Assistance Arrangements. The federal program that provides financial assistance to provinces and territories when response and recovery costs exceed what individual provinces/territories could reasonably be expected to bear.",
+      "category": "Recovery & Finance",
+      "tags": ["federal", "finance", "recovery", "provincial_support"],
+      "related_terms": ["DFA", "PSC"]
+    },
+    {
+      "id": "DHS",
+      "term": "DHS",
+      "definition": "Department of Homeland Security. The US federal executive department responsible for public security.",
+      "category": "International & Humanitarian",
+      "tags": ["us", "federal", "agency", "security"],
+      "related_terms": ["FEMA", "PSC"]
+    },
+    {
+      "id": "DM",
+      "term": "DM",
+      "definition": "Disaster Management. The operational activities associated with the response and recovery phases of a disaster.",
+      "category": "Core Concepts",
+      "tags": ["response", "recovery", "operations", "terminology"],
+      "related_terms": ["EM", "DRR"]
+    },
+    {
+      "id": "DRR",
+      "term": "DRR",
+      "definition": "Disaster Risk Reduction. The systematic approach to identifying, assessing, and reducing the risks of disaster.",
+      "category": "Core Concepts",
+      "tags": ["mitigation", "prevention", "risk_assessment", "theory"],
+      "related_terms": ["DM", "Sendai"]
+    },
+    {
+      "id": "EADRCC",
+      "term": "EADRCC",
+      "definition": "Euro-Atlantic Disaster Response Coordination Centre. NATO’s principal civil emergency response mechanism.",
+      "category": "International & Humanitarian",
+      "tags": ["nato", "international", "coordination", "response"],
+      "related_terms": ["NATO", "UN"]
+    },
+    {
+      "id": "EBA",
+      "term": "EBA",
+      "definition": "Ecosystem-based Adaptation. The use of biodiversity and ecosystem services to adapt to the adverse effects of climate change.",
+      "category": "Risk & Planning",
+      "tags": ["environment", "climate_change", "adaptation", "mitigation"],
+      "related_terms": ["Eco-DRR", "PEDRR"]
+    },
+    {
+      "id": "ECC",
+      "term": "ECC",
+      "definition": "Emergency Coordination Centre. A facility used to coordinate the response to an emergency; synonymous with EOC in many Alberta jurisdictions.",
+      "category": "Operations & Tactics",
+      "tags": ["coordination", "facility", "alberta", "response"],
+      "related_terms": ["EOC", "DEM"]
+    },
+    {
+      "id": "Eco-DRR",
+      "term": "Eco-DRR",
+      "definition": "Ecosystem-based Disaster Risk Reduction. The sustainable management, conservation, and restoration of ecosystems to provide services that reduce disaster risk.",
+      "category": "Risk & Planning",
+      "tags": ["environment", "mitigation", "risk_reduction", "sustainability"],
+      "related_terms": ["EBA", "DRR"]
+    },
+    {
+      "id": "EFT",
+      "term": "EFT",
+      "definition": "Electronic Fund Transfer. A digital movement of money; used by the Red Cross to distribute aid quickly.",
+      "category": "Recovery & Finance",
+      "tags": ["finance", "aid", "logistics", "recovery"],
+      "related_terms": ["IFRC", "NGO"]
+    },
+    {
+      "id": "EM",
+      "term": "EM",
+      "definition": "Emergency Management. The management of emergencies concerning all hazards, including all activities and risk management measures related to prevention/mitigation, preparedness, response, and recovery.",
+      "category": "Core Concepts",
+      "tags": ["definition", "all_hazards", "lifecycle", "management"],
+      "related_terms": ["DM", "DRR"]
+    },
+    {
+      "id": "EMBC",
+      "term": "EMBC",
+      "definition": "Emergency Management British Columbia. The provincial emergency management organization for BC (now Ministry of Emergency Management and Climate Readiness).",
+      "category": "Governance & Agencies",
+      "tags": ["provincial", "bc", "agency", "governance"],
+      "related_terms": ["AEMA", "CSZ"]
+    },
+    {
+      "id": "EMO",
+      "term": "EMO",
+      "definition": "Emergency Measures Organization. A generic term (often historical) for the agency responsible for emergency planning.",
+      "category": "Governance & Agencies",
+      "tags": ["agency", "historical", "planning", "governance"],
+      "related_terms": ["AEMA", "CEMA"]
+    },
+    {
+      "id": "EMS",
+      "term": "EMS",
+      "definition": "Emergency Medical Services. Services that provide out-of-hospital acute medical care and transport.",
+      "category": "Operations & Tactics",
+      "tags": ["medical", "response", "first_responders", "health"],
+      "related_terms": ["ESF", "PPE"]
+    },
+    {
+      "id": "EOC",
+      "term": "EOC",
+      "definition": "Emergency Operations Centre. A designated facility where the 'coordination' and 'support' functions of a response are carried out (as opposed to tactical command at the scene).",
+      "category": "Operations & Tactics",
+      "tags": ["coordination", "facility", "support", "response"],
+      "related_terms": ["ECC", "ICP", "ICS"]
+    },
+    {
+      "id": "EOP",
+      "term": "EOP",
+      "definition": "Emergency Operations Plan. A written plan describing the organizational structure, roles, and responsibilities for emergency response.",
+      "category": "Risk & Planning",
+      "tags": ["planning", "documentation", "structure", "roles"],
+      "related_terms": ["MEP", "IAP"]
+    },
+    {
+      "id": "ERM",
+      "term": "ERM",
+      "definition": "Enterprise Risk Management. A framework for managing organizational risk that looks at all risks (financial, strategic, hazard) that could stop an organization from achieving its mission.",
+      "category": "Infrastructure & Economy",
+      "tags": ["business", "risk_management", "strategic", "organizational"],
+      "related_terms": ["BCM", "AHRA"]
+    },
+    {
+      "id": "ESF",
+      "term": "ESF",
+      "definition": "Emergency Support Function. A grouping of government and private-sector capabilities into an organizational structure to provide the support, resources, and services most likely to be needed to save lives (e.g., ESF-1 Transportation).",
+      "category": "Frameworks & Systems",
+      "tags": ["structure", "capabilities", "resources", "grouping"],
+      "related_terms": ["FERP", "NRF"]
+    },
+    {
+      "id": "ESS",
+      "term": "ESS",
+      "definition": "Emergency Social Services. A planned emergency response organization designed to provide basic services (food, lodging, clothing) to people affected by a disaster.",
+      "category": "International & Humanitarian",
+      "tags": ["social_services", "humanitarian", "response", "community"],
+      "related_terms": ["NGO", "WASH"]
+    },
+    {
+      "id": "FDAI",
+      "term": "FDAI",
+      "definition": "Federal Disaster Assistance Initiative. A Canadian federal initiative to create an inventory of programs to aid disaster recovery.",
+      "category": "Recovery & Finance",
+      "tags": ["federal", "recovery", "assistance", "program"],
+      "related_terms": ["DFAA", "PSC"]
+    },
+    {
+      "id": "FEMA",
+      "term": "FEMA",
+      "definition": "Federal Emergency Management Agency. The US agency responsible for coordinating the response to disasters that overwhelm the resources of local and state authorities.",
+      "category": "International & Humanitarian",
+      "tags": ["us", "federal", "agency", "coordination"],
+      "related_terms": ["DHS", "PSC"]
+    },
+    {
+      "id": "FERP",
+      "term": "FERP",
+      "definition": "Federal Emergency Response Plan. The Government of Canada's 'all-hazards' emergency response plan.",
+      "category": "Risk & Planning",
+      "tags": ["federal", "canada", "plan", "all_hazards"],
+      "related_terms": ["PSC", "NERS"]
+    },
+    {
+      "id": "FIRESCOPE",
+      "term": "FIRESCOPE",
+      "definition": "Firefighting Resources of Southern California Organized for Potential Emergencies. The group that originally developed the Incident Command System (ICS).",
+      "category": "Frameworks & Systems",
+      "tags": ["historical", "firefighting", "origin", "ics"],
+      "related_terms": ["ICS", "NIMS"]
+    },
+    {
+      "id": "FPT",
+      "term": "FPT",
+      "definition": "Federal, Provincial, and Territorial. Refers to the three orders of government in Canada working together.",
+      "category": "Governance & Agencies",
+      "tags": ["government", "canada", "collaboration", "jurisdiction"],
+      "related_terms": ["SOREM", "NERS"]
+    },
+    {
+      "id": "GBA+",
+      "term": "GBA+",
+      "definition": "Gender-Based Analysis Plus. An analytical process used by the Government of Canada to assess how different groups of women, men, and gender-diverse people may experience policies, programs, and initiatives.",
+      "category": "Core Concepts",
+      "tags": ["analysis", "inclusion", "federal", "policy", "diversity"],
+      "related_terms": ["Vulnerable Populations", "PSC"]
+    },
+    {
+      "id": "GOC",
+      "term": "GOC",
+      "definition": "Government Operations Centre. The principal means by which Public Safety Canada provides strategic-level coordination on behalf of the Government of Canada during national events.",
+      "category": "Governance & Agencies",
+      "tags": ["federal", "coordination", "operations", "strategic"],
+      "related_terms": ["PSC", "EOC"]
+    },
+    {
+      "id": "HAZMAT",
+      "term": "HAZMAT",
+      "definition": "Hazardous Materials. Substances that pose a significant risk to health, safety, or property.",
+      "category": "Operations & Tactics",
+      "tags": ["hazards", "response", "safety", "risk"],
+      "related_terms": ["CBRNE", "TIMS"]
+    },
+    {
+      "id": "HFA",
+      "term": "HFA",
+      "definition": "Hyogo Framework for Action. The UN framework for disaster risk reduction that preceded the Sendai Framework (2005-2015).",
+      "category": "International & Humanitarian",
+      "tags": ["international", "un", "framework", "drr", "historical"],
+      "related_terms": ["Sendai", "UNDRR"]
+    },
+    {
+      "id": "HIPs",
+      "term": "HIPs",
+      "definition": "Hazard Information Profiles. Tools that describe hazard types based on global scientific research.",
+      "category": "Risk & Planning",
+      "tags": ["tools", "hazards", "research", "international"],
+      "related_terms": ["UNDRR", "AHRA"]
+    },
+    {
+      "id": "HRVA",
+      "term": "HRVA",
+      "definition": "Hazard, Risk & Vulnerability Analysis. A process used to identify threats, assess the risk they pose, and determine the community's vulnerability to them.",
+      "category": "Risk & Planning",
+      "tags": ["risk_assessment", "vulnerability", "community", "analysis"],
+      "related_terms": ["AHRA", "THIRA"]
+    },
+    {
+      "id": "HSPD",
+      "term": "HSPD",
+      "definition": "Homeland Security Presidential Directive. Directives issued by the US President on matters of national security (e.g., HSPD-5).",
+      "category": "International & Humanitarian",
+      "tags": ["us", "legislation", "security", "executive"],
+      "related_terms": ["DHS", "NIMS"]
+    },
+    {
+      "id": "HUSAR",
+      "term": "HUSAR",
+      "definition": "Heavy Urban Search and Rescue. Specialized teams capable of searching for and rescuing victims trapped in collapsed structures.",
+      "category": "Operations & Tactics",
+      "tags": ["search_and_rescue", "specialized", "urban", "response"],
+      "related_terms": ["USAR", "SAR"]
+    },
+    {
+      "id": "IAEM",
+      "term": "IAEM",
+      "definition": "International Association of Emergency Managers. A non-profit educational organization dedicated to promoting the 'Principles of Emergency Management'.",
+      "category": "Governance & Agencies",
+      "tags": ["association", "international", "education", "professional"],
+      "related_terms": ["EM", "DEM"]
+    },
+    {
+      "id": "IAP",
+      "term": "IAP",
+      "definition": "Incident Action Plan. A written or verbal plan that reflects the incident objectives, strategies, and tactics for a specific operational period.",
+      "category": "Operations & Tactics",
+      "tags": ["planning", "tactical", "ics", "objectives"],
+      "related_terms": ["ICS", "EOP"]
+    },
+    {
+      "id": "IC",
+      "term": "IC",
+      "definition": "Incident Commander. The individual responsible for all incident activities, including the development of strategies and tactics and the ordering and release of resources.",
+      "category": "Operations & Tactics",
+      "tags": ["leadership", "ics", "tactical", "roles"],
+      "related_terms": ["ICS", "UC", "ICP"]
+    },
+    {
+      "id": "ICP",
+      "term": "ICP",
+      "definition": "Incident Command Post. The field location at which the primary tactical-level, on-scene incident command functions are performed.",
+      "category": "Operations & Tactics",
+      "tags": ["facility", "tactical", "field", "ics"],
+      "related_terms": ["EOC", "IC"]
+    },
+    {
+      "id": "ICS",
+      "term": "ICS",
+      "definition": "Incident Command System. A standardized on-site management system designed to enable effective and efficient incident management by integrating facilities, equipment, personnel, procedures, and communications operating within a common organizational structure.",
+      "category": "Frameworks & Systems",
+      "tags": ["command_control", "standardization", "management", "tactical"],
+      "related_terms": ["AIMS", "NIMS", "FIRESCOPE"]
+    },
+    {
+      "id": "IDNDR",
+      "term": "IDNDR",
+      "definition": "International Decade for Natural Disaster Reduction. A UN initiative (1990-1999) to reduce the impact of natural disasters.",
+      "category": "International & Humanitarian",
+      "tags": ["un", "historical", "initiative", "drr"],
+      "related_terms": ["UNDRR", "HFA"]
+    },
+    {
+      "id": "IFRC",
+      "term": "IFRC",
+      "definition": "International Federation of Red Cross and Red Crescent Societies. A global humanitarian organization.",
+      "category": "International & Humanitarian",
+      "tags": ["international", "humanitarian", "ngo", "aid"],
+      "related_terms": ["NGO", "EFT"]
+    },
+    {
+      "id": "IMS",
+      "term": "IMS",
+      "definition": "Incident Management System. A broad term for the operational framework used for emergency response (includes ICS, AIIMS, etc.).",
+      "category": "Frameworks & Systems",
+      "tags": ["framework", "management", "response", "terminology"],
+      "related_terms": ["ICS", "AIMS"]
+    },
+    {
+      "id": "INSET",
+      "term": "INSET",
+      "definition": "Integrated National Security Enforcement Team. RCMP-led teams that investigate national security threats and terrorism.",
+      "category": "Governance & Agencies",
+      "tags": ["security", "terrorism", "enforcement", "federal"],
+      "related_terms": ["RCMP", "PSC"]
+    },
+    {
+      "id": "ISC",
+      "term": "ISC",
+      "definition": "Indigenous Services Canada. The federal department that supports First Nations communities, including funding and support for emergency management.",
+      "category": "Governance & Agencies",
+      "tags": ["federal", "indigenous", "support", "community"],
+      "related_terms": ["PSC", "FPT"]
+    },
+    {
+      "id": "ISO",
+      "term": "ISO",
+      "definition": "International Organization for Standardization. An independent, non-governmental international organization that develops voluntary standards (e.g., ISO 22301 for Business Continuity).",
+      "category": "Governance & Agencies",
+      "tags": ["standards", "international", "organization", "bcm"],
+      "related_terms": ["CSA", "BCM"]
+    },
+    {
+      "id": "ITF",
+      "term": "ITF",
+      "definition": "Interagency Task Force. A team convened to solve complex problems that span more than one Emergency Support Function.",
+      "category": "Operations & Tactics",
+      "tags": ["task_force", "coordination", "problem_solving", "multi_agency"],
+      "related_terms": ["ESF", "AHIMT"]
+    },
+    {
+      "id": "JIC",
+      "term": "JIC",
+      "definition": "Joint Information Center. A facility established to coordinate all incident-related public information activities.",
+      "category": "Operations & Tactics",
+      "tags": ["communication", "public_info", "facility", "coordination"],
+      "related_terms": ["PIO", "EOC"]
+    },
+    {
+      "id": "LAEMR",
+      "term": "LAEMR",
+      "definition": "Local Authority Emergency Management Regulation. Alberta regulation that mandates the use of AIMS and outlines the duties of local authorities.",
+      "category": "Governance & Agencies",
+      "tags": ["alberta", "legislation", "regulation", "municipal"],
+      "related_terms": ["AIMS", "AEMA"]
+    },
+    {
+      "id": "MAC",
+      "term": "MAC",
+      "definition": "Multi-Agency Coordination. A system used to coordinate resources and support between agencies or jurisdictions (strategic level) as opposed to Incident Command (tactical level).",
+      "category": "Frameworks & Systems",
+      "tags": ["coordination", "strategic", "multi_agency", "support"],
+      "related_terms": ["EOC", "ICS"]
+    },
+    {
+      "id": "MEP",
+      "term": "MEP",
+      "definition": "Municipal Emergency Plan. The emergency plan required by legislation for all municipalities in Canada.",
+      "category": "Risk & Planning",
+      "tags": ["municipal", "planning", "legislation", "requirement"],
+      "related_terms": ["DEM", "LAEMR"]
+    },
+    {
+      "id": "MHPSS",
+      "term": "MHPSS",
+      "definition": "Mental Health and Psychosocial Support. A term used in the humanitarian sector to describe support for mental health and social well-being.",
+      "category": "Psychosocial & Health",
+      "tags": ["mental_health", "humanitarian", "support", "psychology"],
+      "related_terms": ["PFA", "WHO"]
+    },
+    {
+      "id": "MOU",
+      "term": "MOU",
+      "definition": "Memorandum of Understanding. A formal agreement between two or more parties (often used for Mutual Aid Agreements).",
+      "category": "Governance & Agencies",
+      "tags": ["agreement", "legal", "mutual_aid", "cooperation"],
+      "related_terms": ["Partnerships"]
+    },
+    {
+      "id": "NATO",
+      "term": "NATO",
+      "definition": "North Atlantic Treaty Organization. An intergovernmental military alliance.",
+      "category": "International & Humanitarian",
+      "tags": ["international", "military", "alliance", "security"],
+      "related_terms": ["EADRCC"]
+    },
+    {
+      "id": "NBEOC",
+      "term": "NBEOC",
+      "definition": "National Business Emergency Operations Center. A US FEMA initiative to coordinate with the private sector.",
+      "category": "Infrastructure & Economy",
+      "tags": ["us", "private_sector", "coordination", "business"],
+      "related_terms": ["FEMA", "EOC"]
+    },
+    {
+      "id": "NDRF",
+      "term": "NDRF",
+      "definition": "National Disaster Recovery Framework. A US framework that guides recovery efforts.",
+      "category": "Frameworks & Systems",
+      "tags": ["us", "recovery", "framework", "guide"],
+      "related_terms": ["FEMA"]
+    },
+    {
+      "id": "NERS",
+      "term": "NERS",
+      "definition": "National Emergency Response System. The framework that allows for the harmonization of joint federal, provincial, and territorial response to emergencies in Canada.",
+      "category": "Frameworks & Systems",
+      "tags": ["canada", "framework", "harmonization", "response"],
+      "related_terms": ["FPT", "FERP"]
+    },
+    {
+      "id": "NFPA",
+      "term": "NFPA",
+      "definition": "National Fire Protection Association. A US trade association that creates standards (e.g., NFPA 1600) adopted by many Canadian jurisdictions.",
+      "category": "Governance & Agencies",
+      "tags": ["standards", "association", "fire", "us"],
+      "related_terms": ["CSA", "ISO"]
+    },
+    {
+      "id": "NGO",
+      "term": "NGO",
+      "definition": "Non-Governmental Organization. A non-profit organization that operates independently of any government.",
+      "category": "International & Humanitarian",
+      "tags": ["non_profit", "independent", "humanitarian", "organization"],
+      "related_terms": ["NPO", "IFRC"]
+    },
+    {
+      "id": "NIMS",
+      "term": "NIMS",
+      "definition": "National Incident Management System. The US comprehensive national approach to incident management (of which ICS is a component).",
+      "category": "Frameworks & Systems",
+      "tags": ["us", "framework", "national", "management"],
+      "related_terms": ["ICS", "FEMA"]
+    },
+    {
+      "id": "NPAS",
+      "term": "NPAS",
+      "definition": "National Public Alerting System. Canada's system for emergency alerts (Alert Ready).",
+      "category": "Operations & Tactics",
+      "tags": ["alerting", "public_info", "communication", "technology"],
+      "related_terms": ["PIO", "JIC"]
+    },
+    {
+      "id": "NPO",
+      "term": "NPO",
+      "definition": "Non-Profit Organization. An organization that does not distribute its surplus funds to owners or shareholders.",
+      "category": "Infrastructure & Economy",
+      "tags": ["non_profit", "organization", "finance"],
+      "related_terms": ["NGO"]
+    },
+    {
+      "id": "NRCan",
+      "term": "NRCan",
+      "definition": "Natural Resources Canada. The federal department responsible for natural resources, explosives, and natural hazards (earthquakes, space weather).",
+      "category": "Governance & Agencies",
+      "tags": ["federal", "resources", "hazards", "science"],
+      "related_terms": ["PSC", "CSZ"]
+    },
+    {
+      "id": "NRP",
+      "term": "NRP",
+      "definition": "National Response Plan. The predecessor to the US National Response Framework.",
+      "category": "Frameworks & Systems",
+      "tags": ["us", "historical", "plan", "response"],
+      "related_terms": ["FEMA", "NRF"]
+    },
+    {
+      "id": "OCHA",
+      "term": "OCHA",
+      "definition": "Office for the Coordination of Humanitarian Affairs. A UN body responsible for bringing together humanitarian actors to ensure a coherent response to emergencies.",
+      "category": "International & Humanitarian",
+      "tags": ["un", "humanitarian", "coordination", "international"],
+      "related_terms": ["UN", "UNDAC"]
+    },
+    {
+      "id": "OCIPEP",
+      "term": "OCIPEP",
+      "definition": "Office of Critical Infrastructure Protection and Emergency Preparedness. A historical Canadian federal body (pre-Public Safety Canada).",
+      "category": "Governance & Agencies",
+      "tags": ["historical", "federal", "infrastructure", "preparedness"],
+      "related_terms": ["PSC", "CI"]
+    },
+    {
+      "id": "OH&S",
+      "term": "OH&S",
+      "definition": "Occupational Health and Safety. Laws and regulations protecting the safety of workers.",
+      "category": "Governance & Agencies",
+      "tags": ["safety", "workers", "regulation", "law"],
+      "related_terms": ["OSHA"]
+    },
+    {
+      "id": "OSHA",
+      "term": "OSHA",
+      "definition": "Occupational Safety and Health Administration. The US agency responsible for worker safety.",
+      "category": "Governance & Agencies",
+      "tags": ["us", "safety", "agency", "workers"],
+      "related_terms": ["OH&S"]
+    },
+    {
+      "id": "PDCA",
+      "term": "PDCA",
+      "definition": "Plan-Do-Check-Act. An iterative four-step management method used for the control and continuous improvement of processes (used in CSA Z1600).",
+      "category": "Frameworks & Systems",
+      "tags": ["management", "method", "process", "improvement"],
+      "related_terms": ["CSA", "Z1600"]
+    },
+    {
+      "id": "PEDRR",
+      "term": "PEDRR",
+      "definition": "Partnership for Environment and Disaster Risk Reduction. A global partnership promoting ecosystem-based DRR.",
+      "category": "International & Humanitarian",
+      "tags": ["partnership", "environment", "drr", "international"],
+      "related_terms": ["Eco-DRR", "EBA"]
+    },
+    {
+      "id": "PFA",
+      "term": "PFA",
+      "definition": "Psychological First Aid. A humane, supportive response to a fellow human being who is suffering and may need support.",
+      "category": "Psychosocial & Health",
+      "tags": ["mental_health", "intervention", "support", "first_aid"],
+      "related_terms": ["MHPSS", "CISM"]
+    },
+    {
+      "id": "PIO",
+      "term": "PIO",
+      "definition": "Public Information Officer. The individual responsible for interfacing with the public and media and/or with other agencies with incident-related information requirements.",
+      "category": "Operations & Tactics",
+      "tags": ["roles", "communication", "media", "ics"],
+      "related_terms": ["JIC", "NPAS"]
+    },
+    {
+      "id": "PPE",
+      "term": "PPE",
+      "definition": "Personal Protective Equipment. Equipment worn to minimize exposure to hazards (also used metaphorically as 'Psychological PPE').",
+      "category": "Operations & Tactics",
+      "tags": ["safety", "equipment", "protection", "health"],
+      "related_terms": ["OH&S", "Psychological Safety"]
+    },
+    {
+      "id": "PSC",
+      "term": "PSC",
+      "definition": "Public Safety Canada. The federal department responsible for protecting Canadians and helping to maintain a peaceful and safe society; the lead for federal EM.",
+      "category": "Governance & Agencies",
+      "tags": ["federal", "canada", "agency", "leadership", "safety"],
+      "related_terms": ["GOC", "DFAA", "AEMA"]
+    },
+    {
+      "id": "PTSD",
+      "term": "PTSD",
+      "definition": "Post-Traumatic Stress Disorder. A mental health condition triggered by a terrifying event.",
+      "category": "Psychosocial & Health",
+      "tags": ["mental_health", "condition", "trauma", "health"],
+      "related_terms": ["CISM", "CISD"]
+    },
+    {
+      "id": "P/T",
+      "term": "P/T",
+      "definition": "Provincial/Territorial. Refers to the provinces and territories of Canada.",
+      "category": "Governance & Agencies",
+      "tags": ["canada", "jurisdiction", "government"],
+      "related_terms": ["FPT", "NERS"]
+    },
+    {
+      "id": "R2MR",
+      "term": "R2MR",
+      "definition": "Road to Mental Resilience. A training program developed by the Department of National Defence and adapted by the Mental Health Commission of Canada.",
+      "category": "Psychosocial & Health",
+      "tags": ["training", "mental_health", "resilience", "canada"],
+      "related_terms": ["CAF", "Psychological Safety"]
+    },
+    {
+      "id": "RCMP",
+      "term": "RCMP",
+      "definition": "Royal Canadian Mounted Police. Canada's national police service.",
+      "category": "Governance & Agencies",
+      "tags": ["federal", "police", "security", "enforcement"],
+      "related_terms": ["INSET", "PSC"]
+    },
+    {
+      "id": "SAR",
+      "term": "SAR",
+      "definition": "Search and Rescue. The search for and provision of aid to people who are in distress or imminent danger.",
+      "category": "Operations & Tactics",
+      "tags": ["search_and_rescue", "response", "tactical", "aid"],
+      "related_terms": ["CCG", "USAR", "HUSAR"]
+    },
+    {
+      "id": "SDGs",
+      "term": "SDGs",
+      "definition": "Sustainable Development Goals. A set of 17 global goals adopted by the UN in 2015.",
+      "category": "International & Humanitarian",
+      "tags": ["un", "global", "development", "goals"],
+      "related_terms": ["UN", "Sendai"]
+    },
+    {
+      "id": "SOLE",
+      "term": "SOLE",
+      "definition": "State of Local Emergency. A declaration by a local authority (municipality) in Alberta that grants extraordinary powers to deal with an emergency.",
+      "category": "Governance & Agencies",
+      "tags": ["legislation", "alberta", "declaration", "municipal", "powers"],
+      "related_terms": ["DEM", "LAEMR", "MEP"]
+    },
+    {
+      "id": "SOREM",
+      "term": "SOREM",
+      "definition": "Senior Officials Responsible for Emergency Management. A federal/provincial/territorial body in Canada that coordinates EM initiatives.",
+      "category": "Governance & Agencies",
+      "tags": ["coordination", "federal", "provincial", "committee"],
+      "related_terms": ["FPT", "PSC"]
+    },
+    {
+      "id": "SPR",
+      "term": "SPR",
+      "definition": "Stakeholder Preparedness Review. A US FEMA process to assess a community's capability levels.",
+      "category": "Risk & Planning",
+      "tags": ["review", "assessment", "preparedness", "us"],
+      "related_terms": ["FEMA", "THIRA"]
+    },
+    {
+      "id": "THIRA",
+      "term": "THIRA",
+      "definition": "Threat and Hazard Identification and Risk Assessment. A risk assessment process used (primarily in the US, but concepts applied in Canada) to identify risks and capability targets.",
+      "category": "Risk & Planning",
+      "tags": ["risk_assessment", "hazards", "identification", "planning"],
+      "related_terms": ["AHRA", "HRVA"]
+    },
+    {
+      "id": "TIMS",
+      "term": "TIMS",
+      "definition": "Toxic Industrial Materials. Industrial chemicals that are toxic but are produced in large quantities for industrial use (distinct from chemical weapons).",
+      "category": "Operations & Tactics",
+      "tags": ["hazards", "chemical", "industrial", "toxic"],
+      "related_terms": ["HAZMAT", "CBRNE"]
+    },
+    {
+      "id": "UC",
+      "term": "UC",
+      "definition": "Unified Command. An ICS application used when more than one agency has incident jurisdiction or when incidents cross political jurisdictions.",
+      "category": "Operations & Tactics",
+      "tags": ["ics", "command", "multi_agency", "jurisdiction"],
+      "related_terms": ["ICS", "IC"]
+    },
+    {
+      "id": "UN",
+      "term": "UN",
+      "definition": "United Nations.",
+      "category": "International & Humanitarian",
+      "tags": ["international", "organization", "governance"],
+      "related_terms": ["OCHA", "UNDRR"]
+    },
+    {
+      "id": "UNDAC",
+      "term": "UNDAC",
+      "definition": "United Nations Disaster Assessment & Coordination. A system designed to help the UN and governments of disaster-affected countries during the first phase of a sudden-onset emergency.",
+      "category": "International & Humanitarian",
+      "tags": ["un", "assessment", "coordination", "response"],
+      "related_terms": ["OCHA", "UN"]
+    },
+    {
+      "id": "UNDRR",
+      "term": "UNDRR",
+      "definition": "United Nations Office for Disaster Risk Reduction. The UN focal point for disaster risk reduction (formerly UNISDR).",
+      "category": "International & Humanitarian",
+      "tags": ["un", "drr", "agency", "risk_reduction"],
+      "related_terms": ["Sendai", "HFA"]
+    },
+    {
+      "id": "UNDRO",
+      "term": "UNDRO",
+      "definition": "United Nations Disaster Relief Office. A historical UN body (1971) created to coordinate disaster relief.",
+      "category": "International & Humanitarian",
+      "tags": ["un", "historical", "relief", "coordination"],
+      "related_terms": ["OCHA", "UN"]
+    },
+    {
+      "id": "UNISDR",
+      "term": "UNISDR",
+      "definition": "United Nations International Strategy for Disaster Reduction. The previous name for UNDRR.",
+      "category": "International & Humanitarian",
+      "tags": ["un", "historical", "drr", "name_change"],
+      "related_terms": ["UNDRR"]
+    },
+    {
+      "id": "USAR",
+      "term": "USAR",
+      "definition": "Urban Search and Rescue. Specialized capabilities to locate, extricate, and medically stabilize victims trapped in confined spaces/collapsed structures.",
+      "category": "Operations & Tactics",
+      "tags": ["search_and_rescue", "urban", "specialized", "response"],
+      "related_terms": ["HUSAR", "SAR"]
+    },
+    {
+      "id": "WASH",
+      "term": "WASH",
+      "definition": "Water, Sanitation and Hygiene. A key area of humanitarian aid focused on public health.",
+      "category": "International & Humanitarian",
+      "tags": ["health", "hygiene", "humanitarian", "aid"],
+      "related_terms": ["NGO", "ESS"]
+    }
+  ]
+}

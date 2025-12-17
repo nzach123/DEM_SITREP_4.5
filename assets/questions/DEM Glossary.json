@@ -1,0 +1,1277 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "source": "DEM Glossary",
+    "description": "Comprehensive dataset of Disaster and Emergency Management terms, categorized for definition-matching gameplay loops.",
+    "all_categories": [
+      "Security & Violence",
+      "Psychology & Stress",
+      "Risk Management",
+      "Incident Command System (ICS)",
+      "Hazards (General)",
+      "Hazards (Natural)",
+      "Hazards (Technological/Human)",
+      "Business Continuity",
+      "Response & Recovery",
+      "Conflict & Communication",
+      "Vulnerability & Resilience"
+    ],
+    "all_tags": [
+      "active_threat",
+      "human_induced",
+      "stress",
+      "mental_health",
+      "intervention",
+      "administrative",
+      "mitigation",
+      "risk_temperament",
+      "personality",
+      "government",
+      "strategy",
+      "fire",
+      "criminal",
+      "financial",
+      "health",
+      "recreational",
+      "reputational",
+      "social",
+      "biological",
+      "weapon",
+      "coping_mechanism",
+      "command_level",
+      "operational",
+      "resilience",
+      "planning",
+      "analysis",
+      "theory",
+      "cascading",
+      "complex_emergency",
+      "civil_unrest",
+      "protest",
+      "climate",
+      "command_staff",
+      "ics_role",
+      "community",
+      "recovery",
+      "humanitarian",
+      "strategic",
+      "process",
+      "infrastructure",
+      "assessment",
+      "model",
+      "reduction",
+      "root_causes",
+      "economics",
+      "environment",
+      "epidemiology",
+      "space_weather",
+      "federal",
+      "finance",
+      "general_staff",
+      "geology",
+      "tactical",
+      "weather",
+      "hydrology",
+      "objective",
+      "industrial",
+      "communication",
+      "conflict",
+      "indigenous_knowledge",
+      "logistics",
+      "preparedness",
+      "prevention",
+      "public_relations",
+      "adaptation",
+      "insurance",
+      "safety",
+      "legal",
+      "terrorism"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "active_aggressor",
+      "term": "Active Aggressor",
+      "definition": "An individual actively engaged in killing or attempting to kill people in a confined and populated area.",
+      "category": "Security & Violence",
+      "tags": ["active_threat", "human_induced", "violence"],
+      "related_terms": ["Active Assailant", "Workplace Violence", "Terrorism"]
+    },
+    {
+      "id": "active_assailant",
+      "term": "Active Assailant",
+      "definition": "One or more individuals actively engaged in harming, killing, or attempting to kill people in a populated area. This term has expanded to include tactics such as using vehicles to drive through crowds.",
+      "category": "Security & Violence",
+      "tags": ["active_threat", "human_induced", "violence", "vehicle_attack"],
+      "related_terms": ["Active Aggressor", "Terrorism"]
+    },
+    {
+      "id": "acute_stress",
+      "term": "Acute Stress",
+      "definition": "A form of stress resulting from current or future demands and pressures; it is temporary in nature.",
+      "category": "Psychology & Stress",
+      "tags": ["stress", "mental_health", "temporary"],
+      "related_terms": ["Chronic Stress", "Episodic Acute Stress", "Stress"]
+    },
+    {
+      "id": "ad_hoc_incident_review",
+      "term": "Ad Hoc Incident Review (AIR)",
+      "definition": "A tool used by leadership to structure a supportive intervention with a group or individual following exposure to a potentially traumatizing event to reduce potential distress.",
+      "category": "Psychology & Stress",
+      "tags": ["intervention", "mental_health", "leadership", "support"],
+      "related_terms": ["Critical Incident Stress Debrief (CISD)"]
+    },
+    {
+      "id": "administrative_actions",
+      "term": "Administrative Actions",
+      "definition": "Risk control measures that attempt to reduce the frequency of initiating events or reduce consequences by changing the way things are done (e.g., controlled entry, safety training).",
+      "category": "Risk Management",
+      "tags": ["administrative", "mitigation", "procedure", "control"],
+      "related_terms": ["Risk Control", "Prevention"]
+    },
+    {
+      "id": "adventurous_risk_temperament",
+      "term": "Adventurous Risk Temperament",
+      "definition": "A natural disposition characterized by a combination of impulsiveness and fearlessness, often appearing oblivious to risk.",
+      "category": "Psychology & Stress",
+      "tags": ["risk_temperament", "personality", "impulsive"],
+      "related_terms": ["Carefree Risk Temperament", "Risk Temperament"]
+    },
+    {
+      "id": "agency",
+      "term": "Agency",
+      "definition": "A government or supporting organization with a defined role in incident management.",
+      "category": "Response & Recovery",
+      "tags": ["government", "organization", "management"],
+      "related_terms": ["Coordinating Agency", "Lead Agency", "Support Agency"]
+    },
+    {
+      "id": "all_hazards_approach",
+      "term": "All-Hazards Approach",
+      "definition": "An emergency management strategy that addresses vulnerabilities exposed by both natural and human-induced hazards. It increases efficiency by recognizing common elements across all hazard types and supplementing them with hazard-specific sub-components only as required.",
+      "category": "Risk Management",
+      "tags": ["strategy", "efficiency", "comprehensive", "planning"],
+      "related_terms": ["Comprehensive", "Hazardscape"]
+    },
+    {
+      "id": "anthropogenic_hazards",
+      "term": "Anthropogenic Hazards",
+      "definition": "Hazards induced almost entirely by human choices and activities, excluding armed conflicts.",
+      "category": "Hazards (Technological/Human)",
+      "tags": ["human_induced", "hazard_type", "choice_based"],
+      "related_terms": ["Technological Hazards", "Intentional Hazards"]
+    },
+    {
+      "id": "arson",
+      "term": "Arson",
+      "definition": "The act of deliberately damaging property by fire or explosion.",
+      "category": "Security & Violence",
+      "tags": ["fire", "criminal", "intentional", "human_induced"],
+      "related_terms": ["Intentional Hazards", "Terrorism"]
+    },
+    {
+      "id": "asset",
+      "term": "Asset",
+      "definition": "People, property, and daily activities of an organization or community that could be affected by a hazardous event.",
+      "category": "Risk Management",
+      "tags": ["value", "property", "people", "vulnerability"],
+      "related_terms": ["Critical Infrastructure", "Business Impact Analysis (BIA)"]
+    },
+    {
+      "id": "attitude_to_risk_financial",
+      "term": "Attitude to Risk (Financial)",
+      "definition": "An individual's willingness to take chances in their financial affairs.",
+      "category": "Psychology & Stress",
+      "tags": ["financial", "risk_attitude", "personality"],
+      "related_terms": ["Risk Temperament"]
+    },
+    {
+      "id": "attitude_to_risk_health_safety",
+      "term": "Attitude to Risk (Health and Safety)",
+      "definition": "An individual's alertness to common dangers and matters that may impact current or future health.",
+      "category": "Psychology & Stress",
+      "tags": ["health", "safety", "risk_attitude", "personality"],
+      "related_terms": ["Health and Safety", "Risk Temperament"]
+    },
+    {
+      "id": "attitude_to_risk_recreational",
+      "term": "Attitude to Risk (Recreational)",
+      "definition": "An individual's concern with the possibility of physical danger in sports or recreational activities.",
+      "category": "Psychology & Stress",
+      "tags": ["recreational", "sports", "risk_attitude", "personality"],
+      "related_terms": ["Risk Temperament"]
+    },
+    {
+      "id": "attitude_to_risk_reputational",
+      "term": "Attitude to Risk (Reputational)",
+      "definition": "An individual's concern with morality and readiness to live according to accepted principles.",
+      "category": "Psychology & Stress",
+      "tags": ["reputational", "morality", "risk_attitude", "personality"],
+      "related_terms": ["Crisis Management"]
+    },
+    {
+      "id": "attitude_to_risk_social",
+      "term": "Attitude to Risk (Social)",
+      "definition": "An individual's concern with the risk of embarrassing oneself or others, or risking disapproval or loss of reputation.",
+      "category": "Psychology & Stress",
+      "tags": ["social", "embarrassment", "risk_attitude", "personality"],
+      "related_terms": ["Risk Temperament"]
+    },
+    {
+      "id": "axial_group_risk_temperament",
+      "term": "Axial Group Risk Temperament",
+      "definition": "A balanced risk temperament where individuals do not show the extremes characterizing other risk types; they are neither particularly impulsive nor especially calm.",
+      "category": "Psychology & Stress",
+      "tags": ["risk_temperament", "personality", "balanced"],
+      "related_terms": ["Risk Temperament"]
+    },
+    {
+      "id": "biological_agent",
+      "term": "Biological Agent",
+      "definition": "A bacterium, virus, protozoan, parasite, or fungus that has been purposely developed or used as a weapon.",
+      "category": "Security & Violence",
+      "tags": ["biological", "weapon", "intentional", "human_induced"],
+      "related_terms": ["Biological Hazards", "Terrorism"]
+    },
+    {
+      "id": "biological_hazards",
+      "term": "Biological Hazards",
+      "definition": "Hazards of organic origin or conveyed by biological vectors, including pathogenic micro-organisms, toxins, and bioactive substances (e.g., venom, mold, vector-borne diseases).",
+      "category": "Hazards (Natural)",
+      "tags": ["biological", "disease", "organic", "hazard_type"],
+      "related_terms": ["Pandemic", "Epidemic"]
+    },
+    {
+      "id": "box_breathing",
+      "term": "Box Breathing",
+      "definition": "A technique for arousal management involving inhaling, holding, exhaling, and holding breath for a count of four each.",
+      "category": "Psychology & Stress",
+      "tags": ["coping_mechanism", "stress", "mental_health", "technique"],
+      "related_terms": ["Mental Toughness", "Stress"]
+    },
+    {
+      "id": "bronze_operational_level",
+      "term": "Bronze / Operational Level",
+      "definition": "The level of command where the management of immediate, hands-on work is undertaken at the site(s) of the emergency.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["command_level", "operational", "hands_on", "site_specific"],
+      "related_terms": ["Silver / Tactical Level", "Gold / Strategic Level"]
+    },
+    {
+      "id": "business_continuity",
+      "term": "Business Continuity",
+      "definition": "An organization’s capacity to ensure that operations and core business activities can function promptly after a disaster or incident takes critical systems and/or facilities offline.",
+      "category": "Business Continuity",
+      "tags": ["resilience", "operations", "recovery", "organizational"],
+      "related_terms": ["Business Continuity Management (BCM)", "Continuity of Operations Plan (COOP)"]
+    },
+    {
+      "id": "business_continuity_management",
+      "term": "Business Continuity Management (BCM)",
+      "definition": "A holistic management process that identifies potential threats to an organization and the impacts to business operations those threats, if realized, might cause. It provides a framework for building organizational resilience and the capability for an effective response.",
+      "category": "Business Continuity",
+      "tags": ["management", "framework", "resilience", "threat_identification"],
+      "related_terms": ["Business Continuity Plan (BCP)", "Risk Management"]
+    },
+    {
+      "id": "business_continuity_plan",
+      "term": "Business Continuity Plan (BCP)",
+      "definition": "A documented strategy outlining procedures and strategies for how an organization can continue to operate during an incident and restore critical business functions within a predefined timeframe.",
+      "category": "Business Continuity",
+      "tags": ["planning", "documentation", "strategy", "recovery"],
+      "related_terms": ["Continuity of Operations Plan (COOP)", "Business Impact Analysis (BIA)"]
+    },
+    {
+      "id": "business_impact_analysis",
+      "term": "Business Impact Analysis (BIA)",
+      "definition": "A process that identifies, quantifies, and qualifies the business impact of a loss, interruption, or disruption of business processes on an organization.",
+      "category": "Business Continuity",
+      "tags": ["analysis", "quantification", "impact", "process"],
+      "related_terms": ["Business Continuity Plan (BCP)", "Risk Analysis"]
+    },
+    {
+      "id": "capacity",
+      "term": "Capacity",
+      "definition": "The capability of a system, community, or society to resist, absorb, adapt to, transform, and recover from hazards and disruptions.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["resilience", "capability", "adaptation", "community"],
+      "related_terms": ["Resilience", "Vulnerability"]
+    },
+    {
+      "id": "carefree_risk_temperament",
+      "term": "Carefree Risk Temperament",
+      "definition": "A risk temperament characterized by high levels of impulsiveness and unconventionality, often disliking repetitive routines.",
+      "category": "Psychology & Stress",
+      "tags": ["risk_temperament", "personality", "impulsive", "unconventional"],
+      "related_terms": ["Adventurous Risk Temperament", "Risk Temperament"]
+    },
+    {
+      "id": "cascading_disasters",
+      "term": "Cascading Disasters",
+      "definition": "Extreme events in which cascading effects increase in progression over time and generate unexpected secondary events of strong impact.",
+      "category": "Hazards (General)",
+      "tags": ["cascading", "secondary_effects", "complexity", "hazard_dynamic"],
+      "related_terms": ["Systemic Risk", "Disaster"]
+    },
+    {
+      "id": "chain_of_command",
+      "term": "Chain of Command",
+      "definition": "The orderly line of authority within the ranks of the incident management organization.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["hierarchy", "authority", "organization", "management"],
+      "related_terms": ["Incident Commander (IC)", "Incident Command System (ICS)"]
+    },
+    {
+      "id": "chemical_agent",
+      "term": "Chemical Agent",
+      "definition": "The toxic component of a chemical weapon, categorized by function (e.g., choking, blister, blood, nerve, and riot control agents).",
+      "category": "Security & Violence",
+      "tags": ["chemical", "weapon", "toxic", "human_induced"],
+      "related_terms": ["Chemical Hazards", "Terrorism"]
+    },
+    {
+      "id": "chronic_stress",
+      "term": "Chronic Stress",
+      "definition": "Stress resulting from a persistent threat environment, such as a war zone or poverty, where the situation does not appear to have a way out.",
+      "category": "Psychology & Stress",
+      "tags": ["stress", "mental_health", "persistent", "long_term"],
+      "related_terms": ["Acute Stress", "Stress"]
+    },
+    {
+      "id": "civil_disobedience",
+      "term": "Civil Disobedience",
+      "definition": "A non-violent act in which individuals or groups deliberately break laws to protest perceived injustices.",
+      "category": "Conflict & Communication",
+      "tags": ["protest", "non_violent", "legal", "civil_unrest"],
+      "related_terms": ["Civil Incidents", "Intergroup Conflict"]
+    },
+    {
+      "id": "civil_incidents",
+      "term": "Civil Incidents",
+      "definition": "Events ranging from peaceful demonstrations and protests to non-violent acts of civil disobedience and violent riots.",
+      "category": "Conflict & Communication",
+      "tags": ["civil_unrest", "protest", "demonstration", "public_safety"],
+      "related_terms": ["Civil Disobedience", "Terrorism"]
+    },
+    {
+      "id": "climatological_hazards",
+      "term": "Climatological Hazards",
+      "definition": "Hazards caused by long-lived, large-scale atmospheric processes, such as drought, extreme temperatures, and wildfires.",
+      "category": "Hazards (Natural)",
+      "tags": ["climate", "atmospheric", "long_term", "hazard_type"],
+      "related_terms": ["Meteorological Hazards", "Environmental Hazards"]
+    },
+    {
+      "id": "command_staff",
+      "term": "Command Staff",
+      "definition": "Incident management personnel who report directly to the Incident Commander, typically including the Information Officer, Safety Officer, and Liaison Officer.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["command_staff", "ics_role", "leadership", "support"],
+      "related_terms": ["General Staff", "Incident Commander (IC)"]
+    },
+    {
+      "id": "community_based_drm",
+      "term": "Community-Based Disaster Risk Management",
+      "definition": "Disaster risk management that promotes the involvement of potentially affected communities at the local level.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["community", "local_level", "engagement", "management"],
+      "related_terms": ["Disaster Risk Management (DRM)", "Local and Indigenous Peoples’ Approach to DRM"]
+    },
+    {
+      "id": "community_disaster_recovery_program",
+      "term": "Community Disaster Recovery Program",
+      "definition": "The process of establishing a community-based, post-disaster vision and identifying projects and funding strategies to achieve that vision.",
+      "category": "Response & Recovery",
+      "tags": ["recovery", "community", "funding", "strategy"],
+      "related_terms": ["Recovery", "Community-Based Disaster Risk Management"]
+    },
+    {
+      "id": "compensatory_drm",
+      "term": "Compensatory Disaster Risk Management",
+      "definition": "Activities that strengthen social and economic resilience in the face of residual risk that cannot be effectively reduced (e.g., preparedness, response, insurance).",
+      "category": "Risk Management",
+      "tags": ["resilience", "residual_risk", "insurance", "preparedness"],
+      "related_terms": ["Corrective Disaster Risk Management", "Prospective Disaster Risk Management"]
+    },
+    {
+      "id": "complex_humanitarian_emergency",
+      "term": "Complex Humanitarian Emergency (CHE)",
+      "definition": "A humanitarian crisis layered over ongoing instability or conflict, characterized by extensive violence, displacement, and widespread damage.",
+      "category": "Hazards (General)",
+      "tags": ["complex_emergency", "humanitarian", "conflict", "displacement"],
+      "related_terms": ["Humanitarian Crisis", "Disaster"]
+    },
+    {
+      "id": "composed_risk_temperament",
+      "term": "Composed Risk Temperament",
+      "definition": "A risk temperament rooted in high levels of composure, optimism, and self-confidence; typically calm and unemotional.",
+      "category": "Psychology & Stress",
+      "tags": ["risk_temperament", "personality", "calm", "confident"],
+      "related_terms": ["Deliberate Risk Temperament", "Risk Temperament"]
+    },
+    {
+      "id": "comprehensive",
+      "term": "Comprehensive",
+      "definition": "An emergency management principle that addresses all hazards and all components of emergency management (prevention/mitigation, preparedness, response, recovery).",
+      "category": "Risk Management",
+      "tags": ["principle", "cycle", "all_hazards", "holistic"],
+      "related_terms": ["All-Hazards Approach", "Emergency Management"]
+    },
+    {
+      "id": "continuity_of_operations_plan",
+      "term": "Continuity of Operations Plan (COOP)",
+      "definition": "A plan ensuring that primary mission-essential functions continue to be performed during a wide range of emergencies.",
+      "category": "Business Continuity",
+      "tags": ["planning", "essential_functions", "government", "continuity"],
+      "related_terms": ["Business Continuity Plan (BCP)", "Business Continuity"]
+    },
+    {
+      "id": "coordinating_agency",
+      "term": "Coordinating Agency",
+      "definition": "The organization assigned by legislation or policy to coordinate efforts of different orders of government, build partnerships, and maintain the emergency management program.",
+      "category": "Response & Recovery",
+      "tags": ["government", "coordination", "leadership", "policy"],
+      "related_terms": ["Lead Agency", "Support Agency"]
+    },
+    {
+      "id": "corrective_drm",
+      "term": "Corrective Disaster Risk Management",
+      "definition": "Activities that address and seek to remove or reduce disaster risks which are already present.",
+      "category": "Risk Management",
+      "tags": ["reduction", "mitigation", "existing_risk", "action"],
+      "related_terms": ["Compensatory Disaster Risk Management", "Prospective Disaster Risk Management"]
+    },
+    {
+      "id": "creeping_crisis",
+      "term": "Creeping Crisis",
+      "definition": "A crisis foreshadowed by a series of events that decision-makers do not initially view as part of a pattern.",
+      "category": "Risk Management",
+      "tags": ["crisis_type", "subtle", "pattern", "warning_signs"],
+      "related_terms": ["Slow-Burn Crisis", "Sudden Crisis"]
+    },
+    {
+      "id": "crisis",
+      "term": "Crisis",
+      "definition": "An unstable condition involving an impending abrupt or significant change that requires urgent attention and action to protect life, assets, property, or the environment. It can also be defined as a self-inflicted situation resulting from management incompetence.",
+      "category": "Risk Management",
+      "tags": ["instability", "urgency", "management_failure", "threat"],
+      "related_terms": ["Crisis Management", "Emergency"]
+    },
+    {
+      "id": "crisis_management",
+      "term": "Crisis Management",
+      "definition": "The art of preventing or minimizing business or organizational loss when threatened by a crisis; focuses on preserving the organization’s reputation.",
+      "category": "Business Continuity",
+      "tags": ["reputation", "minimization", "organizational", "response"],
+      "related_terms": ["Crisis", "Risk Management"]
+    },
+    {
+      "id": "cisd",
+      "term": "Critical Incident Stress Debrief (CISD)",
+      "definition": "A formal, seven-step group discussion process facilitated by trained individuals to restore a group to normal functioning after a traumatic event.",
+      "category": "Psychology & Stress",
+      "tags": ["intervention", "debrief", "process", "mental_health"],
+      "related_terms": ["Ad Hoc Incident Review (AIR)", "Mental Health"]
+    },
+    {
+      "id": "critical_infrastructure",
+      "term": "Critical Infrastructure",
+      "definition": "Processes, systems, facilities, technologies, networks, assets, and services essential to the health, safety, security or economic well-being of a population and the effective functioning of government.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["infrastructure", "essential_services", "systems", "economy"],
+      "related_terms": ["Infrastructure Hazards", "Asset"]
+    },
+    {
+      "id": "damage_assessment",
+      "term": "Damage Assessment",
+      "definition": "A preliminary onsite evaluation of damage or loss caused by an accident or natural event to estimate repair and recovery needs.",
+      "category": "Response & Recovery",
+      "tags": ["evaluation", "estimation", "recovery_needs", "onsite"],
+      "related_terms": ["Recovery", "Asset"]
+    },
+    {
+      "id": "deliberate_risk_temperament",
+      "term": "Deliberate Risk Temperament",
+      "definition": "A risk temperament characterized by high levels of calm self-confidence combined with caution; typically analytical and systematic.",
+      "category": "Psychology & Stress",
+      "tags": ["risk_temperament", "personality", "analytical", "cautious"],
+      "related_terms": ["Composed Risk Temperament", "Risk Temperament"]
+    },
+    {
+      "id": "disaster",
+      "term": "Disaster",
+      "definition": "A social phenomenon that results when a hazard intersects with a vulnerable community in a way that exceeds or overwhelms the community's ability to cope, causing serious harm to people, property, or the environment.",
+      "category": "Hazards (General)",
+      "tags": ["social_phenomenon", "overwhelmed", "harm", "coping_capacity"],
+      "related_terms": ["Emergency", "Hazard", "Vulnerability"]
+    },
+    {
+      "id": "disaster_crunch_model",
+      "term": "Disaster Crunch Model (Pressure and Release Model)",
+      "definition": "A framework suggesting that a disaster is the result of two factors: Pressures (root causes like poverty) and Vulnerabilities (specific conditions making people susceptible).",
+      "category": "Vulnerability & Resilience",
+      "tags": ["model", "theory", "root_causes", "vulnerability"],
+      "related_terms": ["Drivers of Risk", "Vulnerability"]
+    },
+    {
+      "id": "disaster_risk_management",
+      "term": "Disaster Risk Management (DRM)",
+      "definition": "The application of disaster risk reduction policies and strategies to prevent new disaster risk, reduce existing disaster risk, and manage residual risk.",
+      "category": "Risk Management",
+      "tags": ["management", "strategy", "policy", "risk_reduction"],
+      "related_terms": ["Disaster Risk Reduction (DRR)", "Risk Management"]
+    },
+    {
+      "id": "disaster_risk_reduction",
+      "term": "Disaster Risk Reduction (DRR)",
+      "definition": "The concept and practice of reducing disaster risks through systematic efforts to analyze and reduce the causal factors of disasters.",
+      "category": "Risk Management",
+      "tags": ["reduction", "analysis", "causal_factors", "prevention"],
+      "related_terms": ["Disaster Risk Management (DRM)", "Mitigation"]
+    },
+    {
+      "id": "drivers_of_risk",
+      "term": "Drivers of Risk",
+      "definition": "Factors that create vulnerability, such as poverty, environmental degradation, lack of governance, and urbanization.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["root_causes", "vulnerability", "social_factors", "environment"],
+      "related_terms": ["Disaster Crunch Model", "Vulnerability"]
+    },
+    {
+      "id": "economic_vulnerability",
+      "term": "Economic Vulnerability",
+      "definition": "The susceptibility of individuals or jurisdictions to financial loss from disaster events.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["economics", "financial", "susceptibility", "loss"],
+      "related_terms": ["Vulnerability", "Asset"]
+    },
+    {
+      "id": "eco_drr",
+      "term": "Ecosystem-based Disaster Risk Reduction (Eco-DRR)",
+      "definition": "The sustainable management, conservation, and restoration of ecosystems to reduce disaster risk.",
+      "category": "Risk Management",
+      "tags": ["environment", "sustainability", "conservation", "risk_reduction"],
+      "related_terms": ["Disaster Risk Reduction (DRR)", "Environmental Hazards"]
+    },
+    {
+      "id": "emergency",
+      "term": "Emergency",
+      "definition": "A present or imminent event that requires prompt coordination of actions concerning persons or property to protect the health, safety, or welfare of people, or to limit damage to property or the environment.",
+      "category": "Response & Recovery",
+      "tags": ["imminent", "coordination", "protection", "action"],
+      "related_terms": ["Disaster", "Crisis"]
+    },
+    {
+      "id": "emergency_management",
+      "term": "Emergency Management",
+      "definition": "The management of emergencies concerning all-hazards, including all activities and risk management measures related to prevention and mitigation, preparedness, response, and recovery.",
+      "category": "Risk Management",
+      "tags": ["management", "cycle", "all_hazards", "comprehensive"],
+      "related_terms": ["Comprehensive", "All-Hazards Approach"]
+    },
+    {
+      "id": "emergency_social_services",
+      "term": "Emergency Social Services (ESS)",
+      "definition": "A pre-planned emergency response organization designed to provide basic services essential for the immediate and continuing well-being of persons affected by a disaster (e.g., food, clothing, lodging).",
+      "category": "Response & Recovery",
+      "tags": ["social_services", "humanitarian", "basic_needs", "response"],
+      "related_terms": ["Response", "Recovery"]
+    },
+    {
+      "id": "empathy",
+      "term": "Empathy",
+      "definition": "A person’s ability to recognize and share the emotions of another person; seeing a situation from their perspective.",
+      "category": "Psychology & Stress",
+      "tags": ["mental_health", "emotional_intelligence", "social_skill", "perspective"],
+      "related_terms": ["Mental Health", "Conflict"]
+    },
+    {
+      "id": "enterprise_risk_management",
+      "term": "Enterprise Risk Management (ERM)",
+      "definition": "A whole-of-organization view of managing risks that focuses on identifying and communicating major risks that can stop an organization from achieving its mission.",
+      "category": "Business Continuity",
+      "tags": ["organizational", "strategic", "communication", "mission_critical"],
+      "related_terms": ["Risk Management", "Business Continuity Management (BCM)"]
+    },
+    {
+      "id": "environmental_hazards",
+      "term": "Environmental Hazards",
+      "definition": "Hazards that may include chemical, natural, and biological elements, often termed \"drivers of hazard and risk\" (e.g., environmental degradation).",
+      "category": "Hazards (General)",
+      "tags": ["environment", "degradation", "drivers", "hazard_type"],
+      "related_terms": ["Drivers of Risk", "Ecosystem-based Disaster Risk Reduction (Eco-DRR)"]
+    },
+    {
+      "id": "environmental_vulnerability",
+      "term": "Environmental Vulnerability",
+      "definition": "Susceptibility related to the health and welfare of the natural environment in a community affected by a hazard.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["environment", "ecology", "susceptibility", "nature"],
+      "related_terms": ["Vulnerability", "Environmental Hazards"]
+    },
+    {
+      "id": "epidemic",
+      "term": "Epidemic",
+      "definition": "The occurrence of cases of an illness or health-related event clearly in excess of normal expectancy in a community or region.",
+      "category": "Hazards (Natural)",
+      "tags": ["disease", "health", "epidemiology", "community"],
+      "related_terms": ["Pandemic", "Biological Hazards"]
+    },
+    {
+      "id": "episodic_acute_stress",
+      "term": "Episodic Acute Stress",
+      "definition": "Frequent bouts of acute stress, typical in individuals who are disorganized or worry ceaselessly.",
+      "category": "Psychology & Stress",
+      "tags": ["stress", "mental_health", "frequent", "worry"],
+      "related_terms": ["Acute Stress", "Intense Risk Temperament"]
+    },
+    {
+      "id": "excitable_risk_temperament",
+      "term": "Excitable Risk Temperament",
+      "definition": "A risk temperament characterized by impulsivity and an attraction to risk, combined with distress and regret if things go wrong.",
+      "category": "Psychology & Stress",
+      "tags": ["risk_temperament", "personality", "impulsive", "emotional"],
+      "related_terms": ["Risk Temperament", "Impulsive"]
+    },
+    {
+      "id": "extra_terrestrial_hazards",
+      "term": "Extra-terrestrial Hazards",
+      "definition": "Hazards caused by asteroids, meteoroids, and comets entering Earth’s atmosphere or striking Earth, and changes in interplanetary conditions (e.g., space weather).",
+      "category": "Hazards (Natural)",
+      "tags": ["space", "asteroid", "space_weather", "hazard_type"],
+      "related_terms": ["Natural Hazards"]
+    },
+    {
+      "id": "federal_emergency_response_plan",
+      "term": "Federal Emergency Response Plan (FERP)",
+      "definition": "The Government of Canada's all-hazards emergency response plan designed to harmonize federal efforts with those of provinces, territories, and other sectors.",
+      "category": "Response & Recovery",
+      "tags": ["federal", "government", "plan", "coordination"],
+      "related_terms": ["Response", "All-Hazards Approach"]
+    },
+    {
+      "id": "finance_admin_section_chief",
+      "term": "Finance and Administration Section Chief",
+      "definition": "The individual responsible for monitoring incident-related costs, accounting, procurement, and time recording.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["general_staff", "ics_role", "finance", "administration"],
+      "related_terms": ["General Staff", "Incident Commander (IC)"]
+    },
+    {
+      "id": "general_staff",
+      "term": "General Staff",
+      "definition": "A group of incident management personnel reporting to the Incident Commander, typically consisting of Operations, Planning, Logistics, and Finance/Administration Section Chiefs.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["general_staff", "ics_role", "management_team", "structure"],
+      "related_terms": ["Command Staff", "Incident Commander (IC)"]
+    },
+    {
+      "id": "geological_hazards",
+      "term": "Geological/Geophysical Hazards",
+      "definition": "Hazards originating from internal earth processes, such as earthquakes, volcanoes, and mass movements.",
+      "category": "Hazards (Natural)",
+      "tags": ["geology", "earthquake", "volcano", "hazard_type"],
+      "related_terms": ["Mass Movement Events", "Natural Hazards"]
+    },
+    {
+      "id": "gold_strategic_level",
+      "term": "Gold / Strategic Level",
+      "definition": "The level of command that considers the emergency in its wider context, determining longer-term impacts and defining strategic objectives.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["command_level", "strategic", "long_term", "objectives"],
+      "related_terms": ["Silver / Tactical Level", "Bronze / Operational Level"]
+    },
+    {
+      "id": "hazard",
+      "term": "Hazard",
+      "definition": "An event or physical condition that has the potential to cause fatalities, injuries, property damage, infrastructure damage, agricultural loss, damage to the environment, interruption of business, or other types of harm or loss.",
+      "category": "Hazards (General)",
+      "tags": ["potential_harm", "threat", "damage", "core_concept"],
+      "related_terms": ["Risk", "Threat", "Disaster"]
+    },
+    {
+      "id": "hazard_identification",
+      "term": "Hazard Identification",
+      "definition": "The process of understanding the characteristics of a hazard, its history, and likelihood of occurrence.",
+      "category": "Risk Management",
+      "tags": ["analysis", "process", "likelihood", "understanding"],
+      "related_terms": ["Risk Identification", "Hazardscape"]
+    },
+    {
+      "id": "hazardscape",
+      "term": "Hazardscape",
+      "definition": "The cumulative emergency management environment composed of all hazards, risks, vulnerabilities, and capacities present in a given area.",
+      "category": "Risk Management",
+      "tags": ["environment", "cumulative", "context", "overview"],
+      "related_terms": ["All-Hazards Approach", "Risk Assessment"]
+    },
+    {
+      "id": "health_and_safety",
+      "term": "Health and Safety",
+      "definition": "The program responsible for preventing work-related injuries, illnesses, and fatalities during daily operations.",
+      "category": "Risk Management",
+      "tags": ["prevention", "workplace", "daily_operations", "safety"],
+      "related_terms": ["Attitude to Risk (Health and Safety)", "Administrative Actions"]
+    },
+    {
+      "id": "humanitarian_crisis",
+      "term": "Humanitarian Crisis",
+      "definition": "The impact that the realization of natural or technological hazards has on a vulnerable population.",
+      "category": "Hazards (General)",
+      "tags": ["humanitarian", "impact", "vulnerable_population", "crisis"],
+      "related_terms": ["Complex Humanitarian Emergency (CHE)", "Disaster"]
+    },
+    {
+      "id": "hydrological_hazards",
+      "term": "Hydrological Hazards",
+      "definition": "Hazards caused by the occurrence, movement, and distribution of surface and subsurface water (e.g., floods, liquefaction).",
+      "category": "Hazards (Natural)",
+      "tags": ["water", "flood", "hydrology", "hazard_type"],
+      "related_terms": ["Hydrometeorological Hazards", "Natural Hazards"]
+    },
+    {
+      "id": "hydrometeorological_hazards",
+      "term": "Hydrometeorological Hazards",
+      "definition": "Hazards of atmospheric, hydrological, or oceanographic origin.",
+      "category": "Hazards (Natural)",
+      "tags": ["weather", "water", "atmospheric", "hazard_type"],
+      "related_terms": ["Meteorological Hazards", "Hydrological Hazards"]
+    },
+    {
+      "id": "incident_action_plan",
+      "term": "Incident Action Plan (IAP)",
+      "definition": "A plan that provides a concise, coherent means of capturing and communicating overall incident priorities, objectives, strategies, and tactics.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["planning", "communication", "objectives", "strategy"],
+      "related_terms": ["Planning Section Chief", "Incident Commander (IC)"]
+    },
+    {
+      "id": "incident_commander",
+      "term": "Incident Commander (IC)",
+      "definition": "The individual responsible for all incident activities, including the development of strategies and tactics and the ordering/release of resources.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["command_staff", "leadership", "responsibility", "decision_maker"],
+      "related_terms": ["Chain of Command", "Incident Command System (ICS)"]
+    },
+    {
+      "id": "incident_command_system",
+      "term": "Incident Command System (ICS)",
+      "definition": "A standardized on-site management system designed to enable effective incident management by integrating facilities, equipment, personnel, procedures, and communications within a common organizational structure.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["management_system", "standardization", "structure", "integration"],
+      "related_terms": ["Chain of Command", "Incident Commander (IC)"]
+    },
+    {
+      "id": "individual_resilience",
+      "term": "Individual Resilience",
+      "definition": "The ability to withstand, adapt to, and recover from stress and adversity—and maintain or return to mental health wellbeing—using effective coping strategies.",
+      "category": "Psychology & Stress",
+      "tags": ["resilience", "mental_health", "coping_mechanism", "adaptation"],
+      "related_terms": ["Mental Toughness", "Stress"]
+    },
+    {
+      "id": "industrial_hazards",
+      "term": "Industrial Hazards",
+      "definition": "Hazards resulting from the processes and materials used to make things (e.g., chemical spills, explosions, mine accidents).",
+      "category": "Hazards (Technological/Human)",
+      "tags": ["industrial", "manufacturing", "accident", "hazard_type"],
+      "related_terms": ["Technological Hazards", "Chemical Agent"]
+    },
+    {
+      "id": "information_officer",
+      "term": "Information Officer",
+      "definition": "A member of the Command Staff responsible for interfacing with the public, media, and other agencies regarding incident-related information.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["command_staff", "ics_role", "communication", "media"],
+      "related_terms": ["Command Staff", "Public Relations"]
+    },
+    {
+      "id": "infrastructure_hazards",
+      "term": "Infrastructure Hazards",
+      "definition": "Failures of critical systems essential to society, such as power grids, telecommunications, and water systems.",
+      "category": "Hazards (Technological/Human)",
+      "tags": ["infrastructure", "systems", "failure", "hazard_type"],
+      "related_terms": ["Critical Infrastructure", "Technological Hazards"]
+    },
+    {
+      "id": "intense_risk_temperament",
+      "term": "Intense Risk Temperament",
+      "definition": "A risk temperament characterized by anxiety and worry about risk; individuals who are highly strung and expectant of the worst.",
+      "category": "Psychology & Stress",
+      "tags": ["risk_temperament", "personality", "anxious", "worry"],
+      "related_terms": ["Wary Risk Temperament", "Risk Temperament"]
+    },
+    {
+      "id": "intentional_hazards",
+      "term": "Intentional Hazards",
+      "definition": "A potential incident resulting from the intentional actions of an adversary (e.g., terrorism, cyber attacks).",
+      "category": "Hazards (Technological/Human)",
+      "tags": ["intentional", "adversary", "attack", "human_induced"],
+      "related_terms": ["Terrorism", "Anthropogenic Hazards"]
+    },
+    {
+      "id": "intergroup_conflict",
+      "term": "Intergroup Conflict",
+      "definition": "Conflict that occurs between distinct, yet interdependent groups.",
+      "category": "Conflict & Communication",
+      "tags": ["conflict", "group_dynamics", "social", "interdependent"],
+      "related_terms": ["Intragroup Conflict", "Civil Incidents"]
+    },
+    {
+      "id": "interpersonal_conflict",
+      "term": "Interpersonal Conflict",
+      "definition": "Conflict that occurs between two individuals who have different personalities, values, or opinions.",
+      "category": "Conflict & Communication",
+      "tags": ["conflict", "individual", "personality", "social"],
+      "related_terms": ["Intrapersonal Conflict", "Empathy"]
+    },
+    {
+      "id": "intragroup_conflict",
+      "term": "Intragroup Conflict",
+      "definition": "Conflict that occurs among people within a team or group.",
+      "category": "Conflict & Communication",
+      "tags": ["conflict", "team_dynamics", "internal", "social"],
+      "related_terms": ["Intergroup Conflict", "Team"]
+    },
+    {
+      "id": "intrapersonal_conflict",
+      "term": "Intrapersonal Conflict",
+      "definition": "Internal, psychological conflict of one’s emotions, values, ideas, and thoughts.",
+      "category": "Conflict & Communication",
+      "tags": ["conflict", "internal", "psychological", "self"],
+      "related_terms": ["Interpersonal Conflict", "Stress"]
+    },
+    {
+      "id": "lead_agency",
+      "term": "Lead Agency",
+      "definition": "An organization assigned by legislation, regulation, or policy to organize interagency oversight and lead the emergency management of a specific hazard.",
+      "category": "Response & Recovery",
+      "tags": ["leadership", "authority", "responsibility", "agency"],
+      "related_terms": ["Coordinating Agency", "Support Agency"]
+    },
+    {
+      "id": "liaison_officer",
+      "term": "Liaison Officer",
+      "definition": "A member of the Command Staff responsible for coordinating with representatives from cooperating and assisting agencies.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["command_staff", "ics_role", "coordination", "partnership"],
+      "related_terms": ["Command Staff", "Agency"]
+    },
+    {
+      "id": "local_indigenous_drm",
+      "term": "Local and Indigenous Peoples’ Approach to DRM",
+      "definition": "The recognition and use of traditional, indigenous, and local knowledge to complement scientific knowledge in disaster risk assessments and planning.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["indigenous_knowledge", "traditional", "local", "planning"],
+      "related_terms": ["Community-Based Disaster Risk Management", "Disaster Risk Management (DRM)"]
+    },
+    {
+      "id": "logistics_section_chief",
+      "term": "Logistics Section Chief",
+      "definition": "The individual responsible for providing services and resources in support of the incident (e.g., communications, food, facilities).",
+      "category": "Incident Command System (ICS)",
+      "tags": ["general_staff", "ics_role", "resources", "support"],
+      "related_terms": ["General Staff", "Incident Commander (IC)"]
+    },
+    {
+      "id": "mass_movement_events",
+      "term": "Mass Movement Events",
+      "definition": "Events where large quantities of debris slide down a mountain or slope under the force of gravity (e.g., landslides, avalanches).",
+      "category": "Hazards (Natural)",
+      "tags": ["geology", "gravity", "landslide", "hazard_type"],
+      "related_terms": ["Geological/Geophysical Hazards", "Natural Hazards"]
+    },
+    {
+      "id": "mental_health",
+      "term": "Mental Health",
+      "definition": "A state of well-being in which an individual realizes their abilities, can cope with everyday stresses, work productively, and contribute to their community.",
+      "category": "Psychology & Stress",
+      "tags": ["wellbeing", "coping", "health", "productivity"],
+      "related_terms": ["Stress", "Individual Resilience"]
+    },
+    {
+      "id": "mental_toughness",
+      "term": "Mental Toughness",
+      "definition": "The ability to bring life to skills and talents on demand, such as staying relaxed and calm or not surrendering spirit when odds are against you.",
+      "category": "Psychology & Stress",
+      "tags": ["resilience", "performance", "calm", "attitude"],
+      "related_terms": ["Individual Resilience", "Box Breathing"]
+    },
+    {
+      "id": "meteorological_hazards",
+      "term": "Meteorological Hazards",
+      "definition": "Hazards caused by short-lived, extreme weather and atmospheric conditions (e.g., severe storms, tornadoes).",
+      "category": "Hazards (Natural)",
+      "tags": ["weather", "short_term", "storm", "hazard_type"],
+      "related_terms": ["Climatological Hazards", "Hydrometeorological Hazards"]
+    },
+    {
+      "id": "mitigation",
+      "term": "Mitigation",
+      "definition": "Actions taken to reduce the impact of disasters in order to protect lives, property, the environment, and reduce economic disruption.",
+      "category": "Risk Management",
+      "tags": ["reduction", "protection", "impact", "prevention"],
+      "related_terms": ["Prevention", "Structural Mitigation", "Non-Structural Mitigation"]
+    },
+    {
+      "id": "mutual_aid_agreements",
+      "term": "Mutual Aid Agreements",
+      "definition": "Agreements established between nearby municipalities or organizations to identify resources that would be shared should one entity be overwhelmed by an event.",
+      "category": "Response & Recovery",
+      "tags": ["agreement", "resource_sharing", "cooperation", "municipal"],
+      "related_terms": ["Agency", "Response"]
+    },
+    {
+      "id": "natural_hazards",
+      "term": "Natural Hazards",
+      "definition": "Potential incidents resulting from acts of nature.",
+      "category": "Hazards (Natural)",
+      "tags": ["nature", "hazard_type", "non_human", "event"],
+      "related_terms": ["Geological/Geophysical Hazards", "Meteorological Hazards"]
+    },
+    {
+      "id": "non_structural_mitigation",
+      "term": "Non-Structural Mitigation",
+      "definition": "Measures involving a reduction in the likelihood or consequence of risk through modifications in human behavior or natural processes without engineered structures (e.g., zoning bylaws).",
+      "category": "Risk Management",
+      "tags": ["mitigation", "policy", "zoning", "behavioral"],
+      "related_terms": ["Structural Mitigation", "Mitigation"]
+    },
+    {
+      "id": "operational_periods",
+      "term": "Operational Periods",
+      "definition": "The time scheduled for executing a given set of operational actions, usually lasting 12 to 24 hours.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["scheduling", "timeframe", "execution", "planning"],
+      "related_terms": ["Incident Action Plan (IAP)", "Operations Section Chief"]
+    },
+    {
+      "id": "operations_section_chief",
+      "term": "Operations Section Chief",
+      "definition": "The individual who directly manages all incident tactical activities and implements the Incident Action Plan.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["general_staff", "ics_role", "tactical", "execution"],
+      "related_terms": ["General Staff", "Incident Commander (IC)"]
+    },
+    {
+      "id": "pandemic",
+      "term": "Pandemic",
+      "definition": "An epidemic occurring worldwide or over a very wide area, crossing international boundaries and affecting a large number of people.",
+      "category": "Hazards (Natural)",
+      "tags": ["disease", "global", "widespread", "health"],
+      "related_terms": ["Epidemic", "Biological Hazards"]
+    },
+    {
+      "id": "physical_vulnerability",
+      "term": "Physical Vulnerability",
+      "definition": "The physical risks of an environment, such as structures, transportation, and people.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["physical", "infrastructure", "environment", "risk"],
+      "related_terms": ["Vulnerability", "Structural Mitigation"]
+    },
+    {
+      "id": "planning_section_chief",
+      "term": "Planning Section Chief",
+      "definition": "The individual who collects and manages operational data and supervises the preparation of the Incident Action Plan.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["general_staff", "ics_role", "planning", "data"],
+      "related_terms": ["General Staff", "Incident Action Plan (IAP)"]
+    },
+    {
+      "id": "preparedness",
+      "term": "Preparation/Preparedness",
+      "definition": "To be ready to respond to a disaster and manage its consequences through measures taken prior to an event (e.g., emergency response plans, training).",
+      "category": "Response & Recovery",
+      "tags": ["readiness", "planning", "training", "pre_event"],
+      "related_terms": ["Mitigation", "Response"]
+    },
+    {
+      "id": "prevention",
+      "term": "Prevention",
+      "definition": "Actions taken to avoid the occurrence of negative consequences associated with a given threat.",
+      "category": "Risk Management",
+      "tags": ["avoidance", "proactive", "negative_consequences", "action"],
+      "related_terms": ["Mitigation", "Risk Control"]
+    },
+    {
+      "id": "prospective_drm",
+      "term": "Prospective Disaster Risk Management",
+      "definition": "Activities that address and seek to avoid the development of new or increased disaster risks (e.g., land-use planning).",
+      "category": "Risk Management",
+      "tags": ["prevention", "future_risk", "planning", "development"],
+      "related_terms": ["Corrective Disaster Risk Management", "Compensatory Disaster Risk Management"]
+    },
+    {
+      "id": "prudent_risk_temperament",
+      "term": "Prudent Risk Temperament",
+      "definition": "A risk temperament characterized by a high level of self-control, detailed planning, and conformity; typically conservative and systematic.",
+      "category": "Psychology & Stress",
+      "tags": ["risk_temperament", "personality", "conservative", "systematic"],
+      "related_terms": ["Wary Risk Temperament", "Risk Temperament"]
+    },
+    {
+      "id": "public_relations",
+      "term": "Public Relations",
+      "definition": "The actions of an organization in promoting goodwill between itself and the public.",
+      "category": "Conflict & Communication",
+      "tags": ["communication", "reputation", "goodwill", "public"],
+      "related_terms": ["Information Officer", "Crisis Management"]
+    },
+    {
+      "id": "recovery",
+      "term": "Recovery",
+      "definition": "Actions taken to repair or restore conditions to an acceptable level after a disaster, including reconstruction and rehabilitation.",
+      "category": "Response & Recovery",
+      "tags": ["restoration", "reconstruction", "post_disaster", "repair"],
+      "related_terms": ["Response", "Mitigation"]
+    },
+    {
+      "id": "resilience",
+      "term": "Resilience",
+      "definition": "The capacity of a system, community, or society exposed to hazards to adapt to disturbances by persevering, recuperating, or changing to reach and maintain an acceptable level of functioning.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["capacity", "adaptation", "recovery", "functioning"],
+      "related_terms": ["Individual Resilience", "Capacity"]
+    },
+    {
+      "id": "response",
+      "term": "Response",
+      "definition": "Actions taken during or immediately before or after a disaster to manage its consequences (e.g., search and rescue, evacuation).",
+      "category": "Response & Recovery",
+      "tags": ["action", "immediate", "rescue", "evacuation"],
+      "related_terms": ["Recovery", "Emergency"]
+    },
+    {
+      "id": "risk",
+      "term": "Risk",
+      "definition": "The effect of uncertainty on objectives; often expressed as a combination of the consequences of an event and the associated likelihood of occurrence.",
+      "category": "Risk Management",
+      "tags": ["uncertainty", "likelihood", "consequence", "core_concept"],
+      "related_terms": ["Hazard", "Risk Management"]
+    },
+    {
+      "id": "risk_analysis",
+      "term": "Risk Analysis",
+      "definition": "The process to comprehend the nature of risk and to determine the level of risk, providing the basis for risk evaluation.",
+      "category": "Risk Management",
+      "tags": ["analysis", "process", "comprehension", "level_determination"],
+      "related_terms": ["Risk Assessment", "Risk Evaluation"]
+    },
+    {
+      "id": "risk_assessment",
+      "term": "Risk Assessment",
+      "definition": "The overall process of risk identification, risk analysis, and risk evaluation.",
+      "category": "Risk Management",
+      "tags": ["process", "comprehensive", "identification", "analysis"],
+      "related_terms": ["Risk Analysis", "Threat and Hazard Identification and Risk Assessment (THIRA)"]
+    },
+    {
+      "id": "risk_control",
+      "term": "Risk Control",
+      "definition": "The process of accepting, eliminating, or reducing the risk from a hazard.",
+      "category": "Risk Management",
+      "tags": ["control", "reduction", "elimination", "acceptance"],
+      "related_terms": ["Risk Treatment", "Mitigation"]
+    },
+    {
+      "id": "risk_evaluation",
+      "term": "Risk Evaluation",
+      "definition": "The process of comparing the results of risk analysis with risk criteria to determine whether the risk is acceptable or tolerable.",
+      "category": "Risk Management",
+      "tags": ["evaluation", "comparison", "criteria", "decision"],
+      "related_terms": ["Risk Analysis", "Risk Assessment"]
+    },
+    {
+      "id": "risk_identification",
+      "term": "Risk Identification",
+      "definition": "The process of finding, recognizing, and describing risks, involving the identification of risk sources, events, causes, and consequences.",
+      "category": "Risk Management",
+      "tags": ["identification", "finding", "description", "sources"],
+      "related_terms": ["Hazard Identification", "Risk Assessment"]
+    },
+    {
+      "id": "risk_management",
+      "term": "Risk Management",
+      "definition": "Coordinated activities to direct and control an organization with regard to risk.",
+      "category": "Risk Management",
+      "tags": ["management", "control", "coordination", "organization"],
+      "related_terms": ["Disaster Risk Management (DRM)", "Enterprise Risk Management (ERM)"]
+    },
+    {
+      "id": "risk_temperament",
+      "term": "Risk Temperament",
+      "definition": "An individual's natural disposition regarding risk, influencing how much risk they are willing to take and how they react to uncertainty.",
+      "category": "Psychology & Stress",
+      "tags": ["personality", "disposition", "reaction", "uncertainty"],
+      "related_terms": ["Attitude to Risk (Financial)", "Prudent Risk Temperament"]
+    },
+    {
+      "id": "risk_transfer",
+      "term": "Risk Transfer",
+      "definition": "An arrangement for shifting the financial consequences of particular risks to another party, such as through insurance.",
+      "category": "Risk Management",
+      "tags": ["finance", "insurance", "sharing", "shifting"],
+      "related_terms": ["Compensatory Disaster Risk Management", "Risk Treatment"]
+    },
+    {
+      "id": "risk_treatment",
+      "term": "Risk Treatment",
+      "definition": "The process to modify risk, which can involve avoiding, reducing, sharing, or retaining the risk.",
+      "category": "Risk Management",
+      "tags": ["modification", "avoidance", "sharing", "process"],
+      "related_terms": ["Risk Control", "Mitigation"]
+    },
+    {
+      "id": "safe",
+      "term": "Safe",
+      "definition": "A risk is considered \"safe\" or \"acceptable\" if it is associated with the best of the available alternatives.",
+      "category": "Risk Management",
+      "tags": ["acceptable", "alternative", "status", "judgment"],
+      "related_terms": ["Safety Officer", "Health and Safety"]
+    },
+    {
+      "id": "safety_officer",
+      "term": "Safety Officer",
+      "definition": "A member of the Command Staff responsible for monitoring incident operations and advising on matters relating to operational safety.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["command_staff", "ics_role", "safety", "monitoring"],
+      "related_terms": ["Command Staff", "Health and Safety"]
+    },
+    {
+      "id": "silver_tactical_level",
+      "term": "Silver / Tactical Level",
+      "definition": "The level of command that ensures actions taken by the operational level are coordinated, coherent, and integrated.",
+      "category": "Incident Command System (ICS)",
+      "tags": ["command_level", "tactical", "coordination", "integration"],
+      "related_terms": ["Bronze / Operational Level", "Gold / Strategic Level"]
+    },
+    {
+      "id": "slow_burn_crisis",
+      "term": "Slow-Burn Crisis",
+      "definition": "A crisis that gives some advance warning, but the situation has not yet caused actual damage.",
+      "category": "Risk Management",
+      "tags": ["crisis_type", "warning", "pre_damage", "time_factor"],
+      "related_terms": ["Creeping Crisis", "Sudden Crisis"]
+    },
+    {
+      "id": "social_vulnerability",
+      "term": "Social Vulnerability",
+      "definition": "Factors (individual, societal, political, cultural) that can increase or decrease a population’s susceptibility to harm.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["social", "society", "susceptibility", "demographics"],
+      "related_terms": ["Vulnerability", "Economic Vulnerability"]
+    },
+    {
+      "id": "stakeholder",
+      "term": "Stakeholder",
+      "definition": "Someone who is involved in or affected by a course of action. (Note: Terms like \"partners\" or \"interested parties\" are increasingly preferred).",
+      "category": "Conflict & Communication",
+      "tags": ["involvement", "interest", "partner", "affected_party"],
+      "related_terms": ["Agency", "Public Relations"]
+    },
+    {
+      "id": "sole",
+      "term": "State of Local Emergency (SOLE)",
+      "definition": "A declaration made by a municipality or local authority when an emergency overwhelms resources, allowing extraordinary powers to be exercised.",
+      "category": "Response & Recovery",
+      "tags": ["declaration", "legal", "municipality", "powers"],
+      "related_terms": ["Emergency", "Federal Emergency Response Plan (FERP)"]
+    },
+    {
+      "id": "stress",
+      "term": "Stress",
+      "definition": "The mental, emotional, and physiological response of the body to any situation that is new, threatening, frightening, or exciting.",
+      "category": "Psychology & Stress",
+      "tags": ["response", "physiology", "emotion", "mental_health"],
+      "related_terms": ["Acute Stress", "Chronic Stress"]
+    },
+    {
+      "id": "structural_mitigation",
+      "term": "Structural Mitigation",
+      "definition": "Measures involving construction, engineering, or mechanical changes to reduce hazard risk likelihood or consequence (e.g., floodways, dykes).",
+      "category": "Risk Management",
+      "tags": ["construction", "engineering", "physical", "mitigation"],
+      "related_terms": ["Non-Structural Mitigation", "Physical Vulnerability"]
+    },
+    {
+      "id": "sudden_crisis",
+      "term": "Sudden Crisis",
+      "definition": "A crisis where damage has already occurred and will get worse the longer it takes to respond.",
+      "category": "Risk Management",
+      "tags": ["crisis_type", "immediate", "damage", "urgency"],
+      "related_terms": ["Slow-Burn Crisis", "Creeping Crisis"]
+    },
+    {
+      "id": "support_agency",
+      "term": "Support Agency",
+      "definition": "An agency that provides general or specialized assistance and/or resources to the lead agency.",
+      "category": "Response & Recovery",
+      "tags": ["agency", "assistance", "resources", "support"],
+      "related_terms": ["Lead Agency", "Coordinating Agency"]
+    },
+    {
+      "id": "systemic_risk",
+      "term": "Systemic Risk",
+      "definition": "Risks that emerge from the interactions of climate change and natural hazards with complex, interdependent networks of social, technical, environmental, and economic systems.",
+      "category": "Risk Management",
+      "tags": ["complexity", "network", "interdependent", "climate_change"],
+      "related_terms": ["Cascading Disasters", "Risk"]
+    },
+    {
+      "id": "technological_hazards",
+      "term": "Technological Hazards",
+      "definition": "Potential incidents resulting from accidents or failures of systems or structures (e.g., infrastructure failures, industrial accidents).",
+      "category": "Hazards (Technological/Human)",
+      "tags": ["technology", "accident", "failure", "system"],
+      "related_terms": ["Industrial Hazards", "Infrastructure Hazards"]
+    },
+    {
+      "id": "terrorism",
+      "term": "Terrorism",
+      "definition": "An act committed for a political, religious, or ideological purpose to intimidate the public or compel a government/organization to act.",
+      "category": "Security & Violence",
+      "tags": ["violence", "ideology", "intimidation", "political"],
+      "related_terms": ["Intentional Hazards", "Active Aggressor"]
+    },
+    {
+      "id": "threat",
+      "term": "Threat",
+      "definition": "The presence of a hazard and an exposure pathway.",
+      "category": "Risk Management",
+      "tags": ["exposure", "presence", "pathway", "hazard_link"],
+      "related_terms": ["Hazard", "Risk"]
+    },
+    {
+      "id": "thira",
+      "term": "Threat and Hazard Identification and Risk Assessment (THIRA)",
+      "definition": "A three-step risk assessment process that helps communities identify threats/hazards, assess their impacts, and establish capability targets.",
+      "category": "Risk Management",
+      "tags": ["assessment", "process", "community", "targets"],
+      "related_terms": ["Risk Assessment", "Hazard Identification"]
+    },
+    {
+      "id": "vulnerability",
+      "term": "Vulnerability",
+      "definition": "The intrinsic properties of something resulting in susceptibility to a risk source that can lead to an event with a consequence.",
+      "category": "Vulnerability & Resilience",
+      "tags": ["susceptibility", "intrinsic", "weakness", "risk_factor"],
+      "related_terms": ["Physical Vulnerability", "Social Vulnerability"]
+    },
+    {
+      "id": "wary_risk_temperament",
+      "term": "Wary Risk Temperament",
+      "definition": "A risk temperament characterized by self-discipline and concern about risk; individuals are cautious, organized, and prioritize security.",
+      "category": "Psychology & Stress",
+      "tags": ["risk_temperament", "personality", "cautious", "organized"],
+      "related_terms": ["Prudent Risk Temperament", "Risk Temperament"]
+    },
+    {
+      "id": "workplace_violence",
+      "term": "Workplace Violence",
+      "definition": "Acts of violence or harassment in the workplace, including bullying, which can impact individuals and the organization.",
+      "category": "Security & Violence",
+      "tags": ["violence", "harassment", "workplace", "personnel"],
+      "related_terms": ["Active Aggressor", "Health and Safety"]
+    }
+  ]
+}
