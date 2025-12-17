@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21d7eaf93cf587cfaf1f7d5d894da43adb5552d64752deed56048ab16833c660
-size 523
+[gd_scene load_steps=3 format=3 uid="uid://bwu034ays07w8"]
+
+[ext_resource type="Script" uid="uid://hbl5178i7fj" path="res://src/scripts/CourseButton.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="1_y6hqb"]
+
+[node name="CourseButton" type="Button"]
+offset_right = 300.0
+offset_bottom = 60.0
+theme = ExtResource("1_y6hqb")
+theme_override_font_sizes/font_size = 45
+alignment = 0
+autowrap_mode = 3
+script = ExtResource("1_script")

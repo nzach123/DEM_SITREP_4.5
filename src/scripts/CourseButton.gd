@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f04fa775cdd40c875ecaa0195cccace97560487c50034750c5e2f4d8ef5fb6c
-size 294
+extends Button
+
+signal course_selected(course_id: String)
+
+var course_id: String = ""
+
+func _ready() -> void:
+	pressed.connect(_on_pressed)
+
+func setup(id: String, display_name: String) -> void:
+	course_id = id
+	text = display_name
+
+func _on_pressed() -> void:
+	course_selected.emit(course_id)

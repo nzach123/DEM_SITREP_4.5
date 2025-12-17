@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e00afc4c925c0aba2fdbd5a2ce40d0f3f774989a122f14884c32538ad0546b7
-size 1075
+[gd_scene load_steps=3 format=3 uid="uid://cd7ls8r82whn0"]
+
+[ext_resource type="Script" uid="uid://dxs6pl7bpuij5" path="res://src/scripts/splash_screen.gd" id="1_pucxk"]
+[ext_resource type="Texture2D" uid="uid://bg0we6df62qe1" path="res://assets/ui/splash_page/SitRep_Title_Draft1.png" id="1_q6wvw"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("splash_screen")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pucxk")
+splash_screen = NodePath("CenterContainer/TextureRect")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_q6wvw")

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5227d4e5ddf97889da9b9b23c625f58716e80245056f5906ec96796bdd2aefc7
-size 753
+[gd_scene load_steps=4 format=3 uid="uid://drlw648mgibtp"]
+
+[ext_resource type="Script" uid="uid://bq7e1tkio0pnl" path="res://src/autoload/SceneTransition.gd" id="1_script"]
+[ext_resource type="Shader" uid="uid://d2pnsm73dlekn" path="res://content/resources/shaders/mosaic_transition.gdshader" id="2_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
+shader = ExtResource("2_shader")
+shader_parameter/resolution = Vector2(32, 18)
+
+[node name="SceneTransition" type="CanvasLayer"]
+process_mode = 3
+layer = 128
+script = ExtResource("1_script")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
