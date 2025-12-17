@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7fed5025cac6da15eb55613ec7310c41425740a30a75a2b161b7c31ac5690c3f
-size 251
+[gd_scene load_steps=2 format=3 uid="uid://jt6wsefn0x54"]
+
+[sub_resource type="Resource" id="Resource_cayac"]
+metadata/__load_path__ = "res://addons/gut/gut_loader_the_scene.gd"
+
+[node name="Node" type="Node2D"]
+script = SubResource("Resource_cayac")

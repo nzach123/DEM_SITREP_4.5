@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:06805c2746ba01c8f1ed37c1aff2ece1769d3e6417bc9ad6f9546b30bc55309f
-size 184
+[gd_scene format=3 uid="uid://cvvvtsah38l0e"]
+
+[node name="Settings" type="VBoxContainer"]
+offset_right = 388.0
+offset_bottom = 586.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

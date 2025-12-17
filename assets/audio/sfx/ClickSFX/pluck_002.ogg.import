@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb282910eaaea9aa25c36d09418d7208f1bafb4a01400bd174036bec80b2d9b8
-size 408
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0vphnah0rlka"
+path="res://.godot/imported/pluck_002.ogg-5b58f0c57ce510a70c59897643f1a443.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ClickSFX/pluck_002.ogg"
+dest_files=["res://.godot/imported/pluck_002.ogg-5b58f0c57ce510a70c59897643f1a443.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

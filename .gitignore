@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:566ebcada8a3f1eb835c075777c2683b89495f35acb6a62db5fe24058262a59e
-size 541
+# Godot 4 specific ignores
+.godot/
+*.tmp
+
+# Export presets (Uncomment the line below if you want to keep export settings private/local)
+# export_presets.cfg
+
+# Imported translations (automatically generated)
+*.translation
+
+# Mono/C# builds (if you use C# in Godot)
+.mono/
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.pdb
+*.mbe
+*.sln
+*.csproj
+
+# Android/Mobile build generated files
+*.keystore
+*.debug.keystore
+
+# External editors/OS clutter
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+# Blender (if you keep raw blend files in your project)
+*.blend1

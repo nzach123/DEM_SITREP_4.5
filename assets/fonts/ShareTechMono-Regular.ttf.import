@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0a3cdbb7c5428d33dfd9552a944809b37b5a0e745ed69bd3f987ab77bf470713
-size 773
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://csm1r2nmfyeeo"
+path="res://.godot/imported/ShareTechMono-Regular.ttf-e284e7c8df68d7d931beb3b0762d7c17.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/ShareTechMono-Regular.ttf"
+dest_files=["res://.godot/imported/ShareTechMono-Regular.ttf-e284e7c8df68d7d931beb3b0762d7c17.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

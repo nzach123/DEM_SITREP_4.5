@@ -1,3 +1,827 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5decb1469f2d49bc2737a78b808c2e5d18c8ae37bbd4aba65108634bd2da43b0
-size 39968
+[
+  {
+    "question": "What does the \"iceberg\" metaphor in conflict management primarily illustrate?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "The visible hierarchy of a team", "is_correct": false },
+      { "text": "Hidden values, identity, and competence", "is_correct": true },
+      { "text": "The logistical details of an operation", "is_correct": false },
+      { "text": "The potential cost of a disaster", "is_correct": false }
+    ],
+    "explanation": "The iceberg represents the 90% of conflict below the surface, such as identity, competence, and values, rather than surface issues."
+  },
+  {
+    "question": "Which behavior locks individuals into non-productive conflict cycles?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Active listening", "is_correct": false },
+      { "text": "Justification", "is_correct": true },
+      { "text": "Vulnerability", "is_correct": false },
+      { "text": "Strategic planning", "is_correct": false }
+    ],
+    "explanation": "Justification—the belief that one is blameless and others must change—keeps parties stuck in unproductive conflict."
+  },
+  {
+    "question": "In the VOCAB framework, what is the purpose of expressing \"Vulnerability\"?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To manipulate the outcome", "is_correct": false },
+      { "text": "To build psychological safety", "is_correct": true },
+      { "text": "To assign blame to procedures", "is_correct": false },
+      { "text": "To avoid taking responsibility", "is_correct": false }
+    ],
+    "explanation": "Vulnerability builds psychological safety, allowing team members to admit mistakes and share real problems without fear."
+  },
+  {
+    "question": "According to Tuckman, which stage involves necessary conflict over roles and goals?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Performing", "is_correct": false },
+      { "text": "Storming", "is_correct": true },
+      { "text": "Norming", "is_correct": false },
+      { "text": "Adjourning", "is_correct": false }
+    ],
+    "explanation": "Storming is the stage characterized by conflict over roles and goals, which is necessary to reach the Norming stage."
+  },
+  {
+    "question": "How does a \"Red Zone\" environment affect emergency operations?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It increases rapid innovation", "is_correct": false },
+      { "text": "It suppresses vital information sharing", "is_correct": true },
+      { "text": "It streamlines resource allocation", "is_correct": false },
+      { "text": "It builds long-term trust", "is_correct": false }
+    ],
+    "explanation": "Red Zone environments reward aggression and defensiveness, causing team members to withhold information to protect themselves."
+  },
+  {
+    "question": "What is the cognitive consequence of becoming defensive during a crisis?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "A significant drop in IQ", "is_correct": true },
+      { "text": "Enhanced problem-solving speed", "is_correct": false },
+      { "text": "Increased empathy", "is_correct": false },
+      { "text": "Better situational awareness", "is_correct": false }
+    ],
+    "explanation": "Defensiveness causes a drop in IQ, rendering individuals cognitively compromised and rigid in their thinking."
+  },
+  {
+    "question": "In the VOCAB framework, what does \"Boundaries\" establish?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Physical security perimeters", "is_correct": false },
+      { "text": "Ground rules for acceptable behavior", "is_correct": true },
+      { "text": "Legal liability limits", "is_correct": false },
+      { "text": "Budgetary constraints", "is_correct": false }
+    ],
+    "explanation": "Boundaries set ground rules for interaction, creating a trusted space where real issues can be discussed safely."
+  },
+  {
+    "question": "What differentiates \"Intergroup\" conflict from \"Interpersonal\" conflict?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "It occurs between distinct groups", "is_correct": true },
+      { "text": "It happens within a single mind", "is_correct": false },
+      { "text": "It involves only two individuals", "is_correct": false },
+      { "text": "It is always informal", "is_correct": false }
+    ],
+    "explanation": "Intergroup conflict occurs between interdependent groups (e.g., Police vs. Fire), while interpersonal is between individuals."
+  },
+  {
+    "question": "What is the key to breaking a defensive cycle according to the lesson?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Proving the other person wrong", "is_correct": false },
+      { "text": "Recognizing personal physical signs", "is_correct": true },
+      { "text": "Ignoring the conflict", "is_correct": false },
+      { "text": "Asking for a mediator immediately", "is_correct": false }
+    ],
+    "explanation": "Recognizing one's own physical signs (tells) of defensiveness allows for an action step to reset behavior."
+  },
+  {
+    "question": "What is the \"Whole Community\" approach's stance on government-centric management?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "It is the gold standard", "is_correct": false },
+      { "text": "It is insufficient for modern disasters", "is_correct": true },
+      { "text": "It should be expanded to private sectors", "is_correct": false },
+      { "text": "It guarantees resource availability", "is_correct": false }
+    ],
+    "explanation": "The approach argues that government-centric models are insufficient to meet the challenges of complex, modern disasters."
+  },
+  {
+    "question": "Which element is considered part of a community's \"social infrastructure\"?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Highways and bridges", "is_correct": false },
+      { "text": "Food banks and faith groups", "is_correct": true },
+      { "text": "Emergency Operations Centers", "is_correct": false },
+      { "text": "Municipal bylaws", "is_correct": false }
+    ],
+    "explanation": "Social infrastructure includes existing trusted assets like food banks and faith groups that function daily."
+  },
+  {
+    "question": "What combination of attributes creates a \"Dominant\" stakeholder?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Urgency and Legitimacy", "is_correct": false },
+      { "text": "Power and Legitimacy", "is_correct": true },
+      { "text": "Power and Urgency", "is_correct": false },
+      { "text": "Money and Influence", "is_correct": false }
+    ],
+    "explanation": "Dominant stakeholders possess Power and Legitimacy but lack Urgency, making them important targets for proactive engagement."
+  },
+  {
+    "question": "Which stakeholder attribute is primarily responsible for \"Reactive\" behavior?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Power", "is_correct": false },
+      { "text": "Urgency", "is_correct": true },
+      { "text": "Legitimacy", "is_correct": false },
+      { "text": "Expertise", "is_correct": false }
+    ],
+    "explanation": "Urgency, often created by the disaster event itself, drives stakeholders to act reactively."
+  },
+  {
+    "question": "What characterizes a \"Definitive\" stakeholder?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Possessing only Power", "is_correct": false },
+      { "text": "Possessing Power, Legitimacy, and Urgency", "is_correct": true },
+      { "text": "Possessing Legitimacy and Urgency", "is_correct": false },
+      { "text": "Being a federal agency", "is_correct": false }
+    ],
+    "explanation": "Definitive stakeholders possess all three attributes (Power, Legitimacy, Urgency) and require immediate and close management."
+  },
+  {
+    "question": "How should an Emergency Manager engage a \"Dormant\" stakeholder?",
+    "difficulty": 0.8,
+    "answers": [
+      { "text": "Wait for them to act", "is_correct": false },
+      { "text": "Demonstrate the legitimacy of involvement", "is_correct": true },
+      { "text": "Remove their power", "is_correct": false },
+      { "text": "Assign them to logistics", "is_correct": false }
+    ],
+    "explanation": "Dormant stakeholders have power but no urgency or legitimacy; the strategy is to demonstrate legitimacy to engage them."
+  },
+  {
+    "question": "What is the primary role of an Emergency Manager in the Whole Community model?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Facilitator and Coordinator", "is_correct": true },
+      { "text": "Commander and Chief", "is_correct": false },
+      { "text": "Sole Decision Maker", "is_correct": false },
+      { "text": "Resource Gatekeeper", "is_correct": false }
+    ],
+    "explanation": "The role shifts to facilitation and coordination, empowering the community to lead local actions."
+  },
+  {
+    "question": "Why is the Recovery phase critical for stakeholder management?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It is when liability is determined", "is_correct": false },
+      { "text": "It offers a window to build resilience", "is_correct": true },
+      { "text": "It requires the least amount of work", "is_correct": false },
+      { "text": "It is purely a federal responsibility", "is_correct": false }
+    ],
+    "explanation": "Recovery offers a limited window of high attention to build relationships and strengthen future resilience."
+  },
+  {
+    "question": "What characterizes a \"Dependent\" stakeholder?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Power and Urgency without Legitimacy", "is_correct": false },
+      { "text": "Legitimacy and Urgency without Power", "is_correct": true },
+      { "text": "Power and Legitimacy without Urgency", "is_correct": false },
+      { "text": "Legitimacy only", "is_correct": false }
+    ],
+    "explanation": "Dependent stakeholders (e.g., affected citizens) have valid claims (Legitimacy) and Urgency but lack Power."
+  },
+  {
+    "question": "Why is the term \"Partner\" preferred over \"Stakeholder\" in the lesson?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "It sounds more professional", "is_correct": false },
+      { "text": "To avoid colonial connotations", "is_correct": true },
+      { "text": "It implies legal liability", "is_correct": false },
+      { "text": "Stakeholder is too vague", "is_correct": false }
+    ],
+    "explanation": "The term stakeholder has colonial roots referring to land claims; partner is more inclusive."
+  },
+  {
+    "question": "What primarily determines which organization becomes the \"Lead Agency\"?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "The budget of the agency", "is_correct": false },
+      { "text": "The nature of the hazard", "is_correct": true },
+      { "text": "The seniority of the official", "is_correct": false },
+      { "text": "The location of the EOC", "is_correct": false }
+    ],
+    "explanation": "The lead agency is the subject matter expert or authority for the specific hazard type (e.g., Health for pandemics)."
+  },
+  {
+    "question": "Which agency typically leads during a localized house fire?",
+    "difficulty": 0.1,
+    "answers": [
+      { "text": "Police Department", "is_correct": false },
+      { "text": "Fire Department", "is_correct": true },
+      { "text": "Utility Company", "is_correct": false },
+      { "text": "Social Services", "is_correct": false }
+    ],
+    "explanation": "The Fire Department is the standard lead agency for fire emergencies."
+  },
+  {
+    "question": "What is the function of a \"Support Agency\"?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "To take command if the lead fails", "is_correct": false },
+      { "text": "To assist the lead agency", "is_correct": true },
+      { "text": "To handle media relations only", "is_correct": false },
+      { "text": "To audit the response", "is_correct": false }
+    ],
+    "explanation": "Support agencies provide general or specialized assistance and resources to the lead agency."
+  },
+  {
+    "question": "Which agency led the response to the 2014 Calgary snowstorm?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Transportation Department", "is_correct": false },
+      { "text": "Parks Department", "is_correct": true },
+      { "text": "Police Service", "is_correct": false },
+      { "text": "Fire Department", "is_correct": false }
+    ],
+    "explanation": "Parks was the lead agency because the primary impact was on trees and vegetation."
+  },
+  {
+    "question": "What is the distinction between \"Leadership\" and \"Lead Agency\"?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "They are identical", "is_correct": false },
+      { "text": "Leadership is behavioral; Agency is legislative", "is_correct": true },
+      { "text": "Agency implies no authority", "is_correct": false },
+      { "text": "Leadership is only for elected officials", "is_correct": false }
+    ],
+    "explanation": "Leadership is a skill or behavior, while Lead Agency is a formal legislative accountability for a hazard."
+  },
+  {
+    "question": "What is the role of a \"Coordinating Agency\"?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To perform tactical operations", "is_correct": false },
+      { "text": "To integrate overall emergency efforts", "is_correct": true },
+      { "text": "To override the Incident Commander", "is_correct": false },
+      { "text": "To act as the sole spokesperson", "is_correct": false }
+    ],
+    "explanation": "Coordinating agencies manage integration, including partnerships, program maintenance, and recovery."
+  },
+  {
+    "question": "When is the best time to establish relationships with support agencies?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "During the response phase", "is_correct": false },
+      { "text": "Well in advance of an event", "is_correct": true },
+      { "text": "During the recovery phase", "is_correct": false },
+      { "text": "After the After-Action Review", "is_correct": false }
+    ],
+    "explanation": "Relationships must be built proactively; trying to build them during a crisis leads to failure."
+  },
+  {
+    "question": "Which entity acts as the federal coordinating agency in Canada?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Department of National Defence", "is_correct": false },
+      { "text": "Public Safety Canada", "is_correct": true },
+      { "text": "RCMP", "is_correct": false },
+      { "text": "Health Canada", "is_correct": false }
+    ],
+    "explanation": "Public Safety Canada is the federal body responsible for coordination and national leadership."
+  },
+  {
+    "question": "In a widespread power outage, which would typically be the Lead Agency?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Police Service", "is_correct": false },
+      { "text": "Utility Company", "is_correct": true },
+      { "text": "Fire Department", "is_correct": false },
+      { "text": "Public Works", "is_correct": false }
+    ],
+    "explanation": "The utility company leads because they own the problem and the expertise to fix it."
+  },
+  {
+    "question": "What defines a \"Legislated\" accountability?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A handshake agreement", "is_correct": false },
+      { "text": "Responsibility assigned by law", "is_correct": true },
+      { "text": "A strategic goal", "is_correct": false },
+      { "text": "A temporary assignment", "is_correct": false }
+    ],
+    "explanation": "Legislated accountability is formally assigned by acts, regulations, or policy."
+  },
+  {
+    "question": "What is the difference between an \"Act\" and a \"Regulation\"?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Acts are suggestions; Regulations are laws", "is_correct": false },
+      { "text": "Acts are high-level; Regulations provide detail", "is_correct": true },
+      { "text": "Regulations cannot be changed", "is_correct": false },
+      { "text": "Acts are for municipalities only", "is_correct": false }
+    ],
+    "explanation": "Acts are high-level statutes; Regulations provide specific implementation details and are easier to update."
+  },
+  {
+    "question": "Who is responsible for the first response to a disaster in Canada?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "The Federal Government", "is_correct": false },
+      { "text": "The Municipal Government", "is_correct": true },
+      { "text": "The Provincial Government", "is_correct": false },
+      { "text": "The United Nations", "is_correct": false }
+    ],
+    "explanation": "Canada follows a bottom-up approach where local municipalities are the first line of response."
+  },
+  {
+    "question": "What enables a municipality to access extraordinary powers like mandatory evacuation?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A press release", "is_correct": false },
+      { "text": "State of Local Emergency (SOLE)", "is_correct": true },
+      { "text": "A federal warrant", "is_correct": false },
+      { "text": "A police request", "is_correct": false }
+    ],
+    "explanation": "A declared SOLE grants extraordinary powers like evacuation, travel control, and conscription."
+  },
+  {
+    "question": "How long does a SOLE typically last in Alberta before expiring?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "24 hours", "is_correct": false },
+      { "text": "7 days", "is_correct": true },
+      { "text": "30 days", "is_correct": false },
+      { "text": "Until cancelled", "is_correct": false }
+    ],
+    "explanation": "In Alberta, a SOLE automatically expires in 7 days unless explicitly renewed."
+  },
+  {
+    "question": "Which federal act is used only as a last resort for national crises?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Emergency Management Act", "is_correct": false },
+      { "text": "Emergencies Act", "is_correct": true },
+      { "text": "Civil Protection Act", "is_correct": false },
+      { "text": "Stafford Act", "is_correct": false }
+    ],
+    "explanation": "The Emergencies Act is for urgent, critical, temporary national emergencies, unlike the EMA."
+  },
+  {
+    "question": "What is the primary role of the Government Operations Centre (GOC)?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Local fire dispatch", "is_correct": false },
+      { "text": "Strategic national coordination", "is_correct": true },
+      { "text": "Municipal bylaw enforcement", "is_correct": false },
+      { "text": "Directing all police forces", "is_correct": false }
+    ],
+    "explanation": "The GOC provides 24/7 strategic coordination and situational awareness for events of national interest."
+  },
+  {
+    "question": "How is First Nations emergency management structured in Canada?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "They have no emergency responsibilities", "is_correct": false },
+      { "text": "Shared responsibility with ISC support", "is_correct": true },
+      { "text": "Exclusively federal management", "is_correct": false },
+      { "text": "Exclusively provincial management", "is_correct": false }
+    ],
+    "explanation": "First Nations manage local response, supported by Indigenous Services Canada (ISC) and provincial agreements."
+  },
+  {
+    "question": "What is a key feature of the UK's Civil Contingencies Act?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "It defines emergency by cause", "is_correct": false },
+      { "text": "It defines emergency by consequences", "is_correct": true },
+      { "text": "It mandates a top-down response", "is_correct": false },
+      { "text": "It eliminates local responders", "is_correct": false }
+    ],
+    "explanation": "The UK Act defines emergency by consequences, allowing it to cover a broad range of events regardless of cause."
+  },
+  {
+    "question": "Under the US Stafford Act, when is federal assistance typically provided?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Immediately for every incident", "is_correct": false },
+      { "text": "Upon State Governor's request", "is_correct": true },
+      { "text": "When local mayors ask FEMA", "is_correct": false },
+      { "text": "Without any local input", "is_correct": false }
+    ],
+    "explanation": "Federal assistance is triggered when a Governor requests it or the President declares a major disaster."
+  },
+  {
+    "question": "What legal tool do municipalities use to formally establish EM programs?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A Federal Decree", "is_correct": false },
+      { "text": "A Bylaw", "is_correct": true },
+      { "text": "A Policy Memo", "is_correct": false },
+      { "text": "A Handshake Deal", "is_correct": false }
+    ],
+    "explanation": "Municipalities use bylaws to legally establish their emergency management agencies and plans."
+  },
+  {
+    "question": "Which ICS principle ensures every individual reports to only one supervisor?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Span of Control", "is_correct": false },
+      { "text": "Unity of Command", "is_correct": true },
+      { "text": "Modular Organization", "is_correct": false },
+      { "text": "Unified Command", "is_correct": false }
+    ],
+    "explanation": "Unity of Command ensures a clear reporting line, eliminating conflicting directives from multiple bosses."
+  },
+  {
+    "question": "What is the primary function of the \"Planning\" section in ICS?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Executing tactical operations", "is_correct": false },
+      { "text": "Collecting data and developing the IAP", "is_correct": true },
+      { "text": "Paying the bills", "is_correct": false },
+      { "text": "Providing food and supplies", "is_correct": false }
+    ],
+    "explanation": "Planning (The Thinkers) collects info, tracks resources, and creates the Incident Action Plan."
+  },
+  {
+    "question": "Which ICS section is responsible for providing resources, food, and medical services?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Operations", "is_correct": false },
+      { "text": "Logistics", "is_correct": true },
+      { "text": "Planning", "is_correct": false },
+      { "text": "Finance", "is_correct": false }
+    ],
+    "explanation": "Logistics (The Getters) provides all support services, supplies, and resources for the incident."
+  },
+  {
+    "question": "What does \"Modular Organization\" mean in the context of ICS?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "A fixed, rigid hierarchy", "is_correct": false },
+      { "text": "A structure that scales based on needs", "is_correct": true },
+      { "text": "Independent, disconnected teams", "is_correct": false },
+      { "text": "A permanent government department", "is_correct": false }
+    ],
+    "explanation": "The ICS structure is modular, meaning it expands or contracts based on the incident's size and complexity."
+  },
+  {
+    "question": "What is the primary purpose of an Incident Action Plan (IAP)?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To secure media coverage", "is_correct": false },
+      { "text": "To communicate objectives and strategies", "is_correct": true },
+      { "text": "To list staff phone numbers", "is_correct": false },
+      { "text": "To finalize the budget", "is_correct": false }
+    ],
+    "explanation": "An IAP captures and communicates the overall priorities, objectives, and strategies for a specific operational period."
+  },
+  {
+    "question": "Which standard focuses on \"Emergency and Continuity Management Programs\" in Canada?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "ISO 9001", "is_correct": false },
+      { "text": "CSA Z1600", "is_correct": true },
+      { "text": "NFPA 101", "is_correct": false },
+      { "text": "HSPD-5", "is_correct": false }
+    ],
+    "explanation": "CSA Z1600 is the Canadian standard for comprehensive emergency and business continuity management programs."
+  },
+  {
+    "question": "What does \"Span of Control\" refer to in ICS?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "The total budget size", "is_correct": false },
+      { "text": "The number of subordinates per supervisor", "is_correct": true },
+      { "text": "The geographic size of the incident", "is_correct": false },
+      { "text": "The duration of the event", "is_correct": false }
+    ],
+    "explanation": "Span of control defines the manageable number of subordinates a supervisor can effectively lead."
+  },
+  {
+    "question": "In ICS, who has overall authority and responsibility for incident operations?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Safety Officer", "is_correct": false },
+      { "text": "Incident Commander", "is_correct": true },
+      { "text": "Liaison Officer", "is_correct": false },
+      { "text": "Operations Chief", "is_correct": false }
+    ],
+    "explanation": "The Incident Commander is responsible for all incident activities, objectives, and strategies."
+  },
+  {
+    "question": "What distinguishes \"Command Staff\" from \"General Staff\" in ICS?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Command fights fires; General plans", "is_correct": false },
+      { "text": "Command supports IC; General leads sections", "is_correct": true },
+      { "text": "General staff outrank Command staff", "is_correct": false },
+      { "text": "There is no distinction", "is_correct": false }
+    ],
+    "explanation": "Command Staff (Safety, Liaison, Information) report directly to IC; General Staff lead functional sections (Ops, Logistics, etc.)."
+  },
+  {
+    "question": "What allows multiple jurisdictions to work together without compromising authority?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Unified Command", "is_correct": true },
+      { "text": "Single Command", "is_correct": false },
+      { "text": "Martial Law", "is_correct": false },
+      { "text": "Ad-hoc Committee", "is_correct": false }
+    ],
+    "explanation": "Unified Command allows agencies with different mandates to manage an incident together without losing individual authority."
+  },
+  {
+    "question": "What is the primary focus of ISO 22301?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Public warning systems", "is_correct": false },
+      { "text": "Business Continuity Management", "is_correct": true },
+      { "text": "Fire safety codes", "is_correct": false },
+      { "text": "Social media usage", "is_correct": false }
+    ],
+    "explanation": "ISO 22301 is the international standard specifically for business continuity management systems."
+  },
+  {
+    "question": "What historical event triggered the development of ICS?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Hurricane Katrina", "is_correct": false },
+      { "text": "California Wildfires of the 1970s", "is_correct": true },
+      { "text": "9/11 Terrorist Attacks", "is_correct": false },
+      { "text": "The Cold War", "is_correct": false }
+    ],
+    "explanation": "ICS was created after California wildfires exposed failures in coordination and communication, not lack of resources."
+  },
+  {
+    "question": "Which ICS form is typically used to document the communications plan?",
+    "difficulty": 0.8,
+    "answers": [
+      { "text": "ICS 201", "is_correct": false },
+      { "text": "ICS 205", "is_correct": true },
+      { "text": "ICS 214", "is_correct": false },
+      { "text": "ICS 208", "is_correct": false }
+    ],
+    "explanation": "The ICS 205 form is the standard document for the incident radio communications plan."
+  },
+  {
+    "question": "What does the \"SMART\" acronym apply to in ICS planning?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Budgeting", "is_correct": false },
+      { "text": "Incident Objectives", "is_correct": true },
+      { "text": "Hiring practices", "is_correct": false },
+      { "text": "Media releases", "is_correct": false }
+    ],
+    "explanation": "Incident objectives must be Specific, Measurable, Actionable, Realistic, and Time-sensitive (SMART)."
+  },
+  {
+    "question": "Why are standards like NFPA 1600 important even if not strictly law?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "They establish benchmarks for due diligence", "is_correct": true },
+      { "text": "They enforce criminal penalties", "is_correct": false },
+      { "text": "They are purely optional suggestions", "is_correct": false },
+      { "text": "They only apply to the US", "is_correct": false }
+    ],
+    "explanation": "Standards define best practices and are often used as benchmarks to determine liability and due diligence."
+  },
+  {
+    "question": "What characterizes the \"Forming\" stage of team development?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Open conflict and arguing", "is_correct": false },
+      { "text": "Uncertainty and politeness", "is_correct": true },
+      { "text": "High performance flow", "is_correct": false },
+      { "text": "Dissolution of the team", "is_correct": false }
+    ],
+    "explanation": "Forming is the initial stage where members are polite, uncertain, and looking for leadership."
+  },
+  {
+    "question": "Why is \"Ownership\" critical in conflict resolution (VOCAB)?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "It claims property rights", "is_correct": false },
+      { "text": "It acknowledges one's own role in the conflict", "is_correct": true },
+      { "text": "It shifts blame to the system", "is_correct": false },
+      { "text": "It forces an apology", "is_correct": false }
+    ],
+    "explanation": "Ownership involves taking accountability for one's own choices and feelings, reducing defensiveness."
+  },
+  {
+    "question": "What is \"Intrapersonal\" conflict?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Conflict between two people", "is_correct": false },
+      { "text": "Internal psychological conflict", "is_correct": true },
+      { "text": "Conflict between agencies", "is_correct": false },
+      { "text": "Conflict over resources", "is_correct": false }
+    ],
+    "explanation": "Intrapersonal conflict occurs within an individual's own mind (e.g., 'should I or shouldn't I')."
+  },
+  {
+    "question": "How does a \"Green Zone\" culture impact organizational output?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "It reduces it significantly", "is_correct": false },
+      { "text": "It increases it through collaboration", "is_correct": true },
+      { "text": "It creates aggressive competition", "is_correct": false },
+      { "text": "It has no measurable effect", "is_correct": false }
+    ],
+    "explanation": "Green Zone cultures, based on support and trust, are exponentially more productive than defensive Red Zone cultures."
+  },
+  {
+    "question": "What defines a \"Discretionary\" stakeholder?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Legitimacy only", "is_correct": true },
+      { "text": "Power only", "is_correct": false },
+      { "text": "Urgency only", "is_correct": false },
+      { "text": "Power and Urgency", "is_correct": false }
+    ],
+    "explanation": "Discretionary stakeholders (e.g., a charity) have Legitimacy but lack Power or Urgency."
+  },
+  {
+    "question": "What drives the behavior of a \"Dangerous\" stakeholder?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Legitimacy and Power", "is_correct": false },
+      { "text": "Power and Urgency", "is_correct": true },
+      { "text": "Urgency and Legitimacy", "is_correct": false },
+      { "text": "None of the above", "is_correct": false }
+    ],
+    "explanation": "Dangerous stakeholders have Power and Urgency but no Legitimacy, often leading to coercive or violent actions."
+  },
+  {
+    "question": "What is the key method to \"Empower Local Action\"?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Giving top-down orders", "is_correct": false },
+      { "text": "Allowing communities to lead priorities", "is_correct": true },
+      { "text": "Ignoring local input", "is_correct": false },
+      { "text": "Providing minimal resources", "is_correct": false }
+    ],
+    "explanation": "Empowerment involves letting the community define its own needs and lead the implementation of solutions."
+  },
+  {
+    "question": "Why is the \"Deficit Model\" problematic for community engagement?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It focuses only on needs, ignoring assets", "is_correct": true },
+      { "text": "It is too expensive", "is_correct": false },
+      { "text": "It requires too much data", "is_correct": false },
+      { "text": "It empowers the community too much", "is_correct": false }
+    ],
+    "explanation": "The deficit model sees communities only as victims with needs, ignoring the assets and capabilities they possess."
+  },
+  {
+    "question": "What is the function of Public Safety Canada's regional offices?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "To act as local police", "is_correct": false },
+      { "text": "To build partnerships with P/T officials", "is_correct": true },
+      { "text": "To manage municipal elections", "is_correct": false },
+      { "text": "To draft provincial laws", "is_correct": false }
+    ],
+    "explanation": "Regional offices work to build and maintain strategic partnerships with Provincial/Territorial and Municipal counterparts."
+  },
+  {
+    "question": "Which document outlines federal ministerial responsibilities for EM?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "The Criminal Code", "is_correct": false },
+      { "text": "Federal Policy for Emergency Management", "is_correct": true },
+      { "text": "The Municipal Government Act", "is_correct": false },
+      { "text": "The Building Code", "is_correct": false }
+    ],
+    "explanation": "The Federal Policy for Emergency Management identifies accountability and responsibilities for federal institutions."
+  },
+  {
+    "question": "When can the federal government intervene in a provincial emergency?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Whenever they choose", "is_correct": false },
+      { "text": "When the province is overwhelmed or requests it", "is_correct": true },
+      { "text": "Only during wartime", "is_correct": false },
+      { "text": "Never", "is_correct": false }
+    ],
+    "explanation": "Federal intervention occurs when a province is overwhelmed, requests help, or shares legislated responsibility."
+  },
+  {
+    "question": "What is the goal of the Federal Emergency Response Plan (FERP)?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To replace provincial plans", "is_correct": false },
+      { "text": "To harmonize federal response efforts", "is_correct": true },
+      { "text": "To create a national police force", "is_correct": false },
+      { "text": "To direct municipal traffic", "is_correct": false }
+    ],
+    "explanation": "FERP coordinates and harmonizes the emergency response efforts of all federal government institutions."
+  },
+  {
+    "question": "What does \"All-Hazards\" mean in the Canadian EM Framework?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Focusing only on natural disasters", "is_correct": false },
+      { "text": "Integrating elements across all hazard types", "is_correct": true },
+      { "text": "Ignoring technological risks", "is_correct": false },
+      { "text": "Responding only to pandemics", "is_correct": false }
+    ],
+    "explanation": "All-hazards integrates EM planning for natural, technological, and human-induced hazards into a single system."
+  },
+  {
+    "question": "What does \"Management by Objectives\" entail in ICS?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Managing based on personality", "is_correct": false },
+      { "text": "Developing strategies based on set objectives", "is_correct": true },
+      { "text": "Ignoring written plans", "is_correct": false },
+      { "text": "Using ad-hoc tactics", "is_correct": false }
+    ],
+    "explanation": "It involves establishing objectives, developing strategies to meet them, and directing tactics accordingly."
+  },
+  {
+    "question": "Which ICS section manages procurement and time recording?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Operations", "is_correct": false },
+      { "text": "Finance/Administration", "is_correct": true },
+      { "text": "Logistics", "is_correct": false },
+      { "text": "Planning", "is_correct": false }
+    ],
+    "explanation": "Finance/Administration (The Payers) handles all financial aspects, including time recording and procurement."
+  },
+  {
+    "question": "What is the role of the Liaison Officer in ICS?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "To command the incident", "is_correct": false },
+      { "text": "To coordinate with assisting agencies", "is_correct": true },
+      { "text": "To ensure responder safety", "is_correct": false },
+      { "text": "To release public information", "is_correct": false }
+    ],
+    "explanation": "The Liaison Officer is the point of contact for representatives from other assisting and cooperating agencies."
+  },
+  {
+    "question": "When is a written Incident Action Plan (IAP) required?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "For every minor incident", "is_correct": false },
+      { "text": "When incidents extend past one operational period", "is_correct": true },
+      { "text": "Only for funding purposes", "is_correct": false },
+      { "text": "It is never required", "is_correct": false }
+    ],
+    "explanation": "Written IAPs are crucial for complex incidents that span multiple operational periods or jurisdictions."
+  },
+  {
+    "question": "What does \"Demobilization\" refer to in ICS?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "The start of an operation", "is_correct": false },
+      { "text": "The orderly return of resources", "is_correct": true },
+      { "text": "The failure of a mission", "is_correct": false },
+      { "text": "The evacuation of civilians", "is_correct": false }
+    ],
+    "explanation": "Demobilization is the planned, safe, and efficient release of resources back to their original locations."
+  },
+  {
+    "question": "What is the Alberta Incident Management System (AIMS) based on?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Corporate hierarchies", "is_correct": false },
+      { "text": "ICS principles", "is_correct": true },
+      { "text": "Military martial law", "is_correct": false },
+      { "text": "Ad-hoc volunteering", "is_correct": false }
+    ],
+    "explanation": "AIMS is built on ICS principles to ensure consistent terminology and structure across the province."
+  },
+  {
+    "question": "What is the primary benefit of \"Interoperability\" in standards like ISO 22320?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It increases competition", "is_correct": false },
+      { "text": "It allows efficient sharing of resources", "is_correct": true },
+      { "text": "It closes borders", "is_correct": false },
+      { "text": "It isolates agencies", "is_correct": false }
+    ],
+    "explanation": "Interoperability allows different organizations to share functions and resources effectively during a response."
+  },
+  {
+    "question": "What does the \"Plan-Do-Check-Act\" model in CSA Z1600 promote?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Continuous improvement", "is_correct": true },
+      { "text": "Static planning", "is_correct": false },
+      { "text": "Financial auditing only", "is_correct": false },
+      { "text": "Rapid response only", "is_correct": false }
+    ],
+    "explanation": "CSA Z1600 uses the Plan-Do-Check-Act cycle to ensure emergency programs are continually evaluated and improved."
+  }
+]

@@ -1,3 +1,1727 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cede812f02d3ae961e289a1e9bd90652437db4bb46e6ad4195521e1f5e26c99c
-size 51800
+[
+  {
+    "question": "What is the primary focus of Business Continuity?",
+    "difficulty": 0.2,
+    "answers": [
+      {
+        "text": "Maintaining essential internal operations during disruptions",
+        "is_correct": true
+      },
+      {
+        "text": "Managing the external emergency response",
+        "is_correct": false
+      },
+      {
+        "text": "Protecting the organization's reputation exclusively",
+        "is_correct": false
+      },
+      {
+        "text": "Preventing workplace injuries and illnesses",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Business Continuity ensures core business activities function after an incident takes critical systems or facilities offline."
+  },
+  {
+    "question": "How does Crisis Management differ from Emergency Management?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Crisis Management focuses on reputational risk",
+        "is_correct": true
+      },
+      {
+        "text": "Crisis Management focuses on life safety",
+        "is_correct": false
+      },
+      {
+        "text": "Crisis Management handles physical property damage",
+        "is_correct": false
+      },
+      {
+        "text": "Crisis Management manages first responders",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Crisis Management deals with threats to an organization's reputation, whereas Emergency Management focuses on physical incidents and safety."
+  },
+  {
+    "question": "What is a 'Creeping Crisis'?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Events foreshadowed by a pattern not initially seen as threats",
+        "is_correct": true
+      },
+      {
+        "text": "Sudden events causing immediate damage",
+        "is_correct": false
+      },
+      {
+        "text": "Events where damage has occurred and is worsening",
+        "is_correct": false
+      },
+      {
+        "text": "A crisis strictly related to financial loss",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Creeping crises are foreshadowed by a series of events that decision-makers do not initially view as part of a pattern."
+  },
+  {
+    "question": "Why is the private sector considered a critical partner in disasters?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "They own most critical infrastructure and supply chains",
+        "is_correct": true
+      },
+      {
+        "text": "They have legal authority to command government assets",
+        "is_correct": false
+      },
+      {
+        "text": "They replace the role of federal responders",
+        "is_correct": false
+      },
+      {
+        "text": "They are solely responsible for residential evacuations",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The private sector controls essential resources, logistics, and infrastructure necessary for community recovery and resilience."
+  },
+  {
+    "question": "What is the 'Capability Gap' regarding the private sector?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "Government lacking processes to integrate private resources during response",
+        "is_correct": true
+      },
+      {
+        "text": "Private companies lacking funds to support recovery",
+        "is_correct": false
+      },
+      {
+        "text": "A shortage of private sector employees during disasters",
+        "is_correct": false
+      },
+      {
+        "text": "The inability of businesses to plan for continuity",
+        "is_correct": false
+      }
+    ],
+    "explanation": "While the private sector has resources, the government often lacks agile processes to utilize them immediately during a response."
+  },
+  {
+    "question": "What defines the 'Whole Community' approach?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Integrating public, private, and non-profit sectors in planning",
+        "is_correct": true
+      },
+      {
+        "text": "Government agencies handling all aspects of disaster response",
+        "is_correct": false
+      },
+      {
+        "text": "Relying solely on federal funding for recovery",
+        "is_correct": false
+      },
+      {
+        "text": "Excluding private businesses from emergency operations",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Whole Community involves all stakeholders, including individuals, businesses, and NGOs, in disaster prevention, response, and recovery."
+  },
+  {
+    "question": "What is the 'Employee-as-Victim' paradox?",
+    "difficulty": 0.7,
+    "answers": [
+      {
+        "text": "Businesses need employees to recover, but employees are also impacted",
+        "is_correct": true
+      },
+      {
+        "text": "Employees cause disasters through negligence",
+        "is_correct": false
+      },
+      {
+        "text": "Employees should not assist in business recovery",
+        "is_correct": false
+      },
+      {
+        "text": "Businesses prioritize profits over employee safety",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A business cannot recover if its workforce is overwhelmed by personal losses, highlighting the interdependence of community and business resilience."
+  },
+  {
+    "question": "In the Canadian framework, where do all emergencies start and end?",
+    "difficulty": 0.2,
+    "answers": [
+      {
+        "text": "At the local level",
+        "is_correct": true
+      },
+      {
+        "text": "At the federal level",
+        "is_correct": false
+      },
+      {
+        "text": "With the provincial government",
+        "is_correct": false
+      },
+      {
+        "text": "With international aid agencies",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Emergency management responsibility is bottom-up; local authorities manage incidents until capacity is exceeded, and they resume control afterward."
+  },
+  {
+    "question": "Why is individual preparedness (72-hour kits) strategically important?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "It creates a buffer for authorities to mobilize resources",
+        "is_correct": true
+      },
+      {
+        "text": "It eliminates the need for government response",
+        "is_correct": false
+      },
+      {
+        "text": "It shifts all financial liability to citizens",
+        "is_correct": false
+      },
+      {
+        "text": "It prevents natural hazards from occurring",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Self-sufficiency for 72 hours allows the government time to assess damage and clear routes before external aid arrives."
+  },
+  {
+    "question": "What is the primary role of the Provincial government in a disaster?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Coordinating resources and requesting federal assistance",
+        "is_correct": true
+      },
+      {
+        "text": "Taking immediate command of local incident sites",
+        "is_correct": false
+      },
+      {
+        "text": "Managing international diplomatic relations",
+        "is_correct": false
+      },
+      {
+        "text": "Replacing municipal councils",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The province acts as a gateway, prioritizing resources and formally requesting federal aid when municipal capacity is exceeded."
+  },
+  {
+    "question": "What is the role of Public Safety Canada during a major event?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Harmonizing the federal response and coordinating federal agencies",
+        "is_correct": true
+      },
+      {
+        "text": "Commanding local fire and police departments",
+        "is_correct": false
+      },
+      {
+        "text": "Replacing provincial emergency management organizations",
+        "is_correct": false
+      },
+      {
+        "text": "Directing international military interventions",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Public Safety Canada coordinates the federal government's support to provinces through the National Emergency Response System."
+  },
+  {
+    "question": "Which entity leads the coordination of international assistance for Canada?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "Global Affairs Canada",
+        "is_correct": true
+      },
+      {
+        "text": "Department of National Defence",
+        "is_correct": false
+      },
+      {
+        "text": "Public Safety Canada",
+        "is_correct": false
+      },
+      {
+        "text": "The United Nations",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Global Affairs Canada manages offers of international aid and coordinates with foreign governments and organizations."
+  },
+  {
+    "question": "What distinguishes Collaboration from Coordination?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "Collaboration is an attitude; Coordination is a process",
+        "is_correct": true
+      },
+      {
+        "text": "Collaboration is tactical; Coordination is strategic",
+        "is_correct": false
+      },
+      {
+        "text": "Collaboration is mandatory; Coordination is optional",
+        "is_correct": false
+      },
+      {
+        "text": "Collaboration focuses on money; Coordination focuses on people",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Collaboration is the culture of working together, which enables the technical process of coordination (aligning resources)."
+  },
+  {
+    "question": "What is the primary function of an Emergency Operations Centre (EOC)?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "To coordinate support and resources for on-scene responders",
+        "is_correct": true
+      },
+      {
+        "text": "To take tactical command of the incident scene",
+        "is_correct": false
+      },
+      {
+        "text": "To manage the media exclusively",
+        "is_correct": false
+      },
+      {
+        "text": "To replace elected officials in decision making",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The EOC supports the incident by managing resources, policy, and information, while tactical command remains at the scene."
+  },
+  {
+    "question": "What is an Emergency Support Function (ESF)?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "A pre-established team of agencies with similar missions",
+        "is_correct": true
+      },
+      {
+        "text": "A tactical team deployed to the hot zone",
+        "is_correct": false
+      },
+      {
+        "text": "A group of elected officials making policy",
+        "is_correct": false
+      },
+      {
+        "text": "A computerized logistics tracking system",
+        "is_correct": false
+      }
+    ],
+    "explanation": "ESFs group agencies by capability (e.g., Transportation, Health) to manage specific functional areas during a response."
+  },
+  {
+    "question": "What is the purpose of an Interagency Task Force in an EOC?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "To solve complex problems spanning multiple functions",
+        "is_correct": true
+      },
+      {
+        "text": "To handle routine daily operations",
+        "is_correct": false
+      },
+      {
+        "text": "To replace the Incident Commander",
+        "is_correct": false
+      },
+      {
+        "text": "To conduct long-term financial audits",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Task forces are convened to address specific, complex issues (like fuel shortages) that no single agency can solve alone."
+  },
+  {
+    "question": "What distinguishes Command from Coordination in the MAC System?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "Command directs tactical operations; Coordination supports via resources",
+        "is_correct": true
+      },
+      {
+        "text": "Command is off-site; Coordination is on-scene",
+        "is_correct": false
+      },
+      {
+        "text": "Command focuses on policy; Coordination focuses on tactics",
+        "is_correct": false
+      },
+      {
+        "text": "There is no difference; they are synonymous",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Command has tactical authority at the scene, while coordination (EOC) manages the system-wide support and resource allocation."
+  },
+  {
+    "question": "What is the role of the Policy Group in a MAC System?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "Providing strategic direction and making high-level decisions",
+        "is_correct": true
+      },
+      {
+        "text": "Ordering specific resources for the incident scene",
+        "is_correct": false
+      },
+      {
+        "text": "Directing tactical movements of first responders",
+        "is_correct": false
+      },
+      {
+        "text": "Managing the EOC software systems",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Elected officials in the Policy Group make strategic decisions (e.g., evacuations, curfews) but do not manage operations."
+  },
+  {
+    "question": "Why is logistics considered the most critical response component?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "It accounts for the majority of response costs",
+        "is_correct": true
+      },
+      {
+        "text": "It is the only function performed by the military",
+        "is_correct": false
+      },
+      {
+        "text": "It does not require coordination with other agencies",
+        "is_correct": false
+      },
+      {
+        "text": "It replaces the need for operational planning",
+        "is_correct": false
+      }
+    ],
+    "explanation": "70-80% of disaster spending is on logistics, making it central to the success or failure of a response."
+  },
+  {
+    "question": "What was the primary failure of the 2004 Tsunami response?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "A lack of coordination among responding agencies",
+        "is_correct": true
+      },
+      {
+        "text": "A lack of donated supplies",
+        "is_correct": false
+      },
+      {
+        "text": "Insufficient warning systems",
+        "is_correct": false
+      },
+      {
+        "text": "A shortage of funding",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The response failed due to disjointed efforts, leading to the creation of the UN Logistics Cluster to improve coordination."
+  },
+  {
+    "question": "What is a 'Second Disaster' in the context of logistics?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "Unmanaged donations overwhelming the supply chain",
+        "is_correct": true
+      },
+      {
+        "text": "A secondary earthquake or aftershock",
+        "is_correct": false
+      },
+      {
+        "text": "The failure of the electrical grid",
+        "is_correct": false
+      },
+      {
+        "text": "Political unrest following an event",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Inappropriate or unmanaged donations clog logistics channels, diverting resources from critical tasks and creating new problems."
+  },
+  {
+    "question": "Why are Mutual Aid Agreements essential for the MAC System?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "They define legal/financial terms for sharing resources pre-disaster",
+        "is_correct": true
+      },
+      {
+        "text": "They allow federal government to take over local command",
+        "is_correct": false
+      },
+      {
+        "text": "They eliminate the need for an EOC",
+        "is_correct": false
+      },
+      {
+        "text": "They prevent private companies from charging for services",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Effective resource sharing relies on pre-established contracts (Mutual Aid) to ensure rapid and legal deployment during a crisis."
+  },
+  {
+    "question": "What is the main goal of the Response pillar?",
+    "difficulty": 0.1,
+    "answers": [
+      {
+        "text": "To protect life safety and minimize suffering",
+        "is_correct": true
+      },
+      {
+        "text": "To rebuild infrastructure to a better standard",
+        "is_correct": false
+      },
+      {
+        "text": "To assign blame for the incident",
+        "is_correct": false
+      },
+      {
+        "text": "To generate profit for private contractors",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Response focuses on immediate actions to save lives, protect property, and stabilize the situation during or after a disaster."
+  },
+  {
+    "question": "What characterizes 'Pre-Hazard Event Response'?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Actions taken immediately before a foreseeable event strikes",
+        "is_correct": true
+      },
+      {
+        "text": "Long-term construction projects to reduce risk",
+        "is_correct": false
+      },
+      {
+        "text": "Rebuilding efforts after the disaster has passed",
+        "is_correct": false
+      },
+      {
+        "text": "Drafting legislation for future emergencies",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Activities like sandbagging or evacuation warnings occur when a hazard is imminent, blurring the line between preparedness and response."
+  },
+  {
+    "question": "Why does Search and Rescue transition to Search and Recovery?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Survivability decreases significantly after 72 hours",
+        "is_correct": true
+      },
+      {
+        "text": "Responders run out of funding",
+        "is_correct": false
+      },
+      {
+        "text": "The focus shifts to protecting property",
+        "is_correct": false
+      },
+      {
+        "text": "Public interest in the disaster wanes",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The likelihood of finding live survivors drops drastically after the first few days, changing the operational objective."
+  },
+  {
+    "question": "What is the function of Emergency Social Services (ESS)?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Providing basic well-being services to disaster victims",
+        "is_correct": true
+      },
+      {
+        "text": "Restoring telecommunications infrastructure",
+        "is_correct": false
+      },
+      {
+        "text": " conducting criminal investigations",
+        "is_correct": false
+      },
+      {
+        "text": "Managing debris removal operations",
+        "is_correct": false
+      }
+    ],
+    "explanation": "ESS ensures survivors have essentials like food, clothing, lodging, and family reunification support immediately following a disaster."
+  },
+  {
+    "question": "Why is restoring Critical Infrastructure considered a response priority?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "It is a pre-requisite for other life-saving functions",
+        "is_correct": true
+      },
+      {
+        "text": "It is the cheapest part of the operation",
+        "is_correct": false
+      },
+      {
+        "text": "It is required for insurance claims",
+        "is_correct": false
+      },
+      {
+        "text": "It allows the government to look effective",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Hospitals, water pumps, and communications cannot function without power and access, making infrastructure restoration vital for response."
+  },
+  {
+    "question": "What defines the Recovery phase?",
+    "difficulty": 0.2,
+    "answers": [
+      {
+        "text": "Restoring conditions to an acceptable level after a disaster",
+        "is_correct": true
+      },
+      {
+        "text": "Taking immediate action to save lives during impact",
+        "is_correct": false
+      },
+      {
+        "text": "Predicting future weather patterns",
+        "is_correct": false
+      },
+      {
+        "text": "Stockpiling resources for the next event",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Recovery is the long-term process of returning the community to a 'new normal' and rebuilding physical and social systems."
+  },
+  {
+    "question": "What is the 'Build Back Better' concept?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Using recovery to implement mitigation and reduce future risk",
+        "is_correct": true
+      },
+      {
+        "text": "Restoring structures exactly as they were before",
+        "is_correct": false
+      },
+      {
+        "text": "Using only private funds for reconstruction",
+        "is_correct": false
+      },
+      {
+        "text": "Focusing solely on economic recovery",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Recovery offers a unique opportunity to improve resilience by fixing pre-disaster vulnerabilities rather than replicating them."
+  },
+  {
+    "question": "How do Response and Recovery interact?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "They overlap; recovery planning begins during the response",
+        "is_correct": true
+      },
+      {
+        "text": "They are strictly sequential; one ends before the other starts",
+        "is_correct": false
+      },
+      {
+        "text": "Recovery replaces response immediately upon impact",
+        "is_correct": false
+      },
+      {
+        "text": "They are handled by completely different agencies",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Recovery activities, such as damage assessment and infrastructure restoration, start while immediate response operations are still ongoing."
+  },
+  {
+    "question": "What is the purpose of a Damage Assessment?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "To determine the scope of damage and required resources",
+        "is_correct": true
+      },
+      {
+        "text": "To assign legal blame for the disaster",
+        "is_correct": false
+      },
+      {
+        "text": "To calculate the exact insurance premiums",
+        "is_correct": false
+      },
+      {
+        "text": "To identify criminal activity",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Assessment provides the critical information needed to prioritize response efforts and plan for long-term recovery."
+  },
+  {
+    "question": "Why is local labor preferred during recovery?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "It supports the economic recovery of the affected region",
+        "is_correct": true
+      },
+      {
+        "text": "It is always cheaper than outside labor",
+        "is_correct": false
+      },
+      {
+        "text": "It eliminates the need for safety standards",
+        "is_correct": false
+      },
+      {
+        "text": "Local labor is required by international law",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Hiring locals keeps funds within the community, helping to restore livelihoods and the local economy which were disrupted."
+  },
+  {
+    "question": "What is the distinction between Prevention and Mitigation?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "Prevention stops the event; Mitigation reduces the impact",
+        "is_correct": true
+      },
+      {
+        "text": "Prevention is structural; Mitigation is non-structural",
+        "is_correct": false
+      },
+      {
+        "text": "Prevention is post-disaster; Mitigation is pre-disaster",
+        "is_correct": false
+      },
+      {
+        "text": "There is no difference; they are synonymous",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Prevention avoids the hazard entirely (e.g., stopping a terror plot), while mitigation lessens the severity of unavoidable hazards (e.g., earthquakes)."
+  },
+  {
+    "question": "What constitutes Structural Mitigation?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Physical construction or engineering measures",
+        "is_correct": true
+      },
+      {
+        "text": "Changes in laws and zoning policies",
+        "is_correct": false
+      },
+      {
+        "text": "Public education campaigns",
+        "is_correct": false
+      },
+      {
+        "text": "Buying insurance policies",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Structural mitigation involves engineered solutions like dikes, floodways, or reinforced buildings to physically resist hazards."
+  },
+  {
+    "question": "What constitutes Non-Structural Mitigation?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Modifications in behavior or policy without physical construction",
+        "is_correct": true
+      },
+      {
+        "text": "Building dams and levees",
+        "is_correct": false
+      },
+      {
+        "text": "Strengthening building foundations",
+        "is_correct": false
+      },
+      {
+        "text": "Stockpiling sandbags",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Non-structural measures include building codes, land-use planning, and insurance, aiming to change how people interact with risks."
+  },
+  {
+    "question": "What is Risk Transfer?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "Sharing the financial burden of risk with another party",
+        "is_correct": true
+      },
+      {
+        "text": "Eliminating the risk source entirely",
+        "is_correct": false
+      },
+      {
+        "text": "Ignoring the risk",
+        "is_correct": false
+      },
+      {
+        "text": "physically moving assets out of harm's way",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Insurance is the primary example of risk transfer, where the financial cost is shifted to an insurer rather than reducing the physical hazard."
+  },
+  {
+    "question": "What defines the Preparedness pillar?",
+    "difficulty": 0.2,
+    "answers": [
+      {
+        "text": "Actions taken prior to an event to ensure readiness",
+        "is_correct": true
+      },
+      {
+        "text": "Actions taken immediately after an event to save lives",
+        "is_correct": false
+      },
+      {
+        "text": "Long-term reconstruction of a community",
+        "is_correct": false
+      },
+      {
+        "text": "Engineering projects to stop floods",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Preparedness involves planning, training, and exercising to ensure the capability to respond effectively when a disaster strikes."
+  },
+  {
+    "question": "Why are exercises important in Preparedness?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "They test plans and build muscle memory for responders",
+        "is_correct": true
+      },
+      {
+        "text": "They determine the exact date of the next disaster",
+        "is_correct": false
+      },
+      {
+        "text": "They replace the need for written plans",
+        "is_correct": false
+      },
+      {
+        "text": "They generate revenue for the municipality",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A plan is only theoretical until tested; exercises reveal gaps and ensure personnel know their roles before a real crisis."
+  },
+  {
+    "question": "How does Mitigation inform Preparedness?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "Mitigation measures dictate what residual risks must be prepared for",
+        "is_correct": true
+      },
+      {
+        "text": "Mitigation replaces the need for preparedness",
+        "is_correct": false
+      },
+      {
+        "text": "They are unrelated phases",
+        "is_correct": false
+      },
+      {
+        "text": "Preparedness funding pays for mitigation projects",
+        "is_correct": false
+      }
+    ],
+    "explanation": "If mitigation (e.g., a dike) reduces a risk, preparedness plans adapt to manage the remaining risk (e.g., evacuation if the dike fails)."
+  },
+  {
+    "question": "What is an 'Emergency' defined as in the program context?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "A present event requiring prompt coordination to protect safety",
+        "is_correct": true
+      },
+      {
+        "text": "Any event that causes inconvenience to the public",
+        "is_correct": false
+      },
+      {
+        "text": "An event that exceeds local coping capacity",
+        "is_correct": false
+      },
+      {
+        "text": "A theoretical future threat",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Emergencies require immediate action but are typically managed within the capacity of local authorities."
+  },
+  {
+    "question": "What distinguishes a 'Disaster' from an 'Emergency'?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "A disaster overwhelms the community's ability to cope",
+        "is_correct": true
+      },
+      {
+        "text": "A disaster always involves fatalities",
+        "is_correct": false
+      },
+      {
+        "text": "A disaster is strictly natural; an emergency is man-made",
+        "is_correct": false
+      },
+      {
+        "text": "There is no distinction; they are synonyms",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The critical threshold is coping capacity; when local resources are exceeded and external aid is required, it becomes a disaster."
+  },
+  {
+    "question": "What is the defining feature of a 'Crisis'?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "An unstable condition requiring urgent attention to protect values",
+        "is_correct": true
+      },
+      {
+        "text": "Widespread physical destruction of infrastructure",
+        "is_correct": false
+      },
+      {
+        "text": "The involvement of international military forces",
+        "is_correct": false
+      },
+      {
+        "text": "A predictable, slow-onset weather event",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Crises are often characterized by uniqueness, instability, and threats to reputation or organizational performance, rather than just physical damage."
+  },
+  {
+    "question": "What is a 'Hazard'?",
+    "difficulty": 0.2,
+    "answers": [
+      {
+        "text": "An event or condition with potential to cause harm",
+        "is_correct": true
+      },
+      {
+        "text": "An event that has already occurred",
+        "is_correct": false
+      },
+      {
+        "text": "The financial cost of a disaster",
+        "is_correct": false
+      },
+      {
+        "text": "A measure taken to reduce risk",
+        "is_correct": false
+      }
+    ],
+    "explanation": "A hazard is a source of potential harm; it only becomes a threat when there is an exposure pathway to people."
+  },
+  {
+    "question": "What defines a 'Natural Hazard'?",
+    "difficulty": 0.2,
+    "answers": [
+      {
+        "text": "A potential incident resulting from acts of nature",
+        "is_correct": true
+      },
+      {
+        "text": "An accident caused by system failure",
+        "is_correct": false
+      },
+      {
+        "text": "A deliberate act of violence",
+        "is_correct": false
+      },
+      {
+        "text": "A failure of critical infrastructure",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Natural hazards stem from natural processes (biological, geological, meteorological) rather than human error or intent."
+  },
+  {
+    "question": "Which category includes earthquakes and volcanoes?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Geophysical hazards",
+        "is_correct": true
+      },
+      {
+        "text": "Hydrological hazards",
+        "is_correct": false
+      },
+      {
+        "text": "Meteorological hazards",
+        "is_correct": false
+      },
+      {
+        "text": "Climatological hazards",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Geophysical hazards originate from the solid earth, such as tectonic plate movement."
+  },
+  {
+    "question": "What is the most common natural hazard worldwide?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Flooding",
+        "is_correct": true
+      },
+      {
+        "text": "Earthquakes",
+        "is_correct": false
+      },
+      {
+        "text": "Volcanic eruptions",
+        "is_correct": false
+      },
+      {
+        "text": "Tornadoes",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Flooding affects more people globally than any other natural hazard due to the high population density near water."
+  },
+  {
+    "question": "What distinguishes 'Meteorological' from 'Climatological' hazards?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "Meteorological are short-lived; Climatological are long-term",
+        "is_correct": true
+      },
+      {
+        "text": "Meteorological involve water; Climatological involve fire",
+        "is_correct": false
+      },
+      {
+        "text": "Meteorological are predictable; Climatological are random",
+        "is_correct": false
+      },
+      {
+        "text": "There is no difference",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Meteorological hazards (storms) last minutes to days, while climatological hazards (droughts) last seasons to decades."
+  },
+  {
+    "question": "What is a 'Technological Hazard'?",
+    "difficulty": 0.2,
+    "answers": [
+      {
+        "text": "An incident resulting from system or structure failures",
+        "is_correct": true
+      },
+      {
+        "text": "An act of nature",
+        "is_correct": false
+      },
+      {
+        "text": "A deliberate attack by an adversary",
+        "is_correct": false
+      },
+      {
+        "text": "A biological epidemic",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Technological hazards arise from human-made systems failing (e.g., power outages, bridge collapses) and are considered preventable."
+  },
+  {
+    "question": "What is an 'Intentional Hazard'?",
+    "difficulty": 0.2,
+    "answers": [
+      {
+        "text": "An incident resulting from the deliberate actions of an adversary",
+        "is_correct": true
+      },
+      {
+        "text": "Accidental human error",
+        "is_correct": false
+      },
+      {
+        "text": "System malfunction",
+        "is_correct": false
+      },
+      {
+        "text": "Unforeseeable acts of nature",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Intentional hazards involve a conscious decision to cause harm, such as terrorism, cyber attacks, or civil unrest."
+  },
+  {
+    "question": "How does Canada define 'Terrorism'?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "Acts committed for political/religious purposes to intimidate the public",
+        "is_correct": true
+      },
+      {
+        "text": "Any violent crime involving a gun",
+        "is_correct": false
+      },
+      {
+        "text": "Acts committed solely by foreign nationals",
+        "is_correct": false
+      },
+      {
+        "text": "Any act causing property damage",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The Criminal Code defines terrorism by its motivation (political/ideological) and intent (intimidation/compulsion), not just violence."
+  },
+  {
+    "question": "What is a 'Complex Humanitarian Emergency'?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "A humanitarian crisis layered over ongoing conflict or instability",
+        "is_correct": true
+      },
+      {
+        "text": "A natural disaster in a developed nation",
+        "is_correct": false
+      },
+      {
+        "text": "A technological failure causing environmental damage",
+        "is_correct": false
+      },
+      {
+        "text": "A famine caused solely by drought",
+        "is_correct": false
+      }
+    ],
+    "explanation": "CHEs involve a combination of hazard impacts and political/military instability, complicating aid delivery and increasing violence."
+  },
+  {
+    "question": "What defines the 'All-Hazards Approach'?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Addressing common vulnerabilities exposed by various hazards",
+        "is_correct": true
+      },
+      {
+        "text": "Creating a separate plan for every possible hazard",
+        "is_correct": false
+      },
+      {
+        "text": "Focusing only on the most likely hazard",
+        "is_correct": false
+      },
+      {
+        "text": "Ignoring hazards to focus on recovery",
+        "is_correct": false
+      }
+    ],
+    "explanation": "It focuses on common capabilities (e.g., evacuation) applicable to many scenarios rather than planning for every specific threat."
+  },
+  {
+    "question": "What is a major strength of the All-Hazards approach?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "Economic efficiency and reduced duplication of effort",
+        "is_correct": true
+      },
+      {
+        "text": "It guarantees success in unique scenarios",
+        "is_correct": false
+      },
+      {
+        "text": "It eliminates the need for risk assessment",
+        "is_correct": false
+      },
+      {
+        "text": "It removes political influence from planning",
+        "is_correct": false
+      }
+    ],
+    "explanation": "By consolidating resources and planning for common functions, organizations save time and money."
+  },
+  {
+    "question": "What is a criticism of the All-Hazards approach?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "Plans may become too vague to address unique threats",
+        "is_correct": true
+      },
+      {
+        "text": "It costs too much money to implement",
+        "is_correct": false
+      },
+      {
+        "text": "It prevents agencies from working together",
+        "is_correct": false
+      },
+      {
+        "text": "It focuses too much on terrorism",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The 'generalness' of the approach can be a weakness when a specific hazard (like terrorism) requires specialized tactics."
+  },
+  {
+    "question": "What is the purpose of a Risk Assessment?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "To identify risks and evaluate their likelihood and impact",
+        "is_correct": true
+      },
+      {
+        "text": "To eliminate all risks immediately",
+        "is_correct": false
+      },
+      {
+        "text": "To assign blame for past incidents",
+        "is_correct": false
+      },
+      {
+        "text": "To secure funding for response equipment",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Risk assessment provides the data needed to prioritize planning and mitigation efforts based on actual threats."
+  },
+  {
+    "question": "What is the 'THIRA' process?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "Threat and Hazard Identification and Risk Assessment",
+        "is_correct": true
+      },
+      {
+        "text": "Total Hazard Incident Response Action",
+        "is_correct": false
+      },
+      {
+        "text": "The Human Impact of Risk Analysis",
+        "is_correct": false
+      },
+      {
+        "text": "Tactical Hazard Identification and Recovery Assessment",
+        "is_correct": false
+      }
+    ],
+    "explanation": "THIRA is FEMA's standard process for communities to identify risks and set capability targets."
+  },
+  {
+    "question": "Why might an 'Active Assailant' require a specific plan Annex?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "The 'Run, Hide, Fight' protocol differs from standard responses",
+        "is_correct": true
+      },
+      {
+        "text": "It is the most common hazard faced",
+        "is_correct": false
+      },
+      {
+        "text": "It is the only hazard involving police",
+        "is_correct": false
+      },
+      {
+        "text": "It cannot be mitigated",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Standard 'shelter or evacuate' responses do not apply to active violence, necessitating unique protocols."
+  },
+  {
+    "question": "What is 'Risk' defined as?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "The effect of uncertainty on objectives",
+        "is_correct": true
+      },
+      {
+        "text": "A guaranteed negative outcome",
+        "is_correct": false
+      },
+      {
+        "text": "The physical agent causing harm",
+        "is_correct": false
+      },
+      {
+        "text": "The cost of insurance premiums",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Risk is the combination of the likelihood of an event and its potential consequences on objectives."
+  },
+  {
+    "question": "What is 'Vulnerability'?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Intrinsic properties making a system susceptible to harm",
+        "is_correct": true
+      },
+      {
+        "text": "The probability of a hazard occurring",
+        "is_correct": false
+      },
+      {
+        "text": "The strength of a building",
+        "is_correct": false
+      },
+      {
+        "text": "The speed of the response",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Vulnerability describes the weaknesses in a community or system that allow a hazard to cause damage."
+  },
+  {
+    "question": "What is 'Resilience'?",
+    "difficulty": 0.2,
+    "answers": [
+      {
+        "text": "The capacity to adapt and recover from disturbances",
+        "is_correct": true
+      },
+      {
+        "text": "The ability to prevent all disasters",
+        "is_correct": false
+      },
+      {
+        "text": "Having infinite resources for response",
+        "is_correct": false
+      },
+      {
+        "text": "Ignoring risks to maintain normalcy",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Resilience is the ability to withstand impact and bounce back to an acceptable level of functioning."
+  },
+  {
+    "question": "Why is 'Clear Communication' a core EM principle?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "It controls the narrative and coordinates action",
+        "is_correct": true
+      },
+      {
+        "text": "It prevents the media from reporting",
+        "is_correct": false
+      },
+      {
+        "text": "It is required to get funding",
+        "is_correct": false
+      },
+      {
+        "text": "It eliminates the need for plans",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Communication prevents misinformation and ensures all stakeholders and the public know what to do."
+  },
+  {
+    "question": "What is 'Continuous Improvement' in EM?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "Constantly testing and refining plans based on lessons learned",
+        "is_correct": true
+      },
+      {
+        "text": "Writing a plan once and archiving it",
+        "is_correct": false
+      },
+      {
+        "text": "Changing personnel every year",
+        "is_correct": false
+      },
+      {
+        "text": "Increasing the budget annually",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The risk environment changes, so plans must evolve through evaluation and exercises to remain effective."
+  },
+  {
+    "question": "What is the primary role of an Emergency Manager?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "Facilitator and network-builder",
+        "is_correct": true
+      },
+      {
+        "text": "Tactical commander of first responders",
+        "is_correct": false
+      },
+      {
+        "text": "Sole decision maker for the community",
+        "is_correct": false
+      },
+      {
+        "text": "Writer of plans that are rarely used",
+        "is_correct": false
+      }
+    ],
+    "explanation": "EMs manage systems and relationships to enable coordination, rather than commanding tactical assets directly."
+  },
+  {
+    "question": "Why are 'Silos' dangerous in emergency management?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "They prevent the sharing of critical information and resources",
+        "is_correct": true
+      },
+      {
+        "text": "They store hazardous materials unsafely",
+        "is_correct": false
+      },
+      {
+        "text": "They create too much redundancy",
+        "is_correct": false
+      },
+      {
+        "text": "They slow down the promotion of staff",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Silos isolate agencies, preventing the collaboration needed to address interconnected, systemic risks."
+  },
+  {
+    "question": "What is the role of 'Soft Skills' in EM leadership?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Building trust and consensus among independent agencies",
+        "is_correct": true
+      },
+      {
+        "text": "Making people feel good about the disaster",
+        "is_correct": false
+      },
+      {
+        "text": "Avoiding difficult decisions",
+        "is_correct": false
+      },
+      {
+        "text": "Replacing technical knowledge",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Since EMs lack command authority over partners, they rely on influence, negotiation, and trust to coordinate."
+  },
+  {
+    "question": "Why must relationships be built 'Blue Sky' days?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Trust cannot be established effectively during a crisis",
+        "is_correct": true
+      },
+      {
+        "text": "Emergency Managers have no work during disasters",
+        "is_correct": false
+      },
+      {
+        "text": "Funding is only available before the event",
+        "is_correct": false
+      },
+      {
+        "text": "It is a legal requirement",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The 'whirlwind' of a disaster is the wrong time to vet capabilities or establish the trust needed for collaboration."
+  },
+  {
+    "question": "What is the 'Logistics Cluster'?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "A UN-led mechanism to coordinate international supply chains",
+        "is_correct": true
+      },
+      {
+        "text": "A stockpile of goods in a warehouse",
+        "is_correct": false
+      },
+      {
+        "text": "A software program for tracking trucks",
+        "is_correct": false
+      },
+      {
+        "text": "A group of private trucking companies",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Created after the 2004 Tsunami, it formalizes coordination among international agencies to prevent logistical failures."
+  },
+  {
+    "question": "What is a 'Staging Area'?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "A location where resources wait for assignment",
+        "is_correct": true
+      },
+      {
+        "text": "The site of the disaster impact",
+        "is_correct": false
+      },
+      {
+        "text": "Where the EOC is located",
+        "is_correct": false
+      },
+      {
+        "text": "A shelter for evacuees",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Staging areas hold personnel and equipment close to the scene but out of the way until they are requested."
+  },
+  {
+    "question": "What is a 'Point of Distribution' (POD)?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "A site where the public receives emergency supplies",
+        "is_correct": true
+      },
+      {
+        "text": "A warehouse for long-term storage",
+        "is_correct": false
+      },
+      {
+        "text": "The headquarters of the Logistics Section",
+        "is_correct": false
+      },
+      {
+        "text": "A helicopter landing zone",
+        "is_correct": false
+      }
+    ],
+    "explanation": "PODs are the interface with the public where commodities like water and food are handed out."
+  },
+  {
+    "question": "Why is 'Agility' important in supply chains?",
+    "difficulty": 0.5,
+    "answers": [
+      {
+        "text": "It allows rapid response to unforeseen disruptions",
+        "is_correct": true
+      },
+      {
+        "text": "It reduces the cost of goods",
+        "is_correct": false
+      },
+      {
+        "text": "It eliminates the need for inventory",
+        "is_correct": false
+      },
+      {
+        "text": "It automates the ordering process",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Agility enables a supply chain to adapt quickly to the chaos of a disaster, preventing bottlenecks."
+  },
+  {
+    "question": "What is the 'Virtuous Cycle' of preparedness?",
+    "difficulty": 0.6,
+    "answers": [
+      {
+        "text": "Knowledge, Local Capacity, and Early Warning reinforcing each other",
+        "is_correct": true
+      },
+      {
+        "text": "Spending money to get more budget next year",
+        "is_correct": false
+      },
+      {
+        "text": "Responding, Recovering, and forgetting",
+        "is_correct": false
+      },
+      {
+        "text": "Planning, Exercising, and mitigating",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Early warning is useless without local capacity to act, which requires knowledge; all three pillars support one another."
+  },
+  {
+    "question": "What defines 'CBRNE' materials?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Materials designed or used as weapons to cause harm",
+        "is_correct": true
+      },
+      {
+        "text": "Accidental industrial waste",
+        "is_correct": false
+      },
+      {
+        "text": "Medical isotopes used in hospitals",
+        "is_correct": false
+      },
+      {
+        "text": "Natural gases found in the earth",
+        "is_correct": false
+      }
+    ],
+    "explanation": "CBRNE materials (Chemical, Biological, Radiological, Nuclear, Explosive) are distinct from HAZMAT due to their weaponized intent."
+  },
+  {
+    "question": "What distinguishes 'Biological' hazards from other natural hazards?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "They are caused by living organisms (viruses, bacteria)",
+        "is_correct": true
+      },
+      {
+        "text": "They are caused by weather patterns",
+        "is_correct": false
+      },
+      {
+        "text": "They are caused by tectonic plate movement",
+        "is_correct": false
+      },
+      {
+        "text": "They are always man-made",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Biological hazards involve the spread of diseases or infestations by living agents, unlike physical earth processes."
+  },
+  {
+    "question": "What is the danger of 'Space Weather'?",
+    "difficulty": 0.4,
+    "answers": [
+      {
+        "text": "Disruption of power grids and telecommunications",
+        "is_correct": true
+      },
+      {
+        "text": "Physical destruction of buildings",
+        "is_correct": false
+      },
+      {
+        "text": "Causing tidal waves",
+        "is_correct": false
+      },
+      {
+        "text": "Starting wildfires",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Solar flares and geomagnetic storms can damage satellites and electrical infrastructure essential to modern life."
+  },
+  {
+    "question": "Why is 'Fog' considered a hazard?",
+    "difficulty": 0.3,
+    "answers": [
+      {
+        "text": "It reduces visibility, causing transportation accidents",
+        "is_correct": true
+      },
+      {
+        "text": "It contains toxic chemicals",
+        "is_correct": false
+      },
+      {
+        "text": "It causes structural collapse",
+        "is_correct": false
+      },
+      {
+        "text": "It spreads disease",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Fog disrupts aviation and maritime traffic and causes vehicle collisions due to severe visibility reduction."
+  }
+]

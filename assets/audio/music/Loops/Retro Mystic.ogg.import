@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:013b7c9f0798bbd83a6d57da02920eed472b2e6b0774118dceaae391d56bf05e
-size 416
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://beqilmnse66io"
+path="res://.godot/imported/Retro Mystic.ogg-d5ecffa37360c28076eb9874058bbd0d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Loops/Retro Mystic.ogg"
+dest_files=["res://.godot/imported/Retro Mystic.ogg-d5ecffa37360c28076eb9874058bbd0d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

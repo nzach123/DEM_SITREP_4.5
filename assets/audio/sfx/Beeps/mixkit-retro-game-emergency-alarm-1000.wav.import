@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5469bebaf36618c1b25096616c699d0aa06ec1aa3ea32c9bbeb256ae4dfb0163
-size 595
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d16nd2odajx1e"
+path="res://.godot/imported/mixkit-retro-game-emergency-alarm-1000.wav-72205081bf164f753361d81510053e1c.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Beeps/mixkit-retro-game-emergency-alarm-1000.wav"
+dest_files=["res://.godot/imported/mixkit-retro-game-emergency-alarm-1000.wav-72205081bf164f753361d81510053e1c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

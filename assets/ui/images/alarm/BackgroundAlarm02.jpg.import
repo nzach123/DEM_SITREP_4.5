@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:510256b51eb01860c5bace58a46cbc4e9d7ca8b81e6bd9e6662be76bb77a5b06
-size 808
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dea8mxsq4v87m"
+path="res://.godot/imported/BackgroundAlarm02.jpg-d80e371fbf52809b8ccace901b3715ec.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/ui/images/alarm/BackgroundAlarm02.jpg"
+dest_files=["res://.godot/imported/BackgroundAlarm02.jpg-d80e371fbf52809b8ccace901b3715ec.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

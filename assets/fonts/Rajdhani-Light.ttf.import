@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:41408e9decdaf28d47c1515590e19cdc2c331e50342614bf5de1eb6c10d5cc7f
-size 752
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://co217ycxu18ds"
+path="res://.godot/imported/Rajdhani-Light.ttf-f23da7e0ba5ecceb96250a148f73ec61.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/Rajdhani-Light.ttf"
+dest_files=["res://.godot/imported/Rajdhani-Light.ttf-f23da7e0ba5ecceb96250a148f73ec61.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

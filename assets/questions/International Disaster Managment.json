@@ -1,3 +1,1003 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7619483b58f8b380cae84704649ba44c591fb19ab8255021bec5009f914051f3
-size 45626
+[
+  {
+    "question": "Which factor primarily distinguishes a disaster from an emergency?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "High number of fatalities", "is_correct": false },
+      { "text": "Local response capacity is overwhelmed", "is_correct": true },
+      { "text": "Occurrence of a natural hazard", "is_correct": false },
+      { "text": "Significant media coverage", "is_correct": false }
+    ],
+    "explanation": "Disasters are defined by the need for external assistance because local capacity is exceeded."
+  },
+  {
+    "question": "In the disaster management cycle, when does mitigation occur?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Only after a disaster", "is_correct": false },
+      { "text": "Only before a disaster", "is_correct": false },
+      { "text": "Continuously across all phases", "is_correct": true },
+      { "text": "During the response phase only", "is_correct": false }
+    ],
+    "explanation": "Mitigation involves ongoing actions to reduce risk and impacts, occurring before, during, and after events."
+  },
+  {
+    "question": "What is the primary formula used to calculate risk?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Hazard × Vulnerability", "is_correct": false },
+      { "text": "Likelihood × Consequence", "is_correct": true },
+      { "text": "Preparedness + Response", "is_correct": false },
+      { "text": "Exposure − Mitigation", "is_correct": false }
+    ],
+    "explanation": "Risk is the product of the probability of an event and its potential impact."
+  },
+  {
+    "question": "Which activity is considered a nonstructural mitigation measure?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Building a sea wall", "is_correct": false },
+      { "text": "Retrofitting a bridge", "is_correct": false },
+      { "text": "Enacting zoning regulations", "is_correct": true },
+      { "text": "Constructing a dam", "is_correct": false }
+    ],
+    "explanation": "Nonstructural mitigation involves modifying behaviors or regulations rather than engineering physical structures."
+  },
+  {
+    "question": "What distinguishes a complex humanitarian emergency from a natural disaster?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Higher death toll", "is_correct": false },
+      { "text": "Breakdown of authority and internal conflict", "is_correct": true },
+      { "text": "Caused by weather events", "is_correct": false },
+      { "text": "Rapid onset of symptoms", "is_correct": false }
+    ],
+    "explanation": "Complex emergencies involve political instability and conflict, complicating response beyond natural factors."
+  },
+  {
+    "question": "Which phase of emergency management focuses on returning systems to normal?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Mitigation", "is_correct": false },
+      { "text": "Preparedness", "is_correct": false },
+      { "text": "Response", "is_correct": false },
+      { "text": "Recovery", "is_correct": true }
+    ],
+    "explanation": "Recovery involves repairing damages and restoring services after the immediate emergency passes."
+  },
+  {
+    "question": "What is the primary function of the Incident Command System?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To fund recovery operations", "is_correct": false },
+      { "text": "To standardize on-scene command and control", "is_correct": true },
+      { "text": "To predict weather patterns", "is_correct": false },
+      { "text": "To write international treaties", "is_correct": false }
+    ],
+    "explanation": "ICS provides a standardized hierarchy and procedure for managing emergency response operations."
+  },
+  {
+    "question": "Why is the media considered a double-edged sword in disasters?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It rarely covers international events", "is_correct": false },
+      { "text": "It raises awareness but may spread misinformation", "is_correct": true },
+      { "text": "It provides funding but demands control", "is_correct": false },
+      { "text": "It coordinates NGOs but ignores government", "is_correct": false }
+    ],
+    "explanation": "Media effectively broadcasts warnings and needs but can also perpetuate myths and inaccuracies."
+  },
+  {
+    "question": "Which factor most significantly increases vulnerability in developing nations?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Low population density", "is_correct": false },
+      { "text": "Rapid, unplanned urbanization", "is_correct": true },
+      { "text": "Excessive insurance coverage", "is_correct": false },
+      { "text": "Strict building codes", "is_correct": false }
+    ],
+    "explanation": "Unplanned urbanization concentrates populations in high-risk areas with poor infrastructure."
+  },
+  {
+    "question": "What is the primary goal of the Hyogo Framework for Action?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To increase military spending", "is_correct": false },
+      { "text": "To build resilience to disasters", "is_correct": true },
+      { "text": "To privatize emergency response", "is_correct": false },
+      { "text": "To eliminate all natural hazards", "is_correct": false }
+    ],
+    "explanation": "The Hyogo Framework aims to substantially reduce disaster losses by building community resilience."
+  },
+  {
+    "question": "Which hazard is categorized as 'creeping' or slow-onset?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Earthquake", "is_correct": false },
+      { "text": "Tornado", "is_correct": false },
+      { "text": "Drought", "is_correct": true },
+      { "text": "Landslide", "is_correct": false }
+    ],
+    "explanation": "Droughts develop gradually over extended periods, unlike sudden-onset hazards like earthquakes."
+  },
+  {
+    "question": "What is the purpose of a risk matrix?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To calculate insurance premiums", "is_correct": false },
+      { "text": "To compare likelihood and consequence", "is_correct": true },
+      { "text": "To track supply inventory", "is_correct": false },
+      { "text": "To map geographic fault lines", "is_correct": false }
+    ],
+    "explanation": "A risk matrix plots hazards based on probability and impact to prioritize treatment."
+  },
+  {
+    "question": "Which action represents risk transfer?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Building a levee", "is_correct": false },
+      { "text": "Purchasing insurance", "is_correct": true },
+      { "text": "Conducting evacuation drills", "is_correct": false },
+      { "text": "Zoning restrictions", "is_correct": false }
+    ],
+    "explanation": "Insurance shifts the financial burden of a risk to a third party."
+  },
+  {
+    "question": "What is the main challenge of donor-driven recovery?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Lack of funds", "is_correct": false },
+      { "text": "Projects may not meet local needs", "is_correct": true },
+      { "text": "Too much local coordination", "is_correct": false },
+      { "text": "Strict adherence to building codes", "is_correct": false }
+    ],
+    "explanation": "Donors may dictate projects based on external priorities rather than actual community requirements."
+  },
+  {
+    "question": "Which UN body coordinates international humanitarian response?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "WHO", "is_correct": false },
+      { "text": "OCHA", "is_correct": true },
+      { "text": "UNESCO", "is_correct": false },
+      { "text": "IMF", "is_correct": false }
+    ],
+    "explanation": "OCHA is mandated to coordinate humanitarian response during complex emergencies and natural disasters."
+  },
+  {
+    "question": "What is 'donor fatigue'?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Physical exhaustion of aid workers", "is_correct": false },
+      { "text": "Reduced giving due to frequent crises", "is_correct": true },
+      { "text": "Running out of supplies", "is_correct": false },
+      { "text": "Government refusal of aid", "is_correct": false }
+    ],
+    "explanation": "Repeated appeals for aid can lead to decreased public and governmental financial support."
+  },
+  {
+    "question": "Which is a characteristic of effective public warning systems?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Reliance on single communication channel", "is_correct": false },
+      { "text": "Public education on how to react", "is_correct": true },
+      { "text": "Issuing warnings only after impact", "is_correct": false },
+      { "text": "Complex technical jargon", "is_correct": false }
+    ],
+    "explanation": "Warnings are useless if the public does not understand them or know how to act."
+  },
+  {
+    "question": "What role does the military typically play in disaster response?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Long-term political governance", "is_correct": false },
+      { "text": "Logistics and heavy lift support", "is_correct": true },
+      { "text": "Drafting insurance policies", "is_correct": false },
+      { "text": "Managing local schools", "is_correct": false }
+    ],
+    "explanation": "Militaries provide rapid logistics, transport, and manpower support during immediate response phases."
+  },
+  {
+    "question": "What is the primary focus of the Sphere Project?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Military engagement rules", "is_correct": false },
+      { "text": "Minimum standards in humanitarian response", "is_correct": true },
+      { "text": "Global trade tariffs", "is_correct": false },
+      { "text": "Political election monitoring", "is_correct": false }
+    ],
+    "explanation": "Sphere establishes minimum standards for water, food, shelter, and health in humanitarian response."
+  },
+  {
+    "question": "Which factor most influences risk perception?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Mathematical probability", "is_correct": false },
+      { "text": "Qualitative factors like dread", "is_correct": true },
+      { "text": "Historical data accuracy", "is_correct": false },
+      { "text": "Government reports", "is_correct": false }
+    ],
+    "explanation": "People often fear risks that are 'dreadful' or uncontrollable more than statistically likely ones."
+  },
+  {
+    "question": "What is the definition of mitigation?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Actions to save lives during a crash", "is_correct": false },
+      { "text": "Sustained actions to reduce long-term risk", "is_correct": true },
+      { "text": "Rebuilding houses after a fire", "is_correct": false },
+      { "text": "Stockpiling food for an emergency", "is_correct": false }
+    ],
+    "explanation": "Mitigation aims to reduce or eliminate the risks to people and property before disasters occur."
+  },
+  {
+    "question": "Which is an example of structural mitigation?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Purchase of flood insurance", "is_correct": false },
+      { "text": "Construction of a levee", "is_correct": true },
+      { "text": "Land-use zoning", "is_correct": false },
+      { "text": "Public awareness campaigns", "is_correct": false }
+    ],
+    "explanation": "Structural mitigation involves physical engineering or construction to control hazard forces."
+  },
+  {
+    "question": "Why might a government refuse international aid?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "To save face or assert sovereignty", "is_correct": true },
+      { "text": "It has too many resources", "is_correct": false },
+      { "text": "Aid is always expensive", "is_correct": false },
+      { "text": "NGOs require repayment", "is_correct": false }
+    ],
+    "explanation": "Governments may fear appearing weak or losing control over their internal affairs."
+  },
+  {
+    "question": "What is the 'CNN Effect'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Reduced funding for disasters", "is_correct": false },
+      { "text": "24-hour coverage driving policy response", "is_correct": true },
+      { "text": "Accurate scientific reporting", "is_correct": false },
+      { "text": "Government censorship of media", "is_correct": false }
+    ],
+    "explanation": "Real-time media coverage pressures governments to act and donors to give."
+  },
+  {
+    "question": "Which activity is part of the preparedness phase?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Building a dam", "is_correct": false },
+      { "text": "Conducting evacuation drills", "is_correct": true },
+      { "text": "Search and rescue", "is_correct": false },
+      { "text": "Debris removal", "is_correct": false }
+    ],
+    "explanation": "Preparedness involves planning and training to ensure effective response when a disaster occurs."
+  },
+  {
+    "question": "What is a 'compound emergency'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "A very expensive disaster", "is_correct": false },
+      { "text": "Multiple hazard events occurring simultaneously", "is_correct": true },
+      { "text": "An event involving only one agency", "is_correct": false },
+      { "text": "A disaster affecting only rich nations", "is_correct": false }
+    ],
+    "explanation": "Compound emergencies involve concurrent or sequential disasters, complicating response efforts."
+  },
+  {
+    "question": "Which UN mechanism organizes funding appeals for major disasters?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "The Security Council", "is_correct": false },
+      { "text": "Consolidated Appeals Process (CAP)", "is_correct": true },
+      { "text": "The World Bank", "is_correct": false },
+      { "text": "NATO", "is_correct": false }
+    ],
+    "explanation": "CAP coordinates fundraising among aid organizations to prevent gaps and duplication."
+  },
+  {
+    "question": "How does poverty correlate with disaster impact?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Poverty reduces vulnerability", "is_correct": false },
+      { "text": "Poor nations suffer higher mortality", "is_correct": true },
+      { "text": "Wealthy nations have more disasters", "is_correct": false },
+      { "text": "No correlation exists", "is_correct": false }
+    ],
+    "explanation": "Poor nations lack resources for mitigation and response, leading to higher death tolls."
+  },
+  {
+    "question": "What defines a 'technological hazard'?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Events originating from natural processes", "is_correct": false },
+      { "text": "Failures in human-made systems", "is_correct": true },
+      { "text": "Deliberate attacks by terrorists", "is_correct": false },
+      { "text": "Spread of infectious disease", "is_correct": false }
+    ],
+    "explanation": "Technological hazards arise from failures in infrastructure, industry, or transportation systems."
+  },
+  {
+    "question": "What is the primary purpose of 'triage' in mass casualty events?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "To treat everyone equally", "is_correct": false },
+      { "text": "To prioritize treatment based on severity", "is_correct": true },
+      { "text": "To identify the dead", "is_correct": false },
+      { "text": "To document legal liability", "is_correct": false }
+    ],
+    "explanation": "Triage maximizes survival by treating those with the most urgent, survivable needs first."
+  },
+  {
+    "question": "Which concept refers to the ability to resist, absorb, and recover from hazards?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Vulnerability", "is_correct": false },
+      { "text": "Resilience", "is_correct": true },
+      { "text": "Exposure", "is_correct": false },
+      { "text": "Probability", "is_correct": false }
+    ],
+    "explanation": "Resilience is the capacity of a system to maintain function despite disturbances."
+  },
+  {
+    "question": "What is a major limitation of using the military for disaster relief?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Lack of equipment", "is_correct": false },
+      { "text": "High cost and sovereignty concerns", "is_correct": true },
+      { "text": "Inability to deploy quickly", "is_correct": false },
+      { "text": "Lack of command structure", "is_correct": false }
+    ],
+    "explanation": "Military assets are expensive and their presence can raise political or sovereignty issues."
+  },
+  {
+    "question": "Which term describes 'actions taken immediately before, during, and after a disaster'?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Mitigation", "is_correct": false },
+      { "text": "Preparedness", "is_correct": false },
+      { "text": "Response", "is_correct": true },
+      { "text": "Recovery", "is_correct": false }
+    ],
+    "explanation": "Response involves immediate actions to save lives and protect property during an event."
+  },
+  {
+    "question": "What is the role of an Emergency Operations Center (EOC)?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "To house displaced victims", "is_correct": false },
+      { "text": "To coordinate information and resources", "is_correct": true },
+      { "text": "To store medical supplies", "is_correct": false },
+      { "text": "To train first responders", "is_correct": false }
+    ],
+    "explanation": "The EOC serves as a central command and coordination hub during an incident."
+  },
+  {
+    "question": "Which is an example of an intentional hazard?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Hurricane", "is_correct": false },
+      { "text": "Terrorism", "is_correct": true },
+      { "text": "Nuclear power plant failure", "is_correct": false },
+      { "text": "Pandemic flu", "is_correct": false }
+    ],
+    "explanation": "Intentional hazards involve deliberate human actions to cause harm."
+  },
+  {
+    "question": "What distinguishes 'short-term' from 'long-term' recovery?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Cost of operations", "is_correct": false },
+      { "text": "Restoring vital services vs. redevelopment", "is_correct": true },
+      { "text": "Involvement of the military", "is_correct": false },
+      { "text": "The type of hazard involved", "is_correct": false }
+    ],
+    "explanation": "Short-term focuses on immediate needs; long-term focuses on reconstruction and betterment."
+  },
+  {
+    "question": "Which organization primarily provides development loans for infrastructure?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "World Health Organization", "is_correct": false },
+      { "text": "World Bank", "is_correct": true },
+      { "text": "Red Cross", "is_correct": false },
+      { "text": "UNICEF", "is_correct": false }
+    ],
+    "explanation": "The World Bank funds long-term development and reconstruction projects."
+  },
+  {
+    "question": "What does the 'Code of Conduct' for NGOs emphasize?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Profit maximization", "is_correct": false },
+      { "text": "Independence and impartiality", "is_correct": true },
+      { "text": "Military cooperation", "is_correct": false },
+      { "text": "Government alignment", "is_correct": false }
+    ],
+    "explanation": "NGOs strive to provide aid based on need alone, independent of political objectives."
+  },
+  {
+    "question": "Why is 'corruption' a significant issue in disaster management?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It speeds up aid delivery", "is_correct": false },
+      { "text": "It diverts resources from victims", "is_correct": true },
+      { "text": "It increases donor confidence", "is_correct": false },
+      { "text": "It is required for logistics", "is_correct": false }
+    ],
+    "explanation": "Corruption reduces the effectiveness of aid and erodes trust with donors and victims."
+  },
+  {
+    "question": "What is the primary purpose of 'business continuity planning'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To prevent natural hazards", "is_correct": false },
+      { "text": "To maintain critical functions during crises", "is_correct": true },
+      { "text": "To increase market share", "is_correct": false },
+      { "text": "To comply with tax laws", "is_correct": false }
+    ],
+    "explanation": "BCP ensures organizations can continue operating despite disruptions."
+  },
+  {
+    "question": "Which hazard is most associated with the 'Ring of Fire'?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Tornadoes", "is_correct": false },
+      { "text": "Earthquakes and volcanoes", "is_correct": true },
+      { "text": "Blizzards", "is_correct": false },
+      { "text": "Droughts", "is_correct": false }
+    ],
+    "explanation": "The Ring of Fire is a seismically active zone in the Pacific Ocean basin."
+  },
+  {
+    "question": "What is 'social vulnerability'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Physical weakness of buildings", "is_correct": false },
+      { "text": "Susceptibility based on social factors", "is_correct": true },
+      { "text": "Lack of insurance", "is_correct": false },
+      { "text": "Exposure to media criticism", "is_correct": false }
+    ],
+    "explanation": "Social vulnerability refers to characteristics like age, poverty, or race that increase risk."
+  },
+  {
+    "question": "Which step is critical in the hazard identification process?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Purchasing supplies", "is_correct": false },
+      { "text": "Mapping potential threats", "is_correct": true },
+      { "text": "Drafting press releases", "is_correct": false },
+      { "text": "Hiring new staff", "is_correct": false }
+    ],
+    "explanation": "Hazard identification requires determining what threats exist and where they might occur."
+  },
+  {
+    "question": "What is the main advantage of 'tabletop exercises'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "They test physical equipment", "is_correct": false },
+      { "text": "They allow discussion of plans without stress", "is_correct": true },
+      { "text": "They are expensive and realistic", "is_correct": false },
+      { "text": "They deploy resources to the field", "is_correct": false }
+    ],
+    "explanation": "Tabletop exercises are discussion-based, low-stress ways to review roles and procedures."
+  },
+  {
+    "question": "What is a 'slow-onset' disaster?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Flash flood", "is_correct": false },
+      { "text": "Famine", "is_correct": true },
+      { "text": "Tsunami", "is_correct": false },
+      { "text": "Explosion", "is_correct": false }
+    ],
+    "explanation": "Slow-onset disasters like famine or drought emerge gradually over time."
+  },
+  {
+    "question": "Why is 'community-based disaster management' effective?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It relies solely on foreign aid", "is_correct": false },
+      { "text": "It utilizes local knowledge and ownership", "is_correct": true },
+      { "text": "It bypasses government regulations", "is_correct": false },
+      { "text": "It is cheaper than mitigation", "is_correct": false }
+    ],
+    "explanation": "Locals know their environment best and are the first responders in any event."
+  },
+  {
+    "question": "What is the 'CNN Effect' in the context of international aid?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Decreased funding due to coverage", "is_correct": false },
+      { "text": "Aid driven by media visibility", "is_correct": true },
+      { "text": "Accurate reporting of all crises", "is_correct": false },
+      { "text": "Increased government censorship", "is_correct": false }
+    ],
+    "explanation": "Disasters with high media visibility attract disproportionate funding compared to silent crises."
+  },
+  {
+    "question": "Which is a characteristic of 'resilient' infrastructure?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Rigidity and inflexibility", "is_correct": false },
+      { "text": "Redundancy and robustness", "is_correct": true },
+      { "text": "Low cost and temporary materials", "is_correct": false },
+      { "text": "Single points of failure", "is_correct": false }
+    ],
+    "explanation": "Resilience requires systems to absorb shocks (robustness) and have backups (redundancy)."
+  },
+  {
+    "question": "What is the primary role of the Cluster System in UN response?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "To confuse local governments", "is_correct": false },
+      { "text": "To coordinate sectors like health/shelter", "is_correct": true },
+      { "text": "To fund military operations", "is_correct": false },
+      { "text": "To enforce international law", "is_correct": false }
+    ],
+    "explanation": "Clusters organize response by sector (e.g., Health, WASH) to improve coordination."
+  },
+  {
+    "question": "Which represents a 'tangible' loss?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Loss of cultural heritage", "is_correct": false },
+      { "text": "Destruction of a bridge", "is_correct": true },
+      { "text": "Psychological trauma", "is_correct": false },
+      { "text": "Loss of community trust", "is_correct": false }
+    ],
+    "explanation": "Tangible losses are physical assets that can be financially quantified and replaced."
+  },
+  {
+    "question": "What is 'mitigation' in the context of climate change?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Building sea walls", "is_correct": false },
+      { "text": "Reducing greenhouse gas emissions", "is_correct": true },
+      { "text": "Evacuating coastal cities", "is_correct": false },
+      { "text": "Buying flood insurance", "is_correct": false }
+    ],
+    "explanation": "Climate mitigation focuses on reducing the causes (emissions), while adaptation addresses impacts."
+  },
+  {
+    "question": "Why are 'early warning systems' crucial?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "They prevent hazards from happening", "is_correct": false },
+      { "text": "They provide time for protective action", "is_correct": true },
+      { "text": "They calculate insurance costs", "is_correct": false },
+      { "text": "They replace emergency responders", "is_correct": false }
+    ],
+    "explanation": "Early warnings allow populations to evacuate or secure assets before impact."
+  },
+  {
+    "question": "What is a 'secondary hazard'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A hazard that occurs frequently", "is_correct": false },
+      { "text": "A hazard triggered by a primary event", "is_correct": true },
+      { "text": "A hazard with low impact", "is_correct": false },
+      { "text": "A hazard caused by humans", "is_correct": false }
+    ],
+    "explanation": "Secondary hazards (e.g., fires after an earthquake) result from the initial event."
+  },
+  {
+    "question": "Which agency typically leads US international disaster response?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "FEMA", "is_correct": false },
+      { "text": "USAID/OFDA", "is_correct": true },
+      { "text": "Department of Homeland Security", "is_correct": false },
+      { "text": "CDC", "is_correct": false }
+    ],
+    "explanation": "USAID's Office of Foreign Disaster Assistance (OFDA) coordinates US international aid."
+  },
+  {
+    "question": "What is the function of the International Red Cross (ICRC)?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Economic development", "is_correct": false },
+      { "text": "Protection in conflict zones", "is_correct": true },
+      { "text": "Political lobbying", "is_correct": false },
+      { "text": "Scientific research", "is_correct": false }
+    ],
+    "explanation": "The ICRC focuses on protecting victims of armed conflict and internal violence."
+  },
+  {
+    "question": "What does 'capacity building' entail?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Constructing large warehouses", "is_correct": false },
+      { "text": "Strengthening local skills and systems", "is_correct": true },
+      { "text": "Importing foreign workers", "is_correct": false },
+      { "text": "Reducing government oversight", "is_correct": false }
+    ],
+    "explanation": "Capacity building develops the ability of locals to manage their own risks."
+  },
+  {
+    "question": "Which is a 'technological' disaster?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Volcanic eruption", "is_correct": false },
+      { "text": "Nuclear plant meltdown", "is_correct": true },
+      { "text": "Heat wave", "is_correct": false },
+      { "text": "Viral pandemic", "is_correct": false }
+    ],
+    "explanation": "Nuclear meltdowns result from failures in human technology, not natural processes."
+  },
+  {
+    "question": "What does 'risk acceptance' mean?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Ignoring a risk completely", "is_correct": false },
+      { "text": "Deciding the cost of mitigation exceeds benefits", "is_correct": true },
+      { "text": "Buying insurance", "is_correct": false },
+      { "text": "Evacuating an area", "is_correct": false }
+    ],
+    "explanation": "Risk acceptance involves tolerating a risk because fixing it is too difficult/costly."
+  },
+  {
+    "question": "Which phase involves 'lessons learned'?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Response", "is_correct": false },
+      { "text": "Recovery/Mitigation", "is_correct": true },
+      { "text": "Impact", "is_correct": false },
+      { "text": "Warning", "is_correct": false }
+    ],
+    "explanation": "After recovery, lessons are analyzed to improve future mitigation and preparedness."
+  },
+  {
+    "question": "What defines 'sustainable recovery'?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Rebuilding exactly as before", "is_correct": false },
+      { "text": "Rebuilding to reduce future risk", "is_correct": true },
+      { "text": "Using only imported materials", "is_correct": false },
+      { "text": "Focusing only on the economy", "is_correct": false }
+    ],
+    "explanation": "Sustainable recovery (“build back better”) addresses root causes to prevent recurrence."
+  },
+  {
+    "question": "What is the 'sphere of control' in ICS?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "The geographic area of a disaster", "is_correct": false },
+      { "text": "Number of subordinates a supervisor manages", "is_correct": true },
+      { "text": "The budget limit for a project", "is_correct": false },
+      { "text": "The range of radio communications", "is_correct": false }
+    ],
+    "explanation": "Span of control refers to the manageable number of direct reports (usually 3-7)."
+  },
+  {
+    "question": "Which factor complicates international disaster response?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Standardized equipment", "is_correct": false },
+      { "text": "Sovereignty and visa issues", "is_correct": true },
+      { "text": "Universal language", "is_correct": false },
+      { "text": "Unlimited funding", "is_correct": false }
+    ],
+    "explanation": "Respecting national sovereignty and navigating customs/visas slows international aid deployment."
+  },
+  {
+    "question": "What is 'hazard profiling'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Predicting exact dates of events", "is_correct": false },
+      { "text": "Defining physical characteristics of hazards", "is_correct": true },
+      { "text": "Creating a budget for response", "is_correct": false },
+      { "text": "Training staff on safety", "is_correct": false }
+    ],
+    "explanation": "Profiling involves analyzing magnitude, frequency, duration, and spatial extent of hazards."
+  },
+  {
+    "question": "Why are 'development' and 'disaster management' linked?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "They compete for the same funds", "is_correct": false },
+      { "text": "Disasters erase development gains", "is_correct": true },
+      { "text": "They use different personnel", "is_correct": false },
+      { "text": "Development causes all disasters", "is_correct": false }
+    ],
+    "explanation": "Disasters destroy infrastructure/economy; development can increase or decrease disaster vulnerability."
+  },
+  {
+    "question": "What is the primary role of NGOs in disasters?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "To take over the government", "is_correct": false },
+      { "text": "To provide specialized humanitarian services", "is_correct": true },
+      { "text": "To enforce military law", "is_correct": false },
+      { "text": "To manage the stock market", "is_correct": false }
+    ],
+    "explanation": "NGOs fill gaps in government capacity by providing food, health, and shelter."
+  },
+  {
+    "question": "Which represents a 'preparedness' activity?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Clearing debris after a storm", "is_correct": false },
+      { "text": "Stockpiling emergency supplies", "is_correct": true },
+      { "text": "Reviewing insurance claims", "is_correct": false },
+      { "text": "Replanting a forest", "is_correct": false }
+    ],
+    "explanation": "Stockpiling ensures resources are available when a disaster strikes."
+  },
+  {
+    "question": "What is 'risk' in the context of disaster management?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "The event itself", "is_correct": false },
+      { "text": "Potential for loss", "is_correct": true },
+      { "text": "The cost of recovery", "is_correct": false },
+      { "text": "The emergency response plan", "is_correct": false }
+    ],
+    "explanation": "Risk quantifies the potential for loss based on hazard, exposure, and vulnerability."
+  },
+  {
+    "question": "Which is an 'indirect' loss?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Destroyed building", "is_correct": false },
+      { "text": "Lost tourism revenue", "is_correct": true },
+      { "text": "Broken arm", "is_correct": false },
+      { "text": "Flooded car", "is_correct": false }
+    ],
+    "explanation": "Indirect losses (e.g., economic downturn) are consequences of direct physical damage."
+  },
+  {
+    "question": "What is the main function of the World Food Programme (WFP)?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Building shelters", "is_correct": false },
+      { "text": "Combating hunger logistics", "is_correct": true },
+      { "text": "Providing medical care", "is_correct": false },
+      { "text": "Clearing landmines", "is_correct": false }
+    ],
+    "explanation": "WFP is the UN agency responsible for food aid and logistics."
+  },
+  {
+    "question": "Why is 'gender' a critical factor in vulnerability?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It isn't; disasters affect everyone equally", "is_correct": false },
+      { "text": "Women often lack access to resources", "is_correct": true },
+      { "text": "Men are naturally immune to hazards", "is_correct": false },
+      { "text": "Women control all emergency planning", "is_correct": false }
+    ],
+    "explanation": "Social structures often limit women's access to information, resources, and decision-making power."
+  },
+  {
+    "question": "What is the 'International Strategy for Disaster Reduction' (ISDR)?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "A military alliance", "is_correct": false },
+      { "text": "A UN framework to reduce global risk", "is_correct": true },
+      { "text": "An insurance company", "is_correct": false },
+      { "text": "A medical research group", "is_correct": false }
+    ],
+    "explanation": "ISDR coordinates global efforts to reduce disaster losses and build resilience."
+  },
+  {
+    "question": "Which is a 'biological' hazard?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Flood", "is_correct": false },
+      { "text": "Pandemic", "is_correct": true },
+      { "text": "Explosion", "is_correct": false },
+      { "text": "Landslide", "is_correct": false }
+    ],
+    "explanation": "Pandemics involve living organisms (viruses/bacteria), making them biological hazards."
+  },
+  {
+    "question": "What is 'mutual aid'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Paying for services upfront", "is_correct": false },
+      { "text": "Agreements to share resources across jurisdictions", "is_correct": true },
+      { "text": "Refusing outside help", "is_correct": false },
+      { "text": "Depending solely on federal aid", "is_correct": false }
+    ],
+    "explanation": "Mutual aid allows jurisdictions to lend assistance to one another during emergencies."
+  },
+  {
+    "question": "What is the risk of 'spontaneous volunteers'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "They are too expensive", "is_correct": false },
+      { "text": "They can be unmanaged and unsafe", "is_correct": true },
+      { "text": "They are always professionals", "is_correct": false },
+      { "text": "They refuse to work", "is_correct": false }
+    ],
+    "explanation": "Without coordination, untrained volunteers can interfere with operations and risk safety."
+  },
+  {
+    "question": "Which is a goal of 'recovery'?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Deploying search teams", "is_correct": false },
+      { "text": "Restoring the community to better conditions", "is_correct": true },
+      { "text": "Issuing storm warnings", "is_correct": false },
+      { "text": "Conducting risk assessments", "is_correct": false }
+    ],
+    "explanation": "Recovery aims to restore normalcy and improve resilience against future events."
+  },
+  {
+    "question": "What makes 'coordination' difficult in international disasters?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Too few organizations respond", "is_correct": false },
+      { "text": "Multiplicity of independent actors", "is_correct": true },
+      { "text": "Universal standardization of protocols", "is_correct": false },
+      { "text": "Lack of interest from donors", "is_correct": false }
+    ],
+    "explanation": "Hundreds of diverse agencies with different mandates make centralized coordination challenging."
+  },
+  {
+    "question": "What is a 'needs assessment'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Counting the dead", "is_correct": false },
+      { "text": "Determining what the affected population requires", "is_correct": true },
+      { "text": "Calculating the cost of the disaster", "is_correct": false },
+      { "text": "Identifying the cause of the hazard", "is_correct": false }
+    ],
+    "explanation": "Needs assessments identify gaps between what is available and what is required."
+  },
+  {
+    "question": "Which is a 'geological' hazard?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Hurricane", "is_correct": false },
+      { "text": "Volcanic eruption", "is_correct": true },
+      { "text": "Flu outbreak", "is_correct": false },
+      { "text": "Chemical spill", "is_correct": false }
+    ],
+    "explanation": "Volcanoes originate from earth processes, making them geological hazards."
+  },
+  {
+    "question": "What is the function of the 'Logistics' section in ICS?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Directing tactical operations", "is_correct": false },
+      { "text": "Providing support, resources, and services", "is_correct": true },
+      { "text": "Handling the budget", "is_correct": false },
+      { "text": "Tracking the media", "is_correct": false }
+    ],
+    "explanation": "Logistics ensures responders have the equipment, food, and facilities needed to operate."
+  },
+  {
+    "question": "What is 'hazard probability'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "The damage a hazard causes", "is_correct": false },
+      { "text": "Likelihood a hazard will occur", "is_correct": true },
+      { "text": "The area a hazard covers", "is_correct": false },
+      { "text": "The speed of onset", "is_correct": false }
+    ],
+    "explanation": "Probability measures how frequently or likely an event is to happen."
+  },
+  {
+    "question": "Which represents 'political' vulnerability?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Living in a floodplain", "is_correct": false },
+      { "text": "Lack of voice or representation", "is_correct": true },
+      { "text": "Low income", "is_correct": false },
+      { "text": "Weak immune system", "is_correct": false }
+    ],
+    "explanation": "Political vulnerability stems from an inability to influence decisions affecting one's safety."
+  },
+  {
+    "question": "Why is 'debris management' a critical recovery task?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It looks nice", "is_correct": false },
+      { "text": "It clears access for reconstruction", "is_correct": true },
+      { "text": "It is the cheapest task", "is_correct": false },
+      { "text": "It requires no specialized equipment", "is_correct": false }
+    ],
+    "explanation": "Debris blocks access, poses health risks, and prevents rebuilding until cleared."
+  },
+  {
+    "question": "What is the primary mandate of UNHCR?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "To feed the world", "is_correct": false },
+      { "text": "To protect refugees", "is_correct": true },
+      { "text": "To stop wars", "is_correct": false },
+      { "text": "To cure diseases", "is_correct": false }
+    ],
+    "explanation": "UNHCR focuses on the rights and well-being of refugees and displaced persons."
+  },
+  {
+    "question": "What is a 'retrofitting' project?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Building a new house", "is_correct": false },
+      { "text": "Strengthening existing structures", "is_correct": true },
+      { "text": "Demolishing old buildings", "is_correct": false },
+      { "text": "Insuring property", "is_correct": false }
+    ],
+    "explanation": "Retrofitting modifies existing structures to better withstand hazard forces."
+  },
+  {
+    "question": "Which is an example of 'soft' mitigation?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Building a sea wall", "is_correct": false },
+      { "text": "Education and awareness", "is_correct": true },
+      { "text": "Reinforcing a dam", "is_correct": false },
+      { "text": "Burying power lines", "is_correct": false }
+    ],
+    "explanation": "Soft (nonstructural) mitigation involves knowledge, planning, and policy rather than construction."
+  },
+  {
+    "question": "What defines a 'mega-disaster'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It happens in a city", "is_correct": false },
+      { "text": "It exceeds national capacity to respond", "is_correct": true },
+      { "text": "It involves only one type of hazard", "is_correct": false },
+      { "text": "It is resolved in 24 hours", "is_correct": false }
+    ],
+    "explanation": "Mega-disasters overwhelm national resources, requiring international intervention."
+  },
+  {
+    "question": "Which is a 'hydrological' hazard?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Earthquake", "is_correct": false },
+      { "text": "Flood", "is_correct": true },
+      { "text": "Volcano", "is_correct": false },
+      { "text": "Wildfire", "is_correct": false }
+    ],
+    "explanation": "Floods relate to the movement and distribution of water (hydrology)."
+  },
+  {
+    "question": "What is the purpose of 'contingency planning'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To react spontaneously", "is_correct": false },
+      { "text": "To prepare for specific future scenarios", "is_correct": true },
+      { "text": "To calculate past losses", "is_correct": false },
+      { "text": "To avoid all risks", "is_correct": false }
+    ],
+    "explanation": "Contingency planning establishes specific procedures for identified potential events."
+  },
+  {
+    "question": "Why is 'local capacity' important in disaster response?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Locals are the first on the scene", "is_correct": true },
+      { "text": "Locals have the most money", "is_correct": false },
+      { "text": "Locals control the UN", "is_correct": false },
+      { "text": "Locals prevent all hazards", "is_correct": false }
+    ],
+    "explanation": "Immediate survival depends on local action before international aid arrives."
+  },
+  {
+    "question": "What is the main goal of 'sustainable development' in DM?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "To maximize short-term profit", "is_correct": false },
+      { "text": "To meet present needs without compromising the future", "is_correct": true },
+      { "text": "To stop all construction", "is_correct": false },
+      { "text": "To ignore environmental impacts", "is_correct": false }
+    ],
+    "explanation": "Sustainable development ensures progress does not create new risks for future generations."
+  },
+  {
+    "question": "Which agency is part of the US Department of Homeland Security?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "WHO", "is_correct": false },
+      { "text": "FEMA", "is_correct": true },
+      { "text": "NATO", "is_correct": false },
+      { "text": "UNICEF", "is_correct": false }
+    ],
+    "explanation": "FEMA is the US federal agency responsible for emergency management under DHS."
+  }
+]

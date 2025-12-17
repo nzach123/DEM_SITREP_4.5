@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:325dc5352c3f8fbad363e7c2f534aa3ccc4dd4bb054cb2bacebff13a479ca1b3
-size 406
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d0k1fxlhs1dn0"
+path="res://.godot/imported/tick_001.ogg-94a11e654762b8d3a882095afcc475d9.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ClickSFX/tick_001.ogg"
+dest_files=["res://.godot/imported/tick_001.ogg-94a11e654762b8d3a882095afcc475d9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

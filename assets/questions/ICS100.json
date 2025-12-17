@@ -1,3 +1,838 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5ff9c803ba41d9ff680388ea4115402cb44e285c4c29955734a0ff52be60715
-size 42645
+[
+  {
+    "question": "What is the definition of an incident in ICS?",
+    "difficulty": 0.1,
+    "answers": [
+      { "text": "An occurrence requiring response to prevent loss or damage", "is_correct": true },
+      { "text": "A pre-planned non-emergency activity", "is_correct": false },
+      { "text": "Any event involving multiple agencies", "is_correct": false },
+      { "text": "A situation managed solely by law enforcement", "is_correct": false }
+    ],
+    [cite_start]"explanation": "An incident is an occurrence, caused by humans or nature, requiring response to prevent or minimize loss of life or damage. [cite: 76]"
+  },
+  {
+    "question": "What distinguishes an event from an incident in ICS?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Events are non-emergency pre-planned occurrences", "is_correct": true },
+      { "text": "Events involve natural disasters only", "is_correct": false },
+      { "text": "Events do not require the ICS structure", "is_correct": false },
+      { "text": "Events are always smaller than incidents", "is_correct": false }
+    ],
+    [cite_start]"explanation": "An event is a non-emergency pre-planned occurrence or activity, whereas an incident requires a response to prevent loss. [cite: 77]"
+  },
+  {
+    "question": "Which management function is responsible for all incident activity?",
+    "difficulty": 0.1,
+    "answers": [
+      { "text": "Command", "is_correct": true },
+      { "text": "Planning", "is_correct": false },
+      { "text": "Operations", "is_correct": false },
+      { "text": "Logistics", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Incident Commander is responsible for all incident or event activity. [cite: 143]"
+  },
+  {
+    "question": "What is the primary function of the Operations Section?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Directing tactical actions to meet incident objectives", "is_correct": true },
+      { "text": "Collecting and evaluating incident information", "is_correct": false },
+      { "text": "Providing services and support to responders", "is_correct": false },
+      { "text": "Tracking costs and procurement", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Operations Section is responsible for directing the tactical actions to meet incident objectives. [cite: 145]"
+  },
+  {
+    "question": "Which section is responsible for tracking resources and preparing the IAP?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Planning Section", "is_correct": true },
+      { "text": "Logistics Section", "is_correct": false },
+      { "text": "Finance/Administration Section", "is_correct": false },
+      { "text": "Operations Section", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Planning Section is responsible for collection, evaluation, resource tracking, and preparing the Incident Action Plan. [cite: 146]"
+  },
+  {
+    "question": "What is the primary responsibility of the Logistics Section?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Providing services and support to meet incident needs", "is_correct": true },
+      { "text": "Monitoring incident costs and contracts", "is_correct": false },
+      { "text": "Directing tactical resources", "is_correct": false },
+      { "text": "Releasing information to the media", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Logistics Section is responsible for providing adequate services and support to meet all incident or event needs. [cite: 151]"
+  },
+  {
+    "question": "Why is common terminology critical in ICS communications?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "It prevents confusion caused by codes and jargon", "is_correct": true },
+      { "text": "It encrypts messages for security", "is_correct": false },
+      { "text": "It reduces the volume of radio traffic", "is_correct": false },
+      { "text": "It allows for faster speaking speeds", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Using clear text and avoiding codes or jargon is essential because ambiguous codes and acronyms have proven to be major obstacles. [cite: 188, 190]"
+  },
+  {
+    "question": "What does 'Unity of Command' ensure for an individual responder?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Reporting to only one designated supervisor", "is_correct": true },
+      { "text": "Having authority over all other responders", "is_correct": false },
+      { "text": "Communicating with all sections simultaneously", "is_correct": false },
+      { "text": "Working without direct supervision", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Unity of command means that every individual is accountable to only one designated supervisor to whom they report. [cite: 239]"
+  },
+  {
+    "question": "What is 'Chain of Command' within ICS?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "An orderly line of authority within the organization", "is_correct": true },
+      { "text": "A list of all personnel on site", "is_correct": false },
+      { "text": "The sequence of radio frequencies used", "is_correct": false },
+      { "text": "The transfer of liability between agencies", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Chain of command means that there is an orderly line of authority within the ranks of the organization. [cite: 225]"
+  },
+  {
+    "question": "What characterizes a Unified Command?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Multiple jurisdictions/agencies sharing incident management", "is_correct": true },
+      { "text": "A single commander with absolute authority", "is_correct": false },
+      { "text": "Command staff operating from different locations", "is_correct": false },
+      { "text": "Separation of planning and operations", "is_correct": false }
+    ],
+    [cite_start]"explanation": "In Unified Command, responding agencies or jurisdictions with responsibility for the incident share incident management. [cite: 249]"
+  },
+  {
+    "question": "What is the first priority when setting incident objectives?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Life Safety", "is_correct": true },
+      { "text": "Incident Stabilization", "is_correct": false },
+      { "text": "Property Protection", "is_correct": false },
+      { "text": "Cost Recovery", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The first priority is Life Safety, of responders and others. [cite: 267]"
+  },
+  {
+    "question": "What is the second priority in ICS objectives?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Incident Stabilization", "is_correct": true },
+      { "text": "Life Safety", "is_correct": false },
+      { "text": "Environment Protection", "is_correct": false },
+      { "text": "Resource Tracking", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The second priority is Incident Stabilization, establishing command, strategies, and tactics. [cite: 268]"
+  },
+  {
+    "question": "What is the recommended ratio for an effective span of control?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "One supervisor to five reporting elements", "is_correct": true },
+      { "text": "One supervisor to ten reporting elements", "is_correct": false },
+      { "text": "One supervisor to three reporting elements", "is_correct": false },
+      { "text": "One supervisor to seven reporting elements", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Effective span of control varies from three to seven, but a ratio of one supervisor to five reporting elements is recommended. [cite: 320]"
+  },
+  {
+    "question": "What is an Incident Action Plan (IAP)?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "A plan containing general objectives and strategies", "is_correct": true },
+      { "text": "A financial report of incident costs", "is_correct": false },
+      { "text": "A map of the incident scene", "is_correct": false },
+      { "text": "A list of all injured personnel", "is_correct": false }
+    ],
+    [cite_start]"explanation": "An IAP is a verbal or written plan containing general objectives reflecting the overall strategy for managing an incident. [cite: 284]"
+  },
+  {
+    "question": "What defines a 'modular organization' in ICS?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "It expands top-down based on size and complexity", "is_correct": true },
+      { "text": "It remains static regardless of incident size", "is_correct": false },
+      { "text": "It requires all sections to be activated immediately", "is_correct": false },
+      { "text": "It functions independently of the Incident Commander", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The ICS organizational structure develops in a top-down, modular fashion based on the size and complexity of the incident. [cite: 300]"
+  },
+  {
+    "question": "What are 'tactical resources' in ICS?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Personnel/equipment available for assignment to Operations", "is_correct": true },
+      { "text": "Food and medical supplies for responders", "is_correct": false },
+      { "text": "Fixed facilities like the Command Post", "is_correct": false },
+      { "text": "Administrative staff in the Finance Section", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Tactical resources are personnel and major items of equipment available or potentially available to the Operations function. [cite: 325]"
+  },
+  {
+    "question": "What status indicates a resource is ready for immediate assignment?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Available", "is_correct": true },
+      { "text": "Assigned", "is_correct": false },
+      { "text": "Out-of-Service", "is_correct": false },
+      { "text": "Staged", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Available resources are assembled, have been issued equipment, and are ready for immediate assignment. [cite: 330]"
+  },
+  {
+    "question": "What is the status of a resource working under a Supervisor?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Assigned", "is_correct": true },
+      { "text": "Available", "is_correct": false },
+      { "text": "Deployed", "is_correct": false },
+      { "text": "Active", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Assigned resources are working on an assignment under the direction of a Supervisor. [cite: 329]"
+  },
+  {
+    "question": "What constitutes 'comprehensive resource management'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Categorizing, ordering, dispatching, tracking, and recovering resources", "is_correct": true },
+      { "text": "Ensuring all resources are paid in advance", "is_correct": false },
+      { "text": "Assigning one supervisor to every resource", "is_correct": false },
+      { "text": "Storing all resources at the Incident Base", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Comprehensive resource management includes processes for categorizing, ordering, dispatching, tracking, and recovering resources. [cite: 334-339]"
+  },
+  {
+    "question": "What is the 'Incident Command Post' (ICP)?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "The location for primary tactical-level command functions", "is_correct": true },
+      { "text": "The location where helicopters are parked", "is_correct": false },
+      { "text": "The storage area for out-of-service equipment", "is_correct": false },
+      { "text": "The primary sleeping quarters for staff", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The ICP is the field location at which the primary tactical-level, on scene incident command functions are performed. [cite: 349]"
+  },
+  {
+    "question": "What distinguishes an Incident Base from a Camp?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Primary logistics functions are coordinated at the Base", "is_correct": true },
+      { "text": "Camps are for equipment repair only", "is_correct": false },
+      { "text": "Bases are located off-site, Camps are on-site", "is_correct": false },
+      { "text": "There are multiple Bases but only one Camp", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Base is where primary Logistics functions are coordinated; there is only one Base per incident. [cite: 351, 352]"
+  },
+  {
+    "question": "What is a Staging Area used for?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Holding resources awaiting tactical assignment", "is_correct": true },
+      { "text": "Repairing broken equipment", "is_correct": false },
+      { "text": "Permanent sleeping quarters for crew", "is_correct": false },
+      { "text": "Command staff meetings", "is_correct": false }
+    ],
+    [cite_start]"explanation": "A Staging Area is a location established where resources can be placed while awaiting a tactical assignment. [cite: 353]"
+  },
+  {
+    "question": "What must be developed to ensure responders can communicate?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "An integrated voice and data communications system", "is_correct": true },
+      { "text": "A list of personal cell phone numbers", "is_correct": false },
+      { "text": "A dedicated satellite network for all staff", "is_correct": false },
+      { "text": "A secure internet connection at the ICP", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Developing an integrated voice and data communications system, including equipment, systems, and protocols, must occur prior to an incident. [cite: 359]"
+  },
+  {
+    "question": "What does the 'Command Net' link?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Supervisory personnel from IC down to Supervisors", "is_correct": true },
+      { "text": "All tactical resources on the ground", "is_correct": false },
+      { "text": "The Incident Commander to the media", "is_correct": false },
+      { "text": "Logistics units to vendors", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Command Net is established to link supervisory personnel from Incident Commander down to and including division and group supervisors. [cite: 372]"
+  },
+  {
+    "question": "What is a primary purpose of the 'Check-in' process?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Ensuring personnel accountability", "is_correct": true },
+      { "text": "Issuing personal protective equipment", "is_correct": false },
+      { "text": "Assigning radio frequencies", "is_correct": false },
+      { "text": "Providing food and water", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Check-in officially logs a responder in, and the process helps ensure personnel accountability. [cite: 396-397]"
+  },
+  {
+    "question": "Which position is the only one always staffed in ICS?",
+    "difficulty": 0.1,
+    "answers": [
+      { "text": "Incident Commander", "is_correct": true },
+      { "text": "Operations Section Chief", "is_correct": false },
+      { "text": "Safety Officer", "is_correct": false },
+      { "text": "Planning Section Chief", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Incident Commander is the only position that is always staffed in ICS applications. [cite: 479]"
+  },
+  {
+    "question": "What is a prerequisite for a formal transfer of command?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "A transfer of command briefing", "is_correct": true },
+      { "text": "Approval from the Finance Section", "is_correct": false },
+      { "text": "The arrival of the media", "is_correct": false },
+      { "text": "Completion of the operational period", "is_correct": false }
+    ],
+    [cite_start]"explanation": "A formal transfer of command always requires a transfer of command briefing for the incoming Incident Commander. [cite: 506]"
+  },
+  {
+    "question": "Which officer serves as the conduit for information to stakeholders?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Information Officer", "is_correct": true },
+      { "text": "Liaison Officer", "is_correct": false },
+      { "text": "Safety Officer", "is_correct": false },
+      { "text": "Planning Section Chief", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Information Officer serves as the conduit for information to and from internal and external stakeholders. [cite: 513]"
+  },
+  {
+    "question": "What special authority does the Safety Officer possess?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "To stop unsafe acts if personnel are in danger", "is_correct": true },
+      { "text": "To fire incompetent personnel", "is_correct": false },
+      { "text": "To authorize budget increases", "is_correct": false },
+      { "text": "To take command of the incident", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Safety Officer may exercise emergency authority to directly stop unsafe acts if personnel are in imminent danger. [cite: 518]"
+  },
+  {
+    "question": "Who does the Liaison Officer primarily assist?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Agency representatives supporting the operation", "is_correct": true },
+      { "text": "The media and public", "is_correct": false },
+      { "text": "The Operations Section Chief", "is_correct": false },
+      { "text": "Victims of the incident", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Liaison Officer serves as a point of contact for agency representatives who are helping to support the operation. [cite: 523]"
+  },
+  {
+    "question": "Who makes up the Command Staff?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Information, Safety, and Liaison Officers", "is_correct": true },
+      { "text": "Operations, Planning, Logistics, and Finance Chiefs", "is_correct": false },
+      { "text": "The Incident Commander and Deputies", "is_correct": false },
+      { "text": "Division and Group Supervisors", "is_correct": false }
+    ],
+    [cite_start]"explanation": "These personnel make up the Command Staff and consist of: The Information Officer... Safety Officer... Liaison Officer. [cite: 512, 513, 517, 522]"
+  },
+  {
+    "question": "Who comprises the General Staff?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Operations, Planning, Logistics, and Finance Section Chiefs", "is_correct": true },
+      { "text": "Information, Safety, and Liaison Officers", "is_correct": false },
+      { "text": "Branch Directors and Unit Leaders", "is_correct": false },
+      { "text": "Agency Representatives", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The General Staff is made up of four Sections: Operations, Planning, Logistics and Finance/Administration. [cite: 540]"
+  },
+  {
+    "question": "What is the primary role of a Deputy in ICS?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Assume responsibility for a portion of the primary position", "is_correct": true },
+      { "text": "Act as a secretary for the Chief", "is_correct": false },
+      { "text": "Train new recruits", "is_correct": false },
+      { "text": "Monitor safety conditions", "is_correct": false }
+    ],
+    [cite_start]"explanation": "A Deputy may assume responsibility for a specific portion of the primary position, work as relief, or be assigned other tasks. [cite: 564]"
+  },
+  {
+    "question": "How does the Operations Section expand compared to others?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "From the bottom up", "is_correct": true },
+      { "text": "From the top down", "is_correct": false },
+      { "text": "Horizontally across functions", "is_correct": false },
+      { "text": "Based on financial availability", "is_correct": false }
+    ],
+    [cite_start]"explanation": "A key element of the Operations Section is that it expands from the bottom up unlike the rest of the ICS organization. [cite: 586]"
+  },
+  {
+    "question": "What basis is used to establish Divisions?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Geography", "is_correct": true },
+      { "text": "Function", "is_correct": false },
+      { "text": "Agency jurisdiction", "is_correct": false },
+      { "text": "Resource type", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Divisions are used to divide an incident geographically. [cite: 593]"
+  },
+  {
+    "question": "What basis is used to establish Groups?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Functional areas of operation", "is_correct": true },
+      { "text": "Geographic boundaries", "is_correct": false },
+      { "text": "Alphabetical order", "is_correct": false },
+      { "text": "Shift timing", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Groups are used to describe functional areas of operation. [cite: 595]"
+  },
+  {
+    "question": "When are Branches established in the Operations Section?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "When Divisions/Groups exceed span of control", "is_correct": true },
+      { "text": "At the very beginning of an incident", "is_correct": false },
+      { "text": "When air support is required", "is_correct": false },
+      { "text": "Only in unified command structures", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Branches are used when the number of divisions or groups exceeds the span of control. [cite: 597]"
+  },
+  {
+    "question": "What is a 'Task Force' in ICS?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Mixed resources with common communications under a Leader", "is_correct": true },
+      { "text": "Resources of the same kind and type", "is_correct": false },
+      { "text": "A single piece of equipment with personnel", "is_correct": false },
+      { "text": "A group of technical specialists", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Task Forces are a combination of mixed resources with common communications operating under the direct supervision of a Leader. [cite: 657]"
+  },
+  {
+    "question": "What is a 'Strike Team' in ICS?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Same kind and type resources with common communications", "is_correct": true },
+      { "text": "Mixed resources under a Supervisor", "is_correct": false },
+      { "text": "A specialized investigation unit", "is_correct": false },
+      { "text": "An airborne tactical unit", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Strike Teams are a set number of resources of the same kind and type with common communications. [cite: 664]"
+  },
+  {
+    "question": "What is a 'Single Resource'?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Personnel or equipment with an identified supervisor", "is_correct": true },
+      { "text": "A volunteer working alone", "is_correct": false },
+      { "text": "A piece of equipment without an operator", "is_correct": false },
+      { "text": "A resource that cannot be paired", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Single Resources may be individuals, a piece of equipment and its personnel complement... with an identified supervisor. [cite: 666]"
+  },
+  {
+    "question": "Which unit is responsible for Check-in activities?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Resources Unit", "is_correct": true },
+      { "text": "Documentation Unit", "is_correct": false },
+      { "text": "Situation Unit", "is_correct": false },
+      { "text": "Supply Unit", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Resources Unit: Conducts all Check-in activities and maintains the status of all incident resources. [cite: 699]"
+  },
+  {
+    "question": "Which unit prepares situation displays and projections?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Situation Unit", "is_correct": true },
+      { "text": "Planning Section Chief", "is_correct": false },
+      { "text": "Resources Unit", "is_correct": false },
+      { "text": "Operations Section Chief", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Situation Unit: Collects and analyses information... prepares situation displays... and develops maps and projections. [cite: 701]"
+  },
+  {
+    "question": "Which unit is responsible for archiving incident documentation?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Documentation Unit", "is_correct": true },
+      { "text": "Archives Unit", "is_correct": false },
+      { "text": "Situation Unit", "is_correct": false },
+      { "text": "Time Unit", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Documentation Unit... Maintains and archives all incident related documentation. [cite: 703]"
+  },
+  {
+    "question": "What is the primary function of the Demobilization Unit?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Ensuring orderly and safe release of resources", "is_correct": true },
+      { "text": "Firing temporary staff", "is_correct": false },
+      { "text": "Closing down the Command Post", "is_correct": false },
+      { "text": "Transporting victims home", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Demobilization Unit: Assists in ensuring that resources are released from the incident in an orderly, safe, and cost effective manner. [cite: 704]"
+  },
+  {
+    "question": "Where are Technical Specialists initially assigned if not elsewhere?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Planning Section", "is_correct": true },
+      { "text": "Operations Section", "is_correct": false },
+      { "text": "Logistics Section", "is_correct": false },
+      { "text": "Command Staff", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Technical specialists will initially report to the Planning Section, work within that section, or be reassigned. [cite: 690]"
+  },
+  {
+    "question": "Which Logistics branch contains the Communication Unit?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Service Branch", "is_correct": true },
+      { "text": "Support Branch", "is_correct": false },
+      { "text": "Operations Branch", "is_correct": false },
+      { "text": "Technology Branch", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Logistics Service Branch can be staffed to include a: Communication Unit. [cite: 719-720]"
+  },
+  {
+    "question": "What is the Medical Unit in Logistics responsible for?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Medical treatment for personnel assigned to the incident", "is_correct": true },
+      { "text": "Triage of civilian victims", "is_correct": false },
+      { "text": "Transporting injured public to hospitals", "is_correct": false },
+      { "text": "Managing the local hospital", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Medical Unit... provides first aid and light medical treatment for personnel assigned to the incident. [cite: 721]"
+  },
+  {
+    "question": "Which unit is responsible for providing meals to personnel?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Food Unit", "is_correct": true },
+      { "text": "Supply Unit", "is_correct": false },
+      { "text": "Catering Unit", "is_correct": false },
+      { "text": "Facilities Unit", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Food Unit: Responsible for providing meals and drinking water for incident personnel. [cite: 722]"
+  },
+  {
+    "question": "Which Logistics branch contains the Supply Unit?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Support Branch", "is_correct": true },
+      { "text": "Service Branch", "is_correct": false },
+      { "text": "Procurement Branch", "is_correct": false },
+      { "text": "Resources Branch", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Logistics Support Branch can be staffed to include a: Supply Unit. [cite: 723-724]"
+  },
+  {
+    "question": "Through which unit are all resource orders placed?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Supply Unit", "is_correct": true },
+      { "text": "Resources Unit", "is_correct": false },
+      { "text": "Ordering Unit", "is_correct": false },
+      { "text": "Logistics Chief", "is_correct": false }
+    ],
+    [cite_start]"explanation": "All resource orders are placed through the Supply Unit. [cite: 726]"
+  },
+  {
+    "question": "What does the Facilities Unit manage?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Incident Base and Camps", "is_correct": true },
+      { "text": "Local hotels", "is_correct": false },
+      { "text": "The Incident Command Post only", "is_correct": false },
+      { "text": "Public shelters", "is_correct": false }
+    ],
+    "explanation": "Facilities Unit: Sets up and maintains incident facilities. [cite_start]Provides Managers for the Incident Base and Camps. [cite: 727]"
+  },
+  {
+    "question": "What is the responsibility of the Ground Support Unit?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Fueling and maintenance of assigned ground transportation", "is_correct": true },
+      { "text": "Building roads", "is_correct": false },
+      { "text": "Directing traffic control", "is_correct": false },
+      { "text": "Providing air-to-ground communication", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Ground Support Unit... Arranges for, activates, and documents the fuelling and maintenance of assigned ground transportation. [cite: 729]"
+  },
+  {
+    "question": "What is the Procurement Unit responsible for?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Administering vendor contracts and leases", "is_correct": true },
+      { "text": "Ordering tactical supplies", "is_correct": false },
+      { "text": "Hiring new staff", "is_correct": false },
+      { "text": "Calculating incident costs", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Procurement Unit: Responsible for administering all financial matters pertaining to vendor contracts, leases, and fiscal agreements. [cite: 771]"
+  },
+  {
+    "question": "What is the Time Unit responsible for?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Incident personnel time recording", "is_correct": true },
+      { "text": "Scheduling shifts", "is_correct": false },
+      { "text": "Setting the operational period", "is_correct": false },
+      { "text": "Monitoring response times", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Time Unit: Responsible for incident personnel time recording. [cite: 772]"
+  },
+  {
+    "question": "What is the Cost Unit responsible for?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Collecting cost data and performing analysis", "is_correct": true },
+      { "text": "Paying vendors directly", "is_correct": false },
+      { "text": "Setting the budget", "is_correct": false },
+      { "text": "Negotiating contracts", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Cost Unit: Collects all cost data, performs cost effectiveness analyses, provides cost estimates. [cite: 773]"
+  },
+  {
+    "question": "What does the Compensation/Claims Unit manage?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Injury compensation and property claims", "is_correct": true },
+      { "text": "Salaries for staff", "is_correct": false },
+      { "text": "Insurance for vehicles", "is_correct": false },
+      { "text": "Legal lawsuits against the agency", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Compensation/Claims Unit: Responsible for... compensation for injury and claims related activities kept for the incident. [cite: 774]"
+  },
+  {
+    "question": "Where should the Incident Command Post (ICP) be located?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Outside the hazard zone but close enough to command", "is_correct": true },
+      { "text": "In the center of the incident", "is_correct": false },
+      { "text": "At the nearest police station", "is_correct": false },
+      { "text": "As far away as possible", "is_correct": false }
+    ],
+    [cite_start]"explanation": "It should be positioned outside of the present and potential hazard zone but close enough to the incident to maintain command. [cite: 797]"
+  },
+  {
+    "question": "How many Incident Command Posts are established per incident?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Only one", "is_correct": true },
+      { "text": "One per agency", "is_correct": false },
+      { "text": "One for each Division", "is_correct": false },
+      { "text": "Multiple, depending on size", "is_correct": false }
+    ],
+    [cite_start]"explanation": "There will only be one ICP for each incident even if it is a multijurisdictional or multi agency incident. [cite: 793]"
+  },
+  {
+    "question": "What is the status of resources in a Staging Area?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Available and ready for assignment", "is_correct": true },
+      { "text": "Out-of-service", "is_correct": false },
+      { "text": "Resting", "is_correct": false },
+      { "text": "Being repaired", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Only \"available\" resources are held in a staging area which means they are ready for direct assignment. [cite: 810]"
+  },
+  {
+    "question": "Who supervises a Staging Area?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Staging Area Manager", "is_correct": true },
+      { "text": "Operations Section Chief directly", "is_correct": false },
+      { "text": "Logistics Section Chief", "is_correct": false },
+      { "text": "Base Manager", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Supervision of Staging Areas is carried out by a Staging Area Manager who reports to the Operations Section Chief. [cite: 815]"
+  },
+  {
+    "question": "What happens at the Incident Base?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Primary logistics and administrative functions are coordinated", "is_correct": true },
+      { "text": "Tactical operations are planned", "is_correct": false },
+      { "text": "Media briefings occur", "is_correct": false },
+      { "text": "Helicopter operations are centered", "is_correct": false }
+    ],
+    [cite_start]"explanation": "It is the location from which all primary logistics and administrative functions are coordinated and administered. [cite: 819]"
+  },
+  {
+    "question": "What is the status of tactical resources assigned to the Base?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Out-of-service", "is_correct": true },
+      { "text": "Available", "is_correct": false },
+      { "text": "Staged", "is_correct": false },
+      { "text": "Assigned", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Tactical resources assigned to the incident Base are out-of-service. [cite: 826]"
+  },
+  {
+    "question": "What is the function of a Camp?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Providing sleeping, food, and water to personnel", "is_correct": true },
+      { "text": "Coordinating primary logistics", "is_correct": false },
+      { "text": "Staging available resources", "is_correct": false },
+      { "text": "Conducting media interviews", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Camps are... equipped and staffed to provide sleeping, food, water, and sanitary services to incident personnel. [cite: 830]"
+  },
+  {
+    "question": "What distinguishes a Helibase from a Helispot?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Helibases provide maintenance and fueling services", "is_correct": true },
+      { "text": "Helispots are larger", "is_correct": false },
+      { "text": "Helibases are temporary locations", "is_correct": false },
+      { "text": "Helispots have air traffic controllers", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Helibases are generally used on a more long term basis and include such services as fueling and maintenance. [cite: 841]"
+  },
+  {
+    "question": "What is a Helispot used for?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Loading and unloading personnel or supplies", "is_correct": true },
+      { "text": "Long-term helicopter parking", "is_correct": false },
+      { "text": "Major engine repairs", "is_correct": false },
+      { "text": "Fueling operations", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Helispots... can be used as areas to load or unload personnel, equipment supplies, water, etc. [cite: 854]"
+  },
+  {
+    "question": "Which facility cannot be co-located with a Camp?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Incident Command Post (ICP)", "is_correct": true },
+      { "text": "Staging Area", "is_correct": false },
+      { "text": "Base", "is_correct": false },
+      { "text": "Helispot", "is_correct": false }
+    ],
+    [cite_start]"explanation": "According to the Co-locating Facilities table, the ICP cannot be co-located with Camps. [cite: 860]"
+  },
+  {
+    "question": "What should responders do before departing for an extended deployment?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Assemble a travel kit and personal items", "is_correct": true },
+      { "text": "Call the media", "is_correct": false },
+      { "text": "Report directly to the incident scene", "is_correct": false },
+      { "text": "Self-dispatch", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Assemble or update a travel kit... Prepare personal items required for the estimated length of stay. [cite: 884-885]"
+  },
+  {
+    "question": "When should personnel respond to an incident?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Only when requested or dispatched", "is_correct": true },
+      { "text": "As soon as they hear about it", "is_correct": false },
+      { "text": "Whenever they are free", "is_correct": false },
+      { "text": "If they have relevant skills", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Personnel and equipment should respond only when requested or when dispatched by an appropriate authority. [cite: 418]"
+  },
+  {
+    "question": "What should happen immediately after check-in?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Locate point of contact and obtain a briefing", "is_correct": true },
+      { "text": "Start working on the fire line", "is_correct": false },
+      { "text": "Find a place to sleep", "is_correct": false },
+      { "text": "Call home", "is_correct": false }
+    ],
+    [cite_start]"explanation": "After check-in, locate your incident point of contact, and obtain an initial briefing. [cite: 916]"
+  },
+  {
+    "question": "How should time be recorded on incident records?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Using the 24-hour clock", "is_correct": true },
+      { "text": "Using AM/PM format", "is_correct": false },
+      { "text": "Using local time zones only", "is_correct": false },
+      { "text": "Using decimal time", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Use 24-hour clock to record time. [cite: 937]"
+  },
+  {
+    "question": "When does demobilization planning begin?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "With the activation of the first personnel", "is_correct": true },
+      { "text": "When the incident is stabilized", "is_correct": false },
+      { "text": "When the IAP is published", "is_correct": false },
+      { "text": "When the Incident Commander says so", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Demobilization planning begins with the activation of the first personnel and continues until the ICS organization ceases operation. [cite: 669]"
+  },
+  {
+    "question": "What is the final step in the demobilization process for a responder?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Notifying the home unit of arrival", "is_correct": true },
+      { "text": "Completing performance evaluations", "is_correct": false },
+      { "text": "Returning equipment", "is_correct": false },
+      { "text": "Receiving final payment", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Upon arrival at home, notify the home unit (i.e., whomever is tracking you) of your arrival. [cite: 967]"
+  },
+  {
+    "question": "What defines 'Management by Objectives'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Communicating functional actions through the entire organization", "is_correct": true },
+      { "text": "Managing strictly by budget limits", "is_correct": false },
+      { "text": "Allowing each unit to set its own goals", "is_correct": false },
+      { "text": "Following a rigid checklist", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Management by objectives is an approach used to communicate functional actions through the entire ICS organization. [cite: 271]"
+  },
+  {
+    "question": "What is the first step in the incident action planning process?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Understand agency policy and direction", "is_correct": true },
+      { "text": "Establish incident objectives", "is_correct": false },
+      { "text": "Select appropriate strategy", "is_correct": false },
+      { "text": "Assess incident situation", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Step 1: Understand agency policy and direction. [cite: 273]"
+  },
+  {
+    "question": "Who determines if a separate Operations Section is established?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Incident Commander", "is_correct": true },
+      { "text": "Planning Section Chief", "is_correct": false },
+      { "text": "Agency Executive", "is_correct": false },
+      { "text": "Operations Section Chief", "is_correct": false }
+    ],
+    [cite_start]"explanation": "The Incident Commander will determine the need for a separate Operations Section at an incident or event. [cite: 570]"
+  },
+  {
+    "question": "What information does 'Intelligence' include in ICS?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Operational information like weather and risk assessments", "is_correct": true },
+      { "text": "Secret codes only", "is_correct": false },
+      { "text": "Personnel background checks", "is_correct": false },
+      { "text": "Financial records", "is_correct": false }
+    ],
+    [cite_start]"explanation": "Intelligence includes not only security... but also other operational information... such as: Risk assessments, Weather information. [cite: 385-387]"
+  }
+]

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:865ed3672b2c594727d8cf41c296fd33624a1e042bfed0ea1f37923180d128a1
-size 432
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bt6hsptmod1yk"
+path="res://.godot/imported/computerNoise_003.ogg-bb0de07df122e48601f49322f9c4f7cd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Loops/computerNoise_003.ogg"
+dest_files=["res://.godot/imported/computerNoise_003.ogg-bb0de07df122e48601f49322f9c4f7cd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

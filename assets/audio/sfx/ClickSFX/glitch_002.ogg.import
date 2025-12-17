@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6dbac34845dcd3e9346538d71096a43bdabe49d8dd0c69b2984e3ba774b641c1
-size 412
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqaqbx1mu6ik0"
+path="res://.godot/imported/glitch_002.ogg-cd1813e60beba20b398b0217e482172e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ClickSFX/glitch_002.ogg"
+dest_files=["res://.godot/imported/glitch_002.ogg-cd1813e60beba20b398b0217e482172e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
