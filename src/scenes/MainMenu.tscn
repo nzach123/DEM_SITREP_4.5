@@ -117,6 +117,7 @@ visible = false
 layout_mode = 1
 
 [node name="CRTScreen" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_crt")
 layout_mode = 1
 anchors_preset = 15

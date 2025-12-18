@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b74ltasqu7ps5"]
+[gd_scene load_steps=32 format=3 uid="uid://b74ltasqu7ps5"]
 
 [ext_resource type="Theme" uid="uid://dmi3jf6jonyoq" path="res://content/resources/themes/title_theme.tres" id="1_c7ybq"]
 [ext_resource type="Script" uid="uid://bokrq0rpvdy4v" path="res://src/scripts/GameSession.gd" id="1_yjr3o"]
@@ -19,6 +19,7 @@
 [ext_resource type="Theme" uid="uid://fioyouh4dvig" path="res://content/resources/themes/Raj_button_theme.tres" id="12_lv0df"]
 [ext_resource type="FontFile" uid="uid://dd2b87f7wi6ar" path="res://assets/fonts/Rajdhani-SemiBold.ttf" id="13_i6oeq"]
 [ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="14_gax45"]
+[ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="16_gw4jd"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="16_i6oeq"]
 [ext_resource type="Script" uid="uid://cdfd2urify3r6" path="res://src/components/QuizAudio.gd" id="Comp_Audio"]
 [ext_resource type="Script" uid="uid://cno7l45c4w7n3" path="res://src/components/QuizCamera.gd" id="Comp_Cam"]
@@ -373,6 +374,10 @@ theme_override_font_sizes/font_size = 42
 text = "An occurrence requiring response to prevent loss or damage"
 autowrap_mode = 3
 
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer/Button"]
+script = ExtResource("16_gw4jd")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -439,6 +444,7 @@ visible = false
 layout_mode = 1
 
 [node name="CRTScreen" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_ndxw5")
 layout_mode = 1
 anchors_preset = 15
