@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://b152vv4v1kumc"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://b152vv4v1kumc"]
 
 [ext_resource type="FontFile" uid="uid://t86c8t2o1y50" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_loh6t"]
 [ext_resource type="FontFile" uid="uid://cedo7st30x8j6" path="res://assets/fonts/Montserrat-VariableFont_wght.ttf" id="1_wbsuu"]
 [ext_resource type="Texture2D" uid="uid://ck57xqgw5tcia" path="res://assets/ui/container_ui/button_square_blue_a.png" id="2_wbsuu"]
 [ext_resource type="Texture2D" uid="uid://dhu2x8mbwapw1" path="res://assets/ui/container_ui/panel_square_blue_a.png" id="3_y8sgn"]
+[ext_resource type="FontFile" uid="uid://dd2b87f7wi6ar" path="res://assets/fonts/Rajdhani-SemiBold.ttf" id="4_m17ut"]
 
 [sub_resource type="FontVariation" id="FontVariation_m17ut"]
 base_font = ExtResource("1_wbsuu")
@@ -48,6 +49,11 @@ texture_margin_top = 9.0
 texture_margin_right = 8.0
 texture_margin_bottom = 9.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8sgn"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.14901961, 0.26666668, 0.27450982, 1)
+
 [resource]
 default_font_size = 0
 Button/colors/font_color = Color(1, 1, 1, 1)
@@ -64,5 +70,8 @@ Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 34
 Label/fonts/font = SubResource("FontVariation_wbsuu")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_wbsuu")
+PopupMenu/font_sizes/font_size = 40
+PopupMenu/fonts/font = ExtResource("4_m17ut")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_y8sgn")
 ProgressBar/font_sizes/font_size = 40
 ProgressBar/fonts/font = ExtResource("1_loh6t")

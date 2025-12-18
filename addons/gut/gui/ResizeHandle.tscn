@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2ac6ba3f36ed58e5997c7fe6cda91e5a109754fd7a6e7647bf6cb0d79849461
-size 313
+[gd_scene load_steps=2 format=3 uid="uid://bvrqqgjpyouse"]
+
+[ext_resource type="Script" uid="uid://duf6rfdqr6yoc" path="res://addons/gut/gui/ResizeHandle.gd" id="1_oi5ed"]
+
+[node name="ResizeHandle" type="ColorRect"]
+custom_minimum_size = Vector2(20, 20)
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_oi5ed")

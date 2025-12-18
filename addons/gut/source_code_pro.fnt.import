@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de85f9122dc4eed4951e04609094a10835a3ea1366deca778e86b6a5df6cdb6a
-size 382
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cfawt18qr4256"
+path="res://.godot/imported/source_code_pro.fnt-042fb383b3c7b4c19e67c852f7fbefca.fontdata"
+
+[deps]
+
+source_file="res://addons/gut/source_code_pro.fnt"
+dest_files=["res://.godot/imported/source_code_pro.fnt-042fb383b3c7b4c19e67c852f7fbefca.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

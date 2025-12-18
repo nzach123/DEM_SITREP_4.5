@@ -1,3 +1,827 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:42216c67a76f02dee128d7dc3fbbcb54f0d75da99ee25b6cc2626217076d61a0
-size 41778
+[
+  {
+    "question": "What is the primary objective of Business Continuity Management?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Maintaining critical functions during disruptions", "is_correct": true },
+      { "text": "Protecting brand reputation exclusively", "is_correct": false },
+      { "text": "Preventing all physical hazards", "is_correct": false },
+      { "text": "Managing public relations crises", "is_correct": false }
+    ],
+    "explanation": "BCM focuses on ensuring an organization can continue essential operations with minimal interruption during adverse events."
+  },
+  {
+    "question": "Which process quantifies the impact of disruptions on business processes?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Business Impact Analysis", "is_correct": true },
+      { "text": "Hazard Identification", "is_correct": false },
+      { "text": "Crisis Communication Planning", "is_correct": false },
+      { "text": "Supply Chain Audit", "is_correct": false }
+    ],
+    "explanation": "A Business Impact Analysis (BIA) identifies and qualifies the impacts of interruptions to critical business functions."
+  },
+  {
+    "question": "In Enterprise Risk Management, what is the 'layer of cork'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Cultural barriers stopping information flow", "is_correct": true },
+      { "text": "Physical flood protection measures", "is_correct": false },
+      { "text": "Redundant data backup systems", "is_correct": false },
+      { "text": "External insurance policies", "is_correct": false }
+    ],
+    "explanation": "The 'layer of cork' refers to management cultures that prevent critical risk information from reaching decision-makers."
+  },
+  {
+    "question": "Which vulnerability is categorized as an external dependency for businesses?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Supply chain disruptions", "is_correct": true },
+      { "text": "Internal IT failure", "is_correct": false },
+      { "text": "Employee turnover", "is_correct": false },
+      { "text": "Management incompetence", "is_correct": false }
+    ],
+    "explanation": "Supply chains are external networks upon which businesses rely for inputs, making them a critical external dependency."
+  },
+  {
+    "question": "What distinguishes Crisis Management from Business Continuity Management?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It focuses on reputation and leadership", "is_correct": true },
+      { "text": "It deals strictly with IT recovery", "is_correct": false },
+      { "text": "It is a lower-level tactical process", "is_correct": false },
+      { "text": "It replaces the risk assessment", "is_correct": false }
+    ],
+    "explanation": "Crisis Management is strategic and leadership-driven, often focusing on reputation, whereas BCM is tactical and operational."
+  },
+  {
+    "question": "How does 'just-in-time' delivery impact supply chain vulnerability?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "It increases susceptibility to disruption", "is_correct": true },
+      { "text": "It creates larger safety buffers", "is_correct": false },
+      { "text": "It eliminates upstream dependencies", "is_correct": false },
+      { "text": "It decentralizes production risks", "is_correct": false }
+    ],
+    "explanation": "Lean inventories mean minor disruptions cause immediate shortages, removing the buffer against supply chain shocks."
+  },
+  {
+    "question": "What is the primary goal of the 'Shielding' leadership action?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Building team resilience and capacity", "is_correct": true },
+      { "text": "Providing therapy to injured staff", "is_correct": false },
+      { "text": "Identifying early signs of distress", "is_correct": false },
+      { "text": "Hiding bad news from the team", "is_correct": false }
+    ],
+    "explanation": "Shielding actions are proactive measures taken by leaders to build a healthy climate and foster resilience."
+  },
+  {
+    "question": "Which tool is an immediate, informal leader-led check-in after incidents?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Ad Hoc Incident Review", "is_correct": true },
+      { "text": "Critical Incident Stress Debrief", "is_correct": false },
+      { "text": "Psychological First Aid", "is_correct": false },
+      { "text": "Formal Psychotherapy", "is_correct": false }
+    ],
+    "explanation": "The Ad Hoc Incident Review (AIR) is a quick, leader-led tool to acknowledge events and check in."
+  },
+  {
+    "question": "Critical Incident Stress Debriefing (CISD) is intended for whom?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Homogeneous groups of responders", "is_correct": true },
+      { "text": "Primary victims of disasters", "is_correct": false },
+      { "text": "Randomly assembled mixed groups", "is_correct": false },
+      { "text": "Individuals seeking long-term therapy", "is_correct": false }
+    ],
+    "explanation": "CISD is a specific tactic for homogeneous responder groups to restore function, not for primary victims."
+  },
+  {
+    "question": "What characterizes 'empathy' compared to 'sympathy'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Sharing and feeling the other's emotions", "is_correct": true },
+      { "text": "Feeling pity for someone's situation", "is_correct": false },
+      { "text": "Maintaining emotional distance", "is_correct": false },
+      { "text": "Offering immediate advice", "is_correct": false }
+    ],
+    "explanation": "Empathy involves seeing the situation from the other's perspective and sharing their distress, rather than just feeling care."
+  },
+  {
+    "question": "In the Mental Health Continuum, what does 'Yellow' represent?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Reacting", "is_correct": true },
+      { "text": "Healthy", "is_correct": false },
+      { "text": "Injured", "is_correct": false },
+      { "text": "Ill", "is_correct": false }
+    ],
+    "explanation": "Yellow represents 'Reacting,' characterized by irritability and mild distress, which is reversible with self-care."
+  },
+  {
+    "question": "What is the primary function of 'Box Breathing'?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Arousal management and focus", "is_correct": true },
+      { "text": "Long-term cognitive restructuring", "is_correct": false },
+      { "text": "Processing traumatic memories", "is_correct": false },
+      { "text": "Building social connections", "is_correct": false }
+    ],
+    "explanation": "Box breathing is a physiological technique used to immediately calm the nervous system and regain focus."
+  },
+  {
+    "question": "What does the 'S' in SMART goals stand for?",
+    "difficulty": 0.1,
+    "answers": [
+      { "text": "Specific", "is_correct": true },
+      { "text": "Simple", "is_correct": false },
+      { "text": "Safe", "is_correct": false },
+      { "text": "Standard", "is_correct": false }
+    ],
+    "explanation": "Goals must be Specific to avoid ambiguity and ensure clear direction for action."
+  },
+  {
+    "question": "Which mindset perceives a stressful event as an opportunity?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Challenge mindset", "is_correct": true },
+      { "text": "Threat mindset", "is_correct": false },
+      { "text": "Fixed mindset", "is_correct": false },
+      { "text": "Victim mindset", "is_correct": false }
+    ],
+    "explanation": "A challenge mindset views stress as a resource, dilating blood vessels and improving performance."
+  },
+  {
+    "question": "Why is 'negativity bias' dangerous in emergency management?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "It causes tunnel vision on failures", "is_correct": true },
+      { "text": "It leads to excessive risk-taking", "is_correct": false },
+      { "text": "It increases resource spending", "is_correct": false },
+      { "text": "It prevents rapid mobilization", "is_correct": false }
+    ],
+    "explanation": "Negativity bias makes failures 'stick,' causing leaders to lose perspective and ignore successful operations."
+  },
+  {
+    "question": "What is the 'Happiness Advantage' regarding brain performance?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Positive brains are more productive", "is_correct": true },
+      { "text": "Success precedes happiness", "is_correct": false },
+      { "text": "Stress eliminates creativity", "is_correct": false },
+      { "text": "Neutral brains analyze best", "is_correct": false }
+    ],
+    "explanation": "A positive brain state releases dopamine, increasing productivity, creativity, and diagnostic accuracy."
+  },
+  {
+    "question": "Which factor creates 'social density' essential for team resilience?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Frequent pre-disaster interactions", "is_correct": true },
+      { "text": "Large team size", "is_correct": false },
+      { "text": "Rigid hierarchical structures", "is_correct": false },
+      { "text": "Strict adherence to protocols", "is_correct": false }
+    ],
+    "explanation": "Dense social interactions and relationships built before a disaster allow teams to adapt and communicate faster."
+  },
+  {
+    "question": "What is the danger of 'EOC bloat' regarding resilience?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Increased coordination costs reduce efficiency", "is_correct": true },
+      { "text": "Lack of specialized personnel", "is_correct": false },
+      { "text": "Insufficient redundant systems", "is_correct": false },
+      { "text": "Decreased funding for operations", "is_correct": false }
+    ],
+    "explanation": "Larger teams are not necessarily better; they create silos and slow down information flow."
+  },
+  {
+    "question": "How does 'stigma' function as a systemic vulnerability?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "It prevents individuals from seeking help", "is_correct": true },
+      { "text": "It increases physical infrastructure risk", "is_correct": false },
+      { "text": "It reduces the likelihood of hazards", "is_correct": false },
+      { "text": "It speeds up community recovery", "is_correct": false }
+    ],
+    "explanation": "Cultural or professional stigma acts as a barrier to care, worsening the impact of trauma."
+  },
+  {
+    "question": "What is 'Navigation' in the context of individual resilience?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Finding and accessing necessary resources", "is_correct": true },
+      { "text": "Physically evacuating a disaster zone", "is_correct": false },
+      { "text": "Following a predetermined map", "is_correct": false },
+      { "text": "Suppressing emotional responses", "is_correct": false }
+    ],
+    "explanation": "Resilience involves the capacity to navigate to resources (psychological, social, physical) required for well-being."
+  },
+  {
+    "question": "Why is 'Negotiation' critical for effective disaster recovery?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "It ensures aid matches survivor needs", "is_correct": true },
+      { "text": "It reduces the cost of relief", "is_correct": false },
+      { "text": "It forces victims to comply", "is_correct": false },
+      { "text": "It delays resource distribution", "is_correct": false }
+    ],
+    "explanation": "Survivors must be able to negotiate for resources to be provided in meaningful, culturally appropriate ways."
+  },
+  {
+    "question": "What is the 'fight, flight, or freeze' response?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "A physiological reaction to perceived threat", "is_correct": true },
+      { "text": "A calculated decision-making process", "is_correct": false },
+      { "text": "A long-term coping strategy", "is_correct": false },
+      { "text": "A sign of mental illness", "is_correct": false }
+    ],
+    "explanation": "It is the body's automatic, primitive response to danger, mediated by the limbic system."
+  },
+  {
+    "question": "Which hormone encourages social connection during stress?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Oxytocin", "is_correct": true },
+      { "text": "Cortisol", "is_correct": false },
+      { "text": "Adrenaline", "is_correct": false },
+      { "text": "Dopamine", "is_correct": false }
+    ],
+    "explanation": "Oxytocin is released during the stress response to motivate seeking support and protecting the cardiovascular system."
+  },
+  {
+    "question": "What is 'mental toughness' defined as?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Using skills on demand under pressure", "is_correct": true },
+      { "text": "Suppressing all emotional reactions", "is_correct": false },
+      { "text": "Ignoring physical pain entirely", "is_correct": false },
+      { "text": "Acting without any hesitation", "is_correct": false }
+    ],
+    "explanation": "Mental toughness is the ability to access and apply one's talent and skills regardless of the stressful context."
+  },
+  {
+    "question": "What is the 'neocortex' role in emergency response?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Overriding the impulsive limbic system", "is_correct": true },
+      { "text": "Generating the fight or flight response", "is_correct": false },
+      { "text": "Storing long-term traumatic memories", "is_correct": false },
+      { "text": "Regulating basic heart rate functions", "is_correct": false }
+    ],
+    "explanation": "Training helps the neocortex (logic/reasoning) override the primitive limbic system (impulse) to ensure deliberate action."
+  },
+  {
+    "question": "What is a common myth about human behavior in disasters?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "People will panic and act irrationally", "is_correct": true },
+      { "text": "People will help their neighbors", "is_correct": false },
+      { "text": "Crime rates will likely decrease", "is_correct": false },
+      { "text": "Survivors will be the first responders", "is_correct": false }
+    ],
+    "explanation": "The 'panic myth' persists despite evidence that people generally remain calm and act altruistically."
+  },
+  {
+    "question": "What is 'milling' in the context of disaster behavior?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Seeking information and social confirmation", "is_correct": true },
+      { "text": "Running aimlessly in crowds", "is_correct": false },
+      { "text": "Looting stores for supplies", "is_correct": false },
+      { "text": "Freezing in place due to fear", "is_correct": false }
+    ],
+    "explanation": "Milling is the deliberation phase where people converse to confirm their observations before taking action."
+  },
+  {
+    "question": "What is 'negative panic'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Freezing or lethargy delaying action", "is_correct": true },
+      { "text": "Violent outbursts against others", "is_correct": false },
+      { "text": "Hysterical screaming and running", "is_correct": false },
+      { "text": "Immediate aggressive competition", "is_correct": false }
+    ],
+    "explanation": "Negative panic is a state of passivity or paralysis where individuals fail to react to danger."
+  },
+  {
+    "question": "What usually happens to crime rates after a disaster?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "They decrease due to prosocial behavior", "is_correct": true },
+      { "text": "They skyrocket due to lawlessness", "is_correct": false },
+      { "text": "They remain exactly the same", "is_correct": false },
+      { "text": "They increase specifically in suburbs", "is_correct": false }
+    ],
+    "explanation": "Research shows crime often drops as communities focus on mutual aid and recovery."
+  },
+  {
+    "question": "Who performs the majority of initial rescues in a disaster?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Survivors and bystanders", "is_correct": true },
+      { "text": "Professional search and rescue teams", "is_correct": false },
+      { "text": "The National Guard", "is_correct": false },
+      { "text": "Local police forces", "is_correct": false }
+    ],
+    "explanation": "Survivors are the true 'first responders,' performing most rescues before official help arrives."
+  },
+  {
+    "question": "What drives 'collective identity' in a crowd?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Shared norms and mutual support", "is_correct": true },
+      { "text": "Loss of individual rationality", "is_correct": false },
+      { "text": "Anonymity and lack of accountability", "is_correct": false },
+      { "text": "Mindless imitation of others", "is_correct": false }
+    ],
+    "explanation": "Crowds often act based on a shared social identity, which empowers them to achieve collective goals."
+  },
+  {
+    "question": "What is the primary risk of 'in-kind' donations?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "They create logistical burdens", "is_correct": true },
+      { "text": "They are often stolen by locals", "is_correct": false },
+      { "text": "They cause price inflation", "is_correct": false },
+      { "text": "They discourage cash donations", "is_correct": false }
+    ],
+    "explanation": "Unsolicited goods (like used clothes) overwhelm supply lines, creating a 'second disaster' of management."
+  },
+  {
+    "question": "Why is 'cash best' for disaster donations?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "It offers flexibility and supports local economies", "is_correct": true },
+      { "text": "It is harder to steal than goods", "is_correct": false },
+      { "text": "It prevents tax liability issues", "is_correct": false },
+      { "text": "It is the only legal form of aid", "is_correct": false }
+    ],
+    "explanation": "Cash allows responders to buy exactly what is needed locally, fueling the recovery economy."
+  },
+  {
+    "question": "What distinguishes 'sudden-onset' from 'slow-onset' disaster coverage?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Sudden-onset receives more coverage and donations", "is_correct": true },
+      { "text": "Slow-onset is framed more sympathetically", "is_correct": false },
+      { "text": "Coverage is generally equal for both", "is_correct": false },
+      { "text": "Sudden-onset is framed as a political failure", "is_correct": false }
+    ],
+    "explanation": "Media favors sudden, dramatic events, often framing them as 'attractive' for aid, unlike slow crises."
+  },
+  {
+    "question": "What is the 'double-edged sword' of social media in disasters?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Rapid information vs. spread of misinformation", "is_correct": true },
+      { "text": "High cost vs. low reach", "is_correct": false },
+      { "text": "Government control vs. privacy concerns", "is_correct": false },
+      { "text": "Technical reliability vs. user error", "is_correct": false }
+    ],
+    "explanation": "Social media provides critical speed and situational awareness but spreads rumors and falsehoods just as fast."
+  },
+  {
+    "question": "How does social media change emergency communication?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "From one-way broadcast to two-way dialogue", "is_correct": true },
+      { "text": "It eliminates the need for official alerts", "is_correct": false },
+      { "text": "It replaces traditional media entirely", "is_correct": false },
+      { "text": "It slows down the news cycle", "is_correct": false }
+    ],
+    "explanation": "Social media enables 'crowdsourcing' and feedback, moving beyond the traditional top-down broadcast model."
+  },
+  {
+    "question": "What is 'risk temperament'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "An innate, stable disposition toward risk", "is_correct": true },
+      { "text": "A changing attitude based on context", "is_correct": false },
+      { "text": "The calculation of probability and consequence", "is_correct": false },
+      { "text": "A measure of physical vulnerability", "is_correct": false }
+    ],
+    "explanation": "Temperament is the 'factory setting'—a deep-seated personality trait that remains relatively constant."
+  },
+  {
+    "question": "Which 'mental trap' leads to under-preparation?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Forgetting the severity of past events", "is_correct": true },
+      { "text": "Overestimating future risks", "is_correct": false },
+      { "text": "Ignoring neighbor behavior", "is_correct": false },
+      { "text": "Focusing too much on worst-case scenarios", "is_correct": false }
+    ],
+    "explanation": "Humans tend to forget past pain and underestimate future threats, leading to inaction."
+  },
+  {
+    "question": "What is 'social vulnerability'?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Factors increasing susceptibility to harm", "is_correct": true },
+      { "text": "The likelihood of a hazard occurring", "is_correct": false },
+      { "text": "The physical weakness of infrastructure", "is_correct": false },
+      { "text": "The financial cost of recovery", "is_correct": false }
+    ],
+    "explanation": "Social vulnerability involves political, cultural, and societal factors (age, class) that worsen disaster impacts."
+  },
+  {
+    "question": "Why is 'attributional belief' important for responder resilience?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "It helps attribute failure to external factors", "is_correct": true },
+      { "text": "It ensures they take full blame for errors", "is_correct": false },
+      { "text": "It prevents them from analyzing mistakes", "is_correct": false },
+      { "text": "It increases their sense of guilt", "is_correct": false }
+    ],
+    "explanation": "Attributing failure to environmental factors (e.g., equipment) rather than self protects self-efficacy and resilience."
+  },
+  {
+    "question": "What is the result of 'tunnel vision' in leadership?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Fixation on single failures over total success", "is_correct": true },
+      { "text": "Enhanced situational awareness", "is_correct": false },
+      { "text": "Better allocation of resources", "is_correct": false },
+      { "text": "Faster decision-making cycles", "is_correct": false }
+    ],
+    "explanation": "Stress and negativity bias cause leaders to fixate on one problem, ignoring the broader operational picture."
+  },
+  {
+    "question": "How does 'visualization' aid tactical performance?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It creates physiological familiarity with the task", "is_correct": true },
+      { "text": "It replaces the need for physical training", "is_correct": false },
+      { "text": "It guarantees a positive outcome", "is_correct": false },
+      { "text": "It suppresses the stress response entirely", "is_correct": false }
+    ],
+    "explanation": "Mental rehearsal activates neural pathways similar to physical practice, reducing cognitive load during the actual event."
+  },
+  {
+    "question": "What distinguishes 'relative risk' from 'absolute risk'?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Relative compares groups; absolute is total probability", "is_correct": true },
+      { "text": "Relative is objective; absolute is subjective", "is_correct": false },
+      { "text": "Relative is safer; absolute is dangerous", "is_correct": false },
+      { "text": "Relative applies to individuals; absolute to groups", "is_correct": false }
+    ],
+    "explanation": "Relative risk frames danger by comparison (e.g., 'twice as likely'), often influencing perception more than absolute probability."
+  },
+  {
+    "question": "What is the core argument of 'Empowerment Theory' in resilience?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Resilience is an interactive, resourceful process", "is_correct": true },
+      { "text": "Resilience is an innate, unchangeable trait", "is_correct": false },
+      { "text": "Resilience comes from strict top-down control", "is_correct": false },
+      { "text": "Resilience is defined by lack of emotion", "is_correct": false }
+    ],
+    "explanation": "Empowerment theory posits that resilience comes from accessing resources (personal, team, organizational) to adapt."
+  },
+  {
+    "question": "What is the main risk of 'following the crowd' in preparedness?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Assuming safety because others are inactive", "is_correct": true },
+      { "text": "Creating panic by moving together", "is_correct": false },
+      { "text": "Depleting local resources too quickly", "is_correct": false },
+      { "text": "Overloading communication networks", "is_correct": false }
+    ],
+    "explanation": "Looking to others for cues often leads to collective inaction if the crowd is also uninformed."
+  },
+  {
+    "question": "How does 'risk attitude' differ from 'risk temperament'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Attitude is flexible and domain-specific", "is_correct": true },
+      { "text": "Attitude is genetic and unchangeable", "is_correct": false },
+      { "text": "Attitude is unrelated to experience", "is_correct": false },
+      { "text": "Attitude determines physical vulnerability", "is_correct": false }
+    ],
+    "explanation": "Risk attitude changes based on the situation (e.g., financial vs. social), whereas temperament is constant."
+  },
+  {
+    "question": "What is the 'last mile' problem in digital disaster response?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Vulnerable groups lacking digital access", "is_correct": true },
+      { "text": "The final stage of software development", "is_correct": false },
+      { "text": "The delay in social media updates", "is_correct": false },
+      { "text": "The cost of internet infrastructure", "is_correct": false }
+    ],
+    "explanation": "Digital-only responses fail to reach vulnerable populations who lack internet access, requiring a hybrid approach."
+  },
+  {
+    "question": "What defines 'Type 1' behavior in Crimando's model?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Altruism: Neighbor helps neighbor", "is_correct": true },
+      { "text": "Avoidance: Neighbor fears neighbor", "is_correct": false },
+      { "text": "Competition: Neighbor fights neighbor", "is_correct": false },
+      { "text": "Apathy: Neighbor ignores neighbor", "is_correct": false }
+    ],
+    "explanation": "Type 1 is the most common disaster behavior, driven by empathy and mutual aid."
+  },
+  {
+    "question": "When does 'Type 2' behavior (Avoidance) typically occur?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "When a threat is perceived as contagious", "is_correct": true },
+      { "text": "During immediate physical impact", "is_correct": false },
+      { "text": "When resources are abundant", "is_correct": false },
+      { "text": "During the recovery phase", "is_correct": false }
+    ],
+    "explanation": "Fear of contagion or personal harm causes people to withdraw and avoid others to protect themselves."
+  },
+  {
+    "question": "What triggers 'Type 3' behavior (Competition)?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Acute fear over scarce resources", "is_correct": true },
+      { "text": "High levels of community trust", "is_correct": false },
+      { "text": "Clear communication from leaders", "is_correct": false },
+      { "text": "Abundance of relief supplies", "is_correct": false }
+    ],
+    "explanation": "Intense fear and scarcity lead to a breakdown of cohesion and a fight for survival resources."
+  },
+  {
+    "question": "What does the 'A' in the SAVES resilience model stand for?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Attitude", "is_correct": true },
+      { "text": "Action", "is_correct": false },
+      { "text": "Awareness", "is_correct": false },
+      { "text": "Acceptance", "is_correct": false }
+    ],
+    "explanation": "Attitude involves cognitive framing, such as avoiding personalization and viewing events as temporary."
+  },
+  {
+    "question": "Why is 'social connection' vital for resilience?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Isolation is toxic to the nervous system", "is_correct": true },
+      { "text": "It provides financial benefits", "is_correct": false },
+      { "text": "It eliminates the need for planning", "is_correct": false },
+      { "text": "It guarantees physical safety", "is_correct": false }
+    ],
+    "explanation": "Humans are wired for connection; social support buffers stress and is critical for psychological recovery."
+  },
+  {
+    "question": "What is the 'Man in the Arena' concept applied to EM?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Ignoring critics to focus on the mission", "is_correct": true },
+      { "text": "Fighting aggressively against the media", "is_correct": false },
+      { "text": "Entering the disaster zone without gear", "is_correct": false },
+      { "text": "Prioritizing public opinion over tactics", "is_correct": false }
+    ],
+    "explanation": "It emphasizes valuing the feedback of those 'in the arena' (responders) over outside critics (armchair quarterbacks)."
+  },
+  {
+    "question": "What is 'post-traumatic growth'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Positive change experienced after adversity", "is_correct": true },
+      { "text": "The immediate denial of trauma", "is_correct": false },
+      { "text": "Returning exactly to the pre-event state", "is_correct": false },
+      { "text": "Avoiding all future stressful situations", "is_correct": false }
+    ],
+    "explanation": "It refers to the potential for individuals to develop new strengths and appreciation for life following trauma."
+  },
+  {
+    "question": "Why is 'preparedness' considered a form of mental modeling?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It creates a script for decision-making", "is_correct": true },
+      { "text": "It eliminates the possibility of fear", "is_correct": false },
+      { "text": "It predicts the exact future event", "is_correct": false },
+      { "text": "It relies solely on instinct", "is_correct": false }
+    ],
+    "explanation": "Preparedness builds a mental model that allows the brain to bypass the 'denial' phase and act quickly."
+  },
+  {
+    "question": "What is the risk of 'information overload' in social media?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Critical alerts get lost in the noise", "is_correct": true },
+      { "text": "The internet infrastructure collapses", "is_correct": false },
+      { "text": "People stop using social media", "is_correct": false },
+      { "text": "It prevents two-way communication", "is_correct": false }
+    ],
+    "explanation": "Too much data makes it difficult to filter actionable intelligence, obscuring the 'needle in the haystack.'"
+  },
+  {
+    "question": "What is 'disaster dissonance' regarding donations?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Mismatch between what is needed and given", "is_correct": true },
+      { "text": "Conflict between donor agencies", "is_correct": false },
+      { "text": "Lack of public desire to donate", "is_correct": false },
+      { "text": "Corruption in financial handling", "is_correct": false }
+    ],
+    "explanation": "This occurs when the public donates inappropriate items (like winter coats in summer) that clog logistics."
+  },
+  {
+    "question": "Why should 'vulnerable populations' be in the main plan?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "They represent a significant portion of society", "is_correct": true },
+      { "text": "They are easier to evacuate", "is_correct": false },
+      { "text": "They require less specific resources", "is_correct": false },
+      { "text": "They are legally required annexes", "is_correct": false }
+    ],
+    "explanation": "Treating them as an annex ignores the reality that they make up a large percentage of the affected population."
+  },
+  {
+    "question": "What is the primary benefit of 'situational awareness' from social media?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Real-time updates from the ground", "is_correct": true },
+      { "text": "Official government press releases", "is_correct": false },
+      { "text": "Historical data analysis", "is_correct": false },
+      { "text": "Predictive weather modeling", "is_correct": false }
+    ],
+    "explanation": "Crowdsourced photos and reports give commanders a real-time view of the disaster's impact."
+  },
+  {
+    "question": "What defines a 'resilient' organization culture?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Psychological safety and information flow", "is_correct": true },
+      { "text": "Zero tolerance for errors", "is_correct": false },
+      { "text": "Strict top-down command only", "is_correct": false },
+      { "text": "Focus on minor compliance details", "is_correct": false }
+    ],
+    "explanation": "Resilient cultures encourage reporting bad news and focus on solving problems rather than blaming."
+  },
+  {
+    "question": "What is the 'focal bias' in trauma forecasting?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Overestimating the duration of negative feelings", "is_correct": true },
+      { "text": "Ignoring the traumatic event completely", "is_correct": false },
+      { "text": "Focusing only on positive outcomes", "is_correct": false },
+      { "text": "Underestimating the immediate shock", "is_correct": false }
+    ],
+    "explanation": "People tend to fixate on the trauma and ignore mitigating factors, expecting the pain to last longer than it does."
+  },
+  {
+    "question": "How does 'identity' drive risk-taking?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Risks are taken to protect self-concept", "is_correct": true },
+      { "text": "Identity suppresses all risky behavior", "is_correct": false },
+      { "text": "Risk-taking destroys personal identity", "is_correct": false },
+      { "text": "Identity is unrelated to decision making", "is_correct": false }
+    ],
+    "explanation": "People may reject safety measures (like flood gates) to protect their identity as living in a 'safe home.'"
+  },
+  {
+    "question": "What is 'Reflexivity' in risk-taking?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "The degree of conscious thought about risk", "is_correct": true },
+      { "text": "The physical reflex to danger", "is_correct": false },
+      { "text": "The automatic rejection of risk", "is_correct": false },
+      { "text": "The speed of decision making", "is_correct": false }
+    ],
+    "explanation": "Reflexivity refers to how much a person actively thinks about a risk versus acting on habit or social norms."
+  },
+  {
+    "question": "What is the 'disaster syndrome' myth?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Victims are dazed and helpless", "is_correct": true },
+      { "text": "Victims become violent criminals", "is_correct": false },
+      { "text": "Victims refuse all assistance", "is_correct": false },
+      { "text": "Victims evacuate too quickly", "is_correct": false }
+    ],
+    "explanation": "This myth falsely claims survivors are paralyzed by shock, whereas they are usually active first responders."
+  },
+  {
+    "question": "What is the 'hybrid response' model?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Digital tools for the mass, in-person for vulnerable", "is_correct": true },
+      { "text": "Combining police and fire departments", "is_correct": false },
+      { "text": "Using both private and public funding", "is_correct": false },
+      { "text": "Mixing acute and chronic care", "is_correct": false }
+    ],
+    "explanation": "It uses digital efficiency for the general population to free up resources for face-to-face aid for the vulnerable."
+  },
+  {
+    "question": "Why is 'attribution of failure' important in team culture?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It determines if mistakes lead to learning or blame", "is_correct": true },
+      { "text": "It allows leaders to fire underperformers", "is_correct": false },
+      { "text": "It ensures strict adherence to the plan", "is_correct": false },
+      { "text": "It prevents any deviation from protocol", "is_correct": false }
+    ],
+    "explanation": "A growth mindset culture attributes failure to systemic issues, fostering learning rather than fear."
+  },
+  {
+    "question": "What is the 'affective forecasting error'?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Predicting emotions will be more intense/long-lasting", "is_correct": true },
+      { "text": "Accurately predicting future happiness", "is_correct": false },
+      { "text": "Underestimating the pain of trauma", "is_correct": false },
+      { "text": "Ignoring emotional responses entirely", "is_correct": false }
+    ],
+    "explanation": "We often overestimate how devastated we will be, ignoring our own resilience and support systems."
+  },
+  {
+    "question": "What is the role of 'Commander's Intent'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Defining the clear definition of success", "is_correct": true },
+      { "text": "Micromanaging specific tactics", "is_correct": false },
+      { "text": "Listing every possible risk", "is_correct": false },
+      { "text": "Assigning blame for failures", "is_correct": false }
+    ],
+    "explanation": "It provides the 'why' and the end-state, allowing subordinates to adapt tactics while staying aligned with the goal."
+  },
+  {
+    "question": "What is the 'silo problem' in risk management?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Treating risks as separate, unconnected issues", "is_correct": true },
+      { "text": "Storing supplies in vertical structures", "is_correct": false },
+      { "text": "Isolating infected individuals", "is_correct": false },
+      { "text": "Using only one type of communication", "is_correct": false }
+    ],
+    "explanation": "Silos prevent seeing how different risks (e.g., cyber and physical) interconnect and cascade."
+  },
+  {
+    "question": "What is 'dynamic resilience' in teams?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Adapting and evolving to a new state", "is_correct": true },
+      { "text": "Bouncing back to the exact original state", "is_correct": false },
+      { "text": "Resisting all forms of change", "is_correct": false },
+      { "text": "Maintaining a rigid hierarchy", "is_correct": false }
+    ],
+    "explanation": "Dynamic resilience goes beyond robustness; it involves evolving to meet new, changing conditions."
+  },
+  {
+    "question": "Why is 'family support' considered a resilience resource?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "It mediates post-trauma outcomes", "is_correct": true },
+      { "text": "It provides financial income", "is_correct": false },
+      { "text": "It ensures physical fitness", "is_correct": false },
+      { "text": "It prevents exposure to hazards", "is_correct": false }
+    ],
+    "explanation": "Strong family dynamics and support are proven to buffer the impact of work-related trauma."
+  },
+  {
+    "question": "What is 'learned resourcefulness'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Acquiring skills to regulate internal responses", "is_correct": true },
+      { "text": "Memorizing the emergency plan", "is_correct": false },
+      { "text": "Hoarding physical supplies", "is_correct": false },
+      { "text": "Depending solely on external aid", "is_correct": false }
+    ],
+    "explanation": "It is the process of learning cognitive and behavioral skills to control emotions and problem-solve under stress."
+  },
+  {
+    "question": "What is the danger of 'underestimating the future'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Prioritizing immediate comfort over safety", "is_correct": true },
+      { "text": "Over-preparing for minor events", "is_correct": false },
+      { "text": "Spending too much on insurance", "is_correct": false },
+      { "text": "Panicking before a threat arrives", "is_correct": false }
+    ],
+    "explanation": "This bias leads people to discount distant threats, resulting in a lack of necessary preparation."
+  },
+  {
+    "question": "What does 'risk as a means to an end' imply?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Accepting danger to achieve a valued goal", "is_correct": true },
+      { "text": "Seeking danger for the thrill itself", "is_correct": false },
+      { "text": "Having no choice but to take the risk", "is_correct": false },
+      { "text": "Being unaware of the potential harm", "is_correct": false }
+    ],
+    "explanation": "The risk is calculated and accepted as a necessary price for a positive outcome (e.g., aid work)."
+  },
+  {
+    "question": "What defines 'risk as a response to vulnerability'?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Taking risks because the alternative is worse", "is_correct": true },
+      { "text": "Taking risks to prove social status", "is_correct": false },
+      { "text": "Taking risks for recreational pleasure", "is_correct": false },
+      { "text": "Taking risks due to lack of knowledge", "is_correct": false }
+    ],
+    "explanation": "Desperation drives this risk-taking; the danger is preferred over the hopelessness of the current situation."
+  }
+]

@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc13eae9cba496384c5297143cdcd6faa97a9e446bc021c56bc3abc16720c1c6
-size 793
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://c8axnpxc0nrk4"
+path="res://.godot/imported/AnonymousPro-Bold.ttf-9d8fef4d357af5b52cd60afbe608aa49.fontdata"
+
+[deps]
+
+source_file="res://addons/gut/fonts/AnonymousPro-Bold.ttf"
+dest_files=["res://.godot/imported/AnonymousPro-Bold.ttf-9d8fef4d357af5b52cd60afbe608aa49.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+modulate_color_glyphs=false
+hinting=1
+subpixel_positioning=1
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

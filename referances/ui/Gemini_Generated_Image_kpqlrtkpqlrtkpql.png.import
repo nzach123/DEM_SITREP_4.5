@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:532d5d356e58b9157608b117db67759ab380446ad94e7d9a68076de3e196fbb4
-size 865
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bksbgvnlw8jgw"
+path="res://.godot/imported/Gemini_Generated_Image_kpqlrtkpqlrtkpql.png-5c429741e62f8f24c32554bd83a9c07d.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://referances/ui/Gemini_Generated_Image_kpqlrtkpqlrtkpql.png"
+dest_files=["res://.godot/imported/Gemini_Generated_Image_kpqlrtkpqlrtkpql.png-5c429741e62f8f24c32554bd83a9c07d.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

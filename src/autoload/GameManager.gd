@@ -28,7 +28,10 @@ const DIFFICULTY_CONFIG: Dictionary = {
 # Course Data
 var master_questions_pool: Array = []
 var questions_pool: Array = []
+var matching_pool: Array = []
 var current_course_id: String = ""
+var is_matching_mode: bool = false
+var matching_rounds_count: int = 3 # Default to 3 rounds
 
 # Session Data
 var current_score: int = 0
@@ -125,9 +128,17 @@ func load_course_data(course_id: String) -> bool:
 		if error == OK:
 			if json.data is Array and json.data.size() > 0:
 				var first_item = json.data[0]
+				# Standard Quiz
 				if first_item is Dictionary and first_item.has("answers") and first_item["answers"] is Array:
 					master_questions_pool = json.data
 					reset_session_pool()
+					is_matching_mode = false
+					return true
+			elif json.data is Dictionary:
+				# Matching Game (Metadata + Definitions)
+				if json.data.has("definitions") and json.data["definitions"] is Array:
+					matching_pool = json.data["definitions"]
+					is_matching_mode = true
 					return true
 
 			print("Error: Loaded data does not match expected schema.")
@@ -140,6 +151,58 @@ func reset_session_pool() -> void:
 		questions_pool = master_questions_pool.duplicate(true)
 	else:
 		questions_pool = []
+
+func get_course_type(course_id: String) -> String:
+	var file_path: String = "res://assets/questions/" + course_id + ".json"
+	if FileAccess.file_exists(file_path):
+		var file: FileAccess = FileAccess.open(file_path, FileAccess.READ)
+		var json_text: String = file.get_as_text()
+		var json: JSON = JSON.new()
+		var error: Error = json.parse(json_text)
+		if error == OK:
+			if json.data is Dictionary and json.data.has("definitions"):
+				return "matching"
+			elif json.data is Array:
+				return "quiz"
+	return "unknown"
+
+func get_matching_round_data() -> Array:
+	if matching_pool.is_empty():
+		return []
+
+	# Attempt to find 5 items with the same tag
+	# 1. Collect all tags
+	var tag_counts: Dictionary = {}
+	for item in matching_pool:
+		if item.has("tags"):
+			for tag in item["tags"]:
+				tag_counts[tag] = tag_counts.get(tag, 0) + 1
+
+	# 2. Filter tags with >= 5 items
+	var valid_tags: Array = []
+	for tag in tag_counts:
+		if tag_counts[tag] >= 5:
+			valid_tags.append(tag)
+
+	var selected_items: Array = []
+
+	if valid_tags.size() > 0:
+		var random_tag = valid_tags.pick_random()
+		# Pick 5 random items with this tag
+		var candidates: Array = []
+		for item in matching_pool:
+			if item.has("tags") and random_tag in item["tags"]:
+				candidates.append(item)
+
+		candidates.shuffle()
+		selected_items = candidates.slice(0, 5)
+	else:
+		# Fallback: Random 5 items
+		var pool = matching_pool.duplicate()
+		pool.shuffle()
+		selected_items = pool.slice(0, 5)
+
+	return selected_items
 
 func reset_stats() -> void:
 	current_score = 0

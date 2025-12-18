@@ -35,23 +35,50 @@ theme_override_font_sizes/font_size = 120
 text = "SELECT DIFFICULTY"
 horizontal_alignment = 1
 
-[node name="BtnLow" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="QuizContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="BtnLow" type="Button" parent="CenterContainer/VBoxContainer/QuizContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 42
 text = "1 STAR (10 Questions)"
 
-[node name="BtnMed" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="BtnMed" type="Button" parent="CenterContainer/VBoxContainer/QuizContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 42
 text = "2 STAR (25 Questions)"
 
-[node name="BtnHigh" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="BtnHigh" type="Button" parent="CenterContainer/VBoxContainer/QuizContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 42
 text = "3 STAR (75 Questions)"
+
+[node name="MatchingContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="BtnMatch3" type="Button" parent="CenterContainer/VBoxContainer/MatchingContainer"]
+layout_mode = 2
+theme = ExtResource("3_iue5x")
+theme_override_font_sizes/font_size = 42
+text = "3 ROUNDS"
+
+[node name="BtnMatch5" type="Button" parent="CenterContainer/VBoxContainer/MatchingContainer"]
+layout_mode = 2
+theme = ExtResource("3_iue5x")
+theme_override_font_sizes/font_size = 42
+text = "5 ROUNDS"
+
+[node name="BtnMatch10" type="Button" parent="CenterContainer/VBoxContainer/MatchingContainer"]
+layout_mode = 2
+theme = ExtResource("3_iue5x")
+theme_override_font_sizes/font_size = 42
+text = "10 ROUNDS"
 
 [node name="BtnCancel" type="Button" parent="CenterContainer/VBoxContainer"]
 modulate = Color(1, 0.5, 0.5, 1)

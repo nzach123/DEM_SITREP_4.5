@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ca6d98eabbfba7d325e04808836c2883f5dcb342af865c9586a53ae44c9996a0
-size 307
+# This file is here so we can load it only when we are in the editor so that
+# other places do not have to have "EditorInterface" in them, which causes a
+# parser error when loaded outside of the editor.  The things we have to do in
+# order to test things is annoying.
+func get_it():
+	return EditorInterface

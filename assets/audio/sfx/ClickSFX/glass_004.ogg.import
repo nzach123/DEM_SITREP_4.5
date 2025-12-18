@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc46f7fb3c3f26b1a8edfe257d1af77c83d41eba8095f303bb407d9b46ccd4e8
-size 409
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://btaoflw16nisc"
+path="res://.godot/imported/glass_004.ogg-4807c385d1adb4e7df5e6f5ea79f86da.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ClickSFX/glass_004.ogg"
+dest_files=["res://.godot/imported/glass_004.ogg-4807c385d1adb4e7df5e6f5ea79f86da.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ee031f7fa2c61cb9064e8b63b441614bb359b76383d04765d48581ab9dd75e1a
-size 574
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c10rpwkshe82c"
+path="res://.godot/imported/mixkit-facility-alarm-sound-999.wav-0bc66627a27e0fa4d15e5225e9f352f5.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Beeps/mixkit-facility-alarm-sound-999.wav"
+dest_files=["res://.godot/imported/mixkit-facility-alarm-sound-999.wav-0bc66627a27e0fa4d15e5225e9f352f5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

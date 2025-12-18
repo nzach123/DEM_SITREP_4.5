@@ -1,3 +1,937 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:692a68a93f07183d8b3569558b96765940d48de921e089abb7815c2aef96e886
-size 47113
+[
+  {
+    "question": "What fundamental shift occurred in disaster management during the 1970s and 1980s?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "From proactive to reactive", "is_correct": false },
+      { "text": "From reactive response to proactive planning", "is_correct": true },
+      { "text": "From international to local focus only", "is_correct": false },
+      { "text": "From technological to biological hazards", "is_correct": false }
+    ],
+    "explanation": "Early UN efforts shifted focus from simply responding to disasters to emphasizing pre-disaster planning and prevention."
+  },
+  {
+    "question": "According to the IFRC formula, how does capacity affect disaster risk?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "It increases vulnerability", "is_correct": false },
+      { "text": "It is inversely proportional to disaster risk", "is_correct": true },
+      { "text": "It multiplies the hazard impact", "is_correct": false },
+      { "text": "It has no relationship to risk", "is_correct": false }
+    ],
+    "explanation": "The formula Disaster = (Vulnerability + Hazard) / Capacity shows that higher capacity reduces the overall disaster outcome."
+  },
+  {
+    "question": "Which concept defines disaster as a social construct rather than a natural event?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Human vulnerability creates the disaster", "is_correct": true },
+      { "text": "Nature controls all disaster outcomes", "is_correct": false },
+      { "text": "Disasters only occur in cities", "is_correct": false },
+      { "text": "Hazards are synonymous with disasters", "is_correct": false }
+    ],
+    "explanation": "A hazard only becomes a disaster when it intersects with a vulnerable human population or system."
+  },
+  {
+    "question": "What are the three core components of the standard risk equation in DRR?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Hazard, Exposure, Vulnerability", "is_correct": true },
+      { "text": "Hazard, Mitigation, Response", "is_correct": false },
+      { "text": "Capacity, Resilience, Recovery", "is_correct": false },
+      { "text": "Probability, Cost, Insurance", "is_correct": false }
+    ],
+    "explanation": "Risk is generally calculated as the product of Hazard, Exposure, and Vulnerability."
+  },
+  {
+    "question": "Which document established seven global targets for disaster risk reduction by 2030?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Hyogo Framework", "is_correct": false },
+      { "text": "Sendai Framework", "is_correct": true },
+      { "text": "Paris Agreement", "is_correct": false },
+      { "text": "Yokohama Strategy", "is_correct": false }
+    ],
+    "explanation": "The Sendai Framework (2015-2030) outlines seven specific targets to reduce disaster risk and losses."
+  },
+  {
+    "question": "What is the primary goal of the Paris Agreement in relation to DRR?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "To increase global GDP", "is_correct": false },
+      { "text": "To limit global warming and reduce climate risks", "is_correct": true },
+      { "text": "To fund military response to disasters", "is_correct": false },
+      { "text": "To privatize emergency management", "is_correct": false }
+    ],
+    "explanation": "The Paris Agreement aims to limit warming, directly influencing the frequency and intensity of climate-related hazards."
+  },
+  {
+    "question": "Which stakeholder attribute relates to the perceived validity of their claim?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Power", "is_correct": false },
+      { "text": "Urgency", "is_correct": false },
+      { "text": "Legitimacy", "is_correct": true },
+      { "text": "Capacity", "is_correct": false }
+    ],
+    "explanation": "Legitimacy refers to whether a stakeholder is seen as a valid and rightful participant in the process."
+  },
+  {
+    "question": "What distinguishes 'Corrective' Disaster Risk Management from 'Prospective' DRM?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Corrective addresses existing risks; Prospective avoids new ones", "is_correct": true },
+      { "text": "Corrective is for future risks only", "is_correct": false },
+      { "text": "Prospective focuses on response only", "is_correct": false },
+      { "text": "There is no difference", "is_correct": false }
+    ],
+    "explanation": "Corrective DRM fixes present issues (e.g., retrofitting), while Prospective DRM prevents future risks (e.g., land-use planning)."
+  },
+  {
+    "question": "In the Disaster Crunch Model, what precedes 'Unsafe Conditions'?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Hazards", "is_correct": false },
+      { "text": "Dynamic Pressures", "is_correct": true },
+      { "text": "Disaster Risk", "is_correct": false },
+      { "text": "Response", "is_correct": false }
+    ],
+    "explanation": "Root causes lead to dynamic pressures, which in turn create unsafe conditions in the progression of vulnerability."
+  },
+  {
+    "question": "What is a primary advantage of Ecosystem-based DRR over grey infrastructure?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It is always cheaper to build", "is_correct": false },
+      { "text": "It provides co-benefits like food security", "is_correct": true },
+      { "text": "It requires no maintenance", "is_correct": false },
+      { "text": "It works instantly without growth time", "is_correct": false }
+    ],
+    "explanation": "Eco-DRR offers multifunctional benefits (e.g., livelihoods, carbon sequestration) alongside risk reduction."
+  },
+  {
+    "question": "Which phase of the DRM cycle involves addressing 'residual risk'?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Prevention", "is_correct": false },
+      { "text": "Preparedness", "is_correct": false },
+      { "text": "Residual risk management (e.g., insurance)", "is_correct": true },
+      { "text": "Hazard identification", "is_correct": false }
+    ],
+    "explanation": "Residual risk is the risk remaining after prevention efforts, often managed through financing or insurance."
+  },
+  {
+    "question": "What does the 'all-hazards' approach emphasize?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Preparing for every specific hazard individually", "is_correct": false },
+      { "text": "Ignoring specific hazard differences", "is_correct": false },
+      { "text": "Addressing common vulnerabilities across hazard types", "is_correct": true },
+      { "text": "Focusing only on natural hazards", "is_correct": false }
+    ],
+    "explanation": "All-hazards approaches build capabilities that apply to multiple types of emergencies to increase efficiency."
+  },
+  {
+    "question": "How is 'risk' defined in a quantitative assessment?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Hazard magnitude only", "is_correct": false },
+      { "text": "Probability multiplied by Consequence", "is_correct": true },
+      { "text": "Total cost of response", "is_correct": false },
+      { "text": "Vulnerability minus Capacity", "is_correct": false }
+    ],
+    "explanation": "Quantitative risk is calculated as the likelihood of an event occurring times its potential impact."
+  },
+  {
+    "question": "What is the main limitation of relying solely on quantitative risk data?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It is too expensive", "is_correct": false },
+      { "text": "It is never accurate", "is_correct": false },
+      { "text": "Public often misunderstands probability terms", "is_correct": true },
+      { "text": "It cannot measure economic loss", "is_correct": false }
+    ],
+    "explanation": "Terms like '1-in-100 year event' are frequently misinterpreted by the public as time intervals rather than probabilities."
+  },
+  {
+    "question": "What is 'Compensatory' Disaster Risk Management?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Preventing new risks", "is_correct": false },
+      { "text": "Managing residual risk via insurance/preparedness", "is_correct": true },
+      { "text": "Relocating entire populations", "is_correct": false },
+      { "text": "Building dams and levees", "is_correct": false }
+    ],
+    "explanation": "Compensatory DRM strengthens resilience against risks that cannot be reduced, using tools like insurance and safety nets."
+  },
+  {
+    "question": "Which stakeholder attribute is defined as the ability to influence decisions?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Legitimacy", "is_correct": false },
+      { "text": "Urgency", "is_correct": false },
+      { "text": "Power", "is_correct": true },
+      { "text": "Resilience", "is_correct": false }
+    ],
+    "explanation": "Power is the attribute describing a stakeholder's capacity to influence outcomes and other actors."
+  },
+  {
+    "question": "What strategy helps 'manufacture urgency' for reactive stakeholders?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Ignoring them until disaster strikes", "is_correct": false },
+      { "text": "Using policy, regulation, or public pressure", "is_correct": true },
+      { "text": "Providing more scientific data only", "is_correct": false },
+      { "text": "Reducing their power", "is_correct": false }
+    ],
+    "explanation": "Creating external pressure through laws or media can force reactive stakeholders to treat a risk as urgent."
+  },
+  {
+    "question": "Which type of exercise tests the full capacity of an EOP in real-time?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Tabletop exercise", "is_correct": false },
+      { "text": "Drill", "is_correct": false },
+      { "text": "Full-scale exercise", "is_correct": true },
+      { "text": "Functional exercise", "is_correct": false }
+    ],
+    "explanation": "A full-scale exercise involves mobilizing resources and personnel in a real-time simulation of a disaster."
+  },
+  {
+    "question": "Why is 'Situation Assessment' distinct from 'Needs Assessment'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Situation asks 'what happened'; Needs asks 'what is required'", "is_correct": true },
+      { "text": "Situation is for funding; Needs is for media", "is_correct": false },
+      { "text": "They are synonymous terms", "is_correct": false },
+      { "text": "Needs assessment happens before the disaster", "is_correct": false }
+    ],
+    "explanation": "Situation assessment determines the scope of the event; needs assessment determines the resources required to respond."
+  },
+  {
+    "question": "What is a 'cascading event'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A disaster that stops quickly", "is_correct": false },
+      { "text": "Secondary events triggered by a primary hazard", "is_correct": true },
+      { "text": "A hazard that only affects waterfalls", "is_correct": false },
+      { "text": "A standalone political crisis", "is_correct": false }
+    ],
+    "explanation": "Cascading events are unexpected secondary crises (e.g., dam failure after an earthquake) triggered by an initial hazard."
+  },
+  {
+    "question": "What is the most effective form of donations during a disaster?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Used clothing", "is_correct": false },
+      { "text": "Canned food", "is_correct": false },
+      { "text": "Cash", "is_correct": true },
+      { "text": "Toys", "is_correct": false }
+    ],
+    "explanation": "Cash is flexible, requires no logistics to transport, and supports local economies, avoiding the 'second disaster' of goods."
+  },
+  {
+    "question": "What is a 'second disaster' in the context of response?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "An aftershock", "is_correct": false },
+      { "text": "Chaos caused by unmanaged donations or volunteers", "is_correct": true },
+      { "text": "Political elections during a crisis", "is_correct": false },
+      { "text": "Media coverage of the event", "is_correct": false }
+    ],
+    "explanation": "Unmanaged convergence of goods and people can overwhelm responders, creating a secondary logistical crisis."
+  },
+  {
+    "question": "Which risk control measure is considered most effective?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Personal Protective Equipment", "is_correct": false },
+      { "text": "Elimination of the hazard", "is_correct": true },
+      { "text": "Administrative controls", "is_correct": false },
+      { "text": "Emergency response planning", "is_correct": false }
+    ],
+    "explanation": "Elimination removes the risk entirely (e.g., not building in a flood zone), making it the most effective control."
+  },
+  {
+    "question": "What distinguishes 'resilience' from 'capacity'?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Resilience is the process of adapting; capacity is a resource", "is_correct": true },
+      { "text": "Capacity is dynamic; resilience is static", "is_correct": false },
+      { "text": "They are exactly the same", "is_correct": false },
+      { "text": "Resilience only applies to infrastructure", "is_correct": false }
+    ],
+    "explanation": "Capacity is the resources available to cope; resilience is the system's ability to adapt, recover, and improve over time."
+  },
+  {
+    "question": "How does the 'Systemic Disaster Risk' handbook define systemic risk?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Risks emerging from interdependent, complex networks", "is_correct": true },
+      { "text": "Risks that are purely environmental", "is_correct": false },
+      { "text": "Risks limited to a single sector", "is_correct": false },
+      { "text": "Risks that are easily predicted", "is_correct": false }
+    ],
+    "explanation": "Systemic risk arises from the interactions within complex, interconnected social, economic, and technical systems."
+  },
+  {
+    "question": "What is the purpose of the 'Ten Essentials for Making Cities Resilient'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A checklist for rural farming", "is_correct": false },
+      { "text": "A roadmap for local governments to integrate DRR", "is_correct": true },
+      { "text": "A binding international treaty", "is_correct": false },
+      { "text": "A funding application for the UN", "is_correct": false }
+    ],
+    "explanation": "The Ten Essentials guide local governments in integrating risk reduction into urban planning and development."
+  },
+  {
+    "question": "In the context of Eco-DRR, what is a 'bioshield'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "A concrete wall painted green", "is_correct": false },
+      { "text": "Vegetation acting as a barrier against hazards", "is_correct": true },
+      { "text": "A legal protection for forests", "is_correct": false },
+      { "text": "A type of insurance", "is_correct": false }
+    ],
+    "explanation": "Bioshields are natural barriers, like mangroves or forests, that physically buffer communities from hazard impacts."
+  },
+  {
+    "question": "What is the primary challenge in financing DRR?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Too much money is available", "is_correct": false },
+      { "text": "Funding is reactive, prioritizing response over prevention", "is_correct": true },
+      { "text": "It is illegal to fund prevention", "is_correct": false },
+      { "text": "Private sectors refuse to invest", "is_correct": false }
+    ],
+    "explanation": "The vast majority of disaster-related funding goes to post-disaster response rather than pre-disaster risk reduction."
+  },
+  {
+    "question": "What is 'Value Maximization' in stakeholder decision-making?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Acting based on gut feeling", "is_correct": false },
+      { "text": "Rational cost-benefit analysis for long-term gain", "is_correct": true },
+      { "text": "Maximizing immediate emotional satisfaction", "is_correct": false },
+      { "text": "Ignoring all costs", "is_correct": false }
+    ],
+    "explanation": "Value Maximization involves proactive decisions based on data proving that long-term benefits outweigh upfront costs."
+  },
+  {
+    "question": "What role does 'Intuitive Reasoning' play in stakeholder behavior?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It leads to highly proactive planning", "is_correct": false },
+      { "text": "It drives reactive behavior based on immediate threats", "is_correct": true },
+      { "text": "It relies heavily on statistical models", "is_correct": false },
+      { "text": "It is the primary tool for government policy", "is_correct": false }
+    ],
+    "explanation": "Intuitive reasoning relies on short-term perceptions, often leading stakeholders to act only when a threat is imminent."
+  },
+  {
+    "question": "What is the 'Hazardscape'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A map of only natural hazards", "is_correct": false },
+      { "text": "The cumulative emergency management environment", "is_correct": true },
+      { "text": "A landscape damaged by a disaster", "is_correct": false },
+      { "text": "The psychological fear of hazards", "is_correct": false }
+    ],
+    "explanation": "Hazardscape is the comprehensive view of all hazards, risks, vulnerabilities, and capacities in a specific area."
+  },
+  {
+    "question": "Which standard provides best practices for EM and Business Continuity in Canada?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "ISO 9001", "is_correct": false },
+      { "text": "CSA Z1600", "is_correct": true },
+      { "text": "Sendai Framework", "is_correct": false },
+      { "text": "The Paris Agreement", "is_correct": false }
+    ],
+    "explanation": "CSA Z1600 is the Canadian standard that outlines requirements for emergency management and business continuity programs."
+  },
+  {
+    "question": "What is a 'drill' in the context of emergency exercises?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A test of a single specific function", "is_correct": true },
+      { "text": "A full-scale deployment of all resources", "is_correct": false },
+      { "text": "A discussion-based scenario", "is_correct": false },
+      { "text": "A written exam for responders", "is_correct": false }
+    ],
+    "explanation": "A drill is a limited exercise designed to test a specific operation or function, like a fire alarm evacuation."
+  },
+  {
+    "question": "Why is 'Mainstreaming' DRR important for financing?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "It separates DRR from development budgets", "is_correct": false },
+      { "text": "It integrates resilience into all standard investments", "is_correct": true },
+      { "text": "It reduces the need for private sector involvement", "is_correct": false },
+      { "text": "It focuses solely on international aid", "is_correct": false }
+    ],
+    "explanation": "Mainstreaming ensures that vast development and infrastructure budgets inherently address risk, rather than relying on small dedicated DRR funds."
+  },
+  {
+    "question": "What defines 'Root Causes' in the Disaster Crunch Model?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Immediate threats like storms", "is_correct": false },
+      { "text": "Systemic issues like ideology and economic structure", "is_correct": true },
+      { "text": "Lack of disaster kits", "is_correct": false },
+      { "text": "Unsafe building locations", "is_correct": false }
+    ],
+    "explanation": "Root causes are deep, structural factors like political and economic systems that distribute power and resources unequally."
+  },
+  {
+    "question": "Which is an example of a 'Dynamic Pressure'?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Rapid urbanization", "is_correct": true },
+      { "text": "An earthquake", "is_correct": false },
+      { "text": "Colonial history", "is_correct": false },
+      { "text": "Living in a basement", "is_correct": false }
+    ],
+    "explanation": "Dynamic pressures are processes (like urbanization or deforestation) that translate root causes into specific unsafe conditions."
+  },
+  {
+    "question": "What is the primary function of the 'Emergency Operations Plan' (EOP)?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "To serve as a public relations document", "is_correct": false },
+      { "text": "To act as the master blueprint for response", "is_correct": true },
+      { "text": "To request international funding", "is_correct": false },
+      { "text": "To predict future weather patterns", "is_correct": false }
+    ],
+    "explanation": "The EOP outlines responsibilities and procedures, serving as the central guide for coordinating a disaster response."
+  },
+  {
+    "question": "What distinguishes 'Risk Transfer' from 'Risk Reduction'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Transfer shifts financial consequences; Reduction lowers likelihood/impact", "is_correct": true },
+      { "text": "Transfer eliminates the hazard entirely", "is_correct": false },
+      { "text": "Reduction involves insurance", "is_correct": false },
+      { "text": "They are synonymous", "is_correct": false }
+    ],
+    "explanation": "Risk transfer (e.g., insurance) shifts the cost of a realized risk, while reduction actively mitigates the physical risk."
+  },
+  {
+    "question": "Which hazard category includes pathogenic micro-organisms?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Geophysical", "is_correct": false },
+      { "text": "Biological", "is_correct": true },
+      { "text": "Technological", "is_correct": false },
+      { "text": "Hydrometeorological", "is_correct": false }
+    ],
+    "explanation": "Biological hazards are of organic origin, such as bacteria, viruses, and toxins."
+  },
+  {
+    "question": "What is the 'emissions gap' mentioned in relation to the Paris Agreement?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "The distance between countries", "is_correct": false },
+      { "text": "Difference between pledged reductions and necessary reductions", "is_correct": true },
+      { "text": "The hole in the ozone layer", "is_correct": false },
+      { "text": "The time between summits", "is_correct": false }
+    ],
+    "explanation": "The emissions gap is the difference between national pledges to cut emissions and the cuts actually needed to limit warming."
+  },
+  {
+    "question": "What is the goal of 'inclusive governance' in systemic risk management?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "To centralize power in one agency", "is_correct": false },
+      { "text": "To facilitate whole-of-society involvement", "is_correct": true },
+      { "text": "To exclude private sector interests", "is_correct": false },
+      { "text": "To slow down decision making", "is_correct": false }
+    ],
+    "explanation": "Inclusive governance ensures diverse stakeholders participate, which is essential for managing complex, systemic risks."
+  },
+  {
+    "question": "Why are 'spontaneous volunteers' potentially problematic?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "They charge too much money", "is_correct": false },
+      { "text": "They create logistical and safety liabilities if unmanaged", "is_correct": true },
+      { "text": "They are usually foreign spies", "is_correct": false },
+      { "text": "They refuse to work hard", "is_correct": false }
+    ],
+    "explanation": "Without coordination, spontaneous volunteers can interfere with professionals and create new safety/logistical burdens."
+  },
+  {
+    "question": "What is the key benefit of 'ex-ante' financing?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It is cheaper than insurance", "is_correct": false },
+      { "text": "It allows for rapid, guaranteed response funding", "is_correct": true },
+      { "text": "It relies on post-disaster donations", "is_correct": false },
+      { "text": "It avoids government involvement", "is_correct": false }
+    ],
+    "explanation": "Ex-ante financing (arranged before the event) ensures immediate liquidity, unlike ex-post financing which requires scrambling for funds."
+  },
+  {
+    "question": "What does 'Functional Capacity' refer to in capacity building?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "The amount of physical equipment available", "is_correct": false },
+      { "text": "The ability to make decisions and take action", "is_correct": true },
+      { "text": "The storage space in a warehouse", "is_correct": false },
+      { "text": "The number of staff members", "is_correct": false }
+    ],
+    "explanation": "Functional capacity is the soft skill set—management, coordination, and decision-making—that enables effective action."
+  },
+  {
+    "question": "In the IDNDR (1990s), what was the major shift in international focus?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Focusing on space exploration", "is_correct": false },
+      { "text": "Fostering international cooperation for disaster reduction", "is_correct": true },
+      { "text": "Stopping all aid to developing countries", "is_correct": false },
+      { "text": "Ignoring natural disasters", "is_correct": false }
+    ],
+    "explanation": "The International Decade for Natural Disaster Reduction aimed to mobilize global cooperation to reduce disaster impacts."
+  },
+  {
+    "question": "What determines if a risk is 'acceptable'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Scientific data alone", "is_correct": false },
+      { "text": "Social values, cost-benefit, and risk perception", "is_correct": true },
+      { "text": "If it has never happened before", "is_correct": false },
+      { "text": "If it costs nothing to fix", "is_correct": false }
+    ],
+    "explanation": "Acceptability is a societal judgment balancing the cost of mitigation against the likelihood and consequence of the risk."
+  },
+  {
+    "question": "Which is a 'hydrometeorological' hazard?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Earthquake", "is_correct": false },
+      { "text": "Hurricane", "is_correct": true },
+      { "text": "Industrial explosion", "is_correct": false },
+      { "text": "Virus outbreak", "is_correct": false }
+    ],
+    "explanation": "Hydrometeorological hazards relate to water and weather, such as hurricanes, floods, and droughts."
+  },
+  {
+    "question": "What is the primary role of the Incident Command System (ICS)?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "To manage media relations only", "is_correct": false },
+      { "text": "To provide a standardized management hierarchy", "is_correct": true },
+      { "text": "To prevent disasters from happening", "is_correct": false },
+      { "text": "To generate funding", "is_correct": false }
+    ],
+    "explanation": "ICS provides a standardized, scalable hierarchy to coordinate diverse agencies during an emergency response."
+  },
+  {
+    "question": "What is a 'tabletop exercise'?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "A full mobilization of troops", "is_correct": false },
+      { "text": "A discussion-based review of plans", "is_correct": true },
+      { "text": "A physical fitness test", "is_correct": false },
+      { "text": "A test of siren systems", "is_correct": false }
+    ],
+    "explanation": "A tabletop exercise is a low-stress discussion where personnel talk through a scenario to evaluate plans."
+  },
+  {
+    "question": "How does 'sustainable livelihoods' relate to Eco-DRR?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It is unrelated", "is_correct": false },
+      { "text": "Eco-DRR protects resources people rely on for income", "is_correct": true },
+      { "text": "It forces people to move to cities", "is_correct": false },
+      { "text": "It focuses only on industrial jobs", "is_correct": false }
+    ],
+    "explanation": "Eco-DRR projects often secure natural resources (like soil or water) that support local agriculture and income."
+  },
+  {
+    "question": "What is the 'Protection' limit of forests in Eco-DRR?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "They prevent all hazards", "is_correct": false },
+      { "text": "Effective mainly against small-to-medium, high-frequency events", "is_correct": true },
+      { "text": "Effective against massive, low-frequency events", "is_correct": false },
+      { "text": "They only work in summer", "is_correct": false }
+    ],
+    "explanation": "Forests are excellent buffers for common events (rockfalls, small slides) but cannot stop massive catastrophic events."
+  },
+  {
+    "question": "What is 'Risk Avoidance'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Buying insurance", "is_correct": false },
+      { "text": "Removing the risk source entirely", "is_correct": true },
+      { "text": "Ignoring the risk", "is_correct": false },
+      { "text": "Reducing the impact", "is_correct": false }
+    ],
+    "explanation": "Risk avoidance involves decisions (like zoning laws) that remove the possibility of exposure to the hazard completely."
+  },
+  {
+    "question": "Why is 'place-based' planning important in systemic risk?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "All places are the same", "is_correct": false },
+      { "text": "Global solutions apply everywhere", "is_correct": false },
+      { "text": "Solutions must tailor to local social/environmental contexts", "is_correct": true },
+      { "text": "It saves travel money", "is_correct": false }
+    ],
+    "explanation": "Systemic risk manifests uniquely in each location due to specific local interdependencies and vulnerabilities."
+  },
+  {
+    "question": "What is the relationship between 'Hazard' and 'Risk'?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "They are identical", "is_correct": false },
+      { "text": "Hazard is the potential; Risk is the likelihood of harm", "is_correct": true },
+      { "text": "Risk is the cause; Hazard is the effect", "is_correct": false },
+      { "text": "Hazard is financial; Risk is physical", "is_correct": false }
+    ],
+    "explanation": "A hazard is a source of danger; risk is the probability that the hazard will actually cause damage."
+  },
+  {
+    "question": "What does 'Command' refer to in disaster response?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "The legal authority to direct the response", "is_correct": true },
+      { "text": "The number of people involved", "is_correct": false },
+      { "text": "The type of equipment used", "is_correct": false },
+      { "text": "The communication radio channels", "is_correct": false }
+    ],
+    "explanation": "Command is the exercise of authority and direction by a designated individual over an organization."
+  },
+  {
+    "question": "What defines a 'Technological Hazard'?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "A storm", "is_correct": false },
+      { "text": "A volcanic eruption", "is_correct": false },
+      { "text": "Industrial failure or human activity", "is_correct": true },
+      { "text": "A virus", "is_correct": false }
+    ],
+    "explanation": "Technological hazards arise from human systems, such as chemical spills, infrastructure collapse, or transport accidents."
+  },
+  {
+    "question": "What is the primary barrier to effective public preparedness education?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Lack of hazards", "is_correct": false },
+      { "text": "Socio-cultural factors like literacy and poverty", "is_correct": true },
+      { "text": "Too much information", "is_correct": false },
+      { "text": "The internet is too fast", "is_correct": false }
+    ],
+    "explanation": "Education fails if it ignores barriers like language, literacy, or the financial inability to act on advice."
+  },
+  {
+    "question": "How does 'Adaptability' function in inclusive governance?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "By sticking to the original plan at all costs", "is_correct": false },
+      { "text": "Treating decision-making as an active learning process", "is_correct": true },
+      { "text": "Avoiding all decisions", "is_correct": false },
+      { "text": "Changing leaders frequently", "is_correct": false }
+    ],
+    "explanation": "Adaptability involves iterative assessment and adjusting strategies as new information about the risk emerges."
+  },
+  {
+    "question": "What does the 'emissions gap' imply for DRR?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Disaster risks will decrease", "is_correct": false },
+      { "text": "Future climate-related risks will likely increase", "is_correct": true },
+      { "text": "DRR is no longer needed", "is_correct": false },
+      { "text": "Technology will solve all problems", "is_correct": false }
+    ],
+    "explanation": "A gap in emissions reduction means higher global temperatures, leading to more frequent and intense climate hazards."
+  },
+  {
+    "question": "Which represents a 'Structural' mitigation measure?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Building a levee", "is_correct": true },
+      { "text": "Buying insurance", "is_correct": false },
+      { "text": "Creating a zoning law", "is_correct": false },
+      { "text": "Public education", "is_correct": false }
+    ],
+    "explanation": "Structural mitigation involves physical engineering projects to control hazards, like dams, levees, or retrofitting."
+  },
+  {
+    "question": "What is the role of 'Drivers of Risk' in DRR?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "They transport supplies", "is_correct": false },
+      { "text": "They are the underlying factors creating vulnerability", "is_correct": true },
+      { "text": "They identify hazards", "is_correct": false },
+      { "text": "They respond to 911 calls", "is_correct": false }
+    ],
+    "explanation": "Drivers like poverty, urbanization, and environmental degradation actively create the conditions for vulnerability."
+  },
+  {
+    "question": "What is the 'Hyogo Framework for Action'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A plan to increase global warming", "is_correct": false },
+      { "text": "A 10-year plan to build resilience (2005-2015)", "is_correct": true },
+      { "text": "A peace treaty", "is_correct": false },
+      { "text": "A trade agreement", "is_correct": false }
+    ],
+    "explanation": "Hyogo was the global blueprint for DRR from 2005 to 2015, preceding the Sendai Framework."
+  },
+  {
+    "question": "In the Sendai Framework, what is Priority 1?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "Building back better", "is_correct": false },
+      { "text": "Understanding disaster risk", "is_correct": true },
+      { "text": "Investing in resilience", "is_correct": false },
+      { "text": "Strengthening governance", "is_correct": false }
+    ],
+    "explanation": "Priority 1 is 'Understanding disaster risk', as knowledge is the foundation for all other actions."
+  },
+  {
+    "question": "What is the relationship between 'Resilience' and 'Sustainability'?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "They are opposing concepts", "is_correct": false },
+      { "text": "Resilience links sustainability to risk management", "is_correct": true },
+      { "text": "Sustainability is only for the environment", "is_correct": false },
+      { "text": "Resilience is only for the economy", "is_correct": false }
+    ],
+    "explanation": "Resilient systems can withstand shocks, which is essential for maintaining long-term development gains (sustainability)."
+  },
+  {
+    "question": "Which allows a stakeholder to be 'Proactive' according to the theory?",
+    "difficulty": 0.7,
+    "answers": [
+      { "text": "Possessing Power and Value Maximization logic", "is_correct": true },
+      { "text": "Possessing Urgency and Intuitive logic", "is_correct": false },
+      { "text": "Having no attributes", "is_correct": false },
+      { "text": "Having Legitimacy only", "is_correct": false }
+    ],
+    "explanation": "Proactivity requires the capacity to act (Power) and the rational foresight (Value Maximization) to invest early."
+  },
+  {
+    "question": "What does 'Functional Annex' refer to in an EOP?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "A list of phone numbers", "is_correct": false },
+      { "text": "Details for specific tasks like communications or evacuation", "is_correct": true },
+      { "text": "The table of contents", "is_correct": false },
+      { "text": "Historical records of disasters", "is_correct": false }
+    ],
+    "explanation": "Functional annexes cover broad tasks (e.g., Mass Care) that apply across different types of hazards."
+  },
+  {
+    "question": "Why is 'Coordination' essential in the 'Cluster System'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "To ensure agencies don't duplicate efforts", "is_correct": true },
+      { "text": "To compete for funding", "is_correct": false },
+      { "text": "To eliminate small NGOs", "is_correct": false },
+      { "text": "To increase bureaucracy", "is_correct": false }
+    ],
+    "explanation": "The Cluster System groups agencies by sector (e.g., Health) to synchronize efforts and maximize efficiency."
+  },
+  {
+    "question": "What is 'prospective' disaster risk management?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "Responding to past events", "is_correct": false },
+      { "text": "Avoiding the creation of new risks", "is_correct": true },
+      { "text": "Buying insurance", "is_correct": false },
+      { "text": "Repairing old buildings", "is_correct": false }
+    ],
+    "explanation": "Prospective DRM focuses on planning (like land use) to ensure future developments do not generate new risks."
+  },
+  {
+    "question": "What does the 'progression of vulnerability' describe?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "How hazards get stronger", "is_correct": false },
+      { "text": "How root causes translate into unsafe conditions", "is_correct": true },
+      { "text": "How economies grow", "is_correct": false },
+      { "text": "How recovery happens", "is_correct": false }
+    ],
+    "explanation": "It describes the chain mechanism in the Crunch Model where systemic issues evolve into specific physical risks."
+  },
+  {
+    "question": "Which action represents 'Risk Sharing'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Building a stronger wall", "is_correct": false },
+      { "text": "Mutual aid agreements between cities", "is_correct": true },
+      { "text": "Ignoring the risk", "is_correct": false },
+      { "text": "Evacuating the area", "is_correct": false }
+    ],
+    "explanation": "Risk sharing involves spreading the burden of consequence among multiple parties, such as through mutual aid."
+  },
+  {
+    "question": "What is the main focus of 'Human-induced' hazards?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Natural earth processes", "is_correct": false },
+      { "text": "Technological or intentional human actions", "is_correct": true },
+      { "text": "Weather patterns", "is_correct": false },
+      { "text": "Solar flares", "is_correct": false }
+    ],
+    "explanation": "Human-induced hazards stem from anthropogenic sources like industrial accidents, pollution, or cyber failure."
+  },
+  {
+    "question": "Why is 'community ownership' vital in Eco-DRR projects?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It is required by law", "is_correct": false },
+      { "text": "It ensures long-term maintenance and sustainability", "is_correct": true },
+      { "text": "It is cheaper for the government", "is_correct": false },
+      { "text": "It speeds up the initial construction", "is_correct": false }
+    ],
+    "explanation": "Projects fail if locals don't value them; ownership ensures the community maintains the 'green' infrastructure."
+  },
+  {
+    "question": "What is the 'policy-to-practice' loop?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "A bureaucratic delay", "is_correct": false },
+      { "text": "Local projects informing national policy and vice versa", "is_correct": true },
+      { "text": "A repeating mistake", "is_correct": false },
+      { "text": "A legal loophole", "is_correct": false }
+    ],
+    "explanation": "It describes the bidirectional relationship where field success drives policy change, and policy supports field action."
+  },
+  {
+    "question": "What is the benefit of 'multi-functional' infrastructure in Eco-DRR?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It serves only one purpose", "is_correct": false },
+      { "text": "It provides protection plus economic/social benefits", "is_correct": true },
+      { "text": "It is made of concrete", "is_correct": false },
+      { "text": "It is invisible", "is_correct": false }
+    ],
+    "explanation": "Unlike a single-purpose dam, a wetland controls floods while also filtering water and providing habitat."
+  },
+  {
+    "question": "What does 'exposure' refer to in the risk equation?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "The strength of the hazard", "is_correct": false },
+      { "text": "People and assets located in hazard-prone areas", "is_correct": true },
+      { "text": "The lack of insurance", "is_correct": false },
+      { "text": "The time of day", "is_correct": false }
+    ],
+    "explanation": "Exposure quantifies who or what is physically present in the area where a hazard might occur."
+  },
+  {
+    "question": "What is a 'Geological' hazard?",
+    "difficulty": 0.2,
+    "answers": [
+      { "text": "Hurricane", "is_correct": false },
+      { "text": "Earthquake", "is_correct": true },
+      { "text": "Drought", "is_correct": false },
+      { "text": "Pandemic", "is_correct": false }
+    ],
+    "explanation": "Geological hazards originate from internal earth processes, including earthquakes, volcanoes, and tsunamis."
+  },
+  {
+    "question": "What is the outcome of a 'Needs Assessment'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "A list of required resources and assistance", "is_correct": true },
+      { "text": "A map of the area", "is_correct": false },
+      { "text": "A press release", "is_correct": false },
+      { "text": "A historical report", "is_correct": false }
+    ],
+    "explanation": "Needs assessments identify specific gaps (food, water, shelter) that response operations must fill."
+  },
+  {
+    "question": "Why is 'transparency' crucial in risk governance?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "It makes documents look nice", "is_correct": false },
+      { "text": "It builds trust for whole-of-society involvement", "is_correct": true },
+      { "text": "It allows secrets to be kept", "is_correct": false },
+      { "text": "It is required by the UN only", "is_correct": false }
+    ],
+    "explanation": "Transparency ensures stakeholders understand decisions, fostering the trust necessary for collective action."
+  },
+  {
+    "question": "What is 'risk perception'?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "The mathematical probability of an event", "is_correct": false },
+      { "text": "How individuals subjectively view a risk", "is_correct": true },
+      { "text": "The government's official report", "is_correct": false },
+      { "text": "The cost of insurance", "is_correct": false }
+    ],
+    "explanation": "Risk perception is the subjective judgment people make about the severity and likelihood of a risk."
+  },
+  {
+    "question": "What is 'coping capacity'?",
+    "difficulty": 0.5,
+    "answers": [
+      { "text": "The ability to manage resources during a disaster", "is_correct": true },
+      { "text": "The total vulnerability of a system", "is_correct": false },
+      { "text": "The height of a flood wall", "is_correct": false },
+      { "text": "The likelihood of a hazard", "is_correct": false }
+    ],
+    "explanation": "Coping capacity is the ability of people and systems to use available resources to face and manage adverse conditions."
+  },
+  {
+    "question": "What does the 'Sendai Framework' emphasize regarding reconstruction?",
+    "difficulty": 0.4,
+    "answers": [
+      { "text": "Rebuilding exactly as before", "is_correct": false },
+      { "text": "Building Back Better", "is_correct": true },
+      { "text": "Abandoning damaged areas", "is_correct": false },
+      { "text": "Ignoring future risks", "is_correct": false }
+    ],
+    "explanation": "The 'Build Back Better' principle ensures that recovery efforts actively reduce vulnerability to future disasters."
+  },
+  {
+    "question": "Why is 'climate finance' an opportunity for DRR?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It funds fossil fuels", "is_correct": false },
+      { "text": "Adaptation funds can finance resilience projects", "is_correct": true },
+      { "text": "It pays for war damages", "is_correct": false },
+      { "text": "It is only for Europe", "is_correct": false }
+    ],
+    "explanation": "Climate adaptation funds target resilience against weather extremes, overlapping significantly with DRR goals."
+  },
+  {
+    "question": "What distinguishes 'natural' hazards from disasters?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Disasters kill people; hazards are just events", "is_correct": true },
+      { "text": "Hazards are man-made; disasters are natural", "is_correct": false },
+      { "text": "There is no difference", "is_correct": false },
+      { "text": "Disasters are smaller than hazards", "is_correct": false }
+    ],
+    "explanation": "A natural hazard is a physical event; a disaster is the destructive outcome when that event hits a vulnerable community."
+  },
+  {
+    "question": "What is the primary focus of 'Preparedness'?",
+    "difficulty": 0.3,
+    "answers": [
+      { "text": "Rebuilding houses", "is_correct": false },
+      { "text": "Ensuring readiness for an effective response", "is_correct": true },
+      { "text": " Preventing the hazard entirely", "is_correct": false },
+      { "text": "Analyzing historical data", "is_correct": false }
+    ],
+    "explanation": "Preparedness involves planning, training, and equipping forces to ensure they can act effectively when a disaster strikes."
+  },
+  {
+    "question": "How does 'inequality' drive disaster risk?",
+    "difficulty": 0.6,
+    "answers": [
+      { "text": "It reduces the hazard intensity", "is_correct": false },
+      { "text": "It forces marginalized groups into unsafe conditions", "is_correct": true },
+      { "text": "It increases government budgets", "is_correct": false },
+      { "text": "It has no impact on risk", "is_correct": false }
+    ],
+    "explanation": "Inequality restricts access to safe housing and resources, forcing vulnerable populations into high-risk exposures."
+  }
+]

@@ -63,16 +63,29 @@ func create_menu_buttons() -> void:
 func _on_category_selected(course_id: String) -> void:
 	if sfx_click: sfx_click.play()
 	pending_course_id = course_id
-	if difficulty_popup: difficulty_popup.show()
+
+	var type = GameManager.get_course_type(course_id)
+
+	if difficulty_popup and difficulty_popup.has_method("setup"):
+		difficulty_popup.setup(type)
+	elif difficulty_popup:
+		difficulty_popup.show()
 
 # --- NEW POPUP LOGIC ---
 
 func _start_quiz_with_difficulty(difficulty: int) -> void:
 	if sfx_click: sfx_click.play()
-	GameManager.set_difficulty(difficulty)
 
+	# Load Data First to Determine Mode
 	if GameManager.load_course_data(pending_course_id):
-		GameManager.change_scene("res://src/scenes/quiz_scene.tscn")
+		if GameManager.is_matching_mode:
+			GameManager.matching_rounds_count = difficulty
+			# Default to Medium for penalties/speed basis if needed
+			GameManager.set_difficulty(GameManager.Difficulty.MEDIUM)
+			GameManager.change_scene("res://src/scenes/MatchingGame.tscn")
+		else:
+			GameManager.set_difficulty(difficulty)
+			GameManager.change_scene("res://src/scenes/quiz_scene.tscn")
 	else:
 		print("Failed to load course: " + pending_course_id)
 		if difficulty_popup: difficulty_popup.hide()

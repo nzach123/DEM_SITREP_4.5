@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccxol8pbsw8qo"]
+
+[ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="1_theme"]
+
+[node name="DefinitionRow" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_constants/separation = 15
+
+[node name="NumberLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_theme")
+theme_override_font_sizes/font_size = 42
+text = "1."
+horizontal_alignment = 2
+
+[node name="DefinitionLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_theme")
+theme_override_font_sizes/normal_font_size = 32
+text = "Definition text goes here..."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2

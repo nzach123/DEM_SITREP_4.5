@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:516e2483fa92a36164982d0f1f04958716538dd5856b5f68118fa7cd0681f67f
-size 550
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqcdk7o2k8l0o"
+path="res://.godot/imported/mixkit-data-scaner-2847.wav-fd343dcefac8bbe44168d826410a45f9.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Beeps/mixkit-data-scaner-2847.wav"
+dest_files=["res://.godot/imported/mixkit-data-scaner-2847.wav-fd343dcefac8bbe44168d826410a45f9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

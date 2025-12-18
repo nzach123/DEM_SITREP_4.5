@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e6ec5a03e1faa37b057704edcdcc989ed5dcfa2938107e88c58b826b51d94ea
-size 282
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dabb2qtdaq502"]
+
+[ext_resource type="Shader" uid="uid://dfijmn4k1w0ge" path="res://content/resources/shaders/AARScreen.gdshader" id="1_sas3n"]
+
+[resource]
+shader = ExtResource("1_sas3n")
+shader_parameter/lod = 1.0

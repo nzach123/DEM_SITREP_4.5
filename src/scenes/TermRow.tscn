@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4ihx5phy1mbu"]
+
+[ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="1_theme"]
+
+[node name="TermRow" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="OptionButton" type="OptionButton" parent="."]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("1_theme")
+alignment = 1
+selected = 0
+item_count = 6
+popup/item_0/text = "-"
+popup/item_0/id = 0
+popup/item_1/text = "1"
+popup/item_1/id = 1
+popup/item_2/text = "2"
+popup/item_2/id = 2
+popup/item_3/text = "3"
+popup/item_3/id = 3
+popup/item_4/text = "4"
+popup/item_4/id = 4
+popup/item_5/text = "5"
+popup/item_5/id = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_theme")
+theme_override_font_sizes/font_size = 32
+text = "Term Name Here"
+vertical_alignment = 1
+autowrap_mode = 3

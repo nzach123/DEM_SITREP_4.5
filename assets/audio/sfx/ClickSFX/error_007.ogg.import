@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d2de6aff3e3e7aea3282cfab429b11dbf23523f08ff99df593a073da1459c082
-size 409
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cknpdqxy735un"
+path="res://.godot/imported/error_007.ogg-76c3e2c9dd9bb8750b71eab311b28dd7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ClickSFX/error_007.ogg"
+dest_files=["res://.godot/imported/error_007.ogg-76c3e2c9dd9bb8750b71eab311b28dd7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
