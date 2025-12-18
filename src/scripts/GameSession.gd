@@ -9,6 +9,7 @@ enum State { SETUP, PLAYING, LOCKED, END }
 @export var game_camera: QuizCamera
 @export var background_pulse: BackgroundPulse
 @export var strike_system: QuizStrikeSystem
+@export var danger_system: DangerSystem
 
 # --- UI NODES ---
 @export_group("UI Elements")
@@ -43,6 +44,7 @@ func _ready() -> void:
 	# Initial Setup
 	if strike_system: strike_system.reset_visuals()
 	if background_pulse: background_pulse.update_pulse(0)
+	if danger_system: danger_system.reset_system()
 	if audio_manager: audio_manager.stop_ambience()
 
 	# Load Data and Start
@@ -170,6 +172,7 @@ func _handle_correct(idx: int) -> void:
 	strike_streak = 0
 	if strike_system: strike_system.reset_visuals()
 	if background_pulse: background_pulse.update_pulse(0)
+	if danger_system: danger_system.set_danger_mode(false)
 
 	var q_data: Dictionary = GameManager.questions_pool[current_q_index]
 	var user_choice_text: String = answer_buttons[idx].text
@@ -198,6 +201,14 @@ func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user
 	strike_streak += 1
 	if strike_system: strike_system.update_visuals(strike_streak)
 	if background_pulse: background_pulse.update_pulse(strike_streak)
+
+	if danger_system:
+		danger_system.trigger_alert()
+		# If we have 2 strikes, we are close to losing (3 strikes max).
+		# This aligns with "When the player has two incorrect answers ... increase ... to signal heightened danger"
+		# Current strike_streak is already updated to the new value.
+		if strike_streak >= 2:
+			danger_system.set_danger_mode(true)
 
 	var penalty: int = GameManager.get_current_settings()["casualty_penalty"]
 	feedback_label.text = "SIGNAL LOST: %d CASUALTIES" % penalty
@@ -247,6 +258,7 @@ func _trigger_game_over() -> void:
 	feedback_label.text = "CRITICAL FAILURE: 3 STRIKES"
 
 	if strike_system: strike_system.trigger_game_over_sequence()
+	if danger_system: danger_system.trigger_failure()
 	if audio_manager: audio_manager.play_alarm()
 
 	await get_tree().create_timer(2.0).timeout

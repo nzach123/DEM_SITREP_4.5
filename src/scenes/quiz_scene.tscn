@@ -26,6 +26,8 @@
 [ext_resource type="Script" uid="uid://cno7l45c4w7n3" path="res://src/components/QuizCamera.gd" id="Comp_Cam"]
 [ext_resource type="Script" uid="uid://03hbla8pu4cl" path="res://src/components/BackgroundPulse.gd" id="Comp_Pulse"]
 [ext_resource type="Script" uid="uid://buusdfhal8t3i" path="res://src/components/QuizStrikeSystem.gd" id="Comp_Strike"]
+[ext_resource type="Shader" path="res://content/resources/shaders/danger_edge.gdshader" id="Shader_Danger"]
+[ext_resource type="Script" path="res://src/components/DangerSystem.gd" id="Comp_Danger"]
 
 [sub_resource type="Gradient" id="Gradient_ijcxg"]
 offsets = PackedFloat32Array(0.376471, 1)
@@ -44,6 +46,12 @@ bg_color = Color(0.258824, 0.709804, 0.270588, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijcxg"]
 bg_color = Color(5.29438e-06, 0.577399, 0.773026, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_Danger"]
+shader = ExtResource("Shader_Danger")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/intensity = 0.0
+shader_parameter/spread = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ndxw5"]
 shader = ExtResource("3_vk6e3")
@@ -69,7 +77,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[node name="QuizScene" type="Control" node_paths=PackedStringArray("audio_manager", "game_camera", "background_pulse", "strike_system", "question_label", "score_label", "timer_label", "timer_bar", "circular_timer", "rescue_bar", "feedback_label", "remediation_popup", "answer_buttons", "question_timer", "round_timer")]
+[node name="QuizScene" type="Control" node_paths=PackedStringArray("audio_manager", "game_camera", "background_pulse", "strike_system", "danger_system", "question_label", "score_label", "timer_label", "timer_bar", "circular_timer", "rescue_bar", "feedback_label", "remediation_popup", "answer_buttons", "question_timer", "round_timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,6 +89,7 @@ audio_manager = NodePath("AudioManager")
 game_camera = NodePath("Camera2D")
 background_pulse = NodePath("Background")
 strike_system = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/StrikeContainer")
+danger_system = NodePath("DangerSystem")
 question_label = NodePath("VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/QuestionsMarginContainer/QuestionLabel")
 score_label = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/ScoreLabel")
 timer_label = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/TimerLabel")
@@ -461,11 +470,27 @@ visible = false
 layout_mode = 1
 
 [node name="SirensTextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 2784.0
 offset_bottom = 1536.0
 scale = Vector2(0.69, 0.69)
 texture = ExtResource("19_o7nro")
+
+[node name="DangerOverlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_Danger")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DangerSystem" type="Node" parent="." node_paths=PackedStringArray("siren_rect", "danger_overlay")]
+script = ExtResource("Comp_Danger")
+siren_rect = NodePath("../SirensTextureRect")
+danger_overlay = NodePath("../DangerOverlay")
 
 [node name="CRTScreen" type="ColorRect" parent="."]
 visible = false
