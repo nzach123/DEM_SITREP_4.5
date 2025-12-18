@@ -87,22 +87,30 @@ func restart_level() -> void:
 	if game_paused:
 		toggle_pause() # Unpause first
 
-	SceneTransition.cover()
+	# 1. Cover the screen with the lowest resolution (Blocky)
+	if SceneTransition.has_method("set_pixel_size"):
+		SceneTransition.set_pixel_size(8.0)
+	SceneTransition.visible = true
+	
 	await get_tree().process_frame
 	get_tree().reload_current_scene()
 
-	# Wait for load, then resolve
+	# 2. Wait briefly for load, then play the "Boot Up" sequence
 	await get_tree().create_timer(0.1).timeout
-	SceneTransition.resolve()
+	SceneTransition.play_boot_sequence()
 
 func change_scene(path: String) -> void:
-	SceneTransition.cover()
+# 1. Cover the screen with the lowest resolution (Blocky)
+	if SceneTransition.has_method("set_pixel_size"):
+		SceneTransition.set_pixel_size(8.0)
+	SceneTransition.visible = true
+	
 	await get_tree().process_frame
 	get_tree().change_scene_to_file(path)
 
-	# Wait for load, then resolve
+	# 2. Wait briefly for load, then play the "Boot Up" sequence
 	await get_tree().create_timer(0.1).timeout
-	SceneTransition.resolve()
+	SceneTransition.play_boot_sequence()
 
 func quit_to_main() -> void:
 	if game_paused:

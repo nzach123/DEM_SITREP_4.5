@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
 shader = ExtResource("2_shader")
-shader_parameter/resolution = Vector2(32, 18)
+shader_parameter/pixel_size = 8.0000003325
 
 [node name="SceneTransition" type="CanvasLayer"]
 process_mode = 3

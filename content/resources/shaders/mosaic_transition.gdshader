@@ -1,16 +1,28 @@
 shader_type canvas_item;
 
-// Simple Mosaic/Pixelation Shader for Scene Transitions
-// Uses SCREEN_TEXTURE to pixelate the underlying scene.
+// Retro Boot-up Shader
+// Uses a pixel_size factor to create discrete blocking steps.
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
-uniform vec2 resolution = vec2(64.0, 36.0); // Start with low resolution
+
+// 1.0 = Native resolution, 8.0 = 8x8 pixel blocks
+uniform float pixel_size : hint_range(1.0, 128.0) = 1.0;
 
 void fragment() {
-	vec2 uv = SCREEN_UV;
+	// 1. Get absolute screen resolution
+	vec2 screen_res = 1.0 / SCREEN_PIXEL_SIZE;
 
-	// Quantize UVs to simulate lower resolution
-	uv = floor(uv * resolution) / resolution;
+	// 2. Map UV to absolute pixel coordinates
+	vec2 pixel_coord = SCREEN_UV * screen_res;
 
-	COLOR = texture(screen_texture, uv);
+	// 3. Quantize to the nearest "block"
+	vec2 grid_coord = floor(pixel_coord / pixel_size) * pixel_size;
+
+	// 4. Map back to UV space
+	vec2 final_uv = grid_coord / screen_res;
+
+	// 5. Center sample to avoid edge artifacts
+	vec2 half_pixel = (vec2(pixel_size) / screen_res) * 0.5;
+
+	COLOR = texture(screen_texture, final_uv + half_pixel);
 }

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqommlnb2ryhb"]
+[gd_scene load_steps=6 format=3 uid="uid://cqommlnb2ryhb"]
 
 [ext_resource type="Script" uid="uid://56heh1qill7e" path="res://src/scripts/DifficultyPopup.gd" id="1_script"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_iue5x"]
 [ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_iue5x"]
+[ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="4_ylrva"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0, 0, 0, 0.9)
@@ -45,17 +46,32 @@ theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 42
 text = "1 STAR (10 Questions)"
 
+[node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/QuizContainer/BtnLow"]
+script = ExtResource("4_ylrva")
+hover_scale = Vector2(1.1, 1.1)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
 [node name="BtnMed" type="Button" parent="CenterContainer/VBoxContainer/QuizContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 42
 text = "2 STAR (25 Questions)"
 
+[node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/QuizContainer/BtnMed"]
+script = ExtResource("4_ylrva")
+hover_scale = Vector2(1.1, 1.1)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
 [node name="BtnHigh" type="Button" parent="CenterContainer/VBoxContainer/QuizContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 42
 text = "3 STAR (75 Questions)"
+
+[node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/QuizContainer/BtnHigh"]
+script = ExtResource("4_ylrva")
+hover_scale = Vector2(1.1, 1.1)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="MatchingContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
 visible = false
@@ -68,17 +84,32 @@ theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 42
 text = "3 ROUNDS"
 
+[node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/MatchingContainer/BtnMatch3"]
+script = ExtResource("4_ylrva")
+hover_scale = Vector2(1.1, 1.1)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
 [node name="BtnMatch5" type="Button" parent="CenterContainer/VBoxContainer/MatchingContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 42
 text = "5 ROUNDS"
 
+[node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/MatchingContainer/BtnMatch5"]
+script = ExtResource("4_ylrva")
+hover_scale = Vector2(1.1, 1.1)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
 [node name="BtnMatch10" type="Button" parent="CenterContainer/VBoxContainer/MatchingContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 42
 text = "10 ROUNDS"
+
+[node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/MatchingContainer/BtnMatch10"]
+script = ExtResource("4_ylrva")
+hover_scale = Vector2(1.1, 1.1)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="BtnCancel" type="Button" parent="CenterContainer/VBoxContainer"]
 modulate = Color(1, 0.5, 0.5, 1)

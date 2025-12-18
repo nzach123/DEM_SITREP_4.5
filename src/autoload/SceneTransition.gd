@@ -2,51 +2,65 @@ extends CanvasLayer
 class_name SceneTransitionManager
 
 # SceneTransition.gd
-# Handles the retro "Boot-up" pixelation effect.
+# Handles the retro "Boot-up" pixelation effect with discrete steps.
 
 @onready var color_rect: ColorRect = $ColorRect
 
-# Initial low resolution (blocky)
-const START_RES: Vector2 = Vector2(0.1, 0.1)
+# Resolution Divisors (1.0 = Full, 2.0 = Half, 8.0 = Eighth)
+const RES_EIGHTH: float = 8.0
+const RES_QUARTER: float = 4.0
+const RES_HALF: float = 2.0
+const RES_FULL: float = 1.0
 
-# Duration of the resolve effect
-const DURATION: float = 1.5
+# Timing Configuration (Total Duration: ~0.5s)
+const TIME_STEP_1: float = 0.15
+const TIME_STEP_2: float = 0.15
+const TIME_STEP_3: float = 0.10
+const TIME_TWEEN: float  = 0.10
 
 func _ready() -> void:
-	# Ensure the transition layer is on top of everything
 	layer = 128
+	visible = false # Hidden by default until requested
 
-	# "App Launch" effect:
-	# The overlay should be visible and pixelated immediately.
-	cover()
+	# If you want it to run automatically on game launch:
+	# play_boot_sequence()
 
-	# Wait a brief moment for the app to settle, then resolve
-	await get_tree().process_frame
-	resolve()
-
-func cover() -> void:
+# Call this function to start the transition
+func play_boot_sequence() -> void:
 	visible = true
-	var mat: ShaderMaterial = color_rect.material as ShaderMaterial
-	if mat:
-		mat.set_shader_parameter("resolution", START_RES)
-
-func resolve() -> void:
-	var mat: ShaderMaterial = color_rect.material as ShaderMaterial
+	var mat = color_rect.material as ShaderMaterial
 	if not mat:
+		push_error("SceneTransition: No ShaderMaterial on ColorRect!")
 		return
 
-	var target_res: Vector2 = get_viewport().get_visible_rect().size
+	# --- Step 1: Eighth Resolution ---
+	mat.set_shader_parameter("pixel_size", RES_EIGHTH)
+	await get_tree().create_timer(TIME_STEP_1).timeout
 
-	# Tween the resolution from current (Low) to Target (High/Native)
-	var tween: Tween = create_tween()
-	tween.set_trans(Tween.TRANS_LINEAR) # Exponential makes it feel like it's "focusing" faster at the end
+	# --- Step 2: Quarter Resolution ---
+	mat.set_shader_parameter("pixel_size", RES_QUARTER)
+	await get_tree().create_timer(TIME_STEP_2).timeout
+
+	# --- Step 3: Half Resolution ---
+	mat.set_shader_parameter("pixel_size", RES_HALF)
+	await get_tree().create_timer(TIME_STEP_3).timeout
+
+	# --- Step 4: Short Tween to Full Clarity ---
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_LINEAR)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_method(_set_shader_resolution, START_RES, target_res, DURATION)
-
-	# Hide after completion to save performance
+	tween.tween_method(
+		func(val): mat.set_shader_parameter("pixel_size", val),
+		RES_HALF,
+		RES_FULL,
+		TIME_TWEEN
+	)
+	
+	# Cleanup
 	tween.tween_callback(hide)
 
-func _set_shader_resolution(res: Vector2) -> void:
-	var mat: ShaderMaterial = color_rect.material as ShaderMaterial
+# Helper for manual control if needed
+func set_pixel_size(size: float) -> void:
+	var mat = color_rect.material as ShaderMaterial
 	if mat:
-		mat.set_shader_parameter("resolution", res)
+		mat.set_shader_parameter("pixel_size", size)
