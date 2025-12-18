@@ -15,6 +15,7 @@ script = ExtResource("1_script")
 
 [node name="AnimationComponent" type="Node" parent="."]
 script = ExtResource("3_jubtm")
+hover_scale = Vector2(1.1, 1.1)
 time = 0.5
 transition_type = 10
 metadata/_custom_type_script = "uid://dldl6e841cg0e"

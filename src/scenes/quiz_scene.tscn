@@ -376,6 +376,7 @@ autowrap_mode = 3
 
 [node name="AnimationComponent" type="Node" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer/Button"]
 script = ExtResource("16_gw4jd")
+hover_scale = Vector2(1.1, 1.1)
 metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer"]
@@ -387,6 +388,11 @@ theme_override_font_sizes/font_size = 42
 text = "A pre-planned non-emergency activity"
 autowrap_mode = 3
 
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer/Button2"]
+script = ExtResource("16_gw4jd")
+hover_scale = Vector2(1.1, 1.1)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
 [node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -395,6 +401,11 @@ theme = ExtResource("14_gax45")
 theme_override_font_sizes/font_size = 42
 autowrap_mode = 3
 
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer/Button3"]
+script = ExtResource("16_gw4jd")
+hover_scale = Vector2(1.1, 1.1)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
 [node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -402,6 +413,11 @@ size_flags_vertical = 3
 theme = ExtResource("14_gax45")
 theme_override_font_sizes/font_size = 42
 autowrap_mode = 3
+
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer/Button4"]
+script = ExtResource("16_gw4jd")
+hover_scale = Vector2(1.1, 1.1)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="QuizTimer" type="Timer" parent="."]
 wait_time = 20.0
@@ -444,7 +460,6 @@ visible = false
 layout_mode = 1
 
 [node name="CRTScreen" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_ndxw5")
 layout_mode = 1
 anchors_preset = 15

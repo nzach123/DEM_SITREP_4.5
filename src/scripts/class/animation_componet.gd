@@ -28,7 +28,7 @@ func on_hover() -> void:
 	add_tween("scale", hover_scale, time)
 	
 func  off_hover() -> void:
-	add_tween("scale", hover_scale, time)
+	add_tween("scale", default_scale, time)
 
 	
 func add_tween(property: String, value, seconds: float) -> void:
