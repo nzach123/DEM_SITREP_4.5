@@ -461,6 +461,7 @@ visible = false
 layout_mode = 1
 
 [node name="SirensTextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 2784.0
 offset_bottom = 1536.0

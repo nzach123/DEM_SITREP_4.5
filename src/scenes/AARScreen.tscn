@@ -138,7 +138,7 @@ horizontal_alignment = 1
 [node name="ScoreValue" type="Label" parent="MarginContainer/MainVBox/TopRowHBox/ScorePanel/ScoreVBox"]
 layout_mode = 2
 theme = ExtResource("4_oc4gb")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 48
 text = "0"
 horizontal_alignment = 1
 

@@ -1,8 +1,7 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://fioyouh4dvig"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://fioyouh4dvig"]
 
 [ext_resource type="FontFile" uid="uid://dd2b87f7wi6ar" path="res://assets/fonts/Rajdhani-SemiBold.ttf" id="1_7ksdp"]
 [ext_resource type="Texture2D" uid="uid://ck57xqgw5tcia" path="res://assets/ui/container_ui/button_square_blue_a.png" id="2_no726"]
-[ext_resource type="FontFile" uid="uid://b1y71mtrwtvm2" path="res://assets/fonts/Rajdhani-Regular.ttf" id="3_7ksdp"]
 [ext_resource type="FontFile" uid="uid://t86c8t2o1y50" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_eyv7o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4r5r"]
@@ -42,7 +41,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_8hlue")
 Button/styles/pressed = SubResource("StyleBoxFlat_jnodi")
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 50
-Label/fonts/font = ExtResource("3_7ksdp")
+Label/fonts/font = ExtResource("1_7ksdp")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_wbsuu")
 ProgressBar/font_sizes/font_size = 40
 ProgressBar/fonts/font = ExtResource("4_eyv7o")
