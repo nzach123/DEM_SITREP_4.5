@@ -38,6 +38,9 @@ var current_score: int = 0
 var correct_answers_count: int = 0
 var total_population: int = 0
 var citizens_saved: int = 0
+var casualties_count: int = 0
+var rescue_multiplier: float = 1.0
+
 # Stores dictionary of { "question": "", "user_choice": "", "correct_answer": "", "is_correct": bool }
 var session_log: Array[Dictionary] = []
 
@@ -52,6 +55,7 @@ var pause_menu_instance: CanvasLayer # PauseMenu script extends Control/CanvasLa
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	load_game()
+	load_all_matching_data() # Pre-load matching data
 
 	# New Pause Logic
 	pause_menu_instance = pause_menu_scene.instantiate()
@@ -123,6 +127,24 @@ func get_current_settings() -> Dictionary:
 func set_difficulty(tier: Difficulty) -> void:
 	current_difficulty = tier
 
+func load_all_matching_data() -> void:
+	matching_pool.clear()
+	var dir = DirAccess.open("res://assets/questions/")
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if !dir.current_is_dir() and file_name.ends_with(".json"):
+				var full_path = "res://assets/questions/" + file_name
+				var file = FileAccess.open(full_path, FileAccess.READ)
+				var json_text = file.get_as_text()
+				var json = JSON.new()
+				if json.parse(json_text) == OK:
+					if json.data is Dictionary and json.data.has("definitions"):
+						if json.data["definitions"] is Array:
+							matching_pool.append_array(json.data["definitions"])
+			file_name = dir.get_next()
+
 func load_course_data(course_id: String) -> bool:
 	current_course_id = course_id
 	var file_path: String = "res://assets/questions/" + course_id + ".json"
@@ -142,15 +164,7 @@ func load_course_data(course_id: String) -> bool:
 					reset_session_pool()
 					is_matching_mode = false
 					return true
-			elif json.data is Dictionary:
-				# Matching Game (Metadata + Definitions)
-				if json.data.has("definitions") and json.data["definitions"] is Array:
-					matching_pool = json.data["definitions"]
-					is_matching_mode = true
-					return true
-
-			print("Error: Loaded data does not match expected schema.")
-			return false
+			# Removed legacy matching loading here as it's handled by load_all_matching_data
 
 	return false
 
@@ -217,6 +231,8 @@ func reset_stats() -> void:
 	correct_answers_count = 0
 	citizens_saved = 0
 	total_population = 0
+	casualties_count = 0
+	rescue_multiplier = 1.0
 	session_log.clear()
 
 func add_correct_answer() -> void:

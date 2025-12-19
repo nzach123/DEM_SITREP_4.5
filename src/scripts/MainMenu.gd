@@ -28,6 +28,7 @@ func _ready() -> void:
 			difficulty_popup.connect("difficulty_selected", _start_quiz_with_difficulty)
 
 func scan_courses() -> void:
+	available_courses.clear()
 	var dir: DirAccess = DirAccess.open("res://assets/questions/")
 	if dir:
 		dir.list_dir_begin()
@@ -35,7 +36,9 @@ func scan_courses() -> void:
 		while file_name != "":
 			if !dir.current_is_dir() and file_name.ends_with(".json"):
 				var course_id: String = file_name.replace(".json", "")
-				available_courses.append(course_id)
+				# Filter out matching types
+				if GameManager.get_course_type(course_id) != "matching":
+					available_courses.append(course_id)
 			file_name = dir.get_next()
 		available_courses.sort() # Ensure consistent order
 
@@ -51,6 +54,19 @@ func create_menu_buttons() -> void:
 		var display_name: String = course_id
 		if category_names.has(course_id):
 			display_name = course_id + " - " + str(category_names[course_id])
+
+		# Star Rating Calculation
+		var progress = GameManager.player_progress.get(course_id, {})
+		var mastery = progress.get("mastery_percent", 0.0)
+		var stars = "☆☆☆"
+		if mastery >= 80.0:
+			stars = "★★★"
+		elif mastery >= 50.0:
+			stars = "★★☆"
+		elif mastery > 0.0:
+			stars = "★☆☆"
+
+		display_name += "   " + stars
 
 		if btn.has_method("setup"):
 			btn.call("setup", course_id, display_name)
@@ -78,14 +94,9 @@ func _start_quiz_with_difficulty(difficulty: int) -> void:
 
 	# Load Data First to Determine Mode
 	if GameManager.load_course_data(pending_course_id):
-		if GameManager.is_matching_mode:
-			GameManager.matching_rounds_count = difficulty
-			# Default to Medium for penalties/speed basis if needed
-			GameManager.set_difficulty(GameManager.Difficulty.MEDIUM)
-			GameManager.change_scene("res://src/scenes/MatchingGame.tscn")
-		else:
-			GameManager.set_difficulty(difficulty)
-			GameManager.change_scene("res://src/scenes/quiz_scene.tscn")
+		# Always start quiz scene as we filtered matching files
+		GameManager.set_difficulty(difficulty)
+		GameManager.change_scene("res://src/scenes/quiz_scene.tscn")
 	else:
 		print("Failed to load course: " + pending_course_id)
 		if difficulty_popup: difficulty_popup.hide()

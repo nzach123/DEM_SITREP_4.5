@@ -27,6 +27,8 @@ enum State { SETUP, PLAYING, LOCKED, END }
 @export var question_timer: Timer
 @export var round_timer: Timer
 
+const MATCHING_POPUP_SCENE: PackedScene = preload("res://src/scenes/MatchingEventPopup.tscn")
+
 # --- STATE VARIABLES ---
 var current_state: State = State.SETUP
 var current_q_index: int = 0
@@ -53,7 +55,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	# Animate Question Timer Bar
-	if not question_timer.is_stopped():
+	if not question_timer.is_stopped() and not question_timer.paused:
 		timer_label.text = "Time: " + str(int(question_timer.time_left))
 		timer_bar.value = question_timer.time_left
 		if question_timer.time_left < 5:
@@ -62,7 +64,7 @@ func _process(_delta: float) -> void:
 			timer_bar.modulate = Color(1, 1, 1)
 
 	# Update Round Timer (Circular)
-	if not round_timer.is_stopped():
+	if not round_timer.is_stopped() and not round_timer.paused:
 		circular_timer.value = round_timer.time_left
 
 func start_game() -> void:
@@ -81,7 +83,7 @@ func start_game() -> void:
 	var actual_count: int = min(GameManager.questions_pool.size(), target_count)
 	GameManager.questions_pool = GameManager.questions_pool.slice(0, actual_count)
 
-	# Calculate Population
+	# Calculate Population (Fixed for Session)
 	var pop_range: Dictionary = settings["population_range"]
 	GameManager.total_population = rng.randi_range(pop_range["min"], pop_range["max"])
 
@@ -107,14 +109,20 @@ func start_game() -> void:
 	current_state = State.PLAYING
 	load_question(0)
 
-func load_question(index: int) -> void:
+func load_question(index: int, skip_event_check: bool = false) -> void:
 	if index >= GameManager.questions_pool.size():
 		finish_game()
+		return
+
+	# Field Exercise Check (5% Chance)
+	if not skip_event_check and current_q_index > 0 and rng.randf() < 0.05:
+		_trigger_field_exercise()
 		return
 
 	_reset_button_visuals()
 	current_state = State.PLAYING
 	feedback_label.text = ""
+	feedback_label.visible = false
 	timer_bar.modulate = Color(1, 1, 1)
 
 	var q_data: Dictionary = GameManager.questions_pool[index]
@@ -136,6 +144,41 @@ func load_question(index: int) -> void:
 			answer_buttons[i].hide()
 
 	question_timer.start()
+
+func _trigger_field_exercise() -> void:
+	current_state = State.LOCKED
+	question_timer.paused = true
+	round_timer.paused = true
+
+	var popup = MATCHING_POPUP_SCENE.instantiate()
+	add_child(popup)
+	if popup.has_signal("completed"):
+		popup.completed.connect(_on_field_exercise_completed.bind(popup))
+
+	if popup.has_method("setup"):
+		popup.setup()
+
+func _on_field_exercise_completed(success: bool, popup: Node) -> void:
+	popup.queue_free()
+
+	feedback_label.visible = true
+	if success:
+		GameManager.rescue_multiplier *= 1.25 # Multiplicative Stacking
+		feedback_label.text = "FIELD EXERCISE COMPLETE: EFFICIENCY BOOSTED"
+		feedback_label.modulate = Color.CYAN
+		if audio_manager: audio_manager.play_correct()
+	else:
+		feedback_label.text = "FIELD EXERCISE FAILED"
+		feedback_label.modulate = Color.ORANGE
+
+	await get_tree().create_timer(2.0).timeout
+	feedback_label.visible = false
+
+	question_timer.paused = false
+	round_timer.paused = false
+
+	# Resume loading the question
+	load_question(current_q_index, true)
 
 func _on_button_pressed(selected_idx: int) -> void:
 	if current_state != State.PLAYING: return
@@ -176,14 +219,16 @@ func _handle_correct(idx: int) -> void:
 	GameManager.log_attempt(q_data["question"], user_choice_text, user_choice_text, true)
 
 	# Save Mechanics
-	GameManager.citizens_saved += save_weight
-	if GameManager.citizens_saved > GameManager.total_population:
-		GameManager.citizens_saved = GameManager.total_population
+	# Apply Multiplier
+	var actual_saved = int(save_weight * GameManager.rescue_multiplier)
+	GameManager.citizens_saved += actual_saved
+	# Cap removed because we check for >= total_population
 
-	feedback_label.text = "RESCUE CONFIRMED (+%d)" % save_weight
+	feedback_label.text = "RESCUE CONFIRMED (+%d)" % actual_saved
 	feedback_label.modulate = Color.CYAN
+	feedback_label.visible = true
 
-	if game_camera: game_camera.apply_shake_bonus(save_weight)
+	if game_camera: game_camera.apply_shake_bonus(actual_saved)
 
 	GameManager.add_correct_answer()
 	update_score_ui()
@@ -191,6 +236,11 @@ func _handle_correct(idx: int) -> void:
 
 	if idx >= 0 and idx < answer_buttons.size():
 		answer_buttons[idx].modulate = Color.GREEN
+
+	# Check Win Condition
+	if GameManager.citizens_saved >= GameManager.total_population:
+		_trigger_victory()
+		return
 
 func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user_choice_text: String) -> void:
 	if audio_manager: audio_manager.play_wrong()
@@ -200,17 +250,17 @@ func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user
 	if background_pulse: background_pulse.update_pulse(strike_streak)
 
 	var penalty: int = GameManager.get_current_settings()["casualty_penalty"]
+	GameManager.casualties_count += penalty
+
 	feedback_label.text = "SIGNAL LOST: %d CASUALTIES" % penalty
 	feedback_label.modulate = Color.ORANGE
+	feedback_label.visible = true
 
 	if game_camera: game_camera.apply_casualty_shake()
 
-	if penalty > 0:
-		GameManager.total_population -= penalty
-		if GameManager.total_population < GameManager.citizens_saved:
-			GameManager.total_population = GameManager.citizens_saved
+	# Do NOT reduce total_population anymore.
 
-	update_rescue_ui()
+	update_score_ui()
 
 	var correct_text: String = "Unknown"
 	for ans in current_shuffled_answers:
@@ -245,9 +295,24 @@ func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user
 func _trigger_game_over() -> void:
 	current_state = State.END
 	feedback_label.text = "CRITICAL FAILURE: 3 STRIKES"
+	feedback_label.visible = true
 
 	if strike_system: strike_system.trigger_game_over_sequence()
 	if audio_manager: audio_manager.play_alarm()
+
+	await get_tree().create_timer(2.0).timeout
+	finish_game()
+
+func _trigger_victory() -> void:
+	current_state = State.END
+	question_timer.stop()
+	round_timer.stop()
+
+	feedback_label.text = "MISSION ACCOMPLISHED"
+	feedback_label.modulate = Color.GREEN
+	feedback_label.visible = true
+
+	if audio_manager: audio_manager.play_correct() # Victory sound?
 
 	await get_tree().create_timer(2.0).timeout
 	finish_game()
@@ -281,6 +346,9 @@ func finish_game() -> void:
 	GameManager.save_game()
 
 	# Outcome Feedback
+	# If we called _trigger_victory, we are here.
+	# If we timed out, we are here.
+
 	var rescue_percentage: float = 0.0
 	if GameManager.total_population > 0:
 		rescue_percentage = float(GameManager.citizens_saved) / float(GameManager.total_population)
@@ -290,12 +358,17 @@ func finish_game() -> void:
 	if strike_streak >= MAX_STRIKES:
 		feedback_label.text = "MISSION FAILED: SYSTEM LOCKOUT"
 		feedback_label.modulate = Color.RED
+	elif GameManager.citizens_saved >= GameManager.total_population:
+		feedback_label.text = "SUCCESS: ALL CITIZENS SAVED"
+		feedback_label.modulate = Color.GREEN
 	elif rescue_percentage >= 0.5:
 		feedback_label.text = "SUCCESS: CIVILIAN EVAC COMPLETE"
 		feedback_label.modulate = Color.GREEN
 	else:
 		feedback_label.text = "MISSION FAILED: CASUALTIES TOO HIGH"
 		feedback_label.modulate = Color.RED
+
+	feedback_label.visible = true
 
 	await get_tree().create_timer(2.0).timeout
 	GameManager.change_scene("res://src/scenes/AARScreen.tscn")
@@ -352,7 +425,7 @@ func _on_remediation_acknowledged() -> void:
 	load_question(current_q_index)
 
 func update_score_ui() -> void:
-	score_label.text = "Rescued: " + str(GameManager.citizens_saved)
+	score_label.text = "Rescued: %d  |  Casualties: %d" % [GameManager.citizens_saved, GameManager.casualties_count]
 
 func update_rescue_ui() -> void:
 	rescue_bar.min_value = 0

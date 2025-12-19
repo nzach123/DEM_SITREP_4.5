@@ -1,0 +1,161 @@
+[gd_scene load_steps=8 format=3 uid="uid://newmatchingpopup"]
+
+[ext_resource type="Script" path="res://src/scripts/MatchingEventPopup.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_header"]
+[ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_body"]
+[ext_resource type="Texture2D" uid="uid://bjyxhtpo5etq0" path="res://assets/ui/images/MapBackground.jpg" id="4_bg"]
+[ext_resource type="Shader" uid="uid://catxjmc45pfvr" path="res://content/resources/shaders/crt_screen.gdshader" id="5_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
+shader = ExtResource("5_shader")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.2
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.15
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 0.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.02
+shader_parameter/aberration = 0.00500005
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.11
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.5
+
+[node name="MatchingEventPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_bg")
+expand_mode = 1
+stretch_mode = 6
+modulate = Color(0.3, 0.3, 0.3, 1)
+
+[node name="Header" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 100.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Panel/Header"]
+layout_mode = 2
+theme = ExtResource("2_header")
+theme_override_font_sizes/font_size = 72
+text = "FIELD EXERCISE"
+
+[node name="Spacer" type="Control" parent="Panel/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimerLabel" type="Label" parent="Panel/Header"]
+layout_mode = 2
+theme = ExtResource("2_header")
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 72
+text = "TIME: 60"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 120.0
+offset_right = -50.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="LeftCol" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/LeftCol"]
+layout_mode = 2
+theme = ExtResource("2_header")
+theme_override_font_sizes/font_size = 48
+text = "TERMS"
+horizontal_alignment = 1
+
+[node name="TermsContainer" type="VBoxContainer" parent="Panel/HBoxContainer/LeftCol"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="RightCol" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/RightCol"]
+layout_mode = 2
+theme = ExtResource("2_header")
+theme_override_font_sizes/font_size = 48
+text = "DEFINITIONS"
+horizontal_alignment = 1
+
+[node name="DefinitionsContainer" type="VBoxContainer" parent="Panel/HBoxContainer/RightCol"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Footer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="SubmitButton" type="Button" parent="Panel/Footer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme = ExtResource("3_body")
+theme_override_colors/font_color = Color(0.4, 1, 0.4, 1)
+theme_override_font_sizes/font_size = 42
+text = "SUBMIT MATCHES"
+
+[node name="CRTScreen" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_crt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
