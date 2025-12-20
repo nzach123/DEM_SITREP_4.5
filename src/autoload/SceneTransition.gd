@@ -27,34 +27,36 @@ func _ready() -> void:
 
 # Call this function to start the transition
 func play_boot_sequence() -> void:
+	if not is_inside_tree(): return
+
 	visible = true
 	var mat = color_rect.material as ShaderMaterial
 	if not mat:
 		push_error("SceneTransition: No ShaderMaterial on ColorRect!")
 		return
 
+	# Use a single Tween for safety (stops if node is freed)
+	var tween = create_tween()
+
 	# --- Step 1: Eighth Resolution ---
-	mat.set_shader_parameter("pixel_size", RES_EIGHTH)
-	await get_tree().create_timer(TIME_STEP_1).timeout
+	tween.tween_callback(func(): mat.set_shader_parameter("pixel_size", RES_EIGHTH))
+	tween.tween_interval(TIME_STEP_1)
 
 	# --- Step 2: Quarter Resolution ---
-	mat.set_shader_parameter("pixel_size", RES_QUARTER)
-	await get_tree().create_timer(TIME_STEP_2).timeout
+	tween.tween_callback(func(): mat.set_shader_parameter("pixel_size", RES_QUARTER))
+	tween.tween_interval(TIME_STEP_2)
 
 	# --- Step 3: Half Resolution ---
-	mat.set_shader_parameter("pixel_size", RES_HALF)
-	await get_tree().create_timer(TIME_STEP_3).timeout
+	tween.tween_callback(func(): mat.set_shader_parameter("pixel_size", RES_HALF))
+	tween.tween_interval(TIME_STEP_3)
 
 	# --- Step 4: Short Tween to Full Clarity ---
-	var tween = create_tween()
-	tween.set_trans(Tween.TRANS_LINEAR)
-	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_method(
 		func(val): mat.set_shader_parameter("pixel_size", val),
 		RES_HALF,
 		RES_FULL,
 		TIME_TWEEN
-	)
+	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
 	
 	# Cleanup
 	tween.tween_callback(hide)

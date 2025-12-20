@@ -26,9 +26,9 @@ const DIFFICULTY_CONFIG: Dictionary = {
 }
 
 # Course Data
-var master_questions_pool: Array = []
-var questions_pool: Array = []
-var matching_pool: Array = []
+var master_questions_pool: Array[Dictionary] = []
+var questions_pool: Array[Dictionary] = []
+var matching_pool: Array[Dictionary] = []
 var current_course_id: String = ""
 var is_matching_mode: bool = false
 var matching_rounds_count: int = 3 # Default to 3 rounds
@@ -72,7 +72,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		var current_scene = get_tree().current_scene
 		# Prevent pausing in the Main Menu or Splash Screen
-		if current_scene.name != "MainMenu" and current_scene.name != "SplashScreen":
+		if current_scene and current_scene.name != "MainMenu" and current_scene.name != "SplashScreen":
 			toggle_pause()
 
 func toggle_pause() -> void:
@@ -131,6 +131,7 @@ func load_all_matching_data() -> void:
 	matching_pool.clear()
 	var dir = DirAccess.open("res://assets/questions/")
 	if dir:
+		# Iterate files, skipping navigational (. and ..) via check
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
@@ -142,7 +143,13 @@ func load_all_matching_data() -> void:
 				if json.parse(json_text) == OK:
 					if json.data is Dictionary and json.data.has("definitions"):
 						if json.data["definitions"] is Array:
-							matching_pool.append_array(json.data["definitions"])
+							# Iterate manually to ensure type safety if needed,
+							# but append_array works if the data is compatible.
+							# We cast to Array[Dictionary] implicitly or check.
+							var defs: Array = json.data["definitions"]
+							for d in defs:
+								if d is Dictionary:
+									matching_pool.append(d)
 			file_name = dir.get_next()
 
 func load_course_data(course_id: String) -> bool:
@@ -160,7 +167,12 @@ func load_course_data(course_id: String) -> bool:
 				var first_item = json.data[0]
 				# Standard Quiz
 				if first_item is Dictionary and first_item.has("answers") and first_item["answers"] is Array:
-					master_questions_pool = json.data
+					# Explicitly cast to Array[Dictionary] to satisfy strict typing
+					master_questions_pool.clear()
+					for item in json.data:
+						if item is Dictionary:
+							master_questions_pool.append(item)
+
 					reset_session_pool()
 					is_matching_mode = false
 					return true
@@ -188,7 +200,7 @@ func get_course_type(course_id: String) -> String:
 				return "quiz"
 	return "unknown"
 
-func get_matching_round_data() -> Array:
+func get_matching_round_data() -> Array[Dictionary]:
 	if matching_pool.is_empty():
 		return []
 
@@ -206,12 +218,12 @@ func get_matching_round_data() -> Array:
 		if tag_counts[tag] >= 5:
 			valid_tags.append(tag)
 
-	var selected_items: Array = []
+	var selected_items: Array[Dictionary] = []
 
 	if valid_tags.size() > 0:
 		var random_tag = valid_tags.pick_random()
 		# Pick 5 random items with this tag
-		var candidates: Array = []
+		var candidates: Array[Dictionary] = []
 		for item in matching_pool:
 			if item.has("tags") and random_tag in item["tags"]:
 				candidates.append(item)

@@ -32,12 +32,13 @@ const MATCHING_POPUP_SCENE: PackedScene = preload("res://src/scenes/MatchingEven
 # --- STATE VARIABLES ---
 var current_state: State = State.SETUP
 var current_q_index: int = 0
-var current_shuffled_answers: Array = []
+var current_shuffled_answers: Array[Dictionary] = []
 var save_weight: int = 0
 var strike_streak: int = 0
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 const MAX_STRIKES: int = 3
+const FIELD_EXERCISE_CHANCE: float = 0.05
 
 func _ready() -> void:
 	_connect_signals()
@@ -50,8 +51,19 @@ func _ready() -> void:
 	# Load Data and Start
 	if GameManager.questions_pool.size() > 0:
 		start_game()
-	elif GameManager.load_course_data("1110"):
+	elif OS.is_debug_build() and GameManager.load_course_data("1110"):
+		print("Debug Build: Auto-loaded course 1110")
 		start_game()
+	else:
+		# If no data is loaded, return to main menu or show error
+		print("No questions loaded in pool. Returning to menu.")
+		# We need to defer this call or ensure it doesn't loop instantly if MainMenu loads this scene
+		# But usually this scene is loaded FROM MainMenu.
+		# Ideally we show a message.
+		feedback_label.text = "ERROR: NO DATA"
+		feedback_label.visible = true
+		await get_tree().create_timer(2.0).timeout
+		GameManager.quit_to_main()
 
 func _process(_delta: float) -> void:
 	# Animate Question Timer Bar
@@ -79,7 +91,7 @@ func start_game() -> void:
 	if strike_system: strike_system.reset_visuals()
 
 	# Apply Difficulty Slicing
-	var target_count: int = settings["question_count"]
+	var target_count: int = int(settings["question_count"])
 	var actual_count: int = min(GameManager.questions_pool.size(), target_count)
 	GameManager.questions_pool = GameManager.questions_pool.slice(0, actual_count)
 
@@ -93,11 +105,11 @@ func start_game() -> void:
 		save_weight = 100
 
 	# Setup Timers
-	var total_time: float = actual_count * settings["time_per_question"]
+	var total_time: float = actual_count * float(settings["time_per_question"])
 	round_timer.start(total_time)
 	circular_timer.max_value = total_time
 
-	question_timer.wait_time = settings["time_per_question"]
+	question_timer.wait_time = float(settings["time_per_question"])
 	timer_bar.max_value = question_timer.wait_time
 
 	# Setup UI
@@ -114,8 +126,8 @@ func load_question(index: int, skip_event_check: bool = false) -> void:
 		finish_game()
 		return
 
-	# Field Exercise Check (5% Chance)
-	if not skip_event_check and current_q_index > 0 and rng.randf() < 0.05:
+	# Field Exercise Check
+	if not skip_event_check and current_q_index > 0 and rng.randf() < FIELD_EXERCISE_CHANCE:
 		_trigger_field_exercise()
 		return
 
@@ -126,19 +138,24 @@ func load_question(index: int, skip_event_check: bool = false) -> void:
 	timer_bar.modulate = Color(1, 1, 1)
 
 	var q_data: Dictionary = GameManager.questions_pool[index]
-	_animate_text(question_label, q_data["question"])
+	_animate_text(question_label, q_data.get("question", "Error: No Question Text"))
 
 	# Validate answers array
 	if not q_data.has("answers") or not (q_data["answers"] is Array):
 		print("Error: Invalid question data at index ", index)
 		return
 
-	current_shuffled_answers = q_data["answers"].duplicate()
+	# Explicit casting/copying for strict typing
+	current_shuffled_answers.clear()
+	for ans in q_data["answers"]:
+		if ans is Dictionary:
+			current_shuffled_answers.append(ans)
+
 	current_shuffled_answers.shuffle()
 
 	for i in range(answer_buttons.size()):
 		if i < current_shuffled_answers.size():
-			answer_buttons[i].text = current_shuffled_answers[i]["text"]
+			answer_buttons[i].text = current_shuffled_answers[i].get("text", "")
 			answer_buttons[i].show()
 		else:
 			answer_buttons[i].hide()
@@ -249,7 +266,7 @@ func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user
 	if strike_system: strike_system.update_visuals(strike_streak)
 	if background_pulse: background_pulse.update_pulse(strike_streak)
 
-	var penalty: int = GameManager.get_current_settings()["casualty_penalty"]
+	var penalty: int = int(GameManager.get_current_settings()["casualty_penalty"])
 	GameManager.casualties_count += penalty
 
 	feedback_label.text = "SIGNAL LOST: %d CASUALTIES" % penalty
@@ -346,9 +363,6 @@ func finish_game() -> void:
 	GameManager.save_game()
 
 	# Outcome Feedback
-	# If we called _trigger_victory, we are here.
-	# If we timed out, we are here.
-
 	var rescue_percentage: float = 0.0
 	if GameManager.total_population > 0:
 		rescue_percentage = float(GameManager.citizens_saved) / float(GameManager.total_population)
@@ -382,11 +396,8 @@ func _animate_text(label: Label, text_content: String) -> void:
 	tween.tween_property(label, "visible_ratio", 1.0, text_content.length() * 0.02)
 
 func _connect_signals() -> void:
-	if not question_timer.timeout.is_connected(_on_question_timeout):
-		question_timer.timeout.connect(_on_question_timeout)
-
-	if not round_timer.timeout.is_connected(_on_round_timeout):
-		round_timer.timeout.connect(_on_round_timeout)
+	question_timer.timeout.connect(_on_question_timeout)
+	round_timer.timeout.connect(_on_round_timeout)
 
 	if remediation_popup and remediation_popup.has_signal("acknowledged"):
 		if not remediation_popup.acknowledged.is_connected(_on_remediation_acknowledged):
