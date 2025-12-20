@@ -43,8 +43,8 @@ theme_override_constants/separation = 15
 [node name="BtnLow" type="Button" parent="CenterContainer/VBoxContainer/QuizContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
-theme_override_font_sizes/font_size = 42
-text = "1 STAR (10 Questions)"
+theme_override_font_sizes/font_size = 72
+text = "★☆☆"
 
 [node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/QuizContainer/BtnLow"]
 script = ExtResource("4_ylrva")
@@ -54,8 +54,8 @@ metadata/_custom_type_script = "uid://dldl6e841cg0e"
 [node name="BtnMed" type="Button" parent="CenterContainer/VBoxContainer/QuizContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
-theme_override_font_sizes/font_size = 42
-text = "2 STAR (25 Questions)"
+theme_override_font_sizes/font_size = 72
+text = "★★☆"
 
 [node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/QuizContainer/BtnMed"]
 script = ExtResource("4_ylrva")
@@ -65,8 +65,8 @@ metadata/_custom_type_script = "uid://dldl6e841cg0e"
 [node name="BtnHigh" type="Button" parent="CenterContainer/VBoxContainer/QuizContainer"]
 layout_mode = 2
 theme = ExtResource("3_iue5x")
-theme_override_font_sizes/font_size = 42
-text = "3 STAR (75 Questions)"
+theme_override_font_sizes/font_size = 72
+text = "★★★"
 
 [node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/QuizContainer/BtnHigh"]
 script = ExtResource("4_ylrva")
@@ -115,5 +115,5 @@ metadata/_custom_type_script = "uid://dldl6e841cg0e"
 modulate = Color(1, 0.5, 0.5, 1)
 layout_mode = 2
 theme = ExtResource("3_iue5x")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 55
 text = "CANCEL"

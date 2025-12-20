@@ -29,14 +29,17 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="QuestionLabel" type="Label" parent="MarginContainer/HBoxContainer/ContentVBox"]
-modulate = Color(0.8, 0.8, 0.8, 1)
 layout_mode = 2
 theme = ExtResource("3_4vm7d")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.19607843)
+theme_override_constants/shadow_outline_size = 15
 text = "Question text..."
 autowrap_mode = 3
 
 [node name="FeedbackLabel" type="Label" parent="MarginContainer/HBoxContainer/ContentVBox"]
 layout_mode = 2
 theme = ExtResource("3_4vm7d")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.19607843)
+theme_override_constants/shadow_outline_size = 15
 text = ">> Feedback..."
 autowrap_mode = 3

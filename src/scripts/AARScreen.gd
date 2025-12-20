@@ -46,7 +46,7 @@ func display_results() -> void:
 
 	if mastery_value:
 		mastery_value.text = mastery_text
-		mastery_value.modulate = Color(0.6, 0.6, 0.6)
+		mastery_value.modulate = Color(1.0, 1.0, 1.0)
 
 	# Calculate Rank
 	var saved: int = GameManager.citizens_saved

@@ -425,24 +425,23 @@ wait_time = 20.0
 one_shot = true
 
 [node name="FeedbackLabel" type="Label" parent="."]
-visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -11.5
-offset_right = 30.0
-offset_bottom = 11.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_c7ybq")
-theme_override_font_sizes/font_size = 128
+theme = ExtResource("12_lv0df")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 180
 text = "Correct!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="GiantXLabel" type="Label" parent="."]
+visible = false
 modulate = Color(0.733002, 2.75549e-06, 6.73831e-07, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -469,7 +468,6 @@ scale = Vector2(0.69, 0.69)
 texture = ExtResource("19_o7nro")
 
 [node name="CRTScreen" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_ndxw5")
 layout_mode = 1
 anchors_preset = 15

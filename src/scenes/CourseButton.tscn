@@ -7,6 +7,8 @@
 [node name="CourseButton" type="Button"]
 offset_right = 300.0
 offset_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_y6hqb")
 theme_override_font_sizes/font_size = 45
 alignment = 0

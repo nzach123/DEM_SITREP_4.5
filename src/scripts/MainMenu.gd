@@ -2,13 +2,13 @@ extends Control
 
 # Exported dictionary for category labels
 @export var category_names: Dictionary = {
-	"1110": "BASIC SAFETY",
-	"1120": "PROTOCOL ALPHA",
-	"1130": "CONTAINMENT",
-	"1140": "CRITICAL RESPONSE"
+	"1110": "Individual Resilience and Human Behaviour in Disasters",
+	"1120": "Disaster and Emergency Management as a Field of Practice",
+	"1130": "Disaster Risk Reduction (DRR)",
+	"1140": "Disaster and Emergency Management Related Legislation, Standards, and Stakeholders"
 }
 
-@export var buttons_container: VBoxContainer
+@export var buttons_container: GridContainer
 @export var difficulty_popup: Control
 @export var sfx_click: AudioStreamPlayer
 
@@ -56,18 +56,19 @@ func create_menu_buttons() -> void:
 			display_name = course_id + " - " + str(category_names[course_id])
 
 		# Star Rating Calculation
-		var progress = GameManager.player_progress.get(course_id, {})
-		var mastery = progress.get("mastery_percent", 0.0)
-		var stars = "☆☆☆"
-		if mastery >= 80.0:
-			stars = "★★★"
-		elif mastery >= 50.0:
-			stars = "★★☆"
-		elif mastery > 0.0:
-			stars = "★☆☆"
-
-		display_name += "   " + stars
-
+		#var progress = GameManager.player_progress.get(course_id, {})
+		#var mastery = progress.get("mastery_percent", 0.0)
+		#var stars = "☆☆☆"
+		#if mastery >= 80.0:
+			#stars = "★★★"
+		#elif mastery >= 50.0:
+			#stars = "★★☆"
+		#elif mastery > 0.0:
+			#stars = "★☆☆"
+#
+		#display_name += "   " + stars
+		display_name += "   "
+		
 		if btn.has_method("setup"):
 			btn.call("setup", course_id, display_name)
 
