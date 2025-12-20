@@ -12,7 +12,12 @@ extends Control
 @export var difficulty_popup: Control
 @export var sfx_click: AudioStreamPlayer
 
-const COURSE_BUTTON_SCENE: PackedScene = preload("res://src/scenes/CourseButton.tscn")
+# Footer Buttons
+@export var settings_btn: Button
+@export var credits_btn: Button
+@export var quit_btn: Button
+
+const COURSE_CARD_SCENE: PackedScene = preload("res://src/scenes/CourseCard.tscn")
 
 # Helper variable to track available question files
 var available_courses: Array[String] = []
@@ -26,6 +31,30 @@ func _ready() -> void:
 	if difficulty_popup:
 		if difficulty_popup.has_signal("difficulty_selected"):
 			difficulty_popup.connect("difficulty_selected", _start_quiz_with_difficulty)
+
+	connect_footer_buttons()
+
+	# Initial focus for controller/keyboard accessibility
+	if buttons_container and buttons_container.get_child_count() > 0:
+		buttons_container.get_child(0).call_deferred("grab_focus")
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"): # Esc
+		_on_quit_pressed()
+
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_F1:
+			_on_settings_pressed()
+		elif event.keycode == KEY_F2:
+			_on_credits_pressed()
+
+func connect_footer_buttons() -> void:
+	if settings_btn:
+		settings_btn.pressed.connect(_on_settings_pressed)
+	if credits_btn:
+		credits_btn.pressed.connect(_on_credits_pressed)
+	if quit_btn:
+		quit_btn.pressed.connect(_on_quit_pressed)
 
 func scan_courses() -> void:
 	available_courses.clear()
@@ -50,32 +79,18 @@ func create_menu_buttons() -> void:
 		child.queue_free()
 
 	for course_id in available_courses:
-		var btn: Control = COURSE_BUTTON_SCENE.instantiate()
+		var card: Control = COURSE_CARD_SCENE.instantiate()
 		var display_name: String = course_id
 		if category_names.has(course_id):
-			display_name = course_id + " - " + str(category_names[course_id])
-
-		# Star Rating Calculation
-		#var progress = GameManager.player_progress.get(course_id, {})
-		#var mastery = progress.get("mastery_percent", 0.0)
-		#var stars = "☆☆☆"
-		#if mastery >= 80.0:
-			#stars = "★★★"
-		#elif mastery >= 50.0:
-			#stars = "★★☆"
-		#elif mastery > 0.0:
-			#stars = "★☆☆"
-#
-		#display_name += "   " + stars
-		display_name += "   "
+			display_name = category_names[course_id]
 		
-		if btn.has_method("setup"):
-			btn.call("setup", course_id, display_name)
+		if card.has_method("setup"):
+			card.call("setup", course_id, display_name)
 
-		if btn.has_signal("course_selected"):
-			btn.connect("course_selected", _on_category_selected)
+		if card.has_signal("course_selected"):
+			card.connect("course_selected", _on_category_selected)
 
-		buttons_container.add_child(btn)
+		buttons_container.add_child(card)
 
 func _on_category_selected(course_id: String) -> void:
 	if sfx_click: sfx_click.play()
@@ -101,3 +116,20 @@ func _start_quiz_with_difficulty(difficulty: int) -> void:
 	else:
 		print("Failed to load course: " + pending_course_id)
 		if difficulty_popup: difficulty_popup.hide()
+
+func _on_settings_pressed() -> void:
+	if sfx_click: sfx_click.play()
+	print("Settings pressed")
+
+func _on_credits_pressed() -> void:
+	if sfx_click: sfx_click.play()
+	print("Credits pressed")
+
+func _on_quit_pressed() -> void:
+	if sfx_click: sfx_click.play()
+	# Ensure this doesn't accidentally trigger if we are in a popup or something
+	if difficulty_popup and difficulty_popup.visible:
+		difficulty_popup.hide()
+		return
+
+	get_tree().quit()
