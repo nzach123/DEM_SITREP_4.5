@@ -68,6 +68,20 @@ func set_resolution(resolution: Vector2i) -> void:
 func get_resolution() -> Vector2i:
 	return _settings["display"].get("resolution", Vector2i(1280, 720))
 
+func is_resolution_supported() -> bool:
+	# Embedded window in editor does not support resizing.
+	if OS.has_feature("editor"):
+		# In Godot 4.x, we can check if the window is embedded.
+		# Note: DisplayServer.window_get_mode() in editor might return Windowed, 
+		# but resizing via window_set_size often fails or throws errors in embedded mode.
+		return false
+	
+	# Web/HTML5 also has limitations, but for now we focus on the Editor error.
+	if OS.has_feature("web"):
+		return false
+		
+	return true
+
 func _apply_all_settings() -> void:
 	for bus in _settings["audio"].keys():
 		_apply_audio_setting(bus)
@@ -82,8 +96,11 @@ func _apply_audio_setting(bus_name: String) -> void:
 		AudioServer.set_bus_mute(bus_index, _settings["audio"][bus_name] <= 0.001)
 
 func apply_display_settings() -> void:
-	DisplayServer.window_set_mode(_settings["display"]["window_mode"])
-	DisplayServer.window_set_size(_settings["display"]["resolution"])
+	if is_resolution_supported():
+		DisplayServer.window_set_mode(_settings["display"]["window_mode"])
+		DisplayServer.window_set_size(_settings["display"]["resolution"])
+	else:
+		print_debug("SettingsManager: Display settings (mode/resolution) skipped (Unsupported in this environment)")
 
 func reset_to_defaults() -> void:
 	_settings = {

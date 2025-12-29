@@ -76,6 +76,15 @@ func _refresh_ui() -> void:
 	
 	_select_resolution_option(current_res)
 	_select_window_mode_option(current_mode)
+	
+	# Handle unsupported environments (e.g., Editor)
+	if resolution_option:
+		var supported = SettingsManager.is_resolution_supported()
+		resolution_option.disabled = not supported
+		if not supported:
+			resolution_option.tooltip_text = "Resolution locked in this mode/environment."
+		else:
+			resolution_option.tooltip_text = ""
 
 func _populate_resolutions() -> void:
 	if not resolution_option: return
