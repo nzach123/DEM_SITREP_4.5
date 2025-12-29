@@ -13,7 +13,7 @@
     - Verify persistence of these new values.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Core Logic' (Protocol in workflow.md)
 
-## Phase 2: UI Implementation (SettingsOverlay)
+## Phase 2: UI Implementation (SettingsOverlay) [checkpoint: 456d7c0]
 - [x] **Task 1: Update SettingsOverlay.tscn layout**
     - Add `OptionButton` for Resolution (populated with 16:9 list).
     - Add `OptionButton` for Window Mode (Windowed, Fullscreen, Borderless).
@@ -25,7 +25,7 @@
     - Initialize UI with current settings from `SettingsManager`.
 - [x] **Task 3: Unit Testing - UI Integration**
     - Write tests to verify UI interaction correctly calls `SettingsManager` only when "Apply" is pressed.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: UI Implementation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: UI Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Project Configuration & Polish
 - [ ] **Task 1: Configure Project Settings for Resizing**
