@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SettingsManager="*res://src/autoload/SettingsManager.gd"
 GameManager="*res://src/autoload/GameManager.gd"
 SceneTransition="*res://src/scenes/SceneTransition.tscn"
 
