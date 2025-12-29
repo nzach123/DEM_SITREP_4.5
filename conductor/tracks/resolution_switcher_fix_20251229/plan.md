@@ -12,6 +12,6 @@
 - [x] Task: Update `SettingsOverlay` UI state based on support.
     - Write a test in `tests/unit/test_settings_overlay_integration.gd` to verify the resolution dropdown is disabled in the editor.
     - Implement the logic in `src/scripts/SettingsOverlay.gd` to disable `resolution_option` and set the tooltip if `SettingsManager.is_resolution_supported()` returns false.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
-[checkpoint: ]
+[checkpoint: 2835902]
