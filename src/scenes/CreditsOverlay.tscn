@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3x3j6m2p5q2p"]
+
+[ext_resource type="Script" uid="uid://c5heh3qill9e" path="res://src/scripts/CreditsOverlay.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_theme"]
+[ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_theme"]
+[ext_resource type="Theme" uid="uid://b6pydv6j5u4m7" path="res://content/resources/themes/Raj_button_theme.tres" id="4_theme"]
+[ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="5_anim"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0, 0, 0, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.9, 0.9, 0.2)
+
+[node name="CreditsOverlay" type="Panel" node_paths=PackedStringArray("back_button")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -450.0
+offset_right = 400.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+script = ExtResource("1_script")
+back_button = NodePath("VBoxContainer/BackButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_theme")
+theme_override_colors/font_color = Color(0.8, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 82
+text = "CREDITS"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="CreditsContent" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Section_Dev" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/CreditsContent"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="VBoxContainer/ScrollContainer/CreditsContent/Section_Dev"]
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_override_font_sizes/font_size = 28
+text = "> DEVELOPMENT"
+
+[node name="Text" type="Label" parent="VBoxContainer/ScrollContainer/CreditsContent/Section_Dev"]
+layout_mode = 2
+theme = ExtResource("3_theme")
+theme_override_font_sizes/font_size = 20
+text = "Lead Architect: Gemini AI & Nick
+Framework: Conductor Methodology"
+
+[node name="Section_Fonts" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/CreditsContent"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="VBoxContainer/ScrollContainer/CreditsContent/Section_Fonts"]
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_override_font_sizes/font_size = 28
+text = "> TYPOGRAPHY"
+
+[node name="Text" type="Label" parent="VBoxContainer/ScrollContainer/CreditsContent/Section_Fonts"]
+layout_mode = 2
+theme = ExtResource("3_theme")
+theme_override_font_sizes/font_size = 20
+text = "Bebas Neue - Ryoichi Tsunekawa
+Rajdhani - Indian Type Foundry
+Montserrat - Julieta Ulanovsky"
+
+[node name="Section_Assets" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/CreditsContent"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="VBoxContainer/ScrollContainer/CreditsContent/Section_Assets"]
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_override_font_sizes/font_size = 28
+text = "> ASSETS & TOOLS"
+
+[node name="Text" type="Label" parent="VBoxContainer/ScrollContainer/CreditsContent/Section_Assets"]
+layout_mode = 2
+theme = ExtResource("3_theme")
+theme_override_font_sizes/font_size = 20
+text = "Engine: Godot 4.5.1
+Background Art: Gemini AI
+SFX: Open Source Collections"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_theme")
+theme_override_font_sizes/font_size = 42
+text = "BACK"
+
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/BackButton"]
+script = ExtResource("5_anim")
+hover_scale = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://dldl6e841cg0e"

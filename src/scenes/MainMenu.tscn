@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cwi8tg0tp5a6h" path="res://assets/audio/sfx/ClickSFX/click_003.ogg" id="3_sfx"]
 [ext_resource type="PackedScene" uid="uid://cqommlnb2ryhb" path="res://src/scenes/DifficultyPopup.tscn" id="4_popup"]
 [ext_resource type="PackedScene" uid="uid://b8x3j6m2p5q1n" path="res://src/scenes/SettingsOverlay.tscn" id="5_settings"]
+[ext_resource type="PackedScene" uid="uid://d3x3j6m2p5q2p" path="res://src/scenes/CreditsOverlay.tscn" id="6_credits"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
 shader = ExtResource("2_shader")
@@ -33,7 +34,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("buttons_container", "difficulty_popup", "settings_overlay", "sfx_click", "settings_btn", "credits_btn", "quit_btn")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("buttons_container", "difficulty_popup", "settings_overlay", "credits_overlay", "sfx_click", "settings_btn", "credits_btn", "quit_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,6 +47,7 @@ script = ExtResource("1_menu")
 buttons_container = NodePath("VBoxContainer/MarginContainer_Board/ScrollContainer/GridContainer")
 difficulty_popup = NodePath("DifficultyPopup")
 settings_overlay = NodePath("SettingsOverlay")
+credits_overlay = NodePath("CreditsOverlay")
 sfx_click = NodePath("AudioManager/SFX_Click")
 settings_btn = NodePath("VBoxContainer/MarginContainer_Footer/HBoxContainer/SettingsButton")
 credits_btn = NodePath("VBoxContainer/MarginContainer_Footer/HBoxContainer/CreditsButton")
@@ -158,6 +160,10 @@ visible = false
 layout_mode = 1
 
 [node name="SettingsOverlay" parent="." instance=ExtResource("5_settings")]
+visible = false
+layout_mode = 1
+
+[node name="CreditsOverlay" parent="." instance=ExtResource("6_credits")]
 visible = false
 layout_mode = 1
 

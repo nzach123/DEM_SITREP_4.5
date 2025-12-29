@@ -11,6 +11,7 @@ extends Control
 @export var buttons_container: GridContainer
 @export var difficulty_popup: Control
 @export var settings_overlay: Control
+@export var credits_overlay: Control
 @export var sfx_click: AudioStreamPlayer
 
 # Footer Buttons
@@ -125,7 +126,8 @@ func _on_settings_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	if sfx_click: sfx_click.play()
-	print("Credits pressed")
+	if credits_overlay and credits_overlay.has_method("open_menu"):
+		credits_overlay.open_menu()
 
 func _on_quit_pressed() -> void:
 	if sfx_click: sfx_click.play()
