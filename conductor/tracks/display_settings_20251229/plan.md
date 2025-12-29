@@ -28,10 +28,10 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: UI Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Project Configuration & Polish
-- [ ] **Task 1: Configure Project Settings for Resizing**
+- [x] **Task 1: Configure Project Settings for Resizing**
     - Set `display/window/size/resizable` to true.
     - Set `display/window/stretch/mode` to `canvas_items`.
     - Set `display/window/stretch/aspect` to `keep`.
-- [ ] **Task 2: Final Integration Test**
+- [x] **Task 2: Final Integration Test**
     - Verify end-to-end flow: Open menu -> Change resolution/mode -> Apply -> Verify window change.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Project Configuration & Polish' (Protocol in workflow.md)
