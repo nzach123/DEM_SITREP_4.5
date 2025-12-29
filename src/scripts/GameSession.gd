@@ -132,19 +132,20 @@ func load_question(index: int, skip_event_check: bool = false) -> void:
 		_trigger_field_exercise()
 		return
 
+	var q_data: Dictionary = GameManager.questions_pool[index]
+
+	# Validate answers array
+	if not q_data.has("answers") or not (q_data["answers"] is Array):
+		print("Error: Invalid question data at index ", index)
+		return
+
 	_reset_button_visuals()
 	current_state = State.PLAYING
 	feedback_label.text = ""
 	feedback_label.visible = false
 	timer_bar.modulate = Color(1, 1, 1)
 
-	var q_data: Dictionary = GameManager.questions_pool[index]
 	_animate_text(question_label, q_data.get("question", "Error: No Question Text"))
-
-	# Validate answers array
-	if not q_data.has("answers") or not (q_data["answers"] is Array):
-		print("Error: Invalid question data at index ", index)
-		return
 
 	# Explicit casting/copying for strict typing
 	current_shuffled_answers.clear()
