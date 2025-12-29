@@ -3,10 +3,10 @@
 This plan follows the Test-Driven Development (TDD) methodology and the project's established workflow.
 
 ## Phase 1: Bug Investigation and Fix (Quiz Crash)
-- [ ] Task: Investigation - Identify root cause of answer selection crash
-- [ ] Task: Write Failing Test - Reproduce crash scenario in a unit test
-- [ ] Task: Implementation - Fix the crash bug in the Quiz scene logic
-- [ ] Task: Verification - Ensure all tests pass and crash is resolved
+- [x] Task: Investigation - Identify root cause of answer selection crash
+- [x] Task: Write Failing Test - Reproduce crash scenario in a unit test [9a4ccdb]
+- [x] Task: Implementation - Fix the crash bug in the Quiz scene logic [9a4ccdb]
+- [x] Task: Verification - Ensure all tests pass and crash is resolved
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Bug Fix' (Protocol in workflow.md)
 
 ## Phase 2: Pause Menu UI Foundation
