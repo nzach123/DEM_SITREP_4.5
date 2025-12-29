@@ -1,6 +1,6 @@
 # Implementation Plan: Display Settings Enhancements
 
-## Phase 1: Core Logic (SettingsManager)
+## Phase 1: Core Logic (SettingsManager) [checkpoint: 59c03a8]
 - [x] **Task 1: Update SettingsManager with new display settings**
     - Add `resolution` to display settings dictionary.
     - Update `set_window_mode` to optionally NOT apply immediately (or add a separate staged update method).
@@ -11,7 +11,7 @@
 - [x] **Task 3: Unit Testing - SettingsManager Updates**
     - Write tests for `set_resolution` and `set_window_mode`.
     - Verify persistence of these new values.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Core Logic' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Core Logic' (Protocol in workflow.md)
 
 ## Phase 2: UI Implementation (SettingsOverlay)
 - [ ] **Task 1: Update SettingsOverlay.tscn layout**
