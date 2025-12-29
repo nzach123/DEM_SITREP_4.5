@@ -6,11 +6,11 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Infrastructure & Assets' (Protocol in workflow.md)
 
 ## Phase 2: Settings Overlay Implementation
-- [ ] Task: Design the `SettingsOverlay.tscn` (centered panel, Bebas Neue title).
-- [ ] Task: Implement Audio Sliders with real-time SFX feedback.
-- [ ] Task: Implement Display Mode toggle (Fullscreen/Windowed).
-- [ ] Task: Hook up persistence (Save on Change).
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Settings Overlay Implementation' (Protocol in workflow.md)
+- [x] Task: Design the `SettingsOverlay.tscn` (centered panel, Bebas Neue title). (c3f4932)
+- [x] Task: Implement Audio Sliders with real-time SFX feedback. (c3f4932)
+- [x] Task: Implement Display Mode toggle (Fullscreen/Windowed). (c3f4932)
+- [x] Task: Hook up persistence (Save on Change). (c3f4932)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Settings Overlay Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Credits Overlay Implementation
 - [ ] Task: Design the `CreditsOverlay.tscn` (centered panel, scrollable content).
