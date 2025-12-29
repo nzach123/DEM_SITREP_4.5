@@ -1,0 +1,1 @@
+# Project Tracks`n`nThis file tracks all major tracks for the project. Each track has its own detailed plan in its respective folder.`n`n---`n`n## [ ] Track: Implement polished Settings and Credits overlays for the Main Menu.`n*Link: [./conductor/tracks/menu_enhancements_20251228/](./conductor/tracks/menu_enhancements_20251228/)*
