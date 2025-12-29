@@ -18,7 +18,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Credits Overlay Implementation' (Protocol in workflow.md)
 
 ## Phase 4: Integration & Polish
-- [ ] Task: Integrate overlays into `MainMenu.tscn` (connecting buttons to popup logic).
-- [ ] Task: Implement hover/click SFX and visual pulsing animations.
-- [ ] Task: Verify HTML5 compatibility and responsiveness.
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Integration & Polish' (Protocol in workflow.md)
+- [x] Task: Integrate overlays into `MainMenu.tscn` (connecting buttons to popup logic). (a831e1b)
+- [x] Task: Implement hover/click SFX and visual pulsing animations. (a831e1b)
+- [x] Task: Verify HTML5 compatibility and responsiveness. (a831e1b)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Integration & Polish' (Protocol in workflow.md)
