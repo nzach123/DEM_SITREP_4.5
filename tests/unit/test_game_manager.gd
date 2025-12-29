@@ -9,7 +9,7 @@ func test_load_course_data_populates_master_pool():
 
 func test_reset_session_pool_creates_copy():
 	# Setup manually
-	var mock_data = [{"id": 1}, {"id": 2}, {"id": 3}]
+	var mock_data: Array[Dictionary] = [{"id": 1}, {"id": 2}, {"id": 3}]
 	GameManager.master_questions_pool = mock_data.duplicate(true)
 	GameManager.reset_session_pool()
 
