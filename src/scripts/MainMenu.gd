@@ -10,6 +10,7 @@ extends Control
 
 @export var buttons_container: GridContainer
 @export var difficulty_popup: Control
+@export var settings_overlay: Control
 @export var sfx_click: AudioStreamPlayer
 
 # Footer Buttons
@@ -119,7 +120,8 @@ func _start_quiz_with_difficulty(difficulty: int) -> void:
 
 func _on_settings_pressed() -> void:
 	if sfx_click: sfx_click.play()
-	print("Settings pressed")
+	if settings_overlay and settings_overlay.has_method("open_menu"):
+		settings_overlay.open_menu()
 
 func _on_credits_pressed() -> void:
 	if sfx_click: sfx_click.play()
