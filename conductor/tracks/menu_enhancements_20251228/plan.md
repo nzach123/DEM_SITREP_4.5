@@ -1,8 +1,8 @@
 # Plan: Menu Enhancements (Settings & Credits)
 
 ## Phase 1: Infrastructure & Assets
-- [x] Task: Audit existing `GameManager.gd` for audio bus management. (d0a3e2f)
-- [ ] Task: Create a `SettingsManager` resource or script for saving/loading `user://settings.cfg`.
+- [x] Task: Audit existing `GameManager.gd` for audio bus management. (171ad4c)
+- [x] Task: Create a `SettingsManager` resource or script for saving/loading `user://settings.cfg`. (a006f6b)
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Infrastructure & Assets' (Protocol in workflow.md)
 
 ## Phase 2: Settings Overlay Implementation
