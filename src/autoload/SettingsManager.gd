@@ -17,7 +17,8 @@ var _settings = {
 		"SFX": 1.0
 	},
 	"display": {
-		"window_mode": DisplayServer.WINDOW_MODE_WINDOWED
+		"window_mode": DisplayServer.WINDOW_MODE_WINDOWED,
+		"resolution": Vector2i(1280, 720)
 	}
 }
 
@@ -57,15 +58,20 @@ func get_volume(bus_name: String) -> float:
 
 func set_window_mode(mode: DisplayServer.WindowMode) -> void:
 	_settings["display"]["window_mode"] = mode
-	_apply_display_settings()
 
 func get_window_mode() -> DisplayServer.WindowMode:
 	return _settings["display"]["window_mode"]
 
+func set_resolution(resolution: Vector2i) -> void:
+	_settings["display"]["resolution"] = resolution
+
+func get_resolution() -> Vector2i:
+	return _settings["display"].get("resolution", Vector2i(1280, 720))
+
 func _apply_all_settings() -> void:
 	for bus in _settings["audio"].keys():
 		_apply_audio_setting(bus)
-	_apply_display_settings()
+	apply_display_settings()
 
 func _apply_audio_setting(bus_name: String) -> void:
 	var bus_index = AudioServer.get_bus_index(bus_name)
@@ -75,8 +81,9 @@ func _apply_audio_setting(bus_name: String) -> void:
 		AudioServer.set_bus_volume_db(bus_index, db)
 		AudioServer.set_bus_mute(bus_index, _settings["audio"][bus_name] <= 0.001)
 
-func _apply_display_settings() -> void:
+func apply_display_settings() -> void:
 	DisplayServer.window_set_mode(_settings["display"]["window_mode"])
+	DisplayServer.window_set_size(_settings["display"]["resolution"])
 
 func reset_to_defaults() -> void:
 	_settings = {
@@ -86,7 +93,8 @@ func reset_to_defaults() -> void:
 			"SFX": 1.0
 		},
 		"display": {
-			"window_mode": DisplayServer.WINDOW_MODE_WINDOWED
+			"window_mode": DisplayServer.WINDOW_MODE_WINDOWED,
+			"resolution": Vector2i(1280, 720)
 		}
 	}
 	_apply_all_settings()
