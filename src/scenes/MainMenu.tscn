@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cqommlnb2ryhb" path="res://src/scenes/DifficultyPopup.tscn" id="4_popup"]
 [ext_resource type="PackedScene" uid="uid://b8x3j6m2p5q1n" path="res://src/scenes/SettingsOverlay.tscn" id="5_settings"]
 [ext_resource type="PackedScene" uid="uid://d3x3j6m2p5q2p" path="res://src/scenes/CreditsOverlay.tscn" id="6_credits"]
+[ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="7_anim"]
+[ext_resource type="AudioStream" uid="uid://be5eug8n2y7t6" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="8_hover"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
 shader = ExtResource("2_shader")
@@ -143,17 +145,38 @@ theme = ExtResource("2_cbw1n")
 text = "[F1] SETTINGS"
 flat = true
 
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer/SettingsButton"]
+script = ExtResource("7_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("8_hover")
+click_sfx = ExtResource("3_sfx")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
 [node name="CreditsButton" type="Button" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_cbw1n")
 text = "[F2] CREDITS"
 flat = true
 
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer/CreditsButton"]
+script = ExtResource("7_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("8_hover")
+click_sfx = ExtResource("3_sfx")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
 [node name="QuitButton" type="Button" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_cbw1n")
 text = "[ESC] QUIT"
 flat = true
+
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer/QuitButton"]
+script = ExtResource("7_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("8_hover")
+click_sfx = ExtResource("3_sfx")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="DifficultyPopup" parent="." instance=ExtResource("4_popup")]
 visible = false
