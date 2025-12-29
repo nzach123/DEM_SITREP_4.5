@@ -77,3 +77,16 @@ func _apply_audio_setting(bus_name: String) -> void:
 
 func _apply_display_settings() -> void:
 	DisplayServer.window_set_mode(_settings["display"]["window_mode"])
+
+func reset_to_defaults() -> void:
+	_settings = {
+		"audio": {
+			"Master": 1.0,
+			"Music": 1.0,
+			"SFX": 1.0
+		},
+		"display": {
+			"window_mode": DisplayServer.WINDOW_MODE_WINDOWED
+		}
+	}
+	_apply_all_settings()

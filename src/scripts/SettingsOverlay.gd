@@ -5,6 +5,8 @@ SettingsOverlay.gd
 Handles the UI interactions for the settings menu.
 """
 
+signal close_requested
+
 @export var master_slider: HSlider
 @export var music_slider: HSlider
 @export var sfx_slider: HSlider
@@ -40,6 +42,7 @@ func open_menu() -> void:
 func close_menu() -> void:
 	SettingsManager.save_settings()
 	hide()
+	close_requested.emit()
 
 func _on_master_volume_changed(value: float) -> void:
 	SettingsManager.set_volume("Master", value)

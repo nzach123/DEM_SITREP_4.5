@@ -34,6 +34,12 @@ func _ready() -> void:
 		if difficulty_popup.has_signal("difficulty_selected"):
 			difficulty_popup.connect("difficulty_selected", _start_quiz_with_difficulty)
 
+	if settings_overlay and settings_overlay.has_signal("close_requested"):
+		settings_overlay.close_requested.connect(_on_settings_closed)
+	
+	if credits_overlay and credits_overlay.has_signal("close_requested"):
+		credits_overlay.close_requested.connect(_on_credits_closed)
+
 	connect_footer_buttons()
 
 	# Initial focus for controller/keyboard accessibility
@@ -128,6 +134,14 @@ func _on_credits_pressed() -> void:
 	if sfx_click: sfx_click.play()
 	if credits_overlay and credits_overlay.has_method("open_menu"):
 		credits_overlay.open_menu()
+
+func _on_settings_closed() -> void:
+	if settings_btn:
+		settings_btn.grab_focus()
+
+func _on_credits_closed() -> void:
+	if credits_btn:
+		credits_btn.grab_focus()
 
 func _on_quit_pressed() -> void:
 	if sfx_click: sfx_click.play()

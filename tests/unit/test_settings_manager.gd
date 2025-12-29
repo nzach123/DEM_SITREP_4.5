@@ -1,8 +1,7 @@
 extends GutTest
 
 func before_each():
-	# Ensure clean state or mock file access if necessary
-	pass
+	SettingsManager.reset_to_defaults()
 
 func test_default_settings():
 	assert_eq(SettingsManager.get_volume("Master"), 1.0, "Default Master volume should be 1.0")

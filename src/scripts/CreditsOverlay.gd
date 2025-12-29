@@ -5,6 +5,8 @@ CreditsOverlay.gd
 Handles the display and navigation for the credits overlay.
 """
 
+signal close_requested
+
 @export var back_button: Button
 
 func _ready() -> void:
@@ -19,6 +21,7 @@ func open_menu() -> void:
 
 func close_menu() -> void:
 	hide()
+	close_requested.emit()
 
 func _on_back_pressed() -> void:
 	close_menu()
