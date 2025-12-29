@@ -13,10 +13,11 @@ enum State { SETUP, PLAYING, LOCKED, END }
 # --- UI NODES ---
 @export_group("UI Elements")
 @export var question_label: Label
-@export var score_label: Label
+@export var round_time_label: Label
+@export var rescued_value_label: Label
+@export var casualties_value_label: Label
 @export var timer_label: Label
 @export var timer_bar: ProgressBar
-@export var circular_timer: TextureProgressBar
 @export var rescue_bar: ProgressBar
 @export var feedback_label: Label
 @export var remediation_popup: Control # RemediationPopup
@@ -75,9 +76,10 @@ func _process(_delta: float) -> void:
 		else:
 			timer_bar.modulate = Color(1, 1, 1)
 
-	# Update Round Timer (Circular)
+	# Update Round Timer
 	if not round_timer.is_stopped() and not round_timer.paused:
-		circular_timer.value = round_timer.time_left
+		if round_time_label:
+			round_time_label.text = str(int(round_timer.time_left))
 
 func start_game() -> void:
 	GameManager.reset_stats()
@@ -107,7 +109,6 @@ func start_game() -> void:
 	# Setup Timers
 	var total_time: float = actual_count * float(settings["time_per_question"])
 	round_timer.start(total_time)
-	circular_timer.max_value = total_time
 
 	question_timer.wait_time = float(settings["time_per_question"])
 	timer_bar.max_value = question_timer.wait_time
@@ -436,7 +437,10 @@ func _on_remediation_acknowledged() -> void:
 	load_question(current_q_index)
 
 func update_score_ui() -> void:
-	score_label.text = "Rescued: %d  |  Casualties: %d" % [GameManager.citizens_saved, GameManager.casualties_count]
+	if rescued_value_label:
+		rescued_value_label.text = str(GameManager.citizens_saved)
+	if casualties_value_label:
+		casualties_value_label.text = str(GameManager.casualties_count)
 
 func update_rescue_ui() -> void:
 	rescue_bar.min_value = 0

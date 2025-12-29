@@ -69,7 +69,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[node name="QuizScene" type="Control" node_paths=PackedStringArray("audio_manager", "game_camera", "background_pulse", "strike_system", "question_label", "score_label", "timer_label", "timer_bar", "circular_timer", "rescue_bar", "feedback_label", "remediation_popup", "answer_buttons", "question_timer", "round_timer")]
+[node name="QuizScene" type="Control" node_paths=PackedStringArray("audio_manager", "game_camera", "background_pulse", "strike_system", "question_label", "round_time_label", "rescued_value_label", "casualties_value_label", "timer_label", "timer_bar", "rescue_bar", "feedback_label", "remediation_popup", "answer_buttons", "question_timer", "round_timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,10 +82,11 @@ game_camera = NodePath("Camera2D")
 background_pulse = NodePath("Background")
 strike_system = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/StrikeContainer")
 question_label = NodePath("VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/QuestionsMarginContainer/QuestionLabel")
-score_label = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/ScoreLabel")
-timer_label = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/TimerLabel")
+round_time_label = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/TimeContainer/TimeValueLabel")
+rescued_value_label = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/RescuedContainer/RescuedValueLabel")
+casualties_value_label = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/CasualtiesContainer/CasualtiesValueLabel")
+timer_label = NodePath("VBoxContainer/TopBarMarginContainer/PanelContainer/HBoxContainer/TimerLabel")
 timer_bar = NodePath("VBoxContainer/TopBarMarginContainer/PanelContainer/HBoxContainer/TimerBar")
-circular_timer = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/TimerContainer/CircularTimer")
 rescue_bar = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/RescueBar")
 feedback_label = NodePath("FeedbackLabel")
 remediation_popup = NodePath("RemediationPopup")
@@ -199,6 +200,14 @@ theme = ExtResource("14_gax45")
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopBarMarginContainer/PanelContainer"]
 layout_mode = 2
 
+[node name="TimerLabel" type="Label" parent="VBoxContainer/TopBarMarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("12_lv0df")
+theme_override_font_sizes/font_size = 32
+text = "Time: 20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TimerBar" type="ProgressBar" parent="VBoxContainer/TopBarMarginContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -233,51 +242,69 @@ theme_override_constants/margin_bottom = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="TimerContainer" type="Control" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="TimeContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="CircularTimer" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/TimerContainer"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.7, 0.7)
-pivot_offset = Vector2(64, 64)
-max_value = 60.0
-step = 0.1
-value = 60.0
-fill_mode = 4
-texture_progress = ExtResource("9_timerfg")
+[node name="TimeHeaderLabel" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/TimeContainer"]
+layout_mode = 2
+theme = ExtResource("16_i6oeq")
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 24
+text = "MISSION TIME"
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="TimerLabel" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer"]
+[node name="TimeValueLabel" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/TimeContainer"]
 layout_mode = 2
 theme = ExtResource("12_lv0df")
-theme_override_font_sizes/font_size = 42
-text = "Time: 45"
+theme_override_font_sizes/font_size = 64
+text = "60"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
-[node name="ScoreLabel" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer"]
+[node name="RescuedContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+
+[node name="RescuedHeaderLabel" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/RescuedContainer"]
+layout_mode = 2
+theme = ExtResource("16_i6oeq")
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 24
+text = "RESCUED"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="RescuedValueLabel" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/RescuedContainer"]
+layout_mode = 2
 theme = ExtResource("12_lv0df")
-theme_override_font_sizes/font_size = 42
-text = "Score: 0"
+theme_override_colors/font_color = Color(0.258824, 0.709804, 0.270588, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
+
+[node name="CasualtiesContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CasualtiesHeaderLabel" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/CasualtiesContainer"]
+layout_mode = 2
+theme = ExtResource("16_i6oeq")
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 24
+text = "CASUALTIES"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="CasualtiesValueLabel" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/CasualtiesContainer"]
+layout_mode = 2
+theme = ExtResource("12_lv0df")
+theme_override_colors/font_color = Color(0.89, 0.21, 0.18, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RescueBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -289,6 +316,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_ijcxg")
 
 [node name="StrikeContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer" node_paths=PackedStringArray("giant_x_label")]
 layout_mode = 2
+alignment = 1
 script = ExtResource("Comp_Strike")
 giant_x_label = NodePath("../../../../../../../GiantXLabel")
 
