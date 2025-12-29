@@ -14,16 +14,16 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Core Logic' (Protocol in workflow.md)
 
 ## Phase 2: UI Implementation (SettingsOverlay)
-- [ ] **Task 1: Update SettingsOverlay.tscn layout**
+- [x] **Task 1: Update SettingsOverlay.tscn layout**
     - Add `OptionButton` for Resolution (populated with 16:9 list).
     - Add `OptionButton` for Window Mode (Windowed, Fullscreen, Borderless).
     - Add "Apply" `Button`.
-- [ ] **Task 2: Update SettingsOverlay.gd logic**
+- [x] **Task 2: Update SettingsOverlay.gd logic**
     - Connect signals from new controls.
     - Implement staging logic: selections are stored locally until "Apply" is pressed.
     - Update "Apply" button to call `SettingsManager` to apply and save changes.
     - Initialize UI with current settings from `SettingsManager`.
-- [ ] **Task 3: Unit Testing - UI Integration**
+- [x] **Task 3: Unit Testing - UI Integration**
     - Write tests to verify UI interaction correctly calls `SettingsManager` only when "Apply" is pressed.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: UI Implementation' (Protocol in workflow.md)
 
