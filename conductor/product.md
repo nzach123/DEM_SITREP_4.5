@@ -108,7 +108,7 @@ I want to implenet a settings scene and credits scene for the main menu. Use thi
 ## Core Features
 - **Settings Scene:**
     -   **Audio Control:** Master, Music, and SFX volume sliders.
-    -   **Display Options:** Window mode toggles (Fullscreen/Windowed).
+    -   **Display Options:** Resolution selection and Window mode toggles (Windowed/Fullscreen/Borderless).
     -   **Accessibility:** Simple text scaling or high-contrast toggles (if applicable).
     -   **Persistence:** Save/Load settings using Godot's `ConfigFile` or `Resource` system.
 -   **Credits Scene:**
