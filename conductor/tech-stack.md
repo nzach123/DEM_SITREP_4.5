@@ -5,7 +5,7 @@
 - **Programming Language:** GDScript
 
 ## Systems & Architecture
-- **State Management:** Singleton/Autoload pattern (e.g., `GameManager.gd`)
+- **State Management:** Singleton/Autoload pattern (e.g., `GameManager.gd`, `SettingsManager.gd`)
 - **Scene Management:** Custom transition handler (`SceneTransition.gd`)
 - **UI System:** Godot Control nodes, Theme resources, and Signals
 
