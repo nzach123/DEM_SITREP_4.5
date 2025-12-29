@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [ ] Track: Pause Menu & Quiz Crash Fix
+## [~] Track: Pause Menu & Quiz Crash Fix
 *Link: [./conductor/tracks/pause_menu_fix_20251229/](./conductor/tracks/pause_menu_fix_20251229/)*
