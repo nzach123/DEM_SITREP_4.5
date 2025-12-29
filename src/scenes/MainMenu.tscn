@@ -32,7 +32,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("buttons_container", "difficulty_popup", "sfx_click")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("buttons_container", "difficulty_popup", "sfx_click", "settings_btn", "credits_btn", "quit_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,9 +42,12 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_menu")
-buttons_container = NodePath("VBoxContainer/MarginContainer/GridContainer")
+buttons_container = NodePath("VBoxContainer/MarginContainer_Board/ScrollContainer/GridContainer")
 difficulty_popup = NodePath("DifficultyPopup")
 sfx_click = NodePath("AudioManager/SFX_Click")
+settings_btn = NodePath("VBoxContainer/MarginContainer_Footer/HBoxContainer/SettingsButton")
+credits_btn = NodePath("VBoxContainer/MarginContainer_Footer/HBoxContainer/CreditsButton")
+quit_btn = NodePath("VBoxContainer/MarginContainer_Footer/HBoxContainer/QuitButton")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -72,48 +75,81 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 20
 
 [node name="MarginContainer_Title" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 50
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer_Title"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer_Title"]
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer/MarginContainer_Title/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="VBoxContainer/MarginContainer_Title/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_b83k2")
+theme_override_colors/font_color = Color(0.8, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 64
+text = "SITREP // COMMANDER_DASHBOARD"
+vertical_alignment = 1
+
+[node name="DateLabel" type="Label" parent="VBoxContainer/MarginContainer_Title/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_cbw1n")
+theme_override_font_sizes/font_size = 32
+text = "STATUS: ONLINE"
+vertical_alignment = 1
+
+[node name="MarginContainer_Board" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_b83k2")
-theme_override_font_sizes/font_size = 120
-text = "sitrep"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
 
-[node name="TitleLabel2" type="Label" parent="VBoxContainer/MarginContainer_Title/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer_Board"]
 layout_mode = 2
-size_flags_vertical = 6
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer_Board/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="MarginContainer_Footer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer_Footer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 2
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_cbw1n")
-theme_override_font_sizes/font_size = 42
-text = "DISASTER MANAGER TRAINING SIMULATION"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "[F1] SETTINGS"
+flat = true
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 50
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer"]
-layout_mode = 2
-columns = 2
-
-[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
-visible = false
+[node name="CreditsButton" type="Button" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_cbw1n")
-text = "WereWolf"
+text = "[F2] CREDITS"
+flat = true
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_cbw1n")
+text = "[ESC] QUIT"
+flat = true
 
 [node name="DifficultyPopup" parent="." instance=ExtResource("4_popup")]
 visible = false

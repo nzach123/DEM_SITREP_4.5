@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3yqj7k5m2p1q"]
+
+[ext_resource type="Script" path="res://src/scripts/CourseCard.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="3_anim"]
+
+[node name="CourseCard" type="Button" node_paths=PackedStringArray("id_label", "title_label")]
+custom_minimum_size = Vector2(240, 160)
+offset_right = 240.0
+offset_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_theme")
+script = ExtResource("1_script")
+id_label = NodePath("MarginContainer/VBoxContainer/IDLabel")
+title_label = NodePath("MarginContainer/VBoxContainer/TitleLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="IDLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.537, 0.769, 0.757, 1)
+theme_override_font_sizes/font_size = 20
+text = "0000"
+horizontal_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "COURSE NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 3
+
+[node name="AnimationComponent" type="Node" parent="."]
+script = ExtResource("3_anim")
+hover_scale = Vector2(1.05, 1.05)
+time = 0.2
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
