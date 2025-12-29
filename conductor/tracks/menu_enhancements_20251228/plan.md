@@ -13,9 +13,9 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Settings Overlay Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Credits Overlay Implementation
-- [ ] Task: Design the `CreditsOverlay.tscn` (centered panel, scrollable content).
-- [ ] Task: Populate credits content (contributors, fonts, assets).
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Credits Overlay Implementation' (Protocol in workflow.md)
+- [x] Task: Design the `CreditsOverlay.tscn` (centered panel, scrollable content). (ca250b4)
+- [x] Task: Populate credits content (contributors, fonts, assets). (ca250b4)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Credits Overlay Implementation' (Protocol in workflow.md)
 
 ## Phase 4: Integration & Polish
 - [ ] Task: Integrate overlays into `MainMenu.tscn` (connecting buttons to popup logic).
