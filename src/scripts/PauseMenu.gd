@@ -54,8 +54,8 @@ func _animate_hide(signal_to_emit: Signal) -> void:
 	var tween = create_tween()
 	tween.tween_property(color_rect, "color:a", 0.0, 0.2)
 	tween.tween_callback(func():
-		hide()
 		signal_to_emit.emit()
+		queue_free()
 	)
 
 func open_menu() -> void:
@@ -66,9 +66,10 @@ func open_menu() -> void:
 		tween.tween_property(color_rect, "color:a", 0.7, 0.2)
 	
 	# Focus the first button for keyboard/gamepad navigation
-	var first_btn = menu_root.get_node("Continue")
-	if first_btn:
-		first_btn.grab_focus()
+	if menu_root:
+		var first_btn = menu_root.get_node("Continue")
+		if first_btn:
+			first_btn.grab_focus()
 
 func close_menu() -> void:
 	_animate_hide_no_signal()
@@ -76,4 +77,4 @@ func close_menu() -> void:
 func _animate_hide_no_signal() -> void:
 	var tween = create_tween()
 	tween.tween_property(color_rect, "color:a", 0.0, 0.2)
-	tween.tween_callback(hide)
+	tween.tween_callback(queue_free)

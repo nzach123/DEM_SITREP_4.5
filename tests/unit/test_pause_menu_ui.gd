@@ -1,22 +1,18 @@
 extends GutTest
 
 func after_each():
-	if GameManager.pause_menu_instance and GameManager.pause_menu_instance.get_parent():
-		GameManager.pause_menu_instance.get_parent().remove_child(GameManager.pause_menu_instance)
 	GameManager.game_paused = false
 	get_tree().paused = false
 
 func test_settings_navigation_logic():
-	var pause_menu = GameManager.pause_menu_instance
+	var pause_menu = load("res://src/scenes/PauseMenu.tscn").instantiate()
 	# Add to tree so onready variables are initialized
-	get_tree().root.add_child(pause_menu)
+	add_child_autofree(pause_menu)
 	
 	var menu_root = pause_menu.get_node("Panel/VBoxContainer")
 	var settings_btn = pause_menu.find_child("Settings", true, false)
-	if not settings_btn:
-		settings_btn = pause_menu.find_child("Options", true, false) # Fallback for initial test
 	
-	assert_not_null(settings_btn, "Settings/Options button should exist")
+	assert_not_null(settings_btn, "Settings button should exist")
 	
 	# Simulate pressing settings
 	pause_menu.call("_on_settings_pressed")
