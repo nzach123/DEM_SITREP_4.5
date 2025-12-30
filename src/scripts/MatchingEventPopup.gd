@@ -2,21 +2,25 @@ extends Control
 
 signal completed(success: bool)
 
-@onready var terms_container: VBoxContainer = $MarginContainer/Panel/HBoxContainer/LeftCol/TermsContainer
-@onready var definitions_container: VBoxContainer = $MarginContainer/Panel/HBoxContainer/RightCol/DefinitionsContainer
-@onready var timer_label: Label = $MarginContainer/Panel/MarginContainer/Header/TimerLabel
-@onready var submit_button: Button = $MarginContainer/Panel/Footer/SubmitButton
+@onready var timer_label: Label = $MarginContainer/VBoxContainer/Header/TimerLabel
+@onready var definition_label: Label = $MarginContainer/VBoxContainer/DefinitionContainer/MarginContainer/CurrentDefinitionLabel
+@onready var term_grid: GridContainer = $MarginContainer/VBoxContainer/TermGrid
+@onready var crt_screen: ColorRect = $CRTScreen
 
-const TERM_ROW_SCENE: PackedScene = preload("res://src/scenes/TermRow.tscn")
-const DEFINITION_ROW_SCENE: PackedScene = preload("res://src/scenes/DefinitionRow.tscn")
+# Resources to style the buttons dynamically
+const BUTTON_THEME = preload("res://content/resources/themes/Montserrat_button_theme.tres")
 
-var time_left: float = 60.0 # Default time
+var time_left: float = 60.0
 var is_active: bool = false
-var current_data: Array = []
+var definitions_deck: Array = []
+var current_target: Dictionary = {}
+var terms_list: Array = []
 
 func _ready() -> void:
-	submit_button.pressed.connect(_on_submit_pressed)
 	hide()
+	# Ensure CRT is visible
+	if crt_screen:
+		crt_screen.visible = true
 
 func _process(delta: float) -> void:
 	if is_active:
@@ -28,83 +32,83 @@ func _process(delta: float) -> void:
 
 func setup() -> void:
 	is_active = true
-	time_left = 60.0 # Give them 60 seconds
-	current_data = GameManager.get_matching_round_data()
+	time_left = 60.0
 
-	if current_data.size() < 5:
+	# Fetch data
+	var raw_data = GameManager.get_matching_round_data()
+	if raw_data.size() < 1:
 		print("Error: Not enough matching data found.")
 		finish_game(false)
 		return
 
-	# Clear containers
-	for child in terms_container.get_children():
-		child.queue_free()
-	for child in definitions_container.get_children():
-		child.queue_free()
+	# Setup Decks
+	definitions_deck = raw_data.duplicate()
+	definitions_deck.shuffle()
 
-	# Prepare Definitions (Right Column) - Shuffled
-	var definitions = current_data.duplicate()
-	definitions.shuffle()
+	# Terms list should probably contain all answers from the deck to be fair,
+	# or we can keep the terms static if we want them all visible at once.
+	# The prompt implies "match against the terms" (plural), so a static grid of choices is good.
+	terms_list = raw_data.duplicate()
+	# We might want to shuffle the grid positions once
+	terms_list.shuffle()
 
-	# Prepare Terms (Left Column) - Shuffled
-	var terms = current_data.duplicate()
-	terms.shuffle()
-
-	# Populate Definitions
-	for i in range(definitions.size()):
-		var item = definitions[i]
-		var display_id = i + 1
-
-		var row = DEFINITION_ROW_SCENE.instantiate()
-		row.get_node("NumberLabel").text = str(display_id) + "."
-		row.get_node("DefinitionLabel").text = item["definition"]
-		row.set_meta("item_id", item["id"])
-		definitions_container.add_child(row)
-
-	# Populate Terms
-	for i in range(terms.size()):
-		var item = terms[i]
-		var row = TERM_ROW_SCENE.instantiate()
-		row.get_node("Label").text = item["term"]
-		row.set_meta("item_id", item["id"])
-		terms_container.add_child(row)
+	_populate_term_grid()
+	_next_round()
 
 	show()
 
-func _on_submit_pressed() -> void:
+func _populate_term_grid() -> void:
+	# Clear existing
+	for child in term_grid.get_children():
+		child.queue_free()
+
+	for item in terms_list:
+		var btn = Button.new()
+		btn.text = item["term"]
+		btn.theme = BUTTON_THEME
+		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		btn.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		btn.custom_minimum_size = Vector2(0, 80)
+		btn.set_meta("item_id", item["id"])
+		btn.pressed.connect(_on_term_selected.bind(item["id"], btn))
+		term_grid.add_child(btn)
+
+func _next_round() -> void:
+	if definitions_deck.is_empty():
+		finish_game(true)
+		return
+
+	current_target = definitions_deck.pop_front()
+	definition_label.text = current_target["definition"]
+
+	# Reset button states if we want to re-enable them?
+	# If we are matching 1-to-1, we should disable the used term button.
+	# Let's find the button for the *previously* matched term if any?
+	# Actually, easier to just check if the button's ID is in the remaining deck?
+	# Or just disable them as we go.
+
+func _on_term_selected(selected_id: String, btn_ref: Button) -> void:
 	if not is_active: return
 
-	if check_matches():
-		finish_game(true)
+	if selected_id == current_target["id"]:
+		# Match!
+		# Visual feedback on button? Green flash?
+		btn_ref.disabled = true # Disable the used term
+		btn_ref.modulate = Color(0, 1, 0) # Green
+		_next_round()
 	else:
-		# Visual feedback (shake or flash) could be added here
+		# Fail!
+		# Penalty
+		time_left -= 5.0
 		timer_label.modulate = Color(1, 0, 0)
-		await get_tree().create_timer(0.5).timeout
-		timer_label.modulate = Color(1, 1, 1)
 
-func check_matches() -> bool:
-	var def_rows = definitions_container.get_children()
-	var term_rows = terms_container.get_children()
+		# Shake effect or red flash on button
+		var original_mod = btn_ref.modulate
+		btn_ref.modulate = Color(1, 0, 0)
 
-	# Map Display ID (1-5) -> Item ID
-	var display_id_to_item_id = {}
-	for i in range(def_rows.size()):
-		var row = def_rows[i]
-		var item_id = row.get_meta("item_id")
-		display_id_to_item_id[i + 1] = item_id
-
-	for term_row in term_rows:
-		var term_item_id = term_row.get_meta("item_id")
-		var selected_idx = term_row.get_node("OptionButton").selected
-		var selected_val = term_row.get_node("OptionButton").get_item_id(selected_idx)
-
-		if selected_val == 0: return false # Incomplete
-
-		# Check if selected Display ID maps to the Term's Item ID
-		if display_id_to_item_id.get(selected_val) != term_item_id:
-			return false
-
-	return true
+		var tween = create_tween()
+		tween.tween_property(timer_label, "modulate", Color(1, 1, 1), 0.5)
+		tween.parallel().tween_property(btn_ref, "modulate", original_mod, 0.5)
 
 func finish_game(success: bool) -> void:
 	is_active = false

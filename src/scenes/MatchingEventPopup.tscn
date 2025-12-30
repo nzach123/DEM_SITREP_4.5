@@ -39,6 +39,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.901961)
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -46,125 +55,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 40
 
-[node name="Background" type="TextureRect" parent="MarginContainer/Panel"]
-visible = false
-modulate = Color(0.3, 0.3, 0.3, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_bg")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 87.0
-grow_horizontal = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-
-[node name="Header" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/Header"]
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Header"]
 layout_mode = 2
 theme = ExtResource("2_header")
-theme_override_font_sizes/font_size = 72
-text = "FIELD EXERCISE"
+theme_override_font_sizes/font_size = 64
+text = "DECRYPTION PROTOCOL"
 
-[node name="Spacer" type="Control" parent="MarginContainer/Panel/MarginContainer/Header"]
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TimerLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/Header"]
+[node name="TimerLabel" type="Label" parent="MarginContainer/VBoxContainer/Header"]
 layout_mode = 2
 theme = ExtResource("2_header")
 theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 64
 text = "TIME: 60"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 120.0
-offset_right = -50.0
-offset_bottom = -120.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 50
-
-[node name="LeftCol" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer"]
+[node name="DefinitionContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/Panel/HBoxContainer/LeftCol"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/DefinitionContainer"]
 layout_mode = 2
-theme = ExtResource("2_header")
-theme_override_font_sizes/font_size = 48
-text = "TERMS"
-horizontal_alignment = 1
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="TermsContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer/LeftCol"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 20
-
-[node name="RightCol" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainer/Panel/HBoxContainer/RightCol"]
-layout_mode = 2
-theme = ExtResource("2_header")
-theme_override_font_sizes/font_size = 48
-text = "DEFINITIONS"
-horizontal_alignment = 1
-
-[node name="DefinitionsContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer/RightCol"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 20
-
-[node name="Footer" type="HBoxContainer" parent="MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -100.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
-[node name="SubmitButton" type="Button" parent="MarginContainer/Panel/Footer"]
-custom_minimum_size = Vector2(300, 60)
+[node name="CurrentDefinitionLabel" type="Label" parent="MarginContainer/VBoxContainer/DefinitionContainer/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("3_body")
-theme_override_colors/font_color = Color(0.4, 1, 0.4, 1)
-theme_override_font_sizes/font_size = 42
-text = "SUBMIT MATCHES"
+theme_override_font_sizes/font_size = 36
+text = "Decrypting incoming signal..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TermGrid" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
 
 [node name="CRTScreen" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_crt")
 layout_mode = 1
 anchors_preset = 15

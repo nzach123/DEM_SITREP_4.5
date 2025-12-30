@@ -5,64 +5,72 @@ signal resume_requested
 signal restart_requested
 signal quit_requested
 
-@onready var background: ColorRect = $ColorRect
-@onready var menu_root: VBoxContainer = $CenterContainer/MenuRoot
-@onready var options_root: VBoxContainer = $CenterContainer/OptionsRoot
-@onready var click_sfx: AudioStreamPlayer = $ClickSFX
+@onready var menu_root = $CenterContainer/MenuRoot
+@onready var click_sfx = $ClickSFX
+@onready var color_rect = $ColorRect
 
-func _ready() -> void:
-	visible = false
-	menu_root.modulate.a = 0.0
-	background.color.a = 0.0
+# Preload the SettingsOverlay
+const SETTINGS_SCENE = preload("res://src/scenes/SettingsOverlay.tscn")
 
+var settings_instance = null
+
+func _ready():
+	hide()
+
+# Removed _input logic as it is likely handled by GameManager or redundant.
+# If previously present, it might cause conflicts.
+# However, if GameManager calls show(), we are good.
+
+func _on_resume_pressed():
+	if click_sfx: click_sfx.play()
+	_animate_hide(resume_requested)
+
+func _on_restart_pressed():
+	if click_sfx: click_sfx.play()
+	_animate_hide(restart_requested)
+
+func _on_quit_pressed():
+	if click_sfx: click_sfx.play()
+	_animate_hide(quit_requested)
+
+func _on_options_pressed():
+	if click_sfx: click_sfx.play()
+
+	if settings_instance == null:
+		settings_instance = SETTINGS_SCENE.instantiate()
+		add_child(settings_instance)
+		settings_instance.close_requested.connect(_on_settings_closed)
+
+	menu_root.hide()
+	settings_instance.open_menu()
+
+func _on_settings_closed():
+	menu_root.show()
+	if settings_instance:
+		settings_instance.hide()
+
+func _animate_hide(signal_to_emit: Signal) -> void:
+	# Re-adding simple tween animation for polish
+	var tween = create_tween()
+	tween.tween_property(color_rect, "color:a", 0.0, 0.2)
+	tween.tween_callback(func():
+		hide()
+		signal_to_emit.emit()
+	)
+
+# Called by GameManager or others
 func open_menu() -> void:
-	visible = true
-	options_root.visible = false
-	menu_root.visible = true
-
-	# Create tween for fade-in effect
-	var tween: Tween = create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(background, "color:a", 0.5, 0.3)
-	tween.tween_property(menu_root, "modulate:a", 1.0, 0.3)
+	show()
+	if color_rect:
+		color_rect.color.a = 0.0
+		var tween = create_tween()
+		tween.tween_property(color_rect, "color:a", 0.7, 0.2)
 
 func close_menu() -> void:
-	var tween: Tween = create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(background, "color:a", 0.0, 0.2)
-	tween.tween_property(menu_root, "modulate:a", 0.0, 0.2)
-	tween.tween_property(options_root, "modulate:a", 0.0, 0.2)
+	# Standard hide without signal
+	_animate_hide_no_signal()
 
-	await tween.finished
-	visible = false
-
-# --- Signal Connections ---
-
-func _on_resume_pressed() -> void:
-	click_sfx.play()
-	resume_requested.emit()
-
-func _on_restart_pressed() -> void:
-	click_sfx.play()
-	restart_requested.emit()
-
-func _on_quit_pressed() -> void:
-	click_sfx.play()
-	quit_requested.emit()
-
-func _on_options_pressed() -> void:
-	click_sfx.play()
-	menu_root.visible = false
-	options_root.visible = true
-	options_root.modulate.a = 0.0
-	var tween: Tween = create_tween()
-	tween.tween_property(options_root, "modulate:a", 1.0, 0.2)
-
-func _on_back_pressed() -> void:
-	click_sfx.play()
-	options_root.visible = false
-	menu_root.visible = true
-
-func _on_volume_slider_value_changed(value: float) -> void:
-	var bus_idx: int = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(bus_idx, linear_to_db(value))
+func _animate_hide_no_signal() -> void:
+	var tween = create_tween()
+	tween.tween_property(color_rect, "color:a", 0.0, 0.2)
+	tween.tween_callback(hide)

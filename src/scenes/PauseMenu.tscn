@@ -27,7 +27,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MenuRoot" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/MenuRoot"]
@@ -61,28 +60,6 @@ theme = ExtResource("3_2yth3")
 theme_override_fonts/font = ExtResource("3_button_font")
 text = "Main Menu"
 
-[node name="OptionsRoot" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/OptionsRoot"]
-layout_mode = 2
-theme = ExtResource("2_b12r5")
-text = "Master Volume"
-horizontal_alignment = 1
-
-[node name="VolumeSlider" type="HSlider" parent="CenterContainer/OptionsRoot"]
-modulate = Color(0.7892527, 0.9999996, 0.99643785, 1)
-layout_mode = 2
-max_value = 1.0
-step = 0.05
-value = 1.0
-
-[node name="Back" type="Button" parent="CenterContainer/OptionsRoot"]
-layout_mode = 2
-theme = ExtResource("3_2yth3")
-theme_override_font_sizes/font_size = 32
-text = "Back"
-
 [node name="ClickSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_sfx")
 
@@ -90,5 +67,3 @@ stream = ExtResource("4_sfx")
 [connection signal="pressed" from="CenterContainer/MenuRoot/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuRoot/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuRoot/Quit" to="." method="_on_quit_pressed"]
-[connection signal="value_changed" from="CenterContainer/OptionsRoot/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
-[connection signal="pressed" from="CenterContainer/OptionsRoot/Back" to="." method="_on_back_pressed"]
