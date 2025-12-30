@@ -57,18 +57,13 @@ func _ready() -> void:
 		print("Debug Build: Auto-loaded course 1110")
 		start_game()
 	else:
-		# If no data is loaded, return to main menu or show error
 		print("No questions loaded in pool. Returning to menu.")
-		# We need to defer this call or ensure it doesn't loop instantly if MainMenu loads this scene
-		# But usually this scene is loaded FROM MainMenu.
-		# Ideally we show a message.
 		feedback_label.text = "ERROR: NO DATA"
 		feedback_label.visible = true
 		await get_tree().create_timer(2.0).timeout
 		GameManager.quit_to_main()
 
 func _process(_delta: float) -> void:
-	# Animate Question Timer Bar
 	if not question_timer.is_stopped() and not question_timer.paused:
 		timer_label.text = "Time: " + str(int(question_timer.time_left))
 		timer_bar.value = question_timer.time_left
@@ -77,7 +72,6 @@ func _process(_delta: float) -> void:
 		else:
 			timer_bar.modulate = Color(1, 1, 1)
 
-	# Update Round Timer
 	if not round_timer.is_stopped() and not round_timer.paused:
 		if round_time_label:
 			round_time_label.text = str(int(round_timer.time_left))
@@ -136,8 +130,14 @@ func load_question(index: int, skip_event_check: bool = false) -> void:
 	var q_data: Dictionary = GameManager.questions_pool[index]
 
 	# Validate answers array
-	if not q_data.has("answers") or not (q_data["answers"] is Array):
+	if not q_data.has("answers") or not (q_data["answers"] is Array) or q_data["answers"].is_empty():
 		print("Error: Invalid question data at index ", index)
+		current_shuffled_answers.clear()
+		for btn in answer_buttons:
+			btn.hide()
+		current_state = State.LOCKED
+		feedback_label.text = "SYSTEM ERROR: INVALID DATA"
+		feedback_label.visible = true
 		return
 
 	_reset_button_visuals()
@@ -201,7 +201,6 @@ func _on_field_exercise_completed(success: bool, popup: Node) -> void:
 	question_timer.paused = false
 	round_timer.paused = false
 
-	# Resume loading the question
 	load_question(current_q_index, true)
 
 func _on_button_pressed(selected_idx: int) -> void:
@@ -242,8 +241,6 @@ func _handle_correct(idx: int) -> void:
 	var user_choice_text: String = answer_buttons[idx].text
 	GameManager.log_attempt(q_data["question"], user_choice_text, user_choice_text, true)
 
-	# Save Mechanics
-	# Apply Multiplier
 	var actual_saved = int(save_weight * GameManager.rescue_multiplier)
 	GameManager.citizens_saved += actual_saved
 	# Cap removed because we check for >= total_population
@@ -261,7 +258,6 @@ func _handle_correct(idx: int) -> void:
 	if idx >= 0 and idx < answer_buttons.size():
 		answer_buttons[idx].modulate = Color.GREEN
 
-	# Check Win Condition
 	if GameManager.citizens_saved >= GameManager.total_population:
 		_trigger_victory()
 		return
@@ -300,7 +296,6 @@ func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user
 	if correct_idx != -1 and correct_idx < answer_buttons.size():
 		answer_buttons[correct_idx].modulate = Color.GREEN
 
-	# Check Game Over
 	if strike_streak >= MAX_STRIKES:
 		_trigger_game_over()
 		return
@@ -336,7 +331,7 @@ func _trigger_victory() -> void:
 	feedback_label.modulate = Color.GREEN
 	feedback_label.visible = true
 
-	if audio_manager: audio_manager.play_correct() # Victory sound?
+	if audio_manager: audio_manager.play_correct()
 
 	await get_tree().create_timer(2.0).timeout
 	finish_game()

@@ -38,15 +38,12 @@ func _start_pulse_sequence() -> void:
 		# 2 or more strikes
 		candidates = [bg_high_a, bg_high_b]
 
-	# Pick one random texture to pulse
 	var target_node: TextureRect = candidates.pick_random()
 
-	# Ensure non-targets are hidden immediately
 	for node in all_alarms:
 		if node != target_node:
 			node.modulate.a = 0.0
 
-	# Pulse animation: Fade In -> Fade Out
 	var fade_in_time: float = 1.0
 	var fade_out_time: float = 1.0
 
@@ -57,5 +54,4 @@ func _start_pulse_sequence() -> void:
 	bg_tween.tween_property(target_node, "modulate:a", 1.0, fade_in_time).from(0.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	bg_tween.tween_property(target_node, "modulate:a", 0.0, fade_out_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
-	# Loop callback
 	bg_tween.tween_callback(_start_pulse_sequence)

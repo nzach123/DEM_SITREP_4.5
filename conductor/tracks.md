@@ -20,5 +20,48 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
+
+
 ## [~] Track: MixAndMatch Visibility and CRT Fix
+
 *Link: [./conductor/tracks/mix_and_match_visibility_20251229/](./conductor/tracks/mix_and_match_visibility_20251229/)*
+
+
+
+---
+
+
+
+
+
+
+
+## [x] Track: Refactor and clean up AI-slop from existing codebase
+
+
+
+*Link: [./conductor/tracks/cleanup_ai_slop_20251229/](./conductor/tracks/cleanup_ai_slop_20251229/)*
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+## [ ] Track: Restore Dynamic Casualty Logic
+
+
+
+*Link: [./conductor/tracks/restore_dynamic_casualties_20251229/](./conductor/tracks/restore_dynamic_casualties_20251229/)*
+
+
+
+

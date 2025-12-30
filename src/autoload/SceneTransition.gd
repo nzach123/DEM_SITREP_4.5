@@ -22,10 +22,6 @@ func _ready() -> void:
 	layer = 128
 	visible = false # Hidden by default until requested
 
-	# If you want it to run automatically on game launch:
-	# play_boot_sequence()
-
-# Call this function to start the transition
 func play_boot_sequence() -> void:
 	if not is_inside_tree(): return
 
@@ -61,7 +57,6 @@ func play_boot_sequence() -> void:
 	# Cleanup
 	tween.tween_callback(hide)
 
-# Helper for manual control if needed
 func set_pixel_size(size: float) -> void:
 	var mat = color_rect.material as ShaderMaterial
 	if mat:

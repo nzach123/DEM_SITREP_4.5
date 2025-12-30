@@ -6,8 +6,6 @@ var settings_manager
 func before_each():
 	settings_manager = settings_manager_script.new()
 	add_child_autofree(settings_manager)
-	# Mock the ConfigFile logic if possible, or just test logic knowing it hits disk (user:// is safe/isolated)
-	# ideally we mock, but for simplicity in this environment we'll trust the logic and maybe reset defaults
 	settings_manager.reset_to_defaults()
 
 func after_each():

@@ -55,18 +55,9 @@ var pause_menu_instance: CanvasLayer # PauseMenu script extends Control/CanvasLa
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	load_game()
-	load_all_matching_data() # Pre-load matching data
+	load_all_matching_data()
 
-	# New Pause Logic
 	pause_menu_instance = pause_menu_scene.instantiate()
-	add_child(pause_menu_instance)
-
-	if pause_menu_instance.has_signal("resume_requested"):
-		pause_menu_instance.connect("resume_requested", toggle_pause)
-	if pause_menu_instance.has_signal("restart_requested"):
-		pause_menu_instance.connect("restart_requested", restart_level)
-	if pause_menu_instance.has_signal("quit_requested"):
-		pause_menu_instance.connect("quit_requested", quit_to_main)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -91,7 +82,6 @@ func restart_level() -> void:
 	if game_paused:
 		toggle_pause() # Unpause first
 
-	# 1. Cover the screen with the lowest resolution (Blocky)
 	if SceneTransition.has_method("set_pixel_size"):
 		SceneTransition.set_pixel_size(8.0)
 	SceneTransition.visible = true
@@ -99,12 +89,10 @@ func restart_level() -> void:
 	await get_tree().process_frame
 	get_tree().reload_current_scene()
 
-	# 2. Wait briefly for load, then play the "Boot Up" sequence
 	await get_tree().create_timer(0.1).timeout
 	SceneTransition.play_boot_sequence()
 
 func change_scene(path: String) -> void:
-# 1. Cover the screen with the lowest resolution (Blocky)
 	if SceneTransition.has_method("set_pixel_size"):
 		SceneTransition.set_pixel_size(8.0)
 	SceneTransition.visible = true
@@ -112,7 +100,6 @@ func change_scene(path: String) -> void:
 	await get_tree().process_frame
 	get_tree().change_scene_to_file(path)
 
-	# 2. Wait briefly for load, then play the "Boot Up" sequence
 	await get_tree().create_timer(0.1).timeout
 	SceneTransition.play_boot_sequence()
 
@@ -176,7 +163,6 @@ func load_course_data(course_id: String) -> bool:
 					reset_session_pool()
 					is_matching_mode = false
 					return true
-			# Removed legacy matching loading here as it's handled by load_all_matching_data
 
 	return false
 

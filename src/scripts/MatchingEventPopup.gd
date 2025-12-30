@@ -41,11 +41,7 @@ func setup() -> void:
 	definitions_deck = raw_data.duplicate()
 	definitions_deck.shuffle()
 
-	# Terms list should probably contain all answers from the deck to be fair,
-	# or we can keep the terms static if we want them all visible at once.
-	# The prompt implies "match against the terms" (plural), so a static grid of choices is good.
 	terms_list = raw_data.duplicate()
-	# We might want to shuffle the grid positions once
 	terms_list.shuffle()
 
 	_populate_term_grid()
@@ -54,7 +50,6 @@ func setup() -> void:
 	show()
 
 func _populate_term_grid() -> void:
-	# Clear existing
 	for child in term_grid.get_children():
 		child.queue_free()
 
@@ -86,28 +81,17 @@ func _next_round() -> void:
 
 	definition_label.text = current_target["definition"]
 
-	# Reset button states if we want to re-enable them?
-	# If we are matching 1-to-1, we should disable the used term button.
-	# Let's find the button for the *previously* matched term if any?
-	# Actually, easier to just check if the button's ID is in the remaining deck?
-	# Or just disable them as we go.
-
 func _on_term_selected(selected_id: String, btn_ref: Button) -> void:
 	if not is_active: return
 
 	if selected_id == current_target["id"]:
-		# Match!
-		# Visual feedback on button? Green flash?
 		btn_ref.disabled = true # Disable the used term
 		btn_ref.modulate = Color(0, 1, 0) # Green
 		_next_round()
 	else:
-		# Fail!
-		# Penalty
 		time_left -= 5.0
 		timer_label.modulate = Color(1, 0, 0)
 
-		# Shake effect or red flash on button
 		var original_mod = btn_ref.modulate
 		btn_ref.modulate = Color(1, 0, 0)
 

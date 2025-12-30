@@ -1,0 +1,8 @@
+{
+  "track_id": "cleanup_ai_slop_20251229",
+  "type": "refactor",
+  "status": "new",
+  "created_at": "2025-12-29T22:54:00Z",
+  "updated_at": "2025-12-29T22:54:00Z",
+  "description": "Refactor and clean up AI-slop (redundant comments and dead code) from existing codebase."
+}

@@ -21,7 +21,6 @@ extends Control
 
 const COURSE_CARD_SCENE: PackedScene = preload("res://src/scenes/CourseCard.tscn")
 
-# Helper variable to track available question files
 var available_courses: Array[String] = []
 var pending_course_id: String = ""
 

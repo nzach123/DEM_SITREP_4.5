@@ -34,11 +34,6 @@ func test_resolution_persistence():
 	new_manager.free()
 
 func test_apply_display_settings():
-	# This test might be tricky to verify actual window changes in a headless test environment,
-	# but we can verify that the settings are updated in the internal state.
-	# The plan mentions a staged update, but let's check how SettingsManager currently works.
-	# Current SettingsManager applies immediately.
-	
 	var test_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
 	var test_res = Vector2i(1920, 1080)
 	
