@@ -39,7 +39,7 @@ var strike_streak: int = 0
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 const MAX_STRIKES: int = 3
-const FIELD_EXERCISE_CHANCE: float = 0.75
+const FIELD_EXERCISE_CHANCE: float = 0.15
 
 func _ready() -> void:
 	_connect_signals()
@@ -214,7 +214,7 @@ func _on_button_pressed(selected_idx: int) -> void:
 		_handle_correct(selected_idx)
 		# Wait and load next
 		await get_tree().create_timer(1.5).timeout
-		if not round_timer.is_stopped() and current_state != State.END:
+		if current_state != State.END:
 			current_q_index += 1
 			load_question(current_q_index)
 	else:

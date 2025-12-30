@@ -63,6 +63,9 @@ func _populate_term_grid() -> void:
 		child.queue_free()
 
 	for item in terms_list:
+		if not item.has("term") or not item.has("id"):
+			continue
+
 		var btn = Button.new()
 		btn.text = item["term"]
 		btn.theme = BUTTON_THEME
@@ -79,6 +82,12 @@ func _next_round() -> void:
 		return
 
 	current_target = definitions_deck.pop_front()
+
+	if not current_target.has("definition") or not current_target.has("id"):
+		# Skip invalid data
+		_next_round()
+		return
+
 	definition_label.text = current_target["definition"]
 
 	# Reset button states if we want to re-enable them?
