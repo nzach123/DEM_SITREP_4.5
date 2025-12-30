@@ -50,27 +50,18 @@ var save_path: String = "user://savegame.save"
 
 var game_paused: bool = false
 var pause_menu_scene: PackedScene = preload("res://src/scenes/PauseMenu.tscn")
-var pause_menu_instance: CanvasLayer # PauseMenu script extends Control/CanvasLayer
+var _active_pause_menu: PauseMenu = null
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	load_game()
 	load_all_matching_data()
 
-	pause_menu_instance = pause_menu_scene.instantiate()
-	pause_menu_instance.process_mode = Node.PROCESS_MODE_ALWAYS
-	
-	# Connect signals
-	pause_menu_instance.resume_requested.connect(toggle_pause)
-	pause_menu_instance.restart_requested.connect(restart_level)
-	pause_menu_instance.main_menu_requested.connect(quit_to_main)
-	pause_menu_instance.quit_requested.connect(func(): get_tree().quit())
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		var current_scene = get_tree().current_scene
 		# Prevent pausing in the Main Menu or Splash Screen
-		if current_scene and current_scene.name != "MainMenu" and current_scene.name != "SplashScreen":
+		if current_scene and !current_scene.is_in_group("main_menu") and current_scene.name != "SplashScreen":
 			toggle_pause()
 
 func toggle_pause() -> void:
@@ -78,22 +69,40 @@ func toggle_pause() -> void:
 	get_tree().paused = game_paused
 
 	if game_paused:
-		# Ensure pause menu is in the tree
-		if pause_menu_instance.get_parent() == null:
-			var current_scene = get_tree().current_scene
-			if current_scene:
-				var crt = current_scene.find_child("CRTScreen", true, false)
-				if crt:
-					crt.add_child(pause_menu_instance)
-				else:
-					current_scene.add_child(pause_menu_instance)
-		
-		if pause_menu_instance.has_method("open_menu"):
-			pause_menu_instance.call("open_menu")
+		_summon_pause_menu()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
-		if pause_menu_instance.has_method("close_menu"):
-			pause_menu_instance.call("close_menu")
+		_dismiss_pause_menu()
+
+func _summon_pause_menu() -> void:
+	if _active_pause_menu != null:
+		return
+		
+	_active_pause_menu = pause_menu_scene.instantiate() as PauseMenu
+	
+	# Connect signals
+	_active_pause_menu.resume_requested.connect(toggle_pause)
+	_active_pause_menu.restart_requested.connect(restart_level)
+	_active_pause_menu.main_menu_requested.connect(quit_to_main)
+	_active_pause_menu.quit_requested.connect(func(): get_tree().quit())
+	
+	var current_scene = get_tree().current_scene
+	if current_scene:
+		var crt = current_scene.find_child("CRTScreen", true, false)
+		if crt:
+			crt.add_child(_active_pause_menu)
+		else:
+			current_scene.add_child(_active_pause_menu)
+	
+	_active_pause_menu.open_menu()
+
+func _dismiss_pause_menu() -> void:
+	if _active_pause_menu:
+		_active_pause_menu.close_menu()
+		_active_pause_menu = null # Reference will be freed by its own queue_free (Phase 3) or we do it here?
+		# Actually Phase 3 says PauseMenu does queue_free. 
+		# But for now I'll ensure it's removed if Phase 3 isn't done yet.
+		# Wait, if I set it to null, I lose reference.
 
 func restart_level() -> void:
 	if game_paused:
