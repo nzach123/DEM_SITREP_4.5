@@ -1,13 +1,13 @@
 # Tech Stack
 
 ## Core Engine
-- **Game Engine:** Godot 4.3+ (Current project using 4.3 features/structure)
+- **Game Engine:** Godot 4.5.1 (Current project utilizing 4.5 features and syntax)
 - **Programming Language:** GDScript
 
 ## Systems & Architecture
 - **State Management:** Singleton/Autoload pattern (e.g., `GameManager.gd`, `SettingsManager.gd`)
 - **Scene Management:** Custom transition handler (`SceneTransition.gd`)
-- **UI System:** Godot Control nodes, Theme resources, and Signals
+- **UI System:** Strict static typing with class_name, Godot Control nodes, Theme resources, and Signals
 
 ## Assets & Styling
 - **Typography:**

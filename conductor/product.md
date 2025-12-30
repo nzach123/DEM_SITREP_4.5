@@ -116,9 +116,11 @@ I want to implenet a settings scene and credits scene for the main menu. Use thi
     -   **Navigation:** Simple "Back" functionality to return to the Main Menu.
     -   **Style:** Consistent with the "Intentional Arcade Minimalism" aesthetic.
 - **Pause Menu:**
-    -   **Visibility:** Correctly layered under the CRT shader overlay in all gameplay scenes.
-    -   **Options:** Resume gameplay, open Settings Overlay, or Quit to Main Menu.
-    -   **State Management:** Pauses all game processing while active.
+    -   **Dynamic Lifecycle:** Instantiated on-demand and fully cleaned up when dismissed to prevent "zombie" reference crashes.
+    -   **Context Awareness:** Input handling logic prevents the Pause Menu from opening in inappropriate contexts (e.g., Main Menu).
+    -   **Visibility:** Correctly positioned in the scene tree *before* the post-processing layer (CRT shader) to ensure consistent visual application.
+    -   **Options:** Resume gameplay, Restart level, open Settings Overlay, or Quit to Main Menu.
+    -   **State Management:** Standardizes on a fresh "root" state every time it is opened.
 
 ## Design Philosophy
 - **Educational & Arcade Hybrid:** The UI must be immediately readable and "juicy" (responsive, satisfying) to keep students engaged, while maintaining the seriousness of the educational content.
