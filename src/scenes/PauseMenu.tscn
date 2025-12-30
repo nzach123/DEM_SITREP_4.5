@@ -32,7 +32,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CenterContainer/MenuRoot"]
 layout_mode = 2
 theme = ExtResource("2_b12r5")
-theme_override_font_sizes/font_size = 90
+theme_override_colors/font_color = Color(0.8, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 82
 text = "PAUSED"
 horizontal_alignment = 1
 
@@ -48,11 +49,11 @@ theme = ExtResource("3_2yth3")
 theme_override_fonts/font = ExtResource("3_button_font")
 text = "Restart"
 
-[node name="Options" type="Button" parent="CenterContainer/MenuRoot"]
+[node name="Settings" type="Button" parent="CenterContainer/MenuRoot"]
 layout_mode = 2
 theme = ExtResource("3_2yth3")
 theme_override_fonts/font = ExtResource("3_button_font")
-text = "Options"
+text = "Settings"
 
 [node name="Quit" type="Button" parent="CenterContainer/MenuRoot"]
 layout_mode = 2
@@ -65,5 +66,5 @@ stream = ExtResource("4_sfx")
 
 [connection signal="pressed" from="CenterContainer/MenuRoot/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuRoot/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuRoot/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuRoot/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuRoot/Quit" to="." method="_on_quit_pressed"]

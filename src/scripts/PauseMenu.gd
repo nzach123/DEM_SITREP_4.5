@@ -29,7 +29,7 @@ func _on_quit_pressed():
 	if click_sfx: click_sfx.play()
 	_animate_hide(quit_requested)
 
-func _on_options_pressed():
+func _on_settings_pressed():
 	if click_sfx: click_sfx.play()
 
 	if settings_instance == null:

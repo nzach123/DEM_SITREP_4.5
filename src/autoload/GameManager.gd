@@ -58,6 +58,7 @@ func _ready() -> void:
 	load_all_matching_data()
 
 	pause_menu_instance = pause_menu_scene.instantiate()
+	pause_menu_instance.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -71,6 +72,16 @@ func toggle_pause() -> void:
 	get_tree().paused = game_paused
 
 	if game_paused:
+		# Ensure pause menu is in the tree
+		if pause_menu_instance.get_parent() == null:
+			var current_scene = get_tree().current_scene
+			if current_scene:
+				var crt = current_scene.find_child("CRTScreen", true, false)
+				if crt:
+					crt.add_child(pause_menu_instance)
+				else:
+					current_scene.add_child(pause_menu_instance)
+		
 		if pause_menu_instance.has_method("open_menu"):
 			pause_menu_instance.call("open_menu")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
