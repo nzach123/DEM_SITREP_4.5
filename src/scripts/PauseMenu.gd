@@ -64,6 +64,11 @@ func open_menu() -> void:
 		color_rect.color.a = 0.0
 		var tween = create_tween()
 		tween.tween_property(color_rect, "color:a", 0.7, 0.2)
+	
+	# Focus the first button for keyboard/gamepad navigation
+	var first_btn = menu_root.get_node("Continue")
+	if first_btn:
+		first_btn.grab_focus()
 
 func close_menu() -> void:
 	_animate_hide_no_signal()

@@ -4,10 +4,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [x] Track: Pause Menu Visibility and UI Enhancement
-*Link: [./conductor/tracks/pause_menu_ui_fix_20251229/](./conductor/tracks/pause_menu_ui_fix_20251229/)*
 
----
 
 ## [~] Track: Pause Menu & Quiz Crash Fix
 
@@ -53,7 +50,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 
 
----
 
 
 
@@ -61,11 +57,32 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 
 
-## [ ] Track: Restore Dynamic Casualty Logic
 
 
 
-*Link: [./conductor/tracks/restore_dynamic_casualties_20251229/](./conductor/tracks/restore_dynamic_casualties_20251229/)*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
