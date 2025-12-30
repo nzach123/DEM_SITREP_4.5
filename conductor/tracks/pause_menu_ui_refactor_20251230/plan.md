@@ -14,7 +14,7 @@ Unify the Pause Menu's visual identity with the `SettingsOverlay` to ensure a co
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Visual Refactor' (Protocol in workflow.md)
 
 ## Phase 3: Logic & Integration
-- [ ] Task: Implementation - Update `PauseMenu.gd` to handle new button signals and the application quit logic.
-- [ ] Task: Implementation - Update `GameManager.gd` to connect to `PauseMenu` signals and execute scene transitions (Reload, Main Menu).
-- [ ] Task: Verification - Ensure focus navigation works correctly with keyboard/gamepad across all menu buttons.
+- [x] Task: Implementation - Update `PauseMenu.gd` to handle new button signals and the application quit logic.
+- [x] Task: Implementation - Update `GameManager.gd` to connect to `PauseMenu` signals and execute scene transitions (Reload, Main Menu).
+- [x] Task: Verification - Ensure focus navigation works correctly with keyboard/gamepad across all menu buttons.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Logic & Integration' (Protocol in workflow.md)

@@ -59,6 +59,12 @@ func _ready() -> void:
 
 	pause_menu_instance = pause_menu_scene.instantiate()
 	pause_menu_instance.process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	# Connect signals
+	pause_menu_instance.resume_requested.connect(toggle_pause)
+	pause_menu_instance.restart_requested.connect(restart_level)
+	pause_menu_instance.main_menu_requested.connect(quit_to_main)
+	pause_menu_instance.quit_requested.connect(func(): get_tree().quit())
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
