@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b8x3j6m2p5q1n" path="res://src/scenes/SettingsOverlay.tscn" id="5_settings"]
 [ext_resource type="PackedScene" uid="uid://d3x3j6m2p5q2p" path="res://src/scenes/CreditsOverlay.tscn" id="6_credits"]
 [ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="7_anim"]
-[ext_resource type="AudioStream" uid="uid://be5eug8n2y7t6" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="8_hover"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="8_hover"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
 shader = ExtResource("2_shader")

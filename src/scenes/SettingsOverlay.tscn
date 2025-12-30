@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8x3j6m2p5q1n"]
 
-[ext_resource type="Script" uid="uid://d5heh2qill8e" path="res://src/scripts/SettingsOverlay.gd" id="1_script"]
+[ext_resource type="Script" path="res://src/scripts/SettingsOverlay.gd" id="1_script"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_theme"]
 [ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_theme"]
 [ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="4_anim"]
 [ext_resource type="AudioStream" uid="uid://cwi8tg0tp5a6h" path="res://assets/audio/sfx/ClickSFX/click_003.ogg" id="5_sfx"]
-[ext_resource type="AudioStream" uid="uid://be5eug8n2y7t6" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="6_hover"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="6_hover"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0, 0, 0, 0.95)
