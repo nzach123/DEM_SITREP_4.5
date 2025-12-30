@@ -5,7 +5,7 @@
     - **Target:** `src/scenes/CourseCard.gd`, `src/scripts/SettingsOverlay.gd`, `src/scripts/CreditsOverlay.gd`.
     - **Action:** Add `class_name` to these scripts (`CourseCard`, `SettingsOverlay`, `CreditsOverlay`).
     - **Reasoning:** Enables static typing and eliminates fragile `call("method_name")` usage.
-- [ ] Task: Standardize Main Menu Grouping
+- [x] Task: Standardize Main Menu Grouping 72ed94e
     - **Target:** `src/scripts/MainMenu.gd`.
     - **Action:** Add `add_to_group("main_menu")` in `_ready()`.
     - **Reasoning:** Replaces brittle string checks (`if name == "MainMenu"`) with robust group checks for input handling.
