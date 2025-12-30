@@ -1,3 +1,4 @@
+class_name SettingsOverlay
 extends Panel
 
 signal close_requested
