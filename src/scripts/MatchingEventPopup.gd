@@ -2,10 +2,10 @@ extends Control
 
 signal completed(success: bool)
 
-@onready var terms_container: VBoxContainer = $Panel/HBoxContainer/LeftCol/TermsContainer
-@onready var definitions_container: VBoxContainer = $Panel/HBoxContainer/RightCol/DefinitionsContainer
-@onready var timer_label: Label = $Panel/Header/TimerLabel
-@onready var submit_button: Button = $Panel/Footer/SubmitButton
+@onready var terms_container: VBoxContainer = $MarginContainer/Panel/HBoxContainer/LeftCol/TermsContainer
+@onready var definitions_container: VBoxContainer = $MarginContainer/Panel/HBoxContainer/RightCol/DefinitionsContainer
+@onready var timer_label: Label = $MarginContainer/Panel/MarginContainer/Header/TimerLabel
+@onready var submit_button: Button = $MarginContainer/Panel/Footer/SubmitButton
 
 const TERM_ROW_SCENE: PackedScene = preload("res://src/scenes/TermRow.tscn")
 const DEFINITION_ROW_SCENE: PackedScene = preload("res://src/scenes/DefinitionRow.tscn")

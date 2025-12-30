@@ -39,7 +39,7 @@ var strike_streak: int = 0
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 const MAX_STRIKES: int = 3
-const FIELD_EXERCISE_CHANCE: float = 0.05
+const FIELD_EXERCISE_CHANCE: float = 0.75
 
 func _ready() -> void:
 	_connect_signals()

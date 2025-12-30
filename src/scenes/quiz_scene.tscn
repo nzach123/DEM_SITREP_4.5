@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b74ltasqu7ps5"]
+[gd_scene load_steps=32 format=3 uid="uid://b74ltasqu7ps5"]
 
 [ext_resource type="Theme" uid="uid://dmi3jf6jonyoq" path="res://content/resources/themes/title_theme.tres" id="1_c7ybq"]
 [ext_resource type="Script" uid="uid://bokrq0rpvdy4v" path="res://src/scripts/GameSession.gd" id="1_yjr3o"]
@@ -13,7 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://c2unp3p60uc4n" path="res://assets/audio/sfx/ClickSFX/error_001.ogg" id="7_ijcxg"]
 [ext_resource type="Texture2D" uid="uid://d0cmt6i5ydt5q" path="res://assets/ui/images/alarm/BackgroundAlarm05.jpg" id="7_ko4k8"]
 [ext_resource type="AudioStream" uid="uid://c1uv7ad2goehn" path="res://assets/audio/music/Background/Pixel Parade.ogg" id="8_21hr1"]
-[ext_resource type="Texture2D" uid="uid://bea340qugpmjo" path="res://content/resources/textures/timer_fg.tres" id="9_timerfg"]
 [ext_resource type="PackedScene" uid="uid://b8x7y201a3c4d" path="res://src/scenes/RemediationPopup.tscn" id="10_popup"]
 [ext_resource type="AudioStream" uid="uid://dqcdk7o2k8l0o" path="res://assets/audio/sfx/Beeps/mixkit-data-scaner-2847.wav" id="10_xgaly"]
 [ext_resource type="Theme" uid="uid://fioyouh4dvig" path="res://content/resources/themes/Raj_button_theme.tres" id="12_lv0df"]
@@ -452,6 +451,29 @@ metadata/_custom_type_script = "uid://dldl6e841cg0e"
 wait_time = 20.0
 one_shot = true
 
+[node name="GiantXLabel" type="Label" parent="."]
+visible = false
+modulate = Color(0.733002, 2.75549e-06, 6.73831e-07, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("16_i6oeq")
+theme_override_font_sizes/font_size = 700
+text = "XXX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SirensTextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 2784.0
+offset_bottom = 1536.0
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("19_o7nro")
+
 [node name="FeedbackLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -468,32 +490,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="GiantXLabel" type="Label" parent="."]
-visible = false
-modulate = Color(0.733002, 2.75549e-06, 6.73831e-07, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("16_i6oeq")
-theme_override_font_sizes/font_size = 700
-text = "XXX"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="RemediationPopup" parent="." instance=ExtResource("10_popup")]
 visible = false
 layout_mode = 1
-
-[node name="SirensTextureRect" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 2784.0
-offset_bottom = 1536.0
-scale = Vector2(0.69, 0.69)
-texture = ExtResource("19_o7nro")
 
 [node name="CRTScreen" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ndxw5")
