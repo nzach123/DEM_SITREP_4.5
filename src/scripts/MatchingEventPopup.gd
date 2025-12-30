@@ -5,7 +5,6 @@ signal completed(success: bool)
 @onready var timer_label: Label = $MarginContainer/VBoxContainer/Header/TimerLabel
 @onready var definition_label: Label = $MarginContainer/VBoxContainer/DefinitionContainer/MarginContainer/CurrentDefinitionLabel
 @onready var term_grid: GridContainer = $MarginContainer/VBoxContainer/TermGrid
-@onready var crt_screen: ColorRect = $CRTScreen
 
 # Resources to style the buttons dynamically
 const BUTTON_THEME = preload("res://content/resources/themes/Montserrat_button_theme.tres")
@@ -18,9 +17,6 @@ var terms_list: Array = []
 
 func _ready() -> void:
 	hide()
-	# Ensure CRT is visible
-	if crt_screen:
-		crt_screen.visible = true
 
 func _process(delta: float) -> void:
 	if is_active:

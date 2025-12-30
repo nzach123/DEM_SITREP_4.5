@@ -22,6 +22,7 @@ enum State { SETUP, PLAYING, LOCKED, END }
 @export var feedback_label: Label
 @export var remediation_popup: Control # RemediationPopup
 @export var answer_buttons: Array[Button]
+@onready var crt_screen: ColorRect = $CRTScreen
 
 # --- TIMERS ---
 @export_group("Timers")
@@ -170,7 +171,11 @@ func _trigger_field_exercise() -> void:
 	round_timer.paused = true
 
 	var popup = MATCHING_POPUP_SCENE.instantiate()
-	add_child(popup)
+	if crt_screen:
+		crt_screen.add_child(popup)
+	else:
+		add_child(popup)
+		
 	if popup.has_signal("completed"):
 		popup.completed.connect(_on_field_exercise_completed.bind(popup))
 

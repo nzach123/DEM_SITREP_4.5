@@ -17,3 +17,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: settings scene and credits scene for the main menu
 
 *Link: [./conductor/tracks/settings_credits_20251229/](./conductor/tracks/settings_credits_20251229/)*
+
+---
+
+## [~] Track: MixAndMatch Visibility and CRT Fix
+*Link: [./conductor/tracks/mix_and_match_visibility_20251229/](./conductor/tracks/mix_and_match_visibility_20251229/)*
