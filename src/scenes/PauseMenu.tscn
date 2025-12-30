@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8x7x6x5x4x3"]
+[gd_scene load_steps=11 format=3 uid="uid://b8x7x6x5x4x3"]
 
 [ext_resource type="Script" uid="uid://d0lcvfakxfa22" path="res://src/scripts/PauseMenu.gd" id="1_script"]
-[ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_b12r5"]
-[ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_2yth3"]
-[ext_resource type="FontFile" uid="uid://t86c8t2o1y50" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_button_font"]
-[ext_resource type="AudioStream" uid="uid://birxw6w2ehuby" path="res://assets/audio/sfx/ClickSFX/click_001.ogg" id="4_sfx"]
+[ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_theme_bebas"]
+[ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_theme_montserrat"]
+[ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="4_anim"]
+[ext_resource type="AudioStream" uid="uid://cwi8tg0tp5a6h" path="res://assets/audio/sfx/ClickSFX/click_003.ogg" id="5_sfx"]
+[ext_resource type="AudioStream" uid="uid://be5eug8n2y7t6" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="6_hover"]
+[ext_resource type="AudioStream" uid="uid://birxw6w2ehuby" path="res://assets/audio/sfx/ClickSFX/click_001.ogg" id="7_sfx_old"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0, 0, 0, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.9, 0.9, 0.2)
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -19,52 +29,112 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -400.0
+offset_right = 300.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
 
-[node name="MenuRoot" type="VBoxContainer" parent="CenterContainer"]
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/MenuRoot"]
-layout_mode = 2
-theme = ExtResource("2_b12r5")
+theme = ExtResource("2_theme_bebas")
 theme_override_colors/font_color = Color(0.8, 0.9, 0.9, 1)
 theme_override_font_sizes/font_size = 82
 text = "PAUSED"
 horizontal_alignment = 1
 
-[node name="Resume" type="Button" parent="CenterContainer/MenuRoot"]
+[node name="Continue" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_2yth3")
-theme_override_fonts/font = ExtResource("3_button_font")
-text = "Resume"
+theme = ExtResource("3_theme_montserrat")
+theme_override_font_sizes/font_size = 38
+text = "CONTINUE"
 
-[node name="Restart" type="Button" parent="CenterContainer/MenuRoot"]
-layout_mode = 2
-theme = ExtResource("3_2yth3")
-theme_override_fonts/font = ExtResource("3_button_font")
-text = "Restart"
+[node name="AnimationComponent" type="Node" parent="Panel/VBoxContainer/Continue"]
+script = ExtResource("4_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("6_hover")
+click_sfx = ExtResource("5_sfx")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
-[node name="Settings" type="Button" parent="CenterContainer/MenuRoot"]
+[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_2yth3")
-theme_override_fonts/font = ExtResource("3_button_font")
-text = "Settings"
+theme = ExtResource("3_theme_montserrat")
+theme_override_font_sizes/font_size = 38
+text = "RESTART"
 
-[node name="Quit" type="Button" parent="CenterContainer/MenuRoot"]
+[node name="AnimationComponent" type="Node" parent="Panel/VBoxContainer/Restart"]
+script = ExtResource("4_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("6_hover")
+click_sfx = ExtResource("5_sfx")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
+[node name="Settings" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_2yth3")
-theme_override_fonts/font = ExtResource("3_button_font")
-text = "Main Menu"
+theme = ExtResource("3_theme_montserrat")
+theme_override_font_sizes/font_size = 38
+text = "SETTINGS"
+
+[node name="AnimationComponent" type="Node" parent="Panel/VBoxContainer/Settings"]
+script = ExtResource("4_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("6_hover")
+click_sfx = ExtResource("5_sfx")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
+[node name="MainMenu" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_theme_montserrat")
+theme_override_font_sizes/font_size = 38
+text = "MAIN MENU"
+
+[node name="AnimationComponent" type="Node" parent="Panel/VBoxContainer/MainMenu"]
+script = ExtResource("4_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("6_hover")
+click_sfx = ExtResource("5_sfx")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_theme_montserrat")
+theme_override_font_sizes/font_size = 38
+text = "QUIT"
+
+[node name="AnimationComponent" type="Node" parent="Panel/VBoxContainer/Quit"]
+script = ExtResource("4_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("6_hover")
+click_sfx = ExtResource("5_sfx")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="ClickSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_sfx")
+stream = ExtResource("5_sfx")
 
-[connection signal="pressed" from="CenterContainer/MenuRoot/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuRoot/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuRoot/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuRoot/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

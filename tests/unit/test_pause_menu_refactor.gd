@@ -20,7 +20,7 @@ func test_required_buttons_exist():
 	}
 	
 	# Specifically checking for the NEW expected names in the refactored menu
-	var expected_names = ["Continue", "Restart", "Settings", "Main Menu", "Quit"]
+	var expected_names = ["Continue", "Restart", "Settings", "MainMenu", "Quit"]
 	
 	for name in expected_names:
 		var btn = _pause_menu.find_child(name, true, false)

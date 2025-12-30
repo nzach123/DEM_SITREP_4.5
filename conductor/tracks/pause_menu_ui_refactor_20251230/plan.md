@@ -8,9 +8,9 @@ Unify the Pause Menu's visual identity with the `SettingsOverlay` to ensure a co
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Preparation' (Protocol in workflow.md)
 
 ## Phase 2: Visual & Structural Refactor
-- [ ] Task: Implementation - Replace `PauseMenu` center layout with a `Panel` matching `SettingsOverlay`'s style and dimensions.
-- [ ] Task: Implementation - Apply `Bebas_button_theme` to the Title and `Montserrat_button_theme` to all buttons.
-- [ ] Task: Implementation - Add `AnimationComponent` to all Pause Menu buttons for consistent micro-feedback.
+- [x] Task: Implementation - Replace `PauseMenu` center layout with a `Panel` matching `SettingsOverlay`'s style and dimensions.
+- [x] Task: Implementation - Apply `Bebas_button_theme` to the Title and `Montserrat_button_theme` to all buttons.
+- [x] Task: Implementation - Add `AnimationComponent` to all Pause Menu buttons for consistent micro-feedback.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Visual Refactor' (Protocol in workflow.md)
 
 ## Phase 3: Logic & Integration

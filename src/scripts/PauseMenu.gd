@@ -3,9 +3,10 @@ class_name PauseMenu
 
 signal resume_requested
 signal restart_requested
+signal main_menu_requested
 signal quit_requested
 
-@onready var menu_root = $CenterContainer/MenuRoot
+@onready var menu_root = $Panel/VBoxContainer
 @onready var click_sfx = $ClickSFX
 @onready var color_rect = $ColorRect
 
@@ -17,13 +18,17 @@ var settings_instance = null
 func _ready():
 	hide()
 
-func _on_resume_pressed():
+func _on_continue_pressed():
 	if click_sfx: click_sfx.play()
 	_animate_hide(resume_requested)
 
 func _on_restart_pressed():
 	if click_sfx: click_sfx.play()
 	_animate_hide(restart_requested)
+
+func _on_main_menu_pressed():
+	if click_sfx: click_sfx.play()
+	_animate_hide(main_menu_requested)
 
 func _on_quit_pressed():
 	if click_sfx: click_sfx.play()

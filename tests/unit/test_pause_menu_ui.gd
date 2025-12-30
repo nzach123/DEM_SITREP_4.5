@@ -11,7 +11,7 @@ func test_settings_navigation_logic():
 	# Add to tree so onready variables are initialized
 	get_tree().root.add_child(pause_menu)
 	
-	var menu_root = pause_menu.get_node("CenterContainer/MenuRoot")
+	var menu_root = pause_menu.get_node("Panel/VBoxContainer")
 	var settings_btn = pause_menu.find_child("Settings", true, false)
 	if not settings_btn:
 		settings_btn = pause_menu.find_child("Options", true, false) # Fallback for initial test
