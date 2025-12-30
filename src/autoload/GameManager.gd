@@ -90,7 +90,9 @@ func _summon_pause_menu() -> void:
 	if current_scene:
 		var crt = current_scene.find_child("CRTScreen", true, false)
 		if crt:
-			crt.add_child(_active_pause_menu)
+			current_scene.add_child(_active_pause_menu)
+			# Position it just before the CRT shader node so the shader applies to it
+			current_scene.move_child(_active_pause_menu, crt.get_index())
 		else:
 			current_scene.add_child(_active_pause_menu)
 	

@@ -27,7 +27,7 @@ func test_pause_menu_instantiated_on_demand():
 	GameManager.toggle_pause()
 	menu = get_tree().root.find_child("PauseMenu", true, false)
 	assert_not_null(menu, "GameManager should instantiate the Pause Menu on pause")
-	assert_true(menu is CanvasLayer, "Pause Menu should be a CanvasLayer (or extend it)")
+	assert_true(menu is Control, "Pause Menu should be a Control (or extend it)")
 
 func test_pause_menu_added_to_tree_on_pause():
 	var node = Node2D.new()
@@ -45,7 +45,7 @@ func test_pause_menu_added_to_tree_on_pause():
 	GameManager.toggle_pause()
 	assert_false(GameManager.game_paused, "Game should be unpaused")
 
-func test_pause_menu_parented_to_crt_in_quiz_scene():
+func test_pause_menu_positioned_before_crt_in_quiz_scene():
 	var scene = load(quiz_scene_path)
 	var quiz = scene.instantiate()
 	get_tree().root.add_child(quiz)
@@ -57,7 +57,9 @@ func test_pause_menu_parented_to_crt_in_quiz_scene():
 	assert_not_null(crt, "QuizScene should have CRTScreen")
 	
 	var menu = get_tree().root.find_child("PauseMenu", true, false)
-	assert_eq(menu.get_parent(), crt, "Pause Menu should be parented to CRTScreen when paused in QuizScene")
+	# We expect the pause menu to be a sibling of CRTScreen and at an index lower than CRT
+	assert_eq(menu.get_parent(), quiz, "Pause Menu should be a child of the scene root")
+	assert_true(menu.get_index() < crt.get_index(), "Pause Menu should be positioned before CRTScreen in the tree")
 
 func test_pause_menu_process_mode():
 	var node = Node2D.new()

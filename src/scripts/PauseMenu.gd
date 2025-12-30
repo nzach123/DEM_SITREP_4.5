@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 class_name PauseMenu
 
 signal resume_requested
