@@ -25,6 +25,7 @@ var available_courses: Array[String] = []
 var pending_course_id: String = ""
 
 func _ready() -> void:
+	add_to_group("main_menu")
 	# Scan for available question files
 	scan_courses()
 	create_menu_buttons()
