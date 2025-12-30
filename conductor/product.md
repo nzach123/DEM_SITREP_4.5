@@ -111,10 +111,14 @@ I want to implenet a settings scene and credits scene for the main menu. Use thi
     -   **Display Options:** Resolution selection and Window mode toggles (Windowed/Fullscreen/Borderless).
     -   **Accessibility:** Simple text scaling or high-contrast toggles (if applicable).
     -   **Persistence:** Save/Load settings using Godot's `ConfigFile` or `Resource` system.
--   **Credits Scene:**
+- **Credits Scene:**
     -   **Attribution:** Clear listing of contributors, assets (fonts, audio), and libraries.
     -   **Navigation:** Simple "Back" functionality to return to the Main Menu.
     -   **Style:** Consistent with the "Intentional Arcade Minimalism" aesthetic.
+- **Pause Menu:**
+    -   **Visibility:** Correctly layered under the CRT shader overlay in all gameplay scenes.
+    -   **Options:** Resume gameplay, open Settings Overlay, or Quit to Main Menu.
+    -   **State Management:** Pauses all game processing while active.
 
 ## Design Philosophy
 - **Educational & Arcade Hybrid:** The UI must be immediately readable and "juicy" (responsive, satisfying) to keep students engaged, while maintaining the seriousness of the educational content.

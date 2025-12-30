@@ -4,6 +4,11 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
+## [x] Track: Pause Menu Visibility and UI Enhancement
+*Link: [./conductor/tracks/pause_menu_ui_fix_20251229/](./conductor/tracks/pause_menu_ui_fix_20251229/)*
+
+---
+
 ## [~] Track: Pause Menu & Quiz Crash Fix
 
 *Link: [./conductor/tracks/pause_menu_fix_20251229/](./conductor/tracks/pause_menu_fix_20251229/)*
