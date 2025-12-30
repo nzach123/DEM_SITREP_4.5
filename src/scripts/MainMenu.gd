@@ -87,16 +87,13 @@ func create_menu_buttons() -> void:
 		child.queue_free()
 
 	for course_id in available_courses:
-		var card: Control = COURSE_CARD_SCENE.instantiate()
+		var card = COURSE_CARD_SCENE.instantiate() as CourseCard
 		var display_name: String = course_id
 		if category_names.has(course_id):
 			display_name = category_names[course_id]
 		
-		if card.has_method("setup"):
-			card.call("setup", course_id, display_name)
-
-		if card.has_signal("course_selected"):
-			card.connect("course_selected", _on_category_selected)
+		card.setup(course_id, display_name)
+		card.course_selected.connect(_on_category_selected)
 
 		buttons_container.add_child(card)
 
@@ -127,13 +124,15 @@ func _start_quiz_with_difficulty(difficulty: int) -> void:
 
 func _on_settings_pressed() -> void:
 	if sfx_click: sfx_click.play()
-	if settings_overlay and settings_overlay.has_method("open_menu"):
-		settings_overlay.open_menu()
+	var settings = settings_overlay as SettingsOverlay
+	if settings:
+		settings.open_menu()
 
 func _on_credits_pressed() -> void:
 	if sfx_click: sfx_click.play()
-	if credits_overlay and credits_overlay.has_method("open_menu"):
-		credits_overlay.open_menu()
+	var credits = credits_overlay as CreditsOverlay
+	if credits:
+		credits.open_menu()
 
 func _on_settings_closed() -> void:
 	if settings_btn:
