@@ -1,0 +1,8 @@
+{
+  "track_id": "aar_btn_fix_20251231",
+  "type": "bug",
+  "status": "new",
+  "created_at": "2025-12-31T15:55:00Z",
+  "updated_at": "2025-12-31T15:55:00Z",
+  "description": "fix(ui): correct Restart and HQ button resizing on AAR screen. The animation wrapper was causing the button panels to shrink to the text width. Ensure both buttons have equal default spacing before animation. Remove the animation and wrapper from the buttons."
+}
