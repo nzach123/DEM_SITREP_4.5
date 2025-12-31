@@ -34,28 +34,39 @@ func _setup_animation_wrapper() -> void:
 		# 4. Setup Bidirectional Sizing Logic
 
 		# Downstream: Slider Width -> Content Width
-		# We don't use anchors because we want to animate position freely.
-		# CRITICAL FIX: Clamp width to avoid 0-width text wrap explosion (infinite height).
 		slider.resized.connect(func():
-			var safe_width = max(slider.size.x, 200.0)
-			content.size.x = safe_width
+			_sync_layout(slider.size.x)
 		)
 
 		# Upstream: Content Height -> Slider Min Height
 		# When content resizes (e.g. text wrap), report new min height to container.
 		content.resized.connect(func():
 			slider.custom_minimum_size.y = content.size.y
-			# CRITICAL: Re-enforce width constraints to prevent expansion from text/images
+			# Re-enforce width constraints to prevent expansion from text/images
 			if slider.size.x > 0:
 				var target_width = max(slider.size.x, 200.0)
 				if content.size.x != target_width:
 					content.size.x = target_width
 		)
 
-		# 5. Initial Sync (Force safe values immediately)
-		var initial_width = max(size.x, 200.0)
-		content.size.x = initial_width
+		# 5. Initial Sync
+		_sync_layout(size.x)
 		slider.custom_minimum_size.y = content.size.y
+
+func _sync_layout(width: float) -> void:
+	var safe_width = max(width, 200.0)
+	var content = get_node_or_null("Slider/MarginContainer")
+	if not content: return
+
+	content.size.x = safe_width
+
+	# Dynamic Label Sizing to fix min-height calculation bug
+	# 15 (Margin) + 80 (Status) + 4 (HBox Sep) + 10 (Safety) = 109 -> 110
+	var label_width = safe_width - 110.0
+	if label_width < 1.0: label_width = 1.0
+
+	if question_label: question_label.custom_minimum_size.x = label_width
+	if feedback_label: feedback_label.custom_minimum_size.x = label_width
 
 func setup(entry: Dictionary) -> void:
 	var is_success: bool = entry.get("is_correct", false)
@@ -90,6 +101,9 @@ func setup(entry: Dictionary) -> void:
 			evidence_image.show()
 		else:
 			evidence_image.hide()
+			
+	# Ensure layout is correct after text changes
+	if slider: _sync_layout(slider.size.x)
 
 func animate_entry(delay: float, sfx_stream: AudioStream, pitch_scale: float) -> void:
 	# Content is now inside Slider.
