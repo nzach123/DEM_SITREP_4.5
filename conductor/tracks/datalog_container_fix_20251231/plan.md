@@ -16,4 +16,9 @@
 - [x] Task: Review and update `AARScreen.tscn` parent containers to ensure they provide rigid width bounds (e.g., via `ScrollContainer` configuration). 0de1a1f
 - [x] Task: Run all unit tests to ensure no regressions in layout or card functionality. b2624f5
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Implement Parent Constraints and Final Polish' (Protocol in workflow.md) b2624f5
+
+## Phase 4: Runtime Debugging and Layout Overhaul [checkpoint: 9e971ca]
+- [x] Task: Investigate why `ScrollContainer` constraint might be failing in runtime (e.g. check `VBoxContainer` flags). 9e971ca
+- [x] Task: Apply `custom_minimum_size.x = 1` to `LogEntryCard` root or `Slider` to ensure it allows shrinking. (Implemented dynamic label sizing). 9e971ca
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Runtime Debugging and Layout Overhaul' (Protocol in workflow.md) 9e971ca
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Implement Parent Constraints and Final Polish' (Protocol in workflow.md)
