@@ -12,7 +12,8 @@
 - [x] Task: Run reproduction test to verify partial or full resolution. 0de1a1f
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Implement Component Fixes' (Protocol in workflow.md) 13f4cca
 
-## Phase 3: Implement Parent Constraints and Final Polish
+## Phase 3: Implement Parent Constraints and Final Polish [checkpoint: b2624f5]
 - [x] Task: Review and update `AARScreen.tscn` parent containers to ensure they provide rigid width bounds (e.g., via `ScrollContainer` configuration). 0de1a1f
-- [~] Task: Run all unit tests to ensure no regressions in layout or card functionality.
+- [x] Task: Run all unit tests to ensure no regressions in layout or card functionality. b2624f5
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Implement Parent Constraints and Final Polish' (Protocol in workflow.md) b2624f5
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Implement Parent Constraints and Final Polish' (Protocol in workflow.md)
