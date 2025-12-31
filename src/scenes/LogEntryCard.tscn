@@ -43,3 +43,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.19607843)
 theme_override_constants/shadow_outline_size = 15
 text = ">> Feedback..."
 autowrap_mode = 3
+
+[node name="EvidenceImage" type="TextureRect" parent="MarginContainer/HBoxContainer/ContentVBox"]
+layout_mode = 2
+
