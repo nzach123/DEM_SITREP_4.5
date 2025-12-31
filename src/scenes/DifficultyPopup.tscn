@@ -131,3 +131,10 @@ layout_mode = 2
 theme = ExtResource("3_iue5x")
 theme_override_font_sizes/font_size = 55
 text = "CANCEL"
+
+[node name="AnimationComponent" type="Node" parent="CenterContainer/VBoxContainer/BtnCancel"]
+script = ExtResource("4_ylrva")
+hover_scale = Vector2(1.1, 1.1)
+hover_sfx = ExtResource("6_hover")
+click_sfx = ExtResource("5_sfx")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
