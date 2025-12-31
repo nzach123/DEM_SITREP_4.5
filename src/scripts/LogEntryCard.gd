@@ -16,8 +16,9 @@ func _setup_animation_wrapper() -> void:
 	slider = Control.new()
 	slider.name = "Slider"
 	slider.mouse_filter = mouse_filter
-	# Slider will be sized by PanelContainer (Width)
-	# We must tell PanelContainer our Height via custom_minimum_size
+	# Crucial: Ensure slider fills the PanelContainer
+	slider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	slider.size_flags_vertical = Control.SIZE_EXPAND_FILL
 
 	# 2. Get the content node
 	var content = $MarginContainer
@@ -32,25 +33,22 @@ func _setup_animation_wrapper() -> void:
 		# 4. Setup Bidirectional Sizing Logic
 
 		# Downstream: Slider Width -> Content Width
-		# We don't use anchors because we want to animate position freely without fighting the anchor system,
-		# but we need the content to match the width to wrap text correctly.
+		# We don't use anchors because we want to animate position freely.
+		# CRITICAL FIX: Clamp width to avoid 0-width text wrap explosion (infinite height).
 		slider.resized.connect(func():
-			content.size.x = slider.size.x
+			var safe_width = max(slider.size.x, 200.0)
+			content.size.x = safe_width
 		)
 
 		# Upstream: Content Height -> Slider Min Height
-		# When content resizes (e.g. text wrap changes due to width change),
-		# it reports new min size. We pass that up to the Slider's custom_minimum_size.
+		# When content resizes (e.g. text wrap), report new min height to container.
 		content.resized.connect(func():
 			slider.custom_minimum_size.y = content.size.y
-			# Also ensure content keeps width in sync if something weird happens,
-			# though the slider.resized signal handles the main flow.
 		)
 
-		# 5. Initial Sync
-		# Force initial width match
-		content.size.x = slider.size.x
-		# Force initial height reporting
+		# 5. Initial Sync (Force safe values immediately)
+		var initial_width = max(size.x, 200.0)
+		content.size.x = initial_width
 		slider.custom_minimum_size.y = content.size.y
 
 func setup(entry: Dictionary) -> void:
@@ -82,7 +80,6 @@ func animate_entry(delay: float, sfx_stream: AudioStream, pitch_scale: float) ->
 	# Content is now inside Slider.
 	var content = $Slider/MarginContainer
 	if not content:
-		# Fallback if setup failed
 		content = $MarginContainer
 
 	if content:
