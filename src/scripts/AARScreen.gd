@@ -17,12 +17,28 @@ class_name AARScreen
 const MONTSERRAT_BUTTON_THEME = preload("res://content/resources/themes/Montserrat_button_theme.tres")
 var sfx_success: AudioStream = preload("res://assets/audio/music/Loops/Retro Polka.ogg")
 var sfx_fail: AudioStream = preload("res://assets/audio/music/Loops/computerNoise_003.ogg")
+var sfx_hover_sound: AudioStream = preload("res://assets/audio/sfx/ClickSFX/select_001.ogg")
 const LOG_CARD_SCENE: PackedScene = preload("res://src/scenes/LogEntryCard.tscn")
 
+var _hover_player: AudioStreamPlayer
+
 func _ready() -> void:
+	_hover_player = AudioStreamPlayer.new()
+	_hover_player.bus = &"SFX"
+	add_child(_hover_player)
+
 	display_results()
-	if retry_button: retry_button.pressed.connect(_on_retry_pressed)
-	if menu_button: menu_button.pressed.connect(_on_menu_pressed)
+	if retry_button:
+		retry_button.pressed.connect(_on_retry_pressed)
+		retry_button.mouse_entered.connect(_on_hover)
+	if menu_button:
+		menu_button.pressed.connect(_on_menu_pressed)
+		menu_button.mouse_entered.connect(_on_hover)
+
+func _on_hover() -> void:
+	if _hover_player and sfx_hover_sound:
+		_hover_player.stream = sfx_hover_sound
+		_hover_player.play()
 
 func _on_retry_pressed() -> void:
 	await play_click()
