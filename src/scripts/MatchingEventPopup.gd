@@ -8,6 +8,7 @@ signal completed(success: bool)
 
 # Resources to style the buttons dynamically
 const BUTTON_THEME = preload("res://content/resources/themes/Montserrat_button_theme.tres")
+const HOVER_SOUND = preload("res://assets/audio/sfx/ClickSFX/select_001.ogg")
 
 var time_left: float = 60.0
 var is_active: bool = false
@@ -65,6 +66,13 @@ func _populate_term_grid() -> void:
 		btn.custom_minimum_size = Vector2(0, 80)
 		btn.set_meta("item_id", item["id"])
 		btn.pressed.connect(_on_term_selected.bind(item["id"], btn))
+
+		# Add animation component for hover sound and scale
+		var anim = AnimationComponent.new()
+		anim.hover_sfx = HOVER_SOUND
+		anim.hover_scale = Vector2(1.05, 1.05)
+		btn.add_child(anim)
+
 		term_grid.add_child(btn)
 
 func _next_round() -> void:
