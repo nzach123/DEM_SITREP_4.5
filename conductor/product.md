@@ -122,6 +122,11 @@ I want to implenet a settings scene and credits scene for the main menu. Use thi
     -   **Options:** Resume gameplay, Restart level, open Settings Overlay, or Quit to Main Menu.
     -   **State Management:** Standardizes on a fresh "root" state every time it is opened.
 
+- **After Action Report (AAR) Log:**
+    -   **Ultra-Compact Feed:** Highly optimized list of session events (correct/incorrect answers).
+    -   **Data Density:** Prioritizes information density and vertical stacking for immediate review of performance.
+    -   **Vertical Scalability:** Log entries expand to fit content while maintaining a tight, tactical layout.
+
 ## Design Philosophy
 - **Educational & Arcade Hybrid:** The UI must be immediately readable and "juicy" (responsive, satisfying) to keep students engaged, while maintaining the seriousness of the educational content.
 -   **Godot Native:** Leverage `Theme` resources, `HSlider`, `CheckButton`, and existing `SceneTransition` autoloads.

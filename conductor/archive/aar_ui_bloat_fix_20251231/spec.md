@@ -14,6 +14,7 @@
 ### 2.2 Script Cleanup (`LogEntryCard.gd`)
 - **Remove:** Delete any `@onready` variables referencing the icon.
 - **Remove:** Delete any logic in `_ready()` or `setup()` that assigns textures or manipulates the icon's properties.
+- **Remove:** Delete `Slider` logic and `_setup_animation_wrapper()` entirely. The card should use its standard `MarginContainer` child directly to simplify the layout and prevent debugger errors.
 
 ### 2.3 Parent Container (`AARScreen.tscn`)
 - **Spacing:** Ensure the `VBoxContainer` housing the cards has a defined separation (e.g., `theme_override_constants/separation = 10` or lower for ultra-compactness) to verify the "bloat" is gone.
