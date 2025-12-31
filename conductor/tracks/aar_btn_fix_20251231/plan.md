@@ -2,10 +2,10 @@
 
 This plan details the steps to correct the AAR screen button sizing issues and implement standard arcade micro-feedback.
 
-## Phase 1: Analysis & Regression Setup
-- [~] Task: Analyze `src/scenes/AARScreen.tscn` and `src/scenes/MainMenu.tscn` to identify wrapper structure and existing feedback logic.
+## Phase 1: Analysis & Regression Setup [checkpoint: 7027f96]
+- [x] Task: Analyze `src/scenes/AARScreen.tscn` and `src/scenes/MainMenu.tscn` to identify wrapper structure and existing feedback logic.
 - [x] Task: Execute current GUT test suite to establish a passing baseline.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Analysis' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Analysis' (Protocol in workflow.md)
 
 ## Phase 2: Structural Refactoring (The "Fix")
 - [ ] Task: Create or update unit tests to verify AAR button presence and layout flags (Red Phase).
