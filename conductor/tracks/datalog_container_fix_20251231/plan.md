@@ -1,8 +1,8 @@
 # Plan: AARScreen Layout Fix
 
 ## Phase 1: Setup and Reproduction (TDD Red)
-- [~] Task: Create reproduction GUT test `tests/unit/test_aar_layout.gd` that instantiates `LogEntryCard` with oversized content.
-- [ ] Task: Execute tests to confirm failure (width overflow).
+- [x] Task: Create reproduction GUT test `tests/unit/test_aar_layout.gd` that instantiates `LogEntryCard` with oversized content. 40247b0
+- [x] Task: Execute tests to confirm failure (width overflow). 40247b0
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Setup and Reproduction' (Protocol in workflow.md)
 
 ## Phase 2: Implement Component Fixes (TDD Green)
