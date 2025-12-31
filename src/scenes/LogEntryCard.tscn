@@ -6,7 +6,6 @@
 
 [node name="LogEntryCard" type="PanelContainer"]
 offset_right = 400.0
-offset_bottom = 100.0
 theme = ExtResource("3_4vm7d")
 script = ExtResource("1_script")
 

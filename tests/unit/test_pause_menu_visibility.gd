@@ -4,9 +4,10 @@ var quiz_scene_path = "res://src/scenes/quiz_scene.tscn"
 
 func before_each():
 	# Ensure a clean state for each test
-	if get_tree().current_scene:
+	if is_instance_valid(get_tree().current_scene):
 		get_tree().current_scene.free()
 		get_tree().current_scene = null
+	
 	GameManager.game_paused = false
 	get_tree().paused = false
 
