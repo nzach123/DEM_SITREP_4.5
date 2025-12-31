@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="16_gw4jd"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="16_i6oeq"]
 [ext_resource type="Texture2D" uid="uid://b55gimo28a1ot" path="res://assets/vfx/glare_siren_a.png" id="19_o7nro"]
+[ext_resource type="AudioStream" uid="uid://bw5vc22obuemp" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="20_select"]
 [ext_resource type="Script" uid="uid://cdfd2urify3r6" path="res://src/components/QuizAudio.gd" id="Comp_Audio"]
 [ext_resource type="Script" uid="uid://cno7l45c4w7n3" path="res://src/components/QuizCamera.gd" id="Comp_Cam"]
 [ext_resource type="Script" uid="uid://03hbla8pu4cl" path="res://src/components/BackgroundPulse.gd" id="Comp_Pulse"]
@@ -405,6 +406,7 @@ autowrap_mode = 3
 [node name="AnimationComponent" type="Node" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer/Button"]
 script = ExtResource("16_gw4jd")
 hover_scale = Vector2(1.1, 1.1)
+hover_sfx = ExtResource("20_select")
 metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer"]
@@ -419,6 +421,7 @@ autowrap_mode = 3
 [node name="AnimationComponent" type="Node" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer/Button2"]
 script = ExtResource("16_gw4jd")
 hover_scale = Vector2(1.1, 1.1)
+hover_sfx = ExtResource("20_select")
 metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer"]
@@ -432,6 +435,7 @@ autowrap_mode = 3
 [node name="AnimationComponent" type="Node" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer/Button3"]
 script = ExtResource("16_gw4jd")
 hover_scale = Vector2(1.1, 1.1)
+hover_sfx = ExtResource("20_select")
 metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer"]
@@ -445,6 +449,7 @@ autowrap_mode = 3
 [node name="AnimationComponent" type="Node" parent="VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/ButtonsMarginContainer/AnswerGridContainer/Button4"]
 script = ExtResource("16_gw4jd")
 hover_scale = Vector2(1.1, 1.1)
+hover_sfx = ExtResource("20_select")
 metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="QuizTimer" type="Timer" parent="."]
