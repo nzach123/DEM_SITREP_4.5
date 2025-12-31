@@ -8,11 +8,9 @@ extends PanelContainer
 var slider: Control
 
 func _ready() -> void:
-	size_flags_vertical = Control.SIZE_FILL
-	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	# Inject a "Slider" Control to decouple content position from the root PanelContainer's layout constraints
-	_setup_animation_wrapper()
-	
+	#_setup_animation_wrapper()
+	pass
 
 func _setup_animation_wrapper() -> void:
 	# 1. Create the slider wrapper (Plain Control)
