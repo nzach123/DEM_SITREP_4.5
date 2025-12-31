@@ -21,6 +21,9 @@ var sfx_fail: AudioStream = preload("res://assets/audio/music/Loops/computerNois
 const LOG_CARD_SCENE: PackedScene = preload("res://src/scenes/LogEntryCard.tscn")
 
 func _ready() -> void:
+	if mistake_container:
+		mistake_container.add_theme_constant_override("separation", 8)
+
 	display_results()
 	if retry_button: retry_button.pressed.connect(_on_retry_pressed)
 	if menu_button: menu_button.pressed.connect(_on_menu_pressed)

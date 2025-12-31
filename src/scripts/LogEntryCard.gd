@@ -12,25 +12,46 @@ func _ready() -> void:
 	_setup_animation_wrapper()
 
 func _setup_animation_wrapper() -> void:
-	# Create the slider wrapper
+	# 1. Create the slider wrapper (Plain Control)
 	slider = Control.new()
 	slider.name = "Slider"
-	# PanelContainer expects children to fill, but we want the child (slider) to respect that
-	slider.set_anchors_preset(Control.PRESET_FULL_RECT)
-	# Pass mouse filter
 	slider.mouse_filter = mouse_filter
+	# Slider will be sized by PanelContainer (Width)
+	# We must tell PanelContainer our Height via custom_minimum_size
 
-	# Get the content node
+	# 2. Get the content node
 	var content = $MarginContainer
+	if not content: return
 
-	# Reparent
-	if content and content.get_parent() == self:
+	# 3. Reparent
+	if content.get_parent() == self:
 		remove_child(content)
 		slider.add_child(content)
 		add_child(slider)
 
-		# Ensure content fills the slider
-		content.set_anchors_preset(Control.PRESET_FULL_RECT)
+		# 4. Setup Bidirectional Sizing Logic
+
+		# Downstream: Slider Width -> Content Width
+		# We don't use anchors because we want to animate position freely without fighting the anchor system,
+		# but we need the content to match the width to wrap text correctly.
+		slider.resized.connect(func():
+			content.size.x = slider.size.x
+		)
+
+		# Upstream: Content Height -> Slider Min Height
+		# When content resizes (e.g. text wrap changes due to width change),
+		# it reports new min size. We pass that up to the Slider's custom_minimum_size.
+		content.resized.connect(func():
+			slider.custom_minimum_size.y = content.size.y
+			# Also ensure content keeps width in sync if something weird happens,
+			# though the slider.resized signal handles the main flow.
+		)
+
+		# 5. Initial Sync
+		# Force initial width match
+		content.size.x = slider.size.x
+		# Force initial height reporting
+		slider.custom_minimum_size.y = content.size.y
 
 func setup(entry: Dictionary) -> void:
 	var is_success: bool = entry.get("is_correct", false)
@@ -58,8 +79,7 @@ func setup(entry: Dictionary) -> void:
 		feedback_label.modulate = Color(1.0, 0.5, 0.5)
 
 func animate_entry(delay: float, sfx_stream: AudioStream, pitch_scale: float) -> void:
-	# Content is now inside Slider. If _ready didn't run yet (rare), this might fail.
-	# But _ready runs on add_child.
+	# Content is now inside Slider.
 	var content = $Slider/MarginContainer
 	if not content:
 		# Fallback if setup failed
@@ -68,7 +88,7 @@ func animate_entry(delay: float, sfx_stream: AudioStream, pitch_scale: float) ->
 	if content:
 		# Initial State
 		content.modulate.a = 0.0
-		# Shift left (-50px)
+		# Shift left (-50px) relative to Slider
 		content.position.x = -50.0
 
 		var tween = create_tween()
