@@ -44,6 +44,11 @@ func _setup_animation_wrapper() -> void:
 		# When content resizes (e.g. text wrap), report new min height to container.
 		content.resized.connect(func():
 			slider.custom_minimum_size.y = content.size.y
+			# CRITICAL: Re-enforce width constraints to prevent expansion from text/images
+			if slider.size.x > 0:
+				var target_width = max(slider.size.x, 200.0)
+				if content.size.x != target_width:
+					content.size.x = target_width
 		)
 
 		# 5. Initial Sync (Force safe values immediately)

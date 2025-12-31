@@ -7,6 +7,7 @@
 [node name="LogEntryCard" type="PanelContainer"]
 offset_right = 400.0
 offset_bottom = 100.0
+size_flags_horizontal = 3
 theme = ExtResource("3_4vm7d")
 script = ExtResource("1_script")
 
@@ -29,6 +30,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="QuestionLabel" type="Label" parent="MarginContainer/HBoxContainer/ContentVBox"]
+custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 theme = ExtResource("3_4vm7d")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.19607843)
@@ -37,6 +39,7 @@ text = "Question text..."
 autowrap_mode = 3
 
 [node name="FeedbackLabel" type="Label" parent="MarginContainer/HBoxContainer/ContentVBox"]
+custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 theme = ExtResource("3_4vm7d")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.19607843)
@@ -46,4 +49,6 @@ autowrap_mode = 3
 
 [node name="EvidenceImage" type="TextureRect" parent="MarginContainer/HBoxContainer/ContentVBox"]
 layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
 
