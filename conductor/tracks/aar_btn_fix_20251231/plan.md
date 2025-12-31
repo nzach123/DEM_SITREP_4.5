@@ -7,12 +7,12 @@ This plan details the steps to correct the AAR screen button sizing issues and i
 - [x] Task: Execute current GUT test suite to establish a passing baseline.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Analysis' (Protocol in workflow.md)
 
-## Phase 2: Structural Refactoring (The "Fix")
-- [ ] Task: Create or update unit tests to verify AAR button presence and layout flags (Red Phase).
-- [ ] Task: Remove animation wrappers and `AnimationPlayer` dependencies from Restart/HQ buttons in `AARScreen.tscn`.
-- [ ] Task: Configure Restart and HQ buttons with `SIZE_EXPAND_FILL` in their parent container.
-- [ ] Task: Verify implementation against layout tests (Green Phase).
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Structural Refactoring' (Protocol in workflow.md)
+## Phase 2: Structural Refactoring (The "Fix") [checkpoint: 872177d]
+- [x] Task: Create or update unit tests to verify AAR button presence and layout flags (Red Phase).
+- [x] Task: Remove animation wrappers and `AnimationPlayer` dependencies from Restart/HQ buttons in `AARScreen.tscn`.
+- [x] Task: Configure Restart and HQ buttons with `SIZE_EXPAND_FILL` in their parent container.
+- [x] Task: Verify implementation against layout tests (Green Phase).
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Structural Refactoring' (Protocol in workflow.md)
 
 ## Phase 3: Micro-Feedback Implementation
 - [ ] Task: Implement hover/focus scale tween logic in `AARScreen.gd` (or relevant component) matching `MainMenu.tscn`.
