@@ -4,6 +4,7 @@ class_name AARScreen
 @export_group("Audio")
 @export var sfx_click: AudioStreamPlayer
 @export var sfx_result: AudioStreamPlayer
+@export var sfx_pop: AudioStream = preload("res://assets/audio/sfx/ClickSFX/maximize_004.ogg")
 
 @export_group("UI Nodes")
 @export var rank_letter: Label
@@ -95,11 +96,27 @@ func display_results() -> void:
 			if no_data_label: no_data_label.show()
 		else:
 			if no_data_label: no_data_label.hide()
+			# Create cards first
+			var cards: Array[Control] = []
 			for entry in GameManager.session_log:
 				var card: Control = LOG_CARD_SCENE.instantiate()
 				mistake_container.add_child(card)
 				if card.has_method("setup"):
 					card.call("setup", entry)
+				cards.append(card)
+
+			# Animate sequence
+			_animate_mistakes_sequence(cards)
+
+func _animate_mistakes_sequence(cards: Array[Control]) -> void:
+	for i in range(cards.size()):
+		var card = cards[i]
+		if card.has_method("animate_entry"):
+			# Fast shuffle timing: 0.05s per card
+			var delay: float = i * 0.05
+			# Random pitch for tactile "deck shuffle" feel
+			var pitch: float = randf_range(0.9, 1.1)
+			card.call("animate_entry", delay, sfx_pop, pitch)
 
 func _on_retry() -> void:
 	GameManager.change_scene("res://src/scenes/quiz_scene.tscn")
