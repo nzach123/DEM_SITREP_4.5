@@ -139,5 +139,6 @@ func _on_apply_pressed() -> void:
 	SettingsManager.save_settings()
 
 func _on_back_pressed() -> void:
+	SettingsManager.save_settings()
 	hide()
 	close_requested.emit()
