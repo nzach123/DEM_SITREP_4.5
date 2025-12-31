@@ -3,14 +3,16 @@ extends PanelContainer
 @onready var status_label: Label = $MarginContainer/HBoxContainer/StatusLabel
 @onready var question_label: Label = $MarginContainer/HBoxContainer/ContentVBox/QuestionLabel
 @onready var feedback_label: Label = $MarginContainer/HBoxContainer/ContentVBox/FeedbackLabel
-@onready var evidence_image: TextureRect = $MarginContainer/HBoxContainer/ContentVBox/EvidenceImage
 
 # Animation wrapper
 var slider: Control
 
 func _ready() -> void:
+	size_flags_vertical = Control.SIZE_FILL
+	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	# Inject a "Slider" Control to decouple content position from the root PanelContainer's layout constraints
 	_setup_animation_wrapper()
+	
 
 func _setup_animation_wrapper() -> void:
 	# 1. Create the slider wrapper (Plain Control)
@@ -93,15 +95,6 @@ func setup(entry: Dictionary) -> void:
 		feedback_label.text = ">> ERROR: Selected '" + user_choice + "'\n   EXPECTED: '" + correct_answer + "'"
 		feedback_label.modulate = Color(1.0, 0.5, 0.5)
 
-	# Image Evidence
-	if evidence_image:
-		var image_path = entry.get("image_path", "")
-		if image_path and ResourceLoader.exists(image_path):
-			evidence_image.texture = load(image_path)
-			evidence_image.show()
-		else:
-			evidence_image.hide()
-			
 	# Ensure layout is correct after text changes
 	if slider: _sync_layout(slider.size.x)
 
