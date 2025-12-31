@@ -3,6 +3,7 @@ extends PanelContainer
 @onready var status_label: Label = $MarginContainer/HBoxContainer/StatusLabel
 @onready var question_label: Label = $MarginContainer/HBoxContainer/ContentVBox/QuestionLabel
 @onready var feedback_label: Label = $MarginContainer/HBoxContainer/ContentVBox/FeedbackLabel
+@onready var evidence_image: TextureRect = $MarginContainer/HBoxContainer/ContentVBox/EvidenceImage
 
 # Animation wrapper
 var slider: Control
@@ -80,6 +81,15 @@ func setup(entry: Dictionary) -> void:
 	else:
 		feedback_label.text = ">> ERROR: Selected '" + user_choice + "'\n   EXPECTED: '" + correct_answer + "'"
 		feedback_label.modulate = Color(1.0, 0.5, 0.5)
+
+	# Image Evidence
+	if evidence_image:
+		var image_path = entry.get("image_path", "")
+		if image_path and ResourceLoader.exists(image_path):
+			evidence_image.texture = load(image_path)
+			evidence_image.show()
+		else:
+			evidence_image.hide()
 
 func animate_entry(delay: float, sfx_stream: AudioStream, pitch_scale: float) -> void:
 	# Content is now inside Slider.

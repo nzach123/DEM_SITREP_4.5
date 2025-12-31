@@ -51,6 +51,7 @@ func test_card_width_constraint_with_large_image():
 		var img = Image.create(2000, 2000, false, Image.FORMAT_RGBA8)
 		var tex = ImageTexture.create_from_image(img)
 		evidence_image.texture = tex
+		evidence_image.show()
 	
 	# Force layout update
 	await wait_frames(2)

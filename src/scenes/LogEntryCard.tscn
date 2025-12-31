@@ -48,6 +48,7 @@ text = ">> Feedback..."
 autowrap_mode = 3
 
 [node name="EvidenceImage" type="TextureRect" parent="MarginContainer/HBoxContainer/ContentVBox"]
+visible = false
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 5
