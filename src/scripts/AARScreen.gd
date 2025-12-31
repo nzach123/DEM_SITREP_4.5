@@ -23,13 +23,14 @@ const LOG_CARD_SCENE: PackedScene = preload("res://src/scenes/LogEntryCard.tscn"
 
 var _hover_player: AudioStreamPlayer
 
+var button_wrappers: Dictionary = {}
+
 func _ready() -> void:
 	_hover_player = AudioStreamPlayer.new()
 	_hover_player.bus = &"SFX"
 	add_child(_hover_player)
-var button_wrappers: Dictionary = {}
 
-func _ready() -> void:
+
 	if mistake_container:
 		mistake_container.add_theme_constant_override("separation", 8)
 
