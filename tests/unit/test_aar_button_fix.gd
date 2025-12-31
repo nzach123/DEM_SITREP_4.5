@@ -33,3 +33,15 @@ func test_no_wrappers_at_runtime():
 	var control_vbox = _aar_screen.get_node("MarginContainer/MainVBox/TopRowHBox/ControlPanel/ControlVBox")
 	assert_eq(retry_parent, control_vbox, "Retry button parent should be ControlVBox")
 	assert_eq(menu_parent, control_vbox, "Menu button parent should be ControlVBox")
+
+func test_buttons_have_animation_component():
+	var retry_anim = _aar_screen.retry_button.get_node_or_null("AnimationComponent")
+	var menu_anim = _aar_screen.menu_button.get_node_or_null("AnimationComponent")
+	
+	assert_not_null(retry_anim, "Retry button should have AnimationComponent")
+	assert_not_null(menu_anim, "Menu button should have AnimationComponent")
+	
+	if retry_anim:
+		assert_eq(retry_anim.hover_scale, Vector2(1.05, 1.05), "Retry button should have hover scale 1.05")
+		assert_not_null(retry_anim.hover_sfx, "Retry button should have hover sfx")
+		assert_not_null(retry_anim.click_sfx, "Retry button should have click sfx")

@@ -15,7 +15,7 @@ This plan details the steps to correct the AAR screen button sizing issues and i
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Structural Refactoring' (Protocol in workflow.md)
 
 ## Phase 3: Micro-Feedback Implementation
-- [ ] Task: Implement hover/focus scale tween logic in `AARScreen.gd` (or relevant component) matching `MainMenu.tscn`.
+- [~] Task: Implement hover/focus scale tween logic in `AARScreen.gd` (or relevant component) matching `MainMenu.tscn`.
 - [ ] Task: Connect audio signals (hover/click) to buttons using the project's standard UI sound resources.
 - [ ] Task: Add/Update tests to verify signals are connected and feedback logic is triggered.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Micro-Feedback' (Protocol in workflow.md)
