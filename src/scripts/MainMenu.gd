@@ -5,7 +5,7 @@ extends Control
 	"1110": "Individual Resilience and Human Behaviour in Disasters",
 	"1120": "Disaster and Emergency Management as a Field of Practice",
 	"1130": "Disaster Risk Reduction (DRR)",
-	"1140": "Disaster and Emergency Management Related Legislation, Standards, and Stakeholders"
+	"1140": "Disaster and Emergency Management Related Legislation, Standards, and Stakeholders",
 }
 
 @export var buttons_container: GridContainer
