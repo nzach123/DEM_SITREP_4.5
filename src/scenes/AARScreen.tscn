@@ -208,7 +208,7 @@ horizontal_scroll_mode = 0
 [node name="LogContainer" type="VBoxContainer" parent="MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 10
+theme_override_constants/separation = 5
 
 [node name="NoDataLabel" type="Label" parent="MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox/ScrollContainer/LogContainer"]
 layout_mode = 2
