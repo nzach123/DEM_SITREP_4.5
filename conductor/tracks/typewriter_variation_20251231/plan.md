@@ -8,7 +8,7 @@ This plan covers the refactoring of typewriter sound logic to include randomizat
 - [x] Task: Update the caller in `src/scripts/GameSession.gd` (Line 152) to use `play_typewriter()`.
 - [ ] Task: Conductor - User Manual Verification 'Setup & Refactoring' (Protocol in workflow.md)
 
-## Phase 2: Implementation of Variation Logic (TDD)
+## Phase 2: Implementation of Variation Logic (TDD) [checkpoint: f624d69]
 - [x] Task: Update `src/components/QuizAudio.gd` to export/reference the three typewriter SFX nodes.
 - [x] Task: Implement "no-repeat" randomization logic in `play_typewriter()`.
 - [x] Task: Verify that `test_QuizAudioManager.gd` passes, ensuring the no-repeat rule is respected.
