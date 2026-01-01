@@ -11,7 +11,7 @@ This phase focuses on the "static" configuration changes required for Web compat
     - Set `html/custom_html_shell` (if applicable) or default.
     - **Critical:** Add `*.json` to `include_filter` (Resources > Filters to export non-resource files).
     - Disable `html/threads_support` (Set to `false`).
-- [ ] Task: Conductor - User Manual Verification 'Project & Export Configuration' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Project & Export Configuration' (Protocol in workflow.md)
 
 ## Phase 2: Splash Screen Logic (TDD)
 Implement the "Click to Start" requirement for Web builds to handle AudioContext unlocking.
