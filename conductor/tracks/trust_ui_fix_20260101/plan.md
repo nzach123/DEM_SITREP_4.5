@@ -7,7 +7,7 @@ This plan addresses the issue where the `PublicTrustSystem` UI element incorrect
 - [x] Task: Verify that calling `_play_shake()` or `damage_trust()` causes the `PublicTrustSystem` node's `position` to change (failing test).
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Diagnosis & Test Setup' (Protocol in workflow.md)
 
-## Phase 2: Implementation (Refactor Shake Logic)
+## Phase 2: Implementation (Refactor Shake Logic) [checkpoint: 92b72c0]
 - [x] Task: Modify `src/components/PublicTrustSystem.gd` to store the original position of the `progress_bar`.
 - [x] Task: Update `_play_shake()` to animate `progress_bar.position` instead of `self.position`.
 - [x] Task: Ensure `_play_shake()` resets `progress_bar.position` to its original local position after the tween completes.
