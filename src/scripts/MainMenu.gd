@@ -126,11 +126,33 @@ func create_menu_buttons() -> void:
 		card.setup(course_id, display_name)
 		card.course_selected.connect(_on_category_selected)
 
+		# Check Progress
+		var progress = ProfileManager.get_progress(course_id)
+		if progress.has("index"):
+			# Get shift size for the difficulty
+			var diff = progress.get("difficulty", 0)
+			var config = GameManager.DIFFICULTY_CONFIG.get(diff, GameManager.DIFFICULTY_CONFIG[GameManager.Difficulty.LOW])
+			var shift_size = config.get("shift_size", 10)
+
+			var total = progress.get("total_questions", 0)
+			if total == 0:
+				total = GameManager.get_total_questions(course_id)
+
+			card.update_status(progress["index"], total, shift_size)
+			# card.text = "RESUME JOB" - Removing this as per review feedback; CourseCard handles visuals.
+
 		buttons_container.add_child(card)
 
 func _on_category_selected(course_id: String) -> void:
 	if audio: audio.play_click()
 	pending_course_id = course_id
+
+	# Check for Resume
+	var progress = ProfileManager.get_progress(course_id)
+	if progress.has("index"):
+		# Resume directly
+		_resume_shift(course_id, progress)
+		return
 
 	var type = GameManager.get_course_type(course_id)
 
@@ -138,6 +160,16 @@ func _on_category_selected(course_id: String) -> void:
 		difficulty_popup.setup(type)
 	elif difficulty_popup:
 		difficulty_popup.show()
+
+func _resume_shift(course_id: String, progress: Dictionary) -> void:
+	var seed_val = progress.get("seed", -1)
+	var difficulty = progress.get("difficulty", 0)
+
+	if GameManager.load_course_data(course_id, seed_val):
+		GameManager.set_difficulty(difficulty)
+		GameManager.change_scene("res://src/scenes/quiz_scene.tscn")
+	else:
+		print("Failed to resume course: " + course_id)
 
 # --- NEW POPUP LOGIC ---
 

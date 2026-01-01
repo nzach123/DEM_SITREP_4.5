@@ -6,19 +6,19 @@ var current_difficulty: Difficulty = Difficulty.LOW
 
 const DIFFICULTY_CONFIG: Dictionary = {
 	Difficulty.LOW: {
-		"question_count": 10,
+		"shift_size": 10,
 		"time_per_question": 15.0,
 		"casualty_penalty": 0,
 		"population_range": { "min": 10000, "max": 50000 }
 	},
 	Difficulty.MEDIUM: {
-		"question_count": 25,
+		"shift_size": 15,
 		"time_per_question": 12.0,
 		"casualty_penalty": 250,
 		"population_range": { "min": 100000, "max": 500000 }
 	},
 	Difficulty.HIGH: {
-		"question_count": 75,
+		"shift_size": 20,
 		"time_per_question": 10.0,
 		"casualty_penalty": 500,
 		"population_range": { "min": 500000, "max": 2000000 }
@@ -26,6 +26,7 @@ const DIFFICULTY_CONFIG: Dictionary = {
 }
 
 # Course Data
+var current_seed: int = 0
 var master_questions_pool: Array[Dictionary] = []
 var questions_pool: Array[Dictionary] = []
 var matching_pool: Array[Dictionary] = []
@@ -167,7 +168,7 @@ func load_all_matching_data() -> void:
 									matching_pool.append(d)
 			file_name = dir.get_next()
 
-func load_course_data(course_id: String) -> bool:
+func load_course_data(course_id: String, seed_val: int = -1) -> bool:
 	current_course_id = course_id
 	var file_path: String = "res://assets/questions/" + course_id + ".json"
 
@@ -188,6 +189,12 @@ func load_course_data(course_id: String) -> bool:
 						if item is Dictionary:
 							master_questions_pool.append(item)
 
+					# Setup Seed
+					if seed_val == -1:
+						current_seed = randi()
+					else:
+						current_seed = seed_val
+
 					reset_session_pool()
 					is_matching_mode = false
 					return true
@@ -197,6 +204,10 @@ func load_course_data(course_id: String) -> bool:
 func reset_session_pool() -> void:
 	if master_questions_pool.size() > 0:
 		questions_pool = master_questions_pool.duplicate(true)
+
+		# Seeded Shuffle (Using seed() to affect Array.shuffle())
+		seed(current_seed)
+		questions_pool.shuffle()
 	else:
 		questions_pool = []
 

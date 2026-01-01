@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 SettingsManager="*res://src/autoload/SettingsManager.gd"
 GameManager="*res://src/autoload/GameManager.gd"
+ProfileManager="*res://src/autoload/ProfileManager.gd"
 SceneTransition="*res://src/scenes/SceneTransition.tscn"
 
 [display]

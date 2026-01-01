@@ -32,12 +32,17 @@ enum State { SETUP, PLAYING, LOCKED, END }
 const MATCHING_POPUP_SCENE: PackedScene = preload("res://src/scenes/MatchingEventPopup.tscn")
 
 # --- STATE VARIABLES ---
+signal shift_ended(stats: Dictionary)
+
 var current_state: State = State.SETUP
 var current_q_index: int = 0
 var current_shuffled_answers: Array[Dictionary] = []
 var save_weight: int = 0
 var strike_streak: int = 0
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+
+var questions_completed_this_shift: int = 0
+var shift_size: int = 10
 
 const MAX_STRIKES: int = 3
 const FIELD_EXERCISE_CHANCE: float = 0.15
@@ -78,19 +83,25 @@ func _process(_delta: float) -> void:
 
 func start_game() -> void:
 	GameManager.reset_stats()
-	GameManager.reset_session_pool()
-	var settings: Dictionary = GameManager.get_current_settings()
+	# GameManager.reset_session_pool() is handled by load_course_data now with seeds
 
-	current_q_index = 0
-	GameManager.questions_pool.shuffle()
+	var settings: Dictionary = GameManager.get_current_settings()
+	shift_size = int(settings.get("shift_size", 10))
+	questions_completed_this_shift = 0
+
+	# Check for Existing Progress
+	var progress = ProfileManager.get_progress(GameManager.current_course_id)
+	if progress.has("index"):
+		current_q_index = progress["index"]
+		# Assuming seed was already handled by GameManager.load_course_data
+	else:
+		current_q_index = 0
 
 	strike_streak = 0
 	if strike_system: strike_system.reset_visuals()
 
-	# Apply Difficulty Slicing
-	var target_count: int = int(settings["question_count"])
-	var actual_count: int = min(GameManager.questions_pool.size(), target_count)
-	GameManager.questions_pool = GameManager.questions_pool.slice(0, actual_count)
+	# No more slicing! We play the full pool, but in chunks.
+	var actual_count: int = GameManager.questions_pool.size()
 
 	# Calculate Population (Fixed for Session)
 	var pop_range: Dictionary = settings["population_range"]
@@ -101,8 +112,10 @@ func start_game() -> void:
 	else:
 		save_weight = 100
 
-	# Setup Timers
-	var total_time: float = actual_count * float(settings["time_per_question"])
+	# Setup Timers (Timer is now Shift based, or infinite?
+	# Original "round_timer" was based on total questions.
+	# Let's base it on Shift Size for now, to keep pressure)
+	var total_time: float = shift_size * float(settings["time_per_question"])
 	round_timer.start(total_time)
 
 	question_timer.wait_time = float(settings["time_per_question"])
@@ -116,16 +129,21 @@ func start_game() -> void:
 		audio_manager.sfx_ambience.play()
 
 	current_state = State.PLAYING
-	load_question(0)
+	load_question(current_q_index)
 	
 
 func load_question(index: int, skip_event_check: bool = false) -> void:
+	# Shift Budget Check
+	if questions_completed_this_shift >= shift_size:
+		_trigger_shift_end()
+		return
+
 	if index >= GameManager.questions_pool.size():
 		finish_game()
 		return
 
-	# Field Exercise Check
-	if not skip_event_check and current_q_index > 0 and rng.randf() < FIELD_EXERCISE_CHANCE:
+	# Field Exercise Check (skipped if just resuming or internal call)
+	if not skip_event_check and questions_completed_this_shift > 0 and rng.randf() < FIELD_EXERCISE_CHANCE:
 		_trigger_field_exercise()
 		return
 
@@ -246,7 +264,6 @@ func _handle_correct(idx: int) -> void:
 
 	var actual_saved = int(save_weight * GameManager.rescue_multiplier)
 	GameManager.citizens_saved += actual_saved
-	# Cap removed because we check for >= total_population
 
 	feedback_label.text = "RESCUE CONFIRMED (+%d)" % actual_saved
 	feedback_label.modulate = Color.CYAN
@@ -260,6 +277,9 @@ func _handle_correct(idx: int) -> void:
 
 	if idx >= 0 and idx < answer_buttons.size():
 		answer_buttons[idx].modulate = Color.GREEN
+
+	# Increment Progress
+	questions_completed_this_shift += 1
 
 	if GameManager.citizens_saved >= GameManager.total_population:
 		_trigger_victory()
@@ -322,8 +342,17 @@ func _trigger_game_over() -> void:
 	if strike_system: strike_system.trigger_game_over_sequence()
 	if audio_manager: audio_manager.play_alarm()
 
+	# Hardcore Check
+	if GameManager.current_difficulty == GameManager.Difficulty.HIGH:
+		ProfileManager.clear_progress(GameManager.current_course_id)
+		feedback_label.text += "\nFATAL ERROR: JOB TERMINATED"
+	else:
+		# Soft Fail: Just retry shift? Or just end session?
+		# For now, end session, but progress is NOT saved, so next load starts at shift start.
+		feedback_label.text += "\nSHIFT ABORTED"
+
 	await get_tree().create_timer(2.0).timeout
-	finish_game()
+	GameManager.change_scene("res://src/scenes/MainMenu.tscn")
 
 func _trigger_victory() -> void:
 	current_state = State.END
@@ -334,10 +363,37 @@ func _trigger_victory() -> void:
 	feedback_label.modulate = Color.GREEN
 	feedback_label.visible = true
 
+	# Course Complete - Clear Progress
+	ProfileManager.clear_progress(GameManager.current_course_id)
+
 	if audio_manager: audio_manager.play_correct()
 
 	await get_tree().create_timer(2.0).timeout
 	finish_game()
+
+func _trigger_shift_end() -> void:
+	current_state = State.END
+	question_timer.stop()
+	round_timer.stop()
+
+	# Save Progress
+	ProfileManager.save_progress(
+		GameManager.current_course_id,
+		current_q_index,
+		GameManager.current_seed,
+		GameManager.current_difficulty,
+		GameManager.questions_pool.size()
+	)
+
+	var shift_summary = preload("res://src/scenes/ShiftSummary.tscn").instantiate()
+
+	# Inject data into summary if needed (e.g., stats)
+	# shift_summary.setup(...)
+
+	if crt_screen:
+		crt_screen.add_child(shift_summary)
+	else:
+		add_child(shift_summary)
 
 func finish_game() -> void:
 	current_state = State.END
