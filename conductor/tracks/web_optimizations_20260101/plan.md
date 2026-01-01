@@ -1,6 +1,6 @@
 # Plan - Web Export Optimizations
 
-## Phase 1: Project & Export Configuration
+## Phase 1: Project & Export Configuration [checkpoint: 3e84103]
 This phase focuses on the "static" configuration changes required for Web compatibility.
 - [x] Task: Update `project.godot` Rendering Settings d596e50
     - Set `rendering/renderer/rendering_method` to `gl_compatibility`.
