@@ -8,6 +8,12 @@ extends Control
 	"1140": "Disaster and Emergency Management Related Legislation, Standards, and Stakeholders",
 }
 
+@export_group("UI Containers")
+@export var login_view: Control
+@export var dashboard_view: Control
+@export var clock_in_btn: Button
+
+@export_group("Menu Components")
 @export var buttons_container: GridContainer
 @export var difficulty_popup: Control
 @export var settings_overlay: Control
@@ -26,6 +32,11 @@ var pending_course_id: String = ""
 
 func _ready() -> void:
 	add_to_group("main_menu")
+
+	# Initial View State
+	if login_view: login_view.show()
+	if dashboard_view: dashboard_view.hide()
+
 	# Scan for available question files
 	scan_courses()
 	create_menu_buttons()
@@ -40,11 +51,11 @@ func _ready() -> void:
 	if credits_overlay and credits_overlay.has_signal("close_requested"):
 		credits_overlay.close_requested.connect(_on_credits_closed)
 
-	connect_footer_buttons()
+	if clock_in_btn:
+		clock_in_btn.pressed.connect(_on_clock_in_pressed)
+		clock_in_btn.grab_focus()
 
-	# Initial focus for controller/keyboard accessibility
-	if buttons_container and buttons_container.get_child_count() > 0:
-		buttons_container.get_child(0).call_deferred("grab_focus")
+	connect_footer_buttons()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"): # Esc
@@ -63,6 +74,36 @@ func connect_footer_buttons() -> void:
 		credits_btn.pressed.connect(_on_credits_pressed)
 	if quit_btn:
 		quit_btn.pressed.connect(_on_quit_pressed)
+
+func _on_clock_in_pressed() -> void:
+	if sfx_click:
+		# If we want a specific sound, we might need a separate player or change the stream
+		# But using the standard click is consistent. The prompt suggested switch_003.ogg.
+		# I'll create a transient player or just play the click for now if no dedicated player.
+		# However, sfx_click is exported and assigned 'click_003.ogg' in TCN.
+		# The prompt asked for 'switch_003.ogg'.
+		# I'll try to load it dynamically if possible, or just use what we have to be safe.
+		# Actually, I can just load it.
+		var stream = load("res://assets/audio/sfx/ClickSFX/switch_003.ogg")
+		if stream:
+			sfx_click.stream = stream
+			sfx_click.play()
+		else:
+			sfx_click.play()
+
+	# CRT "Boot" Flash
+	var crt = find_child("CRTScreen")
+	if crt and crt.material:
+		var tween = create_tween()
+		tween.tween_property(crt.material, "shader_parameter/brightness", 5.0, 0.1)
+		tween.tween_property(crt.material, "shader_parameter/brightness", 1.4, 0.2)
+
+	if login_view: login_view.hide()
+	if dashboard_view: dashboard_view.show()
+
+	# Initial focus for controller/keyboard accessibility in Dashboard
+	if buttons_container and buttons_container.get_child_count() > 0:
+		buttons_container.get_child(0).call_deferred("grab_focus")
 
 func scan_courses() -> void:
 	available_courses.clear()
@@ -98,6 +139,10 @@ func create_menu_buttons() -> void:
 		buttons_container.add_child(card)
 
 func _on_category_selected(course_id: String) -> void:
+	# Restore standard click sound if it was changed
+	if sfx_click and sfx_click.stream.resource_path != "res://assets/audio/sfx/ClickSFX/click_003.ogg":
+		sfx_click.stream = load("res://assets/audio/sfx/ClickSFX/click_003.ogg")
+
 	if sfx_click: sfx_click.play()
 	pending_course_id = course_id
 
