@@ -112,7 +112,8 @@ func start_game() -> void:
 	update_rescue_ui()
 	update_score_ui()
 
-	if audio_manager: audio_manager.sfx_ambience.play()
+	if audio_manager and audio_manager.sfx_ambience:
+		audio_manager.sfx_ambience.play()
 
 	current_state = State.PLAYING
 	load_question(0)

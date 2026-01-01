@@ -1,6 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://befnihtjxwy32"]
 
 [ext_resource type="Script" uid="uid://cenn0lxa0jbxw" path="res://src/scripts/AARScreen.gd" id="1_ytt3w"]
+[ext_resource type="Script" path="res://src/components/AARAudio.gd" id="10_aar_audio"]
 [ext_resource type="Texture2D" uid="uid://dkfi1nd6y77ee" path="res://assets/ui/backgrounds/Gemini_Generated_Image_f71n1cf71n1cf71n.png" id="2_oc4gb"]
 [ext_resource type="Shader" uid="uid://catxjmc45pfvr" path="res://content/resources/shaders/crt_screen.gdshader" id="3_bddxc"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="3_frbb8"]
@@ -246,8 +247,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AudioManager" type="Node" parent="."]
-script = ExtResource("10_v4b0s")
+[node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("sfx_click", "sfx_tally", "sfx_pop", "music_victory", "music_fail")]
+script = ExtResource("10_aar_audio")
+sfx_click = NodePath("SFX_Click")
+sfx_tally = NodePath("SFX_Result")
+sfx_pop = NodePath("SFX_Pop")
+music_victory = NodePath("SFX_Success")
+music_fail = NodePath("SFX_Fail")
 
 [node name="SFX_Click" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("4_mtiue")

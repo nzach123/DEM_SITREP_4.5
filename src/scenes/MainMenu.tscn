@@ -1,6 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://c8j7k5m2p1q4n"]
 
 [ext_resource type="Script" uid="uid://bet0vs3tt2bki" path="res://src/scripts/MainMenu.gd" id="1_menu"]
+[ext_resource type="Script" path="res://src/components/MenuAudio.gd" id="13_audio"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_b83k2"]
 [ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="2_cbw1n"]
 [ext_resource type="Texture2D" uid="uid://dh8aeudaycobc" path="res://assets/ui/backgrounds/Gemini_Generated_Image_skrc7zskrc7zskrc.png" id="2_rh4h2"]
@@ -246,7 +247,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AudioManager" type="Node" parent="."]
+[node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("music_player", "sfx_click")]
+script = ExtResource("13_audio")
+music_player = NodePath("SFX_Background_Loop")
+sfx_click = NodePath("SFX_Click")
 
 [node name="SFX_Click" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("3_sfx")

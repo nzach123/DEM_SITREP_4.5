@@ -83,10 +83,9 @@ func display_results() -> void:
 
 	# Play Audio
 	if percent < 0.5:
-		if audio_manager: audio_manager.play_fail()
+		if audio_manager: audio_manager.play_fail_music()
 	else:
-		if audio_manager: audio_manager.play_success()
-	if audio_manager: audio_manager.play_result()
+		if audio_manager: audio_manager.play_victory_music()
 
 	# History Display
 	var mistakes_duration: float = 0.0
@@ -132,6 +131,9 @@ func _on_menu() -> void:
 	GameManager.change_scene("res://src/scenes/MainMenu.tscn")
 
 func play_click() -> void:
-	if audio_manager.sfx_click:
-		audio_manager.sfx_click.play()
-		await audio_manager.sfx_click.finished
+	if audio_manager:
+		audio_manager.play_click()
+		if audio_manager.sfx_click:
+			await audio_manager.sfx_click.finished
+		else:
+			await get_tree().process_frame
