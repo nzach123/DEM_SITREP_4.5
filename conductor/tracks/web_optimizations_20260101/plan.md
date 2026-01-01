@@ -2,11 +2,11 @@
 
 ## Phase 1: Project & Export Configuration
 This phase focuses on the "static" configuration changes required for Web compatibility.
-- [x] Task: Update `project.godot` Rendering Settings
+- [x] Task: Update `project.godot` Rendering Settings d596e50
     - Set `rendering/renderer/rendering_method` to `gl_compatibility`.
     - Set `rendering/renderer/rendering_method.mobile` to `gl_compatibility`.
     - Enable `rendering/textures/vram_compression/import_etc2_astc`.
-- [x] Task: Update `export_presets.cfg` for Web
+- [x] Task: Update `export_presets.cfg` for Web d596e50
     - **Note:** If `export_presets.cfg` does not exist, create a basic Web preset.
     - Set `html/custom_html_shell` (if applicable) or default.
     - **Critical:** Add `*.json` to `include_filter` (Resources > Filters to export non-resource files).
