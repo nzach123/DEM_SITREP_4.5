@@ -1,0 +1,8 @@
+{
+  "track_id": "aar_audio_fix_20260101",
+  "type": "bug",
+  "status": "new",
+  "created_at": "2026-01-01T00:55:00Z",
+  "updated_at": "2026-01-01T00:55:00Z",
+  "description": "Fix AAR Screen Music Playback issues where victory/fail cues are silent."
+}

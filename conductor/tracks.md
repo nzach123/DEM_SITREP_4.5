@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [~] Track: Quiz Audio Typewriter Variation
-*Link: [./conductor/tracks/typewriter_variation_20251231/](./conductor/tracks/typewriter_variation_20251231/)*
+## [ ] Track: Fix AAR Screen Music Playback
+*Link: [./conductor/tracks/aar_audio_fix_20260101/](./conductor/tracks/aar_audio_fix_20260101/)*
