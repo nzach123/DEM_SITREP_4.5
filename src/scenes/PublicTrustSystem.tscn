@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3x7y201a3c4e"]
+[gd_scene load_steps=7 format=3 uid="uid://d3x7y201a3c4e"]
 
-[ext_resource type="Script" uid="uid://c8x7y201a3c4f" path="res://src/components/PublicTrustSystem.gd" id="1_trust"]
+[ext_resource type="Script" uid="uid://dehmnycddhxgq" path="res://src/components/PublicTrustSystem.gd" id="1_trust"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_theme"]
 
 [sub_resource type="Gradient" id="Gradient_trust"]
@@ -42,14 +42,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -60.0
-offset_top = 5.0
-offset_right = 60.0
-offset_bottom = 29.0
+offset_left = -75.0
+offset_right = 75.0
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_theme")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 36
 text = "PUBLIC TRUST"
 horizontal_alignment = 1
 
