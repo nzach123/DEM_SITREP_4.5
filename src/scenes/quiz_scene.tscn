@@ -30,7 +30,7 @@
 [ext_resource type="Script" uid="uid://cdfd2urify3r6" path="res://src/components/QuizAudio.gd" id="Comp_Audio"]
 [ext_resource type="Script" uid="uid://cno7l45c4w7n3" path="res://src/components/QuizCamera.gd" id="Comp_Cam"]
 [ext_resource type="Script" uid="uid://03hbla8pu4cl" path="res://src/components/BackgroundPulse.gd" id="Comp_Pulse"]
-[ext_resource type="Script" uid="uid://buusdfhal8t3i" path="res://src/components/QuizStrikeSystem.gd" id="Comp_Strike"]
+[ext_resource type="PackedScene" uid="uid://d3x7y201a3c4e" path="res://src/scenes/PublicTrustSystem.tscn" id="Comp_Trust"]
 
 [sub_resource type="Gradient" id="Gradient_ijcxg"]
 offsets = PackedFloat32Array(0.376471, 1)
@@ -74,7 +74,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[node name="QuizScene" type="Control" node_paths=PackedStringArray("audio_manager", "game_camera", "background_pulse", "strike_system", "question_label", "round_time_label", "rescued_value_label", "casualties_value_label", "timer_label", "timer_bar", "rescue_bar", "feedback_label", "remediation_popup", "answer_buttons", "question_timer", "round_timer")]
+[node name="QuizScene" type="Control" node_paths=PackedStringArray("audio_manager", "game_camera", "background_pulse", "trust_system", "question_label", "round_time_label", "rescued_value_label", "casualties_value_label", "timer_label", "timer_bar", "rescue_bar", "feedback_label", "remediation_popup", "answer_buttons", "question_timer", "round_timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,7 +85,7 @@ script = ExtResource("1_yjr3o")
 audio_manager = NodePath("AudioManager")
 game_camera = NodePath("Camera2D")
 background_pulse = NodePath("Background")
-strike_system = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/StrikeContainer")
+trust_system = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/PublicTrustSystem")
 question_label = NodePath("VBoxContainer/HBoxContainer/RightMarginContainer/PanelContainer/VBoxContainer/QuestionsMarginContainer/QuestionLabel")
 round_time_label = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/TimeContainer/TimeValueLabel")
 rescued_value_label = NodePath("VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/RescuedContainer/RescuedValueLabel")
@@ -319,38 +319,9 @@ theme_override_fonts/font = ExtResource("13_i6oeq")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/fill = SubResource("StyleBoxFlat_ijcxg")
 
-[node name="StrikeContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer" node_paths=PackedStringArray("giant_x_label")]
+[node name="PublicTrustSystem" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer" instance=ExtResource("Comp_Trust")]
 layout_mode = 2
-alignment = 1
-script = ExtResource("Comp_Strike")
-giant_x_label = NodePath("../../../../../../../GiantXLabel")
-
-[node name="Strike1" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/StrikeContainer"]
-visible = false
-modulate = Color(1, 0, 0, 1)
-layout_mode = 2
-theme = ExtResource("1_c7ybq")
-text = "X"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Strike2" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/StrikeContainer"]
-visible = false
-modulate = Color(1, 0, 0, 1)
-layout_mode = 2
-theme = ExtResource("1_c7ybq")
-text = "X"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Strike3" type="Label" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer/StrikeContainer"]
-visible = false
-modulate = Color(1, 0, 0, 1)
-layout_mode = 2
-theme = ExtResource("1_c7ybq")
-text = "X"
-horizontal_alignment = 1
-vertical_alignment = 1
+size_flags_horizontal = 4
 
 [node name="RightMarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2

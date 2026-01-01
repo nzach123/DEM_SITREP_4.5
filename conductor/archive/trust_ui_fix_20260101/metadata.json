@@ -1,0 +1,8 @@
+{
+  "track_id": "trust_ui_fix_20260101",
+  "type": "bug",
+  "status": "new",
+  "created_at": "2026-01-01T14:21:00Z",
+  "updated_at": "2026-01-01T14:21:00Z",
+  "description": "In quiz_scene, after the user submits an answer to the first quiz question, the PublicTrustSystem UI element unexpectedly repositions itself to the top-left of its parent VBoxContainer, instead of maintaining its intended layout. Diagnose the root cause and implement a fix."
+}

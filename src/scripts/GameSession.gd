@@ -8,7 +8,7 @@ enum State { SETUP, PLAYING, LOCKED, END }
 @export var audio_manager: QuizAudioManager
 @export var game_camera: QuizCamera
 @export var background_pulse: BackgroundPulse
-@export var strike_system: QuizStrikeSystem
+@export var trust_system: PublicTrustSystem
 
 # --- UI NODES ---
 @export_group("UI Elements")
@@ -36,19 +36,19 @@ var current_state: State = State.SETUP
 var current_q_index: int = 0
 var current_shuffled_answers: Array[Dictionary] = []
 var save_weight: int = 0
-var strike_streak: int = 0
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
-const MAX_STRIKES: int = 3
 const FIELD_EXERCISE_CHANCE: float = 0.15
 
 func _ready() -> void:
 	_connect_signals()
 
 	# Initial Setup
-	if strike_system: strike_system.reset_visuals()
 	if background_pulse: background_pulse.update_pulse(0)
 	if audio_manager: audio_manager.stop_ambience()
+
+	if trust_system:
+		trust_system.trust_depleted.connect(_on_trust_depleted)
 
 	# Load Data and Start
 	if GameManager.questions_pool.size() > 0:
@@ -83,9 +83,6 @@ func start_game() -> void:
 
 	current_q_index = 0
 	GameManager.questions_pool.shuffle()
-
-	strike_streak = 0
-	if strike_system: strike_system.reset_visuals()
 
 	# Apply Difficulty Slicing
 	var target_count: int = int(settings["question_count"])
@@ -242,8 +239,7 @@ func _on_button_pressed(selected_idx: int) -> void:
 func _handle_correct(idx: int) -> void:
 	if audio_manager: audio_manager.play_correct()
 
-	strike_streak = 0
-	if strike_system: strike_system.reset_visuals()
+	if trust_system: trust_system.heal_trust(5.0) # Small heal reward
 	if background_pulse: background_pulse.update_pulse(0)
 
 	var q_data: Dictionary = GameManager.questions_pool[current_q_index]
@@ -274,11 +270,13 @@ func _handle_correct(idx: int) -> void:
 func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user_choice_text: String) -> void:
 	if audio_manager: audio_manager.play_wrong()
 
-	strike_streak += 1
-	if strike_system: strike_system.update_visuals(strike_streak)
-	if background_pulse: background_pulse.update_pulse(strike_streak)
+	var settings = GameManager.get_current_settings()
+	var trust_dmg: float = float(settings.get("trust_penalty", 10.0))
 
-	var penalty: int = int(GameManager.get_current_settings()["casualty_penalty"])
+	if trust_system: trust_system.damage_trust(trust_dmg)
+	if background_pulse: background_pulse.update_pulse(1) # Generic pulse for damage
+
+	var penalty: int = int(settings["casualty_penalty"])
 	GameManager.casualties_count += penalty
 
 	feedback_label.text = "SIGNAL LOST: %d CASUALTIES" % penalty
@@ -305,8 +303,8 @@ func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user
 	if correct_idx != -1 and correct_idx < answer_buttons.size():
 		answer_buttons[correct_idx].modulate = Color.GREEN
 
-	if strike_streak >= MAX_STRIKES:
-		_trigger_game_over()
+	# Check if game over was triggered by trust system signal
+	if current_state == State.END:
 		return
 
 	# Remediation
@@ -320,12 +318,11 @@ func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user
 		remediation_popup.call("set_explanation", explanation)
 		remediation_popup.show()
 
-func _trigger_game_over() -> void:
+func _on_trust_depleted() -> void:
 	current_state = State.END
-	feedback_label.text = "CRITICAL FAILURE: 3 STRIKES"
+	feedback_label.text = "CIVIL AUTHORITY REVOKED"
 	feedback_label.visible = true
 
-	if strike_system: strike_system.trigger_game_over_sequence()
 	if audio_manager: audio_manager.play_alarm()
 
 	await get_tree().create_timer(2.0).timeout
@@ -380,8 +377,8 @@ func finish_game() -> void:
 
 	question_label.text = "OPERATION COMPLETE"
 
-	if strike_streak >= MAX_STRIKES:
-		feedback_label.text = "MISSION FAILED: SYSTEM LOCKOUT"
+	if trust_system and trust_system.current_trust <= 0:
+		feedback_label.text = "MISSION FAILED: TRUST DEPLETED"
 		feedback_label.modulate = Color.RED
 	elif GameManager.citizens_saved >= GameManager.total_population:
 		feedback_label.text = "SUCCESS: ALL CITIZENS SAVED"
