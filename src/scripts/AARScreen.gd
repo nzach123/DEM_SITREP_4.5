@@ -20,6 +20,11 @@ const MONTSERRAT_BUTTON_THEME = preload("res://content/resources/themes/Montserr
 const LOG_CARD_SCENE: PackedScene = preload("res://src/scenes/LogEntryCard.tscn")
 
 func _ready() -> void:
+	if not audio_manager:
+		audio_manager = get_node_or_null("AudioManager")
+		if not audio_manager:
+			push_warning("AARScreen: AudioManager not found!")
+
 	if mistake_container:
 		mistake_container.add_theme_constant_override("separation", 8)
 
