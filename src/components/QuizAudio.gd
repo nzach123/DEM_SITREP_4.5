@@ -41,7 +41,7 @@ func stop_alarm() -> void:
 	if sfx_alarm:
 		sfx_alarm.stop()
 
-func play_typeon() -> void:
+func play_typewriter() -> void:
 	# Randomize pitch slightly for mechanical feel
 	if sfx_typewriter:
 		sfx_typewriter.pitch_scale = randf_range(0.95, 1.05)

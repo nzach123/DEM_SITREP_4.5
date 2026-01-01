@@ -1,7 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://befnihtjxwy32"]
 
 [ext_resource type="Script" uid="uid://cenn0lxa0jbxw" path="res://src/scripts/AARScreen.gd" id="1_ytt3w"]
-[ext_resource type="Script" path="res://src/components/AARAudio.gd" id="10_aar_audio"]
 [ext_resource type="Texture2D" uid="uid://dkfi1nd6y77ee" path="res://assets/ui/backgrounds/Gemini_Generated_Image_f71n1cf71n1cf71n.png" id="2_oc4gb"]
 [ext_resource type="Shader" uid="uid://catxjmc45pfvr" path="res://content/resources/shaders/crt_screen.gdshader" id="3_bddxc"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="3_frbb8"]
@@ -11,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://btcgxsqgjs5sa" path="res://assets/audio/sfx/ClickSFX/scroll_004.ogg" id="5_0bl5x"]
 [ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="6_anim"]
 [ext_resource type="AudioStream" uid="uid://bw5vc22obuemp" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="7_hover"]
-[ext_resource type="Script" uid="uid://d3agm2flpj0sa" path="res://src/components/MenuAudio.gd" id="10_v4b0s"]
+[ext_resource type="Script" uid="uid://c0a1rd83el8gx" path="res://src/components/AARAudio.gd" id="10_aar_audio"]
 [ext_resource type="AudioStream" uid="uid://tbfkxee0t6sf" path="res://assets/audio/sfx/ClickSFX/maximize_004.ogg" id="11_66bpe"]
 [ext_resource type="AudioStream" uid="uid://cykn54ga46h5a" path="res://assets/audio/sfx/game_pver_sfx.ogg" id="12_0714p"]
 
