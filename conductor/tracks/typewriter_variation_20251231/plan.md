@@ -2,7 +2,7 @@
 
 This plan covers the refactoring of typewriter sound logic to include randomization and a "no-repeat" constraint.
 
-## Phase 1: Setup & Refactoring
+## Phase 1: Setup & Refactoring [checkpoint: 8dc7a0f]
 - [x] Task: Create `tests/unit/test_QuizAudioManager.gd` with initial failing tests for `play_typewriter`.
 - [x] Task: Rename `play_typeon()` to `play_typewriter()` in `src/components/QuizAudio.gd`.
 - [x] Task: Update the caller in `src/scripts/GameSession.gd` (Line 152) to use `play_typewriter()`.
