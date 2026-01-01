@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://b1lhnocf7703x" path="res://assets/audio/sfx/type-on_sfx_01.ogg" id="24_yqsvu"]
 [ext_resource type="AudioStream" uid="uid://vf4d0twf4bi5" path="res://assets/audio/sfx/type-on_sfx_02.ogg" id="25_faugf"]
 [ext_resource type="AudioStream" uid="uid://bq57sut8fwkj3" path="res://assets/audio/sfx/type-on_sfx_03.ogg" id="26_i88oe"]
+[ext_resource type="AudioStream" uid="uid://bt6hsptmod1yk" path="res://assets/audio/music/Loops/computerNoise_003.ogg" id="30_noise"]
 [ext_resource type="Script" uid="uid://cdfd2urify3r6" path="res://src/components/QuizAudio.gd" id="Comp_Audio"]
 [ext_resource type="Script" uid="uid://cno7l45c4w7n3" path="res://src/components/QuizCamera.gd" id="Comp_Cam"]
 [ext_resource type="Script" uid="uid://03hbla8pu4cl" path="res://src/components/BackgroundPulse.gd" id="Comp_Pulse"]
@@ -512,16 +513,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("sfx_correct", "sfx_wrong", "sfx_click", "sfx_alarm", "sfx_ambience", "sfx_typeon01", "sfx_typeon02", "sfx_typeon03")]
+[node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("sfx_room_tone", "sfx_ambience", "sfx_incoming_alert", "sfx_typewriter_pool", "sfx_correct", "sfx_wrong", "sfx_click", "sfx_alarm")]
 script = ExtResource("Comp_Audio")
+sfx_room_tone = NodePath("SFX_RoomTone")
+sfx_ambience = NodePath("SFX_BackgroundMusic")
+sfx_incoming_alert = NodePath("SFX_Incoming")
+sfx_typewriter_pool = [NodePath("SFX_typeon01"), NodePath("SFX_typeon02"), NodePath("SFX_typeon03")]
 sfx_correct = NodePath("SFX_Correct")
 sfx_wrong = NodePath("SFX_Wrong")
 sfx_click = NodePath("SFX_Click")
 sfx_alarm = NodePath("SFX_Alarm")
-sfx_ambience = NodePath("SFX_BackgroundMusic")
-sfx_typeon01 = NodePath("SFX_typeon01")
-sfx_typeon02 = NodePath("SFX_typeon02")
-sfx_typeon03 = NodePath("SFX_typeon03")
 
 [node name="SFX_BackgroundMusic" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("8_21hr1")
@@ -547,6 +548,13 @@ stream = ExtResource("10_xgaly")
 
 [node name="SFX_Wrong" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("7_ijcxg")
+
+[node name="SFX_RoomTone" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("30_noise")
+volume_db = -15.0
+
+[node name="SFX_Incoming" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("10_xgaly")
 
 [node name="RoundTimer" type="Timer" parent="."]
 wait_time = 60.0

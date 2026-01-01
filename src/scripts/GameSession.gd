@@ -148,6 +148,12 @@ func load_question(index: int, skip_event_check: bool = false) -> void:
 	feedback_label.visible = false
 	timer_bar.modulate = Color(1, 1, 1)
 
+	# --- Triage Sequence ---
+	if audio_manager:
+		audio_manager.play_incoming_alert()
+
+	await get_tree().create_timer(0.5).timeout
+
 	_animate_text(question_label, q_data.get("question", "Error: No Question Text"))
 	if audio_manager: audio_manager.play_typewriter()
 	
@@ -248,7 +254,7 @@ func _handle_correct(idx: int) -> void:
 	GameManager.citizens_saved += actual_saved
 	# Cap removed because we check for >= total_population
 
-	feedback_label.text = "RESCUE CONFIRMED (+%d)" % actual_saved
+	feedback_label.text = "INTEL VERIFIED (+%d)" % actual_saved
 	feedback_label.modulate = Color.CYAN
 	feedback_label.visible = true
 

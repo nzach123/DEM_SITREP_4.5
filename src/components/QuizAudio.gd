@@ -2,82 +2,69 @@ extends Node
 class_name QuizAudioManager
 
 # --- Configuration ---
-@export_group("Feedback Sounds")
+@export_group("Room Tone (Diegetic)")
+@export var sfx_room_tone: AudioStreamPlayer
+@export var sfx_ambience: AudioStreamPlayer
+
+@export_group("Triage Events")
+@export var sfx_incoming_alert: AudioStreamPlayer
+@export var sfx_typewriter_pool: Array[AudioStreamPlayer]
+
+@export_group("Feedback")
 @export var sfx_correct: AudioStreamPlayer
 @export var sfx_wrong: AudioStreamPlayer
 @export var sfx_click: AudioStreamPlayer
-
-@export_group("Atmosphere")
 @export var sfx_alarm: AudioStreamPlayer
-@export var sfx_ambience: AudioStreamPlayer
 
-@export_group("Typewriter Variations")
-@export var sfx_typeon01: AudioStreamPlayer
-@export var sfx_typeon02: AudioStreamPlayer
-@export var sfx_typeon03: AudioStreamPlayer
-
-var _typewriter_sounds: Array[AudioStreamPlayer] = []
 var _last_played_index: int = -1
 
 func _ready() -> void:
-	# Fallback: Find children if exports are not assigned (Backwards compatibility with existing scene)
-	if not sfx_correct: sfx_correct = get_node_or_null("SFX_Correct")
-	if not sfx_wrong: sfx_wrong = get_node_or_null("SFX_Wrong")
-	if not sfx_click: sfx_click = get_node_or_null("SFX_Click")
-	if not sfx_alarm: sfx_alarm = get_node_or_null("SFX_Alarm")
-	if not sfx_ambience: sfx_ambience = get_node_or_null("SFX_BackgroundMusic")
-	
-	if not sfx_typeon01: sfx_typeon01 = get_node_or_null("SFX_typeon01")
-	if not sfx_typeon02: sfx_typeon02 = get_node_or_null("SFX_typeon02")
-	if not sfx_typeon03: sfx_typeon03 = get_node_or_null("SFX_typeon03")
+	start_shift()
 
-	# Populate pool
-	if sfx_typeon01: _typewriter_sounds.append(sfx_typeon01)
-	if sfx_typeon02: _typewriter_sounds.append(sfx_typeon02)
-	if sfx_typeon03: _typewriter_sounds.append(sfx_typeon03)
+func start_shift() -> void:
+	# The room tone is the reality anchor. It always runs.
+	if sfx_room_tone and not sfx_room_tone.playing:
+		sfx_room_tone.play()
 
+	# Music is the mood layer.
 	if sfx_ambience and not sfx_ambience.playing:
 		sfx_ambience.play()
 
-func play_correct() -> void:
-	_play_if_valid(sfx_correct)
-
-func play_wrong() -> void:
-	_play_if_valid(sfx_wrong)
-
-func play_click() -> void:
-	_play_if_valid(sfx_click)
-
-func play_alarm() -> void:
-	if sfx_alarm and not sfx_alarm.playing:
-		sfx_alarm.play()
-
-func stop_alarm() -> void:
-	if sfx_alarm:
-		sfx_alarm.stop()
+func play_incoming_alert() -> void:
+	_play_if_valid(sfx_incoming_alert)
 
 func play_typewriter() -> void:
-	if _typewriter_sounds.is_empty():
+	if sfx_typewriter_pool.is_empty():
 		return
 
 	var index = 0
-	if _typewriter_sounds.size() > 1:
-		index = randi() % _typewriter_sounds.size()
+	if sfx_typewriter_pool.size() > 1:
+		# Simple non-repeating random
+		index = randi() % sfx_typewriter_pool.size()
 		while index == _last_played_index:
-			index = randi() % _typewriter_sounds.size()
+			index = randi() % sfx_typewriter_pool.size()
 	
 	_last_played_index = index
-	var sound = _typewriter_sounds[index]
+	var sound = sfx_typewriter_pool[index]
 	
-	# Randomize pitch slightly for mechanical feel
-	sound.pitch_scale = randf_range(0.95, 1.05)
-	sound.play()
+	# Slight pitch variance makes it feel like processing data
+	if sound:
+		sound.pitch_scale = randf_range(0.95, 1.05)
+		sound.play()
+
+func play_correct() -> void: _play_if_valid(sfx_correct)
+func play_wrong() -> void: _play_if_valid(sfx_wrong)
+func play_click() -> void: _play_if_valid(sfx_click)
+
+func play_alarm() -> void:
+	if sfx_alarm and not sfx_alarm.playing: sfx_alarm.play()
+
+func stop_alarm() -> void:
+	if sfx_alarm: sfx_alarm.stop()
 
 func stop_ambience() -> void:
-	if sfx_ambience:
-		sfx_ambience.stop()
+	if sfx_ambience: sfx_ambience.stop()
+	# Note: We usually DO NOT stop room tone, as the room still exists.
 
-# Helper to prevent crashes if a node isn't assigned
 func _play_if_valid(player: AudioStreamPlayer) -> void:
-	if player:
-		player.play()
+	if player: player.play()
