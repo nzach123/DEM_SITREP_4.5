@@ -29,15 +29,15 @@ func _ready() -> void:
 	
 	if not music_victory: 
 		push_warning("AARAudioManager: Victory Music node missing")
-	else:
-		if music_victory.stream != MUSIC_VICTORY_STREAM:
-			music_victory.stream = MUSIC_VICTORY_STREAM
+	#else:
+		#if music_victory.stream != MUSIC_VICTORY_STREAM:
+			#music_victory.stream = MUSIC_VICTORY_STREAM
 			
 	if not music_fail: 
 		push_warning("AARAudioManager: Fail Music node missing")
-	else:
-		if music_fail.stream != MUSIC_FAIL_STREAM:
-			music_fail.stream = MUSIC_FAIL_STREAM
+	#else:
+		#if music_fail.stream != MUSIC_FAIL_STREAM:
+			#music_fail.stream = MUSIC_FAIL_STREAM
 			
 	if sfx_ambience:
 		if sfx_ambience.stream != AMBIENCE_STREAM:

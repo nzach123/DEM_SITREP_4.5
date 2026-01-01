@@ -85,7 +85,7 @@ FINAL ASSESSMENT:
 		report_body.visible_ratio = 0.0
 
 	if action_buttons:
-		action_buttons.visible = false
+		action_buttons.visible = true
 		action_buttons.modulate.a = 0.0 # Prepare for fade in if we want, or just set visible
 
 	_is_printing = true

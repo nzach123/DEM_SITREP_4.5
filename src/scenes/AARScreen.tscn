@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://befnihtjxwy32"]
+[gd_scene load_steps=17 format=3 uid="uid://befnihtjxwy32"]
 
 [ext_resource type="Script" uid="uid://cenn0lxa0jbxw" path="res://src/scripts/AARScreen.gd" id="1_ytt3w"]
 [ext_resource type="Texture2D" uid="uid://dkfi1nd6y77ee" path="res://assets/ui/backgrounds/Gemini_Generated_Image_f71n1cf71n1cf71n.png" id="2_oc4gb"]
@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="3_frbb8"]
 [ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_i88ay"]
 [ext_resource type="AudioStream" uid="uid://cwi8tg0tp5a6h" path="res://assets/audio/sfx/ClickSFX/click_003.ogg" id="4_mtiue"]
-[ext_resource type="Theme" uid="uid://fioyouh4dvig" path="res://content/resources/themes/Raj_button_theme.tres" id="4_oc4gb"]
 [ext_resource type="AudioStream" uid="uid://btcgxsqgjs5sa" path="res://assets/audio/sfx/ClickSFX/scroll_004.ogg" id="5_0bl5x"]
 [ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="6_anim"]
 [ext_resource type="AudioStream" uid="uid://bw5vc22obuemp" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="7_hover"]
@@ -49,8 +48,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ytt3w")
-mistake_container = NodePath("MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox/ScrollContainer/LogContainer")
-no_data_label = NodePath("MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox/ScrollContainer/LogContainer/NoDataLabel")
+mistake_container = NodePath("MarginContainer/MainVBox/HBoxContainer/DataFeedPanel/MarginContainer/VBox/ScrollContainer/LogContainer")
+no_data_label = NodePath("MarginContainer/MainVBox/HBoxContainer/DataFeedPanel/MarginContainer/VBox/ScrollContainer/LogContainer/NoDataLabel")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -78,26 +77,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 20
 
 [node name="MainVBox" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="ReportPanel" type="PanelContainer" parent="MarginContainer/MainVBox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MainVBox"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.0
+
+[node name="ReportPanel" type="PanelContainer" parent="MarginContainer/MainVBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("3_i88ay")
 
-[node name="VBox" type="VBoxContainer" parent="MarginContainer/MainVBox/ReportPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MainVBox/HBoxContainer/ReportPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/MainVBox/HBoxContainer/ReportPanel/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ReportBody" type="RichTextLabel" parent="MarginContainer/MainVBox/ReportPanel/VBox"]
+[node name="ReportBody" type="RichTextLabel" parent="MarginContainer/MainVBox/HBoxContainer/ReportPanel/MarginContainer/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -108,61 +118,22 @@ theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
 text = "INITIALIZING REPORT..."
 
-[node name="ActionButtons" type="HBoxContainer" parent="MarginContainer/MainVBox/ReportPanel/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="RetryButton" type="Button" parent="MarginContainer/MainVBox/ReportPanel/VBox/ActionButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-tooltip_text = "REDEPLOY"
-theme = ExtResource("3_i88ay")
-theme_override_font_sizes/font_size = 42
-text = "REDEPLOY"
-
-[node name="AnimationComponent" type="Node" parent="MarginContainer/MainVBox/ReportPanel/VBox/ActionButtons/RetryButton"]
-script = ExtResource("6_anim")
-hover_scale = Vector2(1.05, 1.05)
-hover_sfx = ExtResource("7_hover")
-click_sfx = ExtResource("4_mtiue")
-metadata/_custom_type_script = "uid://dldl6e841cg0e"
-
-[node name="MenuButton" type="Button" parent="MarginContainer/MainVBox/ReportPanel/VBox/ActionButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-tooltip_text = "HQ"
-theme = ExtResource("3_i88ay")
-theme_override_font_sizes/font_size = 42
-text = "HQ"
-
-[node name="AnimationComponent" type="Node" parent="MarginContainer/MainVBox/ReportPanel/VBox/ActionButtons/MenuButton"]
-script = ExtResource("6_anim")
-hover_scale = Vector2(1.05, 1.05)
-hover_sfx = ExtResource("7_hover")
-click_sfx = ExtResource("4_mtiue")
-metadata/_custom_type_script = "uid://dldl6e841cg0e"
-
-[node name="DataFeedPanel" type="PanelContainer" parent="MarginContainer/MainVBox"]
+[node name="DataFeedPanel" type="PanelContainer" parent="MarginContainer/MainVBox/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.0
 theme = ExtResource("3_i88ay")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MainVBox/DataFeedPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MainVBox/HBoxContainer/DataFeedPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 25
 
-[node name="VBox" type="VBoxContainer" parent="MarginContainer/MainVBox/DataFeedPanel/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/MainVBox/HBoxContainer/DataFeedPanel/MarginContainer"]
 layout_mode = 2
 
-[node name="Header" type="Label" parent="MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox"]
+[node name="Header" type="Label" parent="MarginContainer/MainVBox/HBoxContainer/DataFeedPanel/MarginContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("3_frbb8")
@@ -171,22 +142,60 @@ theme_override_font_sizes/font_size = 48
 text = ">> DATA FEED LOG <<"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MainVBox/HBoxContainer/DataFeedPanel/MarginContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="LogContainer" type="VBoxContainer" parent="MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox/ScrollContainer"]
+[node name="LogContainer" type="VBoxContainer" parent="MarginContainer/MainVBox/HBoxContainer/DataFeedPanel/MarginContainer/VBox/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
-[node name="NoDataLabel" type="Label" parent="MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox/ScrollContainer/LogContainer"]
+[node name="NoDataLabel" type="Label" parent="MarginContainer/MainVBox/HBoxContainer/DataFeedPanel/MarginContainer/VBox/ScrollContainer/LogContainer"]
 layout_mode = 2
 theme = ExtResource("3_i88ay")
 theme_override_colors/font_color = Color(0.636162, 0.971033, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = ">> NO DATA RECORDED IN BLACK BOX."
+
+[node name="ActionButtons" type="HBoxContainer" parent="MarginContainer/MainVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="MarginContainer/MainVBox/ActionButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "REDEPLOY"
+theme = ExtResource("3_i88ay")
+theme_override_font_sizes/font_size = 42
+text = "REDEPLOY"
+
+[node name="AnimationComponent" type="Node" parent="MarginContainer/MainVBox/ActionButtons/RetryButton"]
+script = ExtResource("6_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("7_hover")
+click_sfx = ExtResource("4_mtiue")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
+
+[node name="MenuButton" type="Button" parent="MarginContainer/MainVBox/ActionButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "HQ"
+theme = ExtResource("3_i88ay")
+theme_override_font_sizes/font_size = 42
+text = "HQ"
+
+[node name="AnimationComponent" type="Node" parent="MarginContainer/MainVBox/ActionButtons/MenuButton"]
+script = ExtResource("6_anim")
+hover_scale = Vector2(1.05, 1.05)
+hover_sfx = ExtResource("7_hover")
+click_sfx = ExtResource("4_mtiue")
+metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
 [node name="CRTScreen" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_luru2")
