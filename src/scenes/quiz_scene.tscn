@@ -512,13 +512,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("sfx_correct", "sfx_wrong", "sfx_click", "sfx_alarm", "sfx_ambience")]
+[node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("sfx_correct", "sfx_wrong", "sfx_click", "sfx_alarm", "sfx_ambience", "sfx_typeon01", "sfx_typeon02", "sfx_typeon03")]
 script = ExtResource("Comp_Audio")
 sfx_correct = NodePath("SFX_Correct")
 sfx_wrong = NodePath("SFX_Wrong")
 sfx_click = NodePath("SFX_Click")
 sfx_alarm = NodePath("SFX_Alarm")
 sfx_ambience = NodePath("SFX_BackgroundMusic")
+sfx_typeon01 = NodePath("SFX_typeon01")
+sfx_typeon02 = NodePath("SFX_typeon02")
+sfx_typeon03 = NodePath("SFX_typeon03")
 
 [node name="SFX_BackgroundMusic" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("8_21hr1")
