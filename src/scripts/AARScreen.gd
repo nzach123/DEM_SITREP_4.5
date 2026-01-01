@@ -2,9 +2,8 @@ extends Control
 class_name AARScreen
 
 @export_group("Audio")
-@export var sfx_click: AudioStreamPlayer
-@export var sfx_result: AudioStreamPlayer
-@export var sfx_pop: AudioStream = preload("res://assets/audio/sfx/ClickSFX/maximize_004.ogg")
+@export var audio_manager: AARAudioManager
+
 
 @export_group("UI Nodes")
 @export var rank_letter: Label
@@ -16,8 +15,8 @@ class_name AARScreen
 @export var no_data_label: Label
 
 const MONTSERRAT_BUTTON_THEME = preload("res://content/resources/themes/Montserrat_button_theme.tres")
-var sfx_success: AudioStream = preload("res://assets/audio/music/Loops/Retro Polka.ogg")
-var sfx_fail: AudioStream = preload("res://assets/audio/music/Loops/computerNoise_003.ogg")
+#var sfx_success: AudioStream = preload("res://assets/audio/music/Loops/Retro Polka.ogg")
+#var sfx_fail: AudioStream = preload("res://assets/audio/music/Loops/computerNoise_003.ogg")
 const LOG_CARD_SCENE: PackedScene = preload("res://src/scenes/LogEntryCard.tscn")
 
 func _ready() -> void:
@@ -83,12 +82,11 @@ func display_results() -> void:
 		tween.tween_property(rank_letter, "modulate:a", 1.0, 0.8)
 
 	# Play Audio
-	if sfx_result:
-		if percent < 0.5:
-			sfx_result.stream = sfx_fail
-		else:
-			sfx_result.stream = sfx_success
-		sfx_result.play()
+	if percent < 0.5:
+		if audio_manager: audio_manager.play_fail()
+	else:
+		if audio_manager: audio_manager.play_success()
+	if audio_manager: audio_manager.play_result()
 
 	# History Display
 	var mistakes_duration: float = 0.0
@@ -125,7 +123,7 @@ func _animate_mistakes_sequence(cards: Array[Control]) -> void:
 			var delay: float = i * 0.05
 			# Random pitch for tactile "deck shuffle" feel
 			var pitch: float = randf_range(0.9, 1.1)
-			card.call("animate_entry", delay, sfx_pop, pitch)
+			#card.call("animate_entry", delay, audio_manager.play_pop, pitch)
 
 func _on_retry() -> void:
 	GameManager.change_scene("res://src/scenes/quiz_scene.tscn")
@@ -134,6 +132,6 @@ func _on_menu() -> void:
 	GameManager.change_scene("res://src/scenes/MainMenu.tscn")
 
 func play_click() -> void:
-	if sfx_click:
-		sfx_click.play()
-		await sfx_click.finished
+	if audio_manager.sfx_click:
+		audio_manager.sfx_click.play()
+		await audio_manager.sfx_click.finished

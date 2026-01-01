@@ -1,11 +1,12 @@
 extends Node
-class_name QuizAudioManager
+class_name AARAudioManager
 
 @onready var sfx_click: AudioStreamPlayer = $SFX_Click
 @onready var sfx_correct: AudioStreamPlayer = $SFX_Correct
 @onready var sfx_wrong: AudioStreamPlayer = $SFX_Wrong
 @onready var sfx_alarm: AudioStreamPlayer = $SFX_Alarm
 @onready var sfx_ambience: AudioStreamPlayer = $SFX_BackgroundMusic
+@onready var sfx_typeon: AudioStreamPlayer = $SFX_typeon
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -24,6 +25,9 @@ func play_wrong() -> void:
 
 func play_alarm() -> void:
 	_play_sound(sfx_alarm, false)
+
+func play_typeon() -> void:
+	_play_sound(sfx_typeon, false)
 
 func stop_ambience() -> void:
 	sfx_ambience.stop()

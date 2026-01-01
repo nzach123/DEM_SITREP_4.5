@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b74ltasqu7ps5"]
+[gd_scene load_steps=34 format=3 uid="uid://b74ltasqu7ps5"]
 
 [ext_resource type="Theme" uid="uid://dmi3jf6jonyoq" path="res://content/resources/themes/title_theme.tres" id="1_c7ybq"]
 [ext_resource type="Script" uid="uid://bokrq0rpvdy4v" path="res://src/scripts/GameSession.gd" id="1_yjr3o"]
@@ -22,6 +22,7 @@
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="16_i6oeq"]
 [ext_resource type="Texture2D" uid="uid://b55gimo28a1ot" path="res://assets/vfx/glare_siren_a.png" id="19_o7nro"]
 [ext_resource type="AudioStream" uid="uid://bw5vc22obuemp" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="20_select"]
+[ext_resource type="AudioStream" uid="uid://biml4d6u77ecg" path="res://assets/audio/sfx/type-on_sfx_mixdown.ogg" id="24_iple8"]
 [ext_resource type="Script" uid="uid://cdfd2urify3r6" path="res://src/components/QuizAudio.gd" id="Comp_Audio"]
 [ext_resource type="Script" uid="uid://cno7l45c4w7n3" path="res://src/components/QuizCamera.gd" id="Comp_Cam"]
 [ext_resource type="Script" uid="uid://03hbla8pu4cl" path="res://src/components/BackgroundPulse.gd" id="Comp_Pulse"]
@@ -518,6 +519,9 @@ volume_db = -12.0
 
 [node name="SFX_Click" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("5_ijcxg")
+
+[node name="SFX_typeon" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("24_iple8")
 
 [node name="SFX_Correct" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("6_jfjul")

@@ -116,6 +116,7 @@ func start_game() -> void:
 
 	current_state = State.PLAYING
 	load_question(0)
+	
 
 func load_question(index: int, skip_event_check: bool = false) -> void:
 	if index >= GameManager.questions_pool.size():
@@ -147,7 +148,8 @@ func load_question(index: int, skip_event_check: bool = false) -> void:
 	timer_bar.modulate = Color(1, 1, 1)
 
 	_animate_text(question_label, q_data.get("question", "Error: No Question Text"))
-
+	if audio_manager: audio_manager.play_typeon()
+	
 	# Explicit casting/copying for strict typing
 	current_shuffled_answers.clear()
 	for ans in q_data["answers"]:

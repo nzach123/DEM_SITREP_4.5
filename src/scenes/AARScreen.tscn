@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://befnihtjxwy32"]
+[gd_scene load_steps=15 format=3 uid="uid://befnihtjxwy32"]
 
 [ext_resource type="Script" uid="uid://cenn0lxa0jbxw" path="res://src/scripts/AARScreen.gd" id="1_ytt3w"]
 [ext_resource type="Texture2D" uid="uid://dkfi1nd6y77ee" path="res://assets/ui/backgrounds/Gemini_Generated_Image_f71n1cf71n1cf71n.png" id="2_oc4gb"]
@@ -9,7 +9,10 @@
 [ext_resource type="Theme" uid="uid://fioyouh4dvig" path="res://content/resources/themes/Raj_button_theme.tres" id="4_oc4gb"]
 [ext_resource type="AudioStream" uid="uid://btcgxsqgjs5sa" path="res://assets/audio/sfx/ClickSFX/scroll_004.ogg" id="5_0bl5x"]
 [ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="6_anim"]
-[ext_resource type="AudioStream" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="7_hover"]
+[ext_resource type="AudioStream" uid="uid://bw5vc22obuemp" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="7_hover"]
+[ext_resource type="Script" uid="uid://d3agm2flpj0sa" path="res://src/components/MenuAudio.gd" id="10_v4b0s"]
+[ext_resource type="AudioStream" uid="uid://tbfkxee0t6sf" path="res://assets/audio/sfx/ClickSFX/maximize_004.ogg" id="11_66bpe"]
+[ext_resource type="AudioStream" uid="uid://cykn54ga46h5a" path="res://assets/audio/sfx/game_pver_sfx.ogg" id="12_0714p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_luru2"]
 shader = ExtResource("3_bddxc")
@@ -35,7 +38,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[node name="AarScreen" type="Control" node_paths=PackedStringArray("sfx_click", "sfx_result", "rank_letter", "score_value", "mastery_value", "retry_button", "menu_button", "mistake_container", "no_data_label")]
+[node name="AarScreen" type="Control" node_paths=PackedStringArray("rank_letter", "score_value", "mastery_value", "retry_button", "menu_button", "mistake_container", "no_data_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,8 +46,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ytt3w")
-sfx_click = NodePath("AudioManager/SFX_Click")
-sfx_result = NodePath("AudioManager/SFX_Result")
 rank_letter = NodePath("MarginContainer/MainVBox/TopRowHBox/RankPanel/RankVBox/RankLetter")
 score_value = NodePath("MarginContainer/MainVBox/TopRowHBox/ScorePanel/ScoreVBox/ScoreValue")
 mastery_value = NodePath("MarginContainer/MainVBox/TopRowHBox/ScorePanel/ScoreVBox/MasteryValue")
@@ -246,9 +247,19 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="AudioManager" type="Node" parent="."]
+script = ExtResource("10_v4b0s")
 
 [node name="SFX_Click" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("4_mtiue")
+
+[node name="SFX_Pop" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("11_66bpe")
+
+[node name="SFX_Success" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("4_mtiue")
+
+[node name="SFX_Fail" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("12_0714p")
 
 [node name="SFX_Result" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("5_0bl5x")

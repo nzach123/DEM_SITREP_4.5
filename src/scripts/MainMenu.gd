@@ -19,6 +19,7 @@ extends Control
 @export var settings_overlay: Control
 @export var credits_overlay: Control
 @export var sfx_click: AudioStreamPlayer
+@export var sfx_background_loop: AudioStreamPlayer
 
 # Footer Buttons
 @export var settings_btn: Button
@@ -32,7 +33,7 @@ var pending_course_id: String = ""
 
 func _ready() -> void:
 	add_to_group("main_menu")
-
+	sfx_background_loop.play()
 	# Initial View State
 	if login_view: login_view.show()
 	if dashboard_view: dashboard_view.hide()
