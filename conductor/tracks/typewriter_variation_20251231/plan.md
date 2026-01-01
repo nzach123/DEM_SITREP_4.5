@@ -9,9 +9,9 @@ This plan covers the refactoring of typewriter sound logic to include randomizat
 - [ ] Task: Conductor - User Manual Verification 'Setup & Refactoring' (Protocol in workflow.md)
 
 ## Phase 2: Implementation of Variation Logic (TDD)
-- [ ] Task: Update `src/components/QuizAudio.gd` to export/reference the three typewriter SFX nodes.
-- [ ] Task: Implement "no-repeat" randomization logic in `play_typewriter()`.
-- [ ] Task: Verify that `test_QuizAudioManager.gd` passes, ensuring the no-repeat rule is respected.
+- [x] Task: Update `src/components/QuizAudio.gd` to export/reference the three typewriter SFX nodes.
+- [x] Task: Implement "no-repeat" randomization logic in `play_typewriter()`.
+- [x] Task: Verify that `test_QuizAudioManager.gd` passes, ensuring the no-repeat rule is respected.
 - [ ] Task: Conductor - User Manual Verification 'Variation Logic' (Protocol in workflow.md)
 
 ## Phase 3: Final Integration & Cleanup

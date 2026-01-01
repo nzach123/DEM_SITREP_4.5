@@ -10,7 +10,14 @@ class_name QuizAudioManager
 @export_group("Atmosphere")
 @export var sfx_alarm: AudioStreamPlayer
 @export var sfx_ambience: AudioStreamPlayer
-@export var sfx_typewriter: AudioStreamPlayer
+
+@export_group("Typewriter Variations")
+@export var sfx_typeon01: AudioStreamPlayer
+@export var sfx_typeon02: AudioStreamPlayer
+@export var sfx_typeon03: AudioStreamPlayer
+
+var _typewriter_sounds: Array[AudioStreamPlayer] = []
+var _last_played_index: int = -1
 
 func _ready() -> void:
 	# Fallback: Find children if exports are not assigned (Backwards compatibility with existing scene)
@@ -19,7 +26,15 @@ func _ready() -> void:
 	if not sfx_click: sfx_click = get_node_or_null("SFX_Click")
 	if not sfx_alarm: sfx_alarm = get_node_or_null("SFX_Alarm")
 	if not sfx_ambience: sfx_ambience = get_node_or_null("SFX_BackgroundMusic")
-	if not sfx_typewriter: sfx_typewriter = get_node_or_null("SFX_typeon")
+	
+	if not sfx_typeon01: sfx_typeon01 = get_node_or_null("SFX_typeon01")
+	if not sfx_typeon02: sfx_typeon02 = get_node_or_null("SFX_typeon02")
+	if not sfx_typeon03: sfx_typeon03 = get_node_or_null("SFX_typeon03")
+
+	# Populate pool
+	if sfx_typeon01: _typewriter_sounds.append(sfx_typeon01)
+	if sfx_typeon02: _typewriter_sounds.append(sfx_typeon02)
+	if sfx_typeon03: _typewriter_sounds.append(sfx_typeon03)
 
 	if sfx_ambience and not sfx_ambience.playing:
 		sfx_ambience.play()
@@ -42,10 +57,21 @@ func stop_alarm() -> void:
 		sfx_alarm.stop()
 
 func play_typewriter() -> void:
+	if _typewriter_sounds.is_empty():
+		return
+
+	var index = 0
+	if _typewriter_sounds.size() > 1:
+		index = randi() % _typewriter_sounds.size()
+		while index == _last_played_index:
+			index = randi() % _typewriter_sounds.size()
+	
+	_last_played_index = index
+	var sound = _typewriter_sounds[index]
+	
 	# Randomize pitch slightly for mechanical feel
-	if sfx_typewriter:
-		sfx_typewriter.pitch_scale = randf_range(0.95, 1.05)
-		sfx_typewriter.play()
+	sound.pitch_scale = randf_range(0.95, 1.05)
+	sound.play()
 
 func stop_ambience() -> void:
 	if sfx_ambience:
