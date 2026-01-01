@@ -9,18 +9,21 @@ const DIFFICULTY_CONFIG: Dictionary = {
 		"question_count": 10,
 		"time_per_question": 15.0,
 		"casualty_penalty": 0,
+		"trust_penalty": 10,
 		"population_range": { "min": 10000, "max": 50000 }
 	},
 	Difficulty.MEDIUM: {
 		"question_count": 25,
 		"time_per_question": 12.0,
 		"casualty_penalty": 250,
+		"trust_penalty": 20,
 		"population_range": { "min": 100000, "max": 500000 }
 	},
 	Difficulty.HIGH: {
 		"question_count": 75,
 		"time_per_question": 10.0,
 		"casualty_penalty": 500,
+		"trust_penalty": 34,
 		"population_range": { "min": 500000, "max": 2000000 }
 	}
 }
