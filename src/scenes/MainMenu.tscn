@@ -36,7 +36,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("login_view", "dashboard_view", "clock_in_btn", "crt_screen", "buttons_container", "difficulty_popup", "settings_overlay", "credits_overlay", "sfx_click", "settings_btn", "credits_btn", "quit_btn")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("buttons_container", "difficulty_popup", "settings_overlay", "credits_overlay", "sfx_click", "settings_btn", "credits_btn", "quit_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,18 +46,14 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_menu")
-login_view = NodePath("MainLayout/LoginView")
-dashboard_view = NodePath("MainLayout/DashboardView")
-clock_in_btn = NodePath("MainLayout/LoginView/ClockInButton")
-crt_screen = NodePath("CRTScreen")
-buttons_container = NodePath("MainLayout/DashboardView/MarginContainer_Board/ScrollContainer/GridContainer")
+buttons_container = NodePath("VBoxContainer/MarginContainer_Board/ScrollContainer/GridContainer")
 difficulty_popup = NodePath("DifficultyPopup")
 settings_overlay = NodePath("SettingsOverlay")
 credits_overlay = NodePath("CreditsOverlay")
 sfx_click = NodePath("AudioManager/SFX_Click")
-settings_btn = NodePath("MainLayout/MarginContainer_Footer/HBoxContainer/SettingsButton")
-credits_btn = NodePath("MainLayout/MarginContainer_Footer/HBoxContainer/CreditsButton")
-quit_btn = NodePath("MainLayout/MarginContainer_Footer/HBoxContainer/QuitButton")
+settings_btn = NodePath("VBoxContainer/MarginContainer_Footer/HBoxContainer/SettingsButton")
+credits_btn = NodePath("VBoxContainer/MarginContainer_Footer/HBoxContainer/CreditsButton")
+quit_btn = NodePath("VBoxContainer/MarginContainer_Footer/HBoxContainer/QuitButton")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -78,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0156863, 0.054902, 0.0156863, 1)
 
-[node name="MainLayout" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,57 +83,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="LoginView" type="VBoxContainer" parent="MainLayout"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Label_Auth" type="Label" parent="MainLayout/LoginView"]
-layout_mode = 2
-theme = ExtResource("2_b83k2")
-theme_override_colors/font_color = Color(0.8, 0.2, 0.2, 1)
-theme_override_font_sizes/font_size = 84
-text = "TERMINAL LOCKED"
-horizontal_alignment = 1
-
-[node name="Label_User" type="Label" parent="MainLayout/LoginView"]
-layout_mode = 2
-theme = ExtResource("2_cbw1n")
-theme_override_font_sizes/font_size = 32
-text = "USER: COMMANDER"
-horizontal_alignment = 1
-
-[node name="ClockInButton" type="Button" parent="MainLayout/LoginView"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_b83k2")
-theme_override_font_sizes/font_size = 48
-text = "CLOCK IN"
-
-[node name="AnimationComponent" type="Node" parent="MainLayout/LoginView/ClockInButton"]
-script = ExtResource("7_anim")
-hover_scale = Vector2(1.05, 1.05)
-hover_sfx = ExtResource("8_hover")
-click_sfx = ExtResource("3_sfx")
-metadata/_custom_type_script = "uid://dldl6e841cg0e"
-
-[node name="DashboardView" type="VBoxContainer" parent="MainLayout"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MarginContainer_Title" type="MarginContainer" parent="MainLayout/DashboardView"]
+[node name="MarginContainer_Title" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainLayout/DashboardView/MarginContainer_Title"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer_Title"]
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="MainLayout/DashboardView/MarginContainer_Title/HBoxContainer"]
+[node name="TitleLabel" type="Label" parent="VBoxContainer/MarginContainer_Title/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_b83k2")
@@ -146,26 +101,26 @@ theme_override_font_sizes/font_size = 64
 text = "SITREP // COMMANDER_DASHBOARD"
 vertical_alignment = 1
 
-[node name="DateLabel" type="Label" parent="MainLayout/DashboardView/MarginContainer_Title/HBoxContainer"]
+[node name="DateLabel" type="Label" parent="VBoxContainer/MarginContainer_Title/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_cbw1n")
 theme_override_font_sizes/font_size = 32
 text = "STATUS: ONLINE"
 vertical_alignment = 1
 
-[node name="MarginContainer_Board" type="MarginContainer" parent="MainLayout/DashboardView"]
+[node name="MarginContainer_Board" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 20
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainLayout/DashboardView/MarginContainer_Board"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer_Board"]
 layout_mode = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="MainLayout/DashboardView/MarginContainer_Board/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer_Board/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -173,50 +128,50 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 4
 
-[node name="MarginContainer_Footer" type="MarginContainer" parent="MainLayout"]
+[node name="MarginContainer_Footer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainLayout/MarginContainer_Footer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer_Footer"]
 layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 2
 
-[node name="SettingsButton" type="Button" parent="MainLayout/MarginContainer_Footer/HBoxContainer"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_cbw1n")
 text = "[F1] SETTINGS"
 flat = true
 
-[node name="AnimationComponent" type="Node" parent="MainLayout/MarginContainer_Footer/HBoxContainer/SettingsButton"]
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer/SettingsButton"]
 script = ExtResource("7_anim")
 hover_scale = Vector2(1.05, 1.05)
 hover_sfx = ExtResource("8_hover")
 click_sfx = ExtResource("3_sfx")
 metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
-[node name="CreditsButton" type="Button" parent="MainLayout/MarginContainer_Footer/HBoxContainer"]
+[node name="CreditsButton" type="Button" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_cbw1n")
 text = "[F2] CREDITS"
 flat = true
 
-[node name="AnimationComponent" type="Node" parent="MainLayout/MarginContainer_Footer/HBoxContainer/CreditsButton"]
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer/CreditsButton"]
 script = ExtResource("7_anim")
 hover_scale = Vector2(1.05, 1.05)
 hover_sfx = ExtResource("8_hover")
 click_sfx = ExtResource("3_sfx")
 metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
-[node name="QuitButton" type="Button" parent="MainLayout/MarginContainer_Footer/HBoxContainer"]
+[node name="QuitButton" type="Button" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_cbw1n")
-text = "[ESC] END SHIFT"
+text = "[ESC] QUIT"
 flat = true
 
-[node name="AnimationComponent" type="Node" parent="MainLayout/MarginContainer_Footer/HBoxContainer/QuitButton"]
+[node name="AnimationComponent" type="Node" parent="VBoxContainer/MarginContainer_Footer/HBoxContainer/QuitButton"]
 script = ExtResource("7_anim")
 hover_scale = Vector2(1.05, 1.05)
 hover_sfx = ExtResource("8_hover")
