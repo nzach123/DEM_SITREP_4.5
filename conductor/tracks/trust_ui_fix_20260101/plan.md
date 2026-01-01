@@ -2,7 +2,7 @@
 
 This plan addresses the issue where the `PublicTrustSystem` UI element incorrectly repositions itself to (0,0) after a shake animation. We will fix this by targeting the internal `TrustBar` for the animation instead of the root node.
 
-## Phase 1: Diagnosis & Test Setup
+## Phase 1: Diagnosis & Test Setup [checkpoint: 8e0881f]
 - [x] Task: Create a reproduction test case in `tests/unit/test_PublicTrustSystem.gd`.
 - [x] Task: Verify that calling `_play_shake()` or `damage_trust()` causes the `PublicTrustSystem` node's `position` to change (failing test).
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Diagnosis & Test Setup' (Protocol in workflow.md)
