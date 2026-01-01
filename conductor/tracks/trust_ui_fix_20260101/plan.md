@@ -8,10 +8,10 @@ This plan addresses the issue where the `PublicTrustSystem` UI element incorrect
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Diagnosis & Test Setup' (Protocol in workflow.md)
 
 ## Phase 2: Implementation (Refactor Shake Logic)
-- [~] Task: Modify `src/components/PublicTrustSystem.gd` to store the original position of the `progress_bar`.
-- [ ] Task: Update `_play_shake()` to animate `progress_bar.position` instead of `self.position`.
-- [ ] Task: Ensure `_play_shake()` resets `progress_bar.position` to its original local position after the tween completes.
-- [ ] Task: Verify that tests now pass (position of root node remains unchanged during/after shake).
+- [x] Task: Modify `src/components/PublicTrustSystem.gd` to store the original position of the `progress_bar`.
+- [x] Task: Update `_play_shake()` to animate `progress_bar.position` instead of `self.position`.
+- [x] Task: Ensure `_play_shake()` resets `progress_bar.position` to its original local position after the tween completes.
+- [x] Task: Verify that tests now pass (position of root node remains unchanged during/after shake).
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Verification & Polish

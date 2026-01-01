@@ -17,9 +17,12 @@ signal trust_healed(amount_gained: float)
 @onready var anim: AnimationPlayer = $AnimationPlayer # Optional for shake
 
 var current_trust: float
+var _original_bar_pos: Vector2
 
 func _ready() -> void:
 	current_trust = max_trust
+	if progress_bar:
+		_original_bar_pos = progress_bar.position
 	_update_ui(false)
 
 func damage_trust(amount: float) -> void:
@@ -62,9 +65,10 @@ func _update_ui(animate: bool) -> void:
 		_play_shake()
 
 func _play_shake() -> void:
-	var original_pos = Vector2.ZERO # Local position relative to container
+	if not progress_bar: return
+	
 	var tween = create_tween()
 	for i in range(5):
 		var offset = Vector2(randf_range(-5, 5), randf_range(-5, 5))
-		tween.tween_property(self, "position", original_pos + offset, 0.05)
-	tween.tween_property(self, "position", original_pos, 0.05)
+		tween.tween_property(progress_bar, "position", _original_bar_pos + offset, 0.05)
+	tween.tween_property(progress_bar, "position", _original_bar_pos, 0.05)
