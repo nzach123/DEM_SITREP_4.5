@@ -15,6 +15,6 @@ This plan addresses the issue where the `PublicTrustSystem` UI element incorrect
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Verification & Polish
-- [ ] Task: Manually verify in `quiz_scene` that answering a question triggers a visual shake on the bar without moving the entire component.
-- [ ] Task: Check for any layout "popping" or glitches when trust is updated.
+- [x] Task: Manually verify in `quiz_scene` that answering a question triggers a visual shake on the bar without moving the entire component.
+- [x] Task: Check for any layout "popping" or glitches when trust is updated.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Verification & Polish' (Protocol in workflow.md)
