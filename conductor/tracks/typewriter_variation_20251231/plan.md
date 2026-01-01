@@ -14,7 +14,7 @@ This plan covers the refactoring of typewriter sound logic to include randomizat
 - [x] Task: Verify that `test_QuizAudioManager.gd` passes, ensuring the no-repeat rule is respected.
 - [ ] Task: Conductor - User Manual Verification 'Variation Logic' (Protocol in workflow.md)
 
-## Phase 3: Final Integration & Cleanup
+## Phase 3: Final Integration & Cleanup [checkpoint: ff71673]
 - [x] Task: Verify the audio nodes in `src/scenes/quiz_scene.tscn` are correctly assigned in the editor (or through fallback logic).
 - [x] Task: Run full test suite to ensure no regressions in other audio functions.
 - [ ] Task: Conductor - User Manual Verification 'Final Integration' (Protocol in workflow.md)
