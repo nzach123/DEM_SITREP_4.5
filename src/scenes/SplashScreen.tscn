@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd7ls8r82whn0"]
+[gd_scene load_steps=5 format=3 uid="uid://cd7ls8r82whn0"]
 
 [ext_resource type="Script" uid="uid://dxs6pl7bpuij5" path="res://src/scripts/splash_screen.gd" id="1_pucxk"]
 [ext_resource type="Texture2D" uid="uid://bg0we6df62qe1" path="res://assets/ui/splash_page/SitRep_Title_Draft1.png" id="1_q6wvw"]
+[ext_resource type="FontFile" uid="uid://b0u724cqxwcei" path="res://assets/fonts/BebasNeue-Regular.ttf" id="2_font"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("splash_screen")]
+[sub_resource type="LabelSettings" id="LabelSettings_1"]
+font = ExtResource("2_font")
+font_size = 48
+font_color = Color(1, 1, 1, 0.784314)
+
+[node name="Control" type="Control" node_paths=PackedStringArray("splash_screen", "click_to_start_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +17,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pucxk")
-splash_screen = NodePath("CenterContainer/TextureRect")
+splash_screen = NodePath("CenterContainer/VBoxContainer/TextureRect")
+click_to_start_label = NodePath("CenterContainer/VBoxContainer/ClickToStart")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -30,6 +37,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_q6wvw")
+
+[node name="ClickToStart" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "CLICK TO START"
+label_settings = SubResource("LabelSettings_1")
+horizontal_alignment = 1
+vertical_alignment = 1
