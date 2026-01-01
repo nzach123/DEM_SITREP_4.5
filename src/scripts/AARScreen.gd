@@ -15,8 +15,6 @@ class_name AARScreen
 @export var no_data_label: Label
 
 const MONTSERRAT_BUTTON_THEME = preload("res://content/resources/themes/Montserrat_button_theme.tres")
-#var sfx_success: AudioStream = preload("res://assets/audio/music/Loops/Retro Polka.ogg")
-#var sfx_fail: AudioStream = preload("res://assets/audio/music/Loops/computerNoise_003.ogg")
 const LOG_CARD_SCENE: PackedScene = preload("res://src/scenes/LogEntryCard.tscn")
 
 func _ready() -> void:

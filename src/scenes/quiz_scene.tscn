@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b74ltasqu7ps5"]
+[gd_scene load_steps=38 format=3 uid="uid://b74ltasqu7ps5"]
 
 [ext_resource type="Theme" uid="uid://dmi3jf6jonyoq" path="res://content/resources/themes/title_theme.tres" id="1_c7ybq"]
 [ext_resource type="Script" uid="uid://bokrq0rpvdy4v" path="res://src/scripts/GameSession.gd" id="1_yjr3o"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://vf4d0twf4bi5" path="res://assets/audio/sfx/type-on_sfx_02.ogg" id="25_faugf"]
 [ext_resource type="AudioStream" uid="uid://bq57sut8fwkj3" path="res://assets/audio/sfx/type-on_sfx_03.ogg" id="26_i88oe"]
 [ext_resource type="AudioStream" uid="uid://c8cgfq0c6al8f" path="res://assets/audio/sfx/loops/Computers_Lights_Hum_loop.ogg" id="30_faugf"]
+[ext_resource type="AudioStream" uid="uid://dr6rkjq7uyvxk" path="res://assets/audio/sfx/incoming_alert_sfx.ogg" id="31_i88oe"]
 [ext_resource type="Script" uid="uid://cdfd2urify3r6" path="res://src/components/QuizAudio.gd" id="Comp_Audio"]
 [ext_resource type="Script" uid="uid://cno7l45c4w7n3" path="res://src/components/QuizCamera.gd" id="Comp_Cam"]
 [ext_resource type="Script" uid="uid://03hbla8pu4cl" path="res://src/components/BackgroundPulse.gd" id="Comp_Pulse"]
@@ -554,7 +555,8 @@ stream = ExtResource("30_faugf")
 volume_db = -15.0
 
 [node name="SFX_Incoming" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("10_xgaly")
+stream = ExtResource("31_i88oe")
+volume_db = -6.0
 
 [node name="RoundTimer" type="Timer" parent="."]
 wait_time = 60.0
