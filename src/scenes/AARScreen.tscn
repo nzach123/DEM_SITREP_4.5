@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://befnihtjxwy32"]
+[gd_scene load_steps=18 format=3 uid="uid://befnihtjxwy32"]
 
 [ext_resource type="Script" uid="uid://cenn0lxa0jbxw" path="res://src/scripts/AARScreen.gd" id="1_ytt3w"]
 [ext_resource type="Texture2D" uid="uid://dkfi1nd6y77ee" path="res://assets/ui/backgrounds/Gemini_Generated_Image_f71n1cf71n1cf71n.png" id="2_oc4gb"]
@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://c0a1rd83el8gx" path="res://src/components/AARAudio.gd" id="10_aar_audio"]
 [ext_resource type="AudioStream" uid="uid://tbfkxee0t6sf" path="res://assets/audio/sfx/ClickSFX/maximize_004.ogg" id="11_66bpe"]
 [ext_resource type="AudioStream" uid="uid://cykn54ga46h5a" path="res://assets/audio/sfx/game_pver_sfx.ogg" id="12_0714p"]
+[ext_resource type="AudioStream" uid="uid://d0k1fxlhs1dn0" path="res://assets/audio/sfx/ClickSFX/tick_001.ogg" id="13_tick"]
+[ext_resource type="AudioStream" uid="uid://ds61nk7k0v0oi" path="res://assets/audio/sfx/ClickSFX/bong_001.ogg" id="14_stamp"]
+[ext_resource type="FontFile" uid="uid://csm1r2nmfyeeo" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="15_font"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_luru2"]
 shader = ExtResource("3_bddxc")
@@ -38,7 +41,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[node name="AarScreen" type="Control" node_paths=PackedStringArray("rank_letter", "score_value", "mastery_value", "retry_button", "menu_button", "mistake_container", "no_data_label")]
+[node name="AarScreen" type="Control" node_paths=PackedStringArray("mistake_container", "no_data_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,11 +49,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ytt3w")
-rank_letter = NodePath("MarginContainer/MainVBox/TopRowHBox/RankPanel/RankVBox/RankLetter")
-score_value = NodePath("MarginContainer/MainVBox/TopRowHBox/ScorePanel/ScoreVBox/ScoreValue")
-mastery_value = NodePath("MarginContainer/MainVBox/TopRowHBox/ScorePanel/ScoreVBox/MasteryValue")
-retry_button = NodePath("MarginContainer/MainVBox/TopRowHBox/ControlPanel/ControlVBox/RetryButton")
-menu_button = NodePath("MarginContainer/MainVBox/TopRowHBox/ControlPanel/ControlVBox/MenuButton")
 mistake_container = NodePath("MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox/ScrollContainer/LogContainer")
 no_data_label = NodePath("MarginContainer/MainVBox/DataFeedPanel/MarginContainer/VBox/ScrollContainer/LogContainer/NoDataLabel")
 
@@ -89,106 +87,59 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="TopRowHBox" type="HBoxContainer" parent="MarginContainer/MainVBox"]
+[node name="ReportPanel" type="PanelContainer" parent="MarginContainer/MainVBox"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.25
-theme_override_constants/separation = 15
-
-[node name="RankPanel" type="PanelContainer" parent="MarginContainer/MainVBox/TopRowHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.3
+size_flags_stretch_ratio = 1.0
 theme = ExtResource("3_i88ay")
 
-[node name="RankVBox" type="VBoxContainer" parent="MarginContainer/MainVBox/TopRowHBox/RankPanel"]
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/MainVBox/ReportPanel"]
 layout_mode = 2
-alignment = 1
+theme_override_constants/separation = 20
 
-[node name="Header" type="Label" parent="MarginContainer/MainVBox/TopRowHBox/RankPanel/RankVBox"]
+[node name="ReportBody" type="RichTextLabel" parent="MarginContainer/MainVBox/ReportPanel/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("3_frbb8")
-theme_override_colors/font_color = Color(0.196078, 0.945098, 1, 1)
-theme_override_font_sizes/font_size = 64
-text = "RANK"
-horizontal_alignment = 1
-
-[node name="RankLetter" type="Label" parent="MarginContainer/MainVBox/TopRowHBox/RankPanel/RankVBox"]
-layout_mode = 2
-theme = ExtResource("4_oc4gb")
-theme_override_font_sizes/font_size = 64
-text = "-"
-horizontal_alignment = 1
-
-[node name="ScorePanel" type="PanelContainer" parent="MarginContainer/MainVBox/TopRowHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
-theme = ExtResource("3_i88ay")
-
-[node name="ScoreVBox" type="VBoxContainer" parent="MarginContainer/MainVBox/TopRowHBox/ScorePanel"]
-layout_mode = 2
-alignment = 1
-
-[node name="Header" type="Label" parent="MarginContainer/MainVBox/TopRowHBox/ScorePanel/ScoreVBox"]
-layout_mode = 2
-theme = ExtResource("3_frbb8")
-theme_override_colors/font_color = Color(0.196078, 0.945098, 1, 1)
-theme_override_font_sizes/font_size = 64
-text = "CITIZENS RESCUED"
-horizontal_alignment = 1
-
-[node name="ScoreValue" type="Label" parent="MarginContainer/MainVBox/TopRowHBox/ScorePanel/ScoreVBox"]
-layout_mode = 2
-theme = ExtResource("4_oc4gb")
-theme_override_font_sizes/font_size = 48
-text = "0"
-horizontal_alignment = 1
-
-[node name="MasteryValue" type="Label" parent="MarginContainer/MainVBox/TopRowHBox/ScorePanel/ScoreVBox"]
-layout_mode = 2
-theme = ExtResource("4_oc4gb")
-theme_override_font_sizes/font_size = 42
-text = "MASTERY: 0%"
-horizontal_alignment = 1
-
-[node name="ControlPanel" type="PanelContainer" parent="MarginContainer/MainVBox/TopRowHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.3
-theme = ExtResource("3_i88ay")
-
-[node name="ControlVBox" type="VBoxContainer" parent="MarginContainer/MainVBox/TopRowHBox/ControlPanel"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="RetryButton" type="Button" parent="MarginContainer/MainVBox/TopRowHBox/ControlPanel/ControlVBox"]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("15_font")
+theme_override_fonts/bold_font = ExtResource("15_font")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "INITIALIZING REPORT..."
+
+[node name="ActionButtons" type="HBoxContainer" parent="MarginContainer/MainVBox/ReportPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="MarginContainer/MainVBox/ReportPanel/VBox/ActionButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 tooltip_text = "REDEPLOY"
 theme = ExtResource("3_i88ay")
 theme_override_font_sizes/font_size = 42
 text = "REDEPLOY"
 
-[node name="AnimationComponent" type="Node" parent="MarginContainer/MainVBox/TopRowHBox/ControlPanel/ControlVBox/RetryButton"]
+[node name="AnimationComponent" type="Node" parent="MarginContainer/MainVBox/ReportPanel/VBox/ActionButtons/RetryButton"]
 script = ExtResource("6_anim")
 hover_scale = Vector2(1.05, 1.05)
 hover_sfx = ExtResource("7_hover")
 click_sfx = ExtResource("4_mtiue")
 metadata/_custom_type_script = "uid://dldl6e841cg0e"
 
-[node name="MenuButton" type="Button" parent="MarginContainer/MainVBox/TopRowHBox/ControlPanel/ControlVBox"]
+[node name="MenuButton" type="Button" parent="MarginContainer/MainVBox/ReportPanel/VBox/ActionButtons"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
 tooltip_text = "HQ"
 theme = ExtResource("3_i88ay")
 theme_override_font_sizes/font_size = 42
 text = "HQ"
 
-[node name="AnimationComponent" type="Node" parent="MarginContainer/MainVBox/TopRowHBox/ControlPanel/ControlVBox/MenuButton"]
+[node name="AnimationComponent" type="Node" parent="MarginContainer/MainVBox/ReportPanel/VBox/ActionButtons/MenuButton"]
 script = ExtResource("6_anim")
 hover_scale = Vector2(1.05, 1.05)
 hover_sfx = ExtResource("7_hover")
@@ -198,6 +149,7 @@ metadata/_custom_type_script = "uid://dldl6e841cg0e"
 [node name="DataFeedPanel" type="PanelContainer" parent="MarginContainer/MainVBox"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.0
 theme = ExtResource("3_i88ay")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MainVBox/DataFeedPanel"]
@@ -215,7 +167,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("3_frbb8")
 theme_override_colors/font_color = Color(0.197151, 0.944839, 0.999018, 1)
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 48
 text = ">> DATA FEED LOG <<"
 horizontal_alignment = 1
 
@@ -233,7 +185,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 theme = ExtResource("3_i88ay")
 theme_override_colors/font_color = Color(0.636162, 0.971033, 1, 1)
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 32
 text = ">> NO DATA RECORDED IN BLACK BOX."
 
 [node name="CRTScreen" type="ColorRect" parent="."]
@@ -269,3 +221,10 @@ stream = ExtResource("12_0714p")
 [node name="SFX_Result" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("5_0bl5x")
 volume_db = -12.0
+
+[node name="SfxTick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_tick")
+max_polyphony = 3
+
+[node name="SfxStamp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_stamp")

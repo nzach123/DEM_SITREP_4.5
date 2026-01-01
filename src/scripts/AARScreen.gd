@@ -1,25 +1,36 @@
 extends Control
 class_name AARScreen
 
-@export_group("Audio")
-@export var audio_manager: AARAudioManager
+# Signals
+signal report_finished
 
+# Exported Nodes (assigned via Unique Names in Scene or manual hookups)
+@export_group("Report UI")
+@onready var report_body: RichTextLabel = %ReportBody
+@onready var action_buttons: Control = %ActionButtons
+@onready var retry_button: Button = %RetryButton
+@onready var menu_button: Button = %MenuButton
 
-@export_group("UI Nodes")
-@export var rank_letter: Label
-@export var score_value: Label
-@export var mastery_value: Label
-@export var retry_button: Button
-@export var menu_button: Button
+@export_group("Log UI")
 @export var mistake_container: VBoxContainer
 @export var no_data_label: Label
 
-const MONTSERRAT_BUTTON_THEME = preload("res://content/resources/themes/Montserrat_button_theme.tres")
-#var sfx_success: AudioStream = preload("res://assets/audio/music/Loops/Retro Polka.ogg")
-#var sfx_fail: AudioStream = preload("res://assets/audio/music/Loops/computerNoise_003.ogg")
+@export_group("Audio")
+@export var audio_manager: AARAudioManager
+@onready var sfx_tick: AudioStreamPlayer = $SfxTick
+@onready var sfx_stamp: AudioStreamPlayer = $SfxStamp
+
+# Constants
+const TYPE_SPEED: float = 0.03 # Seconds per character
+const AUDIO_FREQUENCY: int = 3 # Play sound every Nth character
 const LOG_CARD_SCENE: PackedScene = preload("res://src/scenes/LogEntryCard.tscn")
 
+# State
+var _is_printing: bool = false
+var _full_text: String = ""
+
 func _ready() -> void:
+	# Fallback if audio_manager isn't set
 	if not audio_manager:
 		audio_manager = get_node_or_null("AudioManager")
 		if not audio_manager:
@@ -28,117 +39,159 @@ func _ready() -> void:
 	if mistake_container:
 		mistake_container.add_theme_constant_override("separation", 8)
 
-	display_results()
+	# Connect Buttons
 	if retry_button:
 		retry_button.pressed.connect(_on_retry_pressed)
 	if menu_button:
 		menu_button.pressed.connect(_on_menu_pressed)
 
-func _on_retry_pressed() -> void:
-	await play_click()
-	_on_retry()
+	# Setup Data
+	var score_pct: float = 0.0
+	if GameManager.total_population > 0:
+		score_pct = float(GameManager.citizens_saved) / float(GameManager.total_population)
 
-func _on_menu_pressed() -> void:
-	await play_click()
-	_on_menu()
+	# Generate Date String
+	var date_dict = Time.get_datetime_dict_from_system()
+	var date_str = "%04d-%02d-%02d %02d:%02d" % [date_dict.year, date_dict.month, date_dict.day, date_dict.hour, date_dict.minute]
 
-func display_results() -> void:
-	if score_value: score_value.text = str(GameManager.citizens_saved)
+	setup_aar(score_pct * 100.0, date_str) # Pass as percentage 0-100
 
-	# Display Mastery
-	var course_id: String = GameManager.current_course_id
-	var mastery_text: String = "MASTERY: 0%"
+func setup_aar(score_percent: float, date_str: String):
+	# 1. Generate the Report Text
+	var grade_status = _get_grade_status(score_percent)
+	var citizens_saved = GameManager.citizens_saved
+	var casualties = GameManager.casualties_count
+	var course_id = GameManager.current_course_id
 
-	if GameManager.player_progress.has(course_id):
-		var p_data: Dictionary = GameManager.player_progress[course_id]
-		var mastery: float = p_data.get("mastery_percent", 0.0)
-		mastery_text = "MASTERY: %.1f%%" % mastery
+	_full_text = """[b]OFFICIAL INCIDENT INQUIRY[/b]
+--------------------------------
+DATE: %s
+MISSION ID: %s
+OPERATIVE: [REDACTED]
 
-	if mastery_value:
-		mastery_value.text = mastery_text
-		mastery_value.modulate = Color(1.0, 1.0, 1.0)
+METRICS ANALYSIS:
+> CITIZENS SECURED: %d
+> CASUALTIES: %d
+> EFFICIENCY RATING: %.1f%%
 
-	# Calculate Rank
-	var saved: int = GameManager.citizens_saved
-	var total: int = GameManager.total_population
-	var percent: float = 0.0
-	if total > 0: percent = float(saved) / float(total)
+FINAL ASSESSMENT:
+%s
+--------------------------------
+""" % [date_str, course_id.to_upper(), citizens_saved, casualties, score_percent, grade_status]
 
-	var rank_char: String = "F"
-	var color: Color = Color(0.9, 0, 0) # Red
+	# 2. Reset State
+	if report_body:
+		report_body.text = _full_text
+		report_body.visible_ratio = 0.0
 
-	if percent >= 1.0:
-		rank_char = "S"
-		color = Color(1, 0.84, 0) # Gold
-	elif percent >= 0.8:
-		rank_char = "A"
-		color = Color(0, 1, 0) # Green
-	elif percent >= 0.5:
-		rank_char = "B"
-		color = Color(0.5, 0.5, 1) # Blue
+	if action_buttons:
+		action_buttons.visible = false
+		action_buttons.modulate.a = 0.0 # Prepare for fade in if we want, or just set visible
 
-	if rank_letter:
-		rank_letter.text = rank_char
-		rank_letter.modulate = color
+	_is_printing = true
 
-		# Animate Rank
-		var tween: Tween = create_tween().set_loops()
-		tween.tween_property(rank_letter, "modulate:a", 0.5, 0.8)
-		tween.tween_property(rank_letter, "modulate:a", 1.0, 0.8)
+	# 3. Populate Log (Passive)
+	_populate_log()
 
-	# Play Audio
-	if percent < 0.5:
+	# 4. Start Typewriter
+	_start_typewriter()
+
+func _get_grade_status(score: float) -> String:
+	if score >= 90:
+		return "[color=green]EXEMPLARY PERFORMANCE\nSTATUS: COMMENDATION RECOMMENDED[/color]"
+	elif score >= 70:
+		return "[color=yellow]ACCEPTABLE\nSTATUS: STANDARD PROTOCOL OBSERVED[/color]"
+	else:
+		return "[color=red]CRITICAL FAILURE\nSTATUS: REMEDIAL TRAINING ASSIGNED[/color]"
+
+func _start_typewriter():
+	if not report_body:
+		_finish_printing()
+		return
+
+	var total_chars = report_body.get_total_character_count()
+	var current_char = 0
+
+	# Ensure audio matches text
+	while current_char < total_chars and _is_printing:
+		current_char += 1
+		report_body.visible_characters = current_char
+
+		# Audio Logic
+		if current_char % AUDIO_FREQUENCY == 0:
+			if sfx_tick:
+				sfx_tick.pitch_scale = randf_range(0.95, 1.05)
+				sfx_tick.play()
+
+		await get_tree().create_timer(TYPE_SPEED).timeout
+
+	_finish_printing()
+
+func _finish_printing():
+	if not _is_printing: return # Already finished
+
+	_is_printing = false
+	if report_body:
+		report_body.visible_ratio = 1.0
+
+	if action_buttons:
+		action_buttons.visible = true
+		var tween = create_tween()
+		tween.tween_property(action_buttons, "modulate:a", 1.0, 0.5)
+
+	# Play the "Stamp" sound for finality
+	if sfx_stamp:
+		sfx_stamp.play()
+
+	emit_signal("report_finished")
+
+	# Play Result Music based on score
+	var percent = 0.0
+	if GameManager.total_population > 0:
+		percent = float(GameManager.citizens_saved) / float(GameManager.total_population)
+
+	if percent < 0.7: # Using 70% threshold for music too? Or stick to simple pass/fail?
+		# Original code used 0.5. Let's align with "Critical Failure" being < 70
 		if audio_manager: audio_manager.play_fail_music()
 	else:
 		if audio_manager: audio_manager.play_victory_music()
 
-	# History Display
-	var mistakes_duration: float = 0.0
-	if mistake_container:
-		# Clear any dummy children first, preserving NoDataLabel
-		for child in mistake_container.get_children():
-			if child != no_data_label:
-				child.queue_free()
+func _input(event):
+	# Allow user to skip the typing animation
+	if _is_printing and (event is InputEventMouseButton and event.pressed) or (event.is_action_pressed("ui_accept")):
+		_finish_printing()
+		get_viewport().set_input_as_handled()
 
-		var has_data = (GameManager.session_log.size() > 0)
-		if not has_data:
-			if no_data_label: no_data_label.show()
-			mistakes_duration = 0.5 # Small pause
-		else:
-			if no_data_label: no_data_label.hide()
-			# Create cards first
-			var cards: Array[Control] = []
-			for entry in GameManager.session_log:
-				var card: Control = LOG_CARD_SCENE.instantiate()
-				mistake_container.add_child(card)
-				if card.has_method("setup"):
-					card.call("setup", entry)
-				cards.append(card)
+func _populate_log() -> void:
+	if not mistake_container: return
 
-			# Animate sequence
-			_animate_mistakes_sequence(cards)
-			mistakes_duration = cards.size() * 0.05
+	# Clear previous
+	for child in mistake_container.get_children():
+		if child != no_data_label:
+			child.queue_free()
 
-func _animate_mistakes_sequence(cards: Array[Control]) -> void:
-	for i in range(cards.size()):
-		var card = cards[i]
-		if card.has_method("animate_entry"):
-			# Fast shuffle timing: 0.05s per card
-			var delay: float = i * 0.05
-			# Random pitch for tactile "deck shuffle" feel
-			var pitch: float = randf_range(0.9, 1.1)
-			#card.call("animate_entry", delay, audio_manager.play_pop, pitch)
+	var has_data = (GameManager.session_log.size() > 0)
+	if not has_data:
+		if no_data_label: no_data_label.show()
+	else:
+		if no_data_label: no_data_label.hide()
+		# Create cards
+		for entry in GameManager.session_log:
+			var card: Control = LOG_CARD_SCENE.instantiate()
+			mistake_container.add_child(card)
+			if card.has_method("setup"):
+				card.call("setup", entry)
 
-func _on_retry() -> void:
+func _on_retry_pressed() -> void:
+	await play_click()
 	GameManager.change_scene("res://src/scenes/quiz_scene.tscn")
 
-func _on_menu() -> void:
+func _on_menu_pressed() -> void:
+	await play_click()
 	GameManager.change_scene("res://src/scenes/MainMenu.tscn")
 
 func play_click() -> void:
 	if audio_manager:
 		audio_manager.play_click()
-		if audio_manager.sfx_click:
-			await audio_manager.sfx_click.finished
-		else:
-			await get_tree().process_frame
+		# Small delay for SFX
+		await get_tree().create_timer(0.1).timeout
