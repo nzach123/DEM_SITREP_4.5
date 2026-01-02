@@ -108,13 +108,16 @@ I want to implenet a settings scene and credits scene for the main menu. Use thi
 ## Core Features
 - **Settings Scene:**
     -   **Audio Control:** Master, Music, and SFX volume sliders.
-    -   **Display Options:** Resolution selection and Window mode toggles (Windowed/Fullscreen/Borderless).
+    -   **Display Options:** Resolution selection and Window mode toggles (Hidden on Web).
     -   **Accessibility:** Simple text scaling or high-contrast toggles (if applicable).
     -   **Persistence:** Save/Load settings using Godot's `ConfigFile` or `Resource` system.
 - **Credits Scene:**
     -   **Attribution:** Clear listing of contributors, assets (fonts, audio), and libraries.
     -   **Navigation:** Simple "Back" functionality to return to the Main Menu.
     -   **Style:** Consistent with the "Intentional Arcade Minimalism" aesthetic.
+- **Splash Screen (Web Optimized):**
+    - **Audio Unlock:** Acts as a landing page for Web builds, waiting for user interaction (click/touch) to ensure the browser's AudioContext is unlocked.
+    - **Visual Feedback:** Displays a blinking "CLICK TO START" prompt on Web.
 - **Pause Menu:**
     -   **Dynamic Lifecycle:** Instantiated on-demand and fully cleaned up when dismissed to prevent "zombie" reference crashes.
     -   **Context Awareness:** Input handling logic prevents the Pause Menu from opening in inappropriate contexts (e.g., Main Menu).
@@ -130,4 +133,4 @@ I want to implenet a settings scene and credits scene for the main menu. Use thi
 ## Design Philosophy
 - **Educational & Arcade Hybrid:** The UI must be immediately readable and "juicy" (responsive, satisfying) to keep students engaged, while maintaining the seriousness of the educational content.
 -   **Godot Native:** Leverage `Theme` resources, `HSlider`, `CheckButton`, and existing `SceneTransition` autoloads.
--   **Browser Ready:** Ensure all UI elements work seamlessly with touch/mouse inputs in an HTML5 export context.
+-   **Browser Ready:** Automatically hides desktop-specific UI (Quit, Resolution) and manages audio context unlocking for a seamless Web experience.

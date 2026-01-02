@@ -30,7 +30,7 @@ const COURSE_CARD_SCENE: PackedScene = preload("res://src/scenes/CourseCard.tscn
 
 var available_courses: Array[String] = []
 var pending_course_id: String = ""
-var is_web_mode_override: bool = false # For testing
+var is_web_mode_override: bool = true # For testing
 
 func _ready() -> void:
 	add_to_group("main_menu")
