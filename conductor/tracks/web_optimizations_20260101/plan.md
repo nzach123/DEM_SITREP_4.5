@@ -33,7 +33,7 @@ Hide incompatible UI elements when running in a browser.
 - [x] Task: Implement UI Hiding Logic df4bab2
     - Modify `MainMenu.gd` (or relevant UI controller).
     - In `_ready()`, add the `OS.has_feature("web")` check to hide the target nodes.
-- [ ] Task: Conductor - User Manual Verification 'Main Menu Optimizations (TDD)' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Main Menu Optimizations (TDD)' (Protocol in workflow.md)
 
 ## Phase 4: Final Verification
 - [ ] Task: Perform Local Web Export
