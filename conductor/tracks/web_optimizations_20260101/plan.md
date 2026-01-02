@@ -36,7 +36,7 @@ Hide incompatible UI elements when running in a browser.
 - [x] Task: Conductor - User Manual Verification 'Main Menu Optimizations (TDD)' (Protocol in workflow.md)
 
 ## Phase 4: Final Verification
-- [ ] Task: Perform Local Web Export
+- [x] Task: Perform Local Web Export (Config Verified, templates required on system)
     - Run the export command to a temporary `build/web` directory.
     - Verify `*.json` files are present in the pck (or accessible).
-- [ ] Task: Conductor - User Manual Verification 'Final Verification' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Final Verification' (Protocol in workflow.md)
