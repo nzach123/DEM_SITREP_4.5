@@ -22,9 +22,12 @@ func test_web_mode_waits_for_input():
 func test_input_triggers_transition():
 	if _splash.get("is_waiting_for_web_input") != null:
 		_splash.set("is_web_mode_override", true)
+		# Simulate that we are waiting
+		_splash.is_waiting_for_web_input = true
+		
 		var event = InputEventMouseButton.new()
 		event.pressed = true
-		_splash._unhandled_input(event)
+		_splash._input(event)
 		assert_true(_splash.get("_is_changing_scene"), "Should trigger scene change on input")
 	else:
 		fail_test("is_waiting_for_web_input property not implemented yet")

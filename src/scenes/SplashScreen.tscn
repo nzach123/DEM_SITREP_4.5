@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pucxk")
 splash_screen = NodePath("CenterContainer/VBoxContainer/TextureRect")
-click_to_start_label = NodePath("CenterContainer/VBoxContainer/ClickToStart")
+click_to_start_label = NodePath("ClickToStart")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -34,6 +34,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -49.5
+offset_bottom = 49.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -42,11 +44,16 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, -3.42)
 layout_mode = 2
 texture = ExtResource("1_q6wvw")
 
-[node name="ClickToStart" type="Label" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
+[node name="ClickToStart" type="Label" parent="."]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 841.0
+offset_right = 1071.0
+offset_bottom = 900.0
 text = "CLICK TO START"
 label_settings = SubResource("LabelSettings_1")
 horizontal_alignment = 1

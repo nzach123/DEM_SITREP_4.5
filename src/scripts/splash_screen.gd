@@ -11,7 +11,7 @@ const LOAD_SCENE = preload("res://src/scenes/MainMenu.tscn")
 @export var click_to_start_label: Control
 
 var _is_changing_scene: bool = false
-var is_web_mode_override: bool = false # For testing
+var is_web_mode_override: bool = true # For testing
 var is_waiting_for_web_input: bool = false
 
 func _ready() -> void:
@@ -54,12 +54,27 @@ func _prompt_web_click() -> void:
 		tween.tween_property(click_to_start_label, "modulate:a", 0.3, 0.8)
 		tween.tween_property(click_to_start_label, "modulate:a", 1.0, 0.8)
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if _is_changing_scene:
 		return
 
+	# We only want to interrupt if we are waiting for web input
+	# OR if we are just skipping the animation (optional, but good for UX)
+	# But for the specific Web requirement:
+	if OS.has_feature("web") or is_web_mode_override:
+		if not is_waiting_for_web_input:
+			return # Don't allow skipping the fade-in, only the wait state? 
+			# Actually, standard behavior is usually "click to skip splash".
+			# But if we strictly want to enforce the "wait for click" state:
+			pass 
+		
 	if event.is_pressed():
-		accept_event()
+		# If we are waiting for web input, any press triggers it.
+		# If we are simply animating, a press could skip it (if desired).
+		# For now, let's just make sure it triggers the change.
+		
+		# Prevent double-firing
+		set_process_input(false)
 		_change_scene()
 
 func _change_scene() -> void:

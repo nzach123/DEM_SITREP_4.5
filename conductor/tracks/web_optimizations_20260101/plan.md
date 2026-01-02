@@ -23,7 +23,7 @@ Implement the "Click to Start" requirement for Web builds to handle AudioContext
     - Modify Splash Screen script to check `OS.has_feature("web")`.
     - Add "Click to Start" Label (Control node) that is visible only on Web.
     - Intercept the timer/finish logic to wait for `_input` event on Web.
-- [ ] Task: Conductor - User Manual Verification 'Splash Screen Logic (TDD)' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Splash Screen Logic (TDD)' (Protocol in workflow.md)
 
 ## Phase 3: Main Menu Optimizations (TDD)
 Hide incompatible UI elements when running in a browser.
