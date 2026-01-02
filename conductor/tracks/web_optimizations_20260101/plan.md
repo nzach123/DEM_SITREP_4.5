@@ -35,7 +35,7 @@ Hide incompatible UI elements when running in a browser.
     - In `_ready()`, add the `OS.has_feature("web")` check to hide the target nodes.
 - [x] Task: Conductor - User Manual Verification 'Main Menu Optimizations (TDD)' (Protocol in workflow.md)
 
-## Phase 4: Final Verification
+## Phase 4: Final Verification [checkpoint: da501fd]
 - [x] Task: Perform Local Web Export (Config Verified, templates required on system)
     - Run the export command to a temporary `build/web` directory.
     - Verify `*.json` files are present in the pck (or accessible).
