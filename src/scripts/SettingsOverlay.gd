@@ -7,10 +7,13 @@ signal close_requested
 @export var music_slider: HSlider
 @export var sfx_slider: HSlider
 
+@export var display_settings_container: Control
 @export var resolution_option: OptionButton
 @export var window_mode_option: OptionButton
 @export var apply_button: Button
 @export var back_button: Button
+
+var is_web_mode_override: bool = false # For testing
 
 # Standard 16:9 Resolutions
 const RESOLUTIONS: Array[Vector2i] = [
@@ -33,6 +36,10 @@ var _pending_resolution: Vector2i
 var _pending_mode: DisplayServer.WindowMode = DisplayServer.WINDOW_MODE_WINDOWED
 
 func _ready() -> void:
+	if OS.has_feature("web") or is_web_mode_override:
+		if display_settings_container:
+			display_settings_container.hide()
+			
 	if back_button:
 		back_button.pressed.connect(_on_back_pressed)
 	

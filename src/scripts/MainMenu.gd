@@ -30,9 +30,15 @@ const COURSE_CARD_SCENE: PackedScene = preload("res://src/scenes/CourseCard.tscn
 
 var available_courses: Array[String] = []
 var pending_course_id: String = ""
+var is_web_mode_override: bool = false # For testing
 
 func _ready() -> void:
 	add_to_group("main_menu")
+	
+	# Web Optimization: Hide Quit Button
+	if quit_btn and (OS.has_feature("web") or is_web_mode_override):
+		quit_btn.hide()
+		
 	# Initial View State
 	if login_view: login_view.show()
 	if dashboard_view: dashboard_view.hide()
