@@ -13,7 +13,7 @@ This phase focuses on the "static" configuration changes required for Web compat
     - Disable `html/threads_support` (Set to `false`).
 - [x] Task: Conductor - User Manual Verification 'Project & Export Configuration' (Protocol in workflow.md)
 
-## Phase 2: Splash Screen Logic (TDD)
+## Phase 2: Splash Screen Logic (TDD) [checkpoint: 609eaa4]
 Implement the "Click to Start" requirement for Web builds to handle AudioContext unlocking.
 - [x] Task: Create Unit Tests for Splash Screen Web Logic 190dccc
     - Create `tests/unit/test_splash_screen.gd`.
