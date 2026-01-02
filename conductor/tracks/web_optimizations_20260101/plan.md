@@ -25,7 +25,7 @@ Implement the "Click to Start" requirement for Web builds to handle AudioContext
     - Intercept the timer/finish logic to wait for `_input` event on Web.
 - [x] Task: Conductor - User Manual Verification 'Splash Screen Logic (TDD)' (Protocol in workflow.md)
 
-## Phase 3: Main Menu Optimizations (TDD)
+## Phase 3: Main Menu Optimizations (TDD) [checkpoint: 18d9e09]
 Hide incompatible UI elements when running in a browser.
 - [x] Task: Create Unit Tests for Main Menu UI df4bab2
     - Create `tests/unit/test_main_menu_web.gd`.
