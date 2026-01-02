@@ -27,10 +27,10 @@ Implement the "Click to Start" requirement for Web builds to handle AudioContext
 
 ## Phase 3: Main Menu Optimizations (TDD)
 Hide incompatible UI elements when running in a browser.
-- [x] Task: Create Unit Tests for Main Menu UI
+- [x] Task: Create Unit Tests for Main Menu UI df4bab2
     - Create `tests/unit/test_main_menu_web.gd`.
     - Test Case: Verify `quit_button`, `resolution_options`, and `window_mode_options` are hidden (visible = false) when `OS.has_feature("web")` is simulated.
-- [x] Task: Implement UI Hiding Logic
+- [x] Task: Implement UI Hiding Logic df4bab2
     - Modify `MainMenu.gd` (or relevant UI controller).
     - In `_ready()`, add the `OS.has_feature("web")` check to hide the target nodes.
 - [ ] Task: Conductor - User Manual Verification 'Main Menu Optimizations (TDD)' (Protocol in workflow.md)
