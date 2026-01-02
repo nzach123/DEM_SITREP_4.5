@@ -15,11 +15,11 @@ This phase focuses on the "static" configuration changes required for Web compat
 
 ## Phase 2: Splash Screen Logic (TDD)
 Implement the "Click to Start" requirement for Web builds to handle AudioContext unlocking.
-- [~] Task: Create Unit Tests for Splash Screen Web Logic
+- [x] Task: Create Unit Tests for Splash Screen Web Logic 190dccc
     - Create `tests/unit/test_splash_screen.gd`.
     - Test Case: Verify `splash_finished` signal is *not* emitted automatically when `OS.has_feature("web")` is simulated.
     - Test Case: Verify `splash_finished` is emitted after input action on Web.
-- [ ] Task: Implement Web Input Handling in Splash Screen
+- [x] Task: Implement Web Input Handling in Splash Screen 190dccc
     - Modify Splash Screen script to check `OS.has_feature("web")`.
     - Add "Click to Start" Label (Control node) that is visible only on Web.
     - Intercept the timer/finish logic to wait for `_input` event on Web.
