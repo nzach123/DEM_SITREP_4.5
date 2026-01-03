@@ -6,7 +6,7 @@
     - Verify JSON validity using a linter or online tool.
 - [x] Task: Conductor - User Manual Verification 'Data Sanitation and Verification' (Protocol in workflow.md)
 
-## Phase 2: Logic Hardening (Test Driven)
+## Phase 2: Logic Hardening (Test Driven) [checkpoint: ea4a301]
 - [x] Task: Create Test for Menu Filtering 4e5ea6e
     - Create `tests/unit/test_main_menu_filtering.gd`.
     - Test Case 1: `test_scan_valid_course` - Mock a valid "quiz" JSON and ensure it is added.
@@ -15,7 +15,7 @@
     - Modify `scan_courses()` to use `GameManager.get_course_type()`.
     - Implement the `if type == "quiz"` check.
     - Add the console warning for "unknown" types.
-- [ ] Task: Conductor - User Manual Verification 'Logic Hardening (Test Driven)' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Logic Hardening (Test Driven)' (Protocol in workflow.md)
 
 ## Phase 3: Final Integration Check
 - [ ] Task: Manual End-to-End Test
