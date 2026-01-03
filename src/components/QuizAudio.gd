@@ -28,6 +28,7 @@ var _music_player: AudioStreamPlayer
 
 func _ready() -> void:
 	_create_music_player()
+	
 	# GameSession calls setup()
 
 func _create_music_player() -> void:
@@ -80,6 +81,7 @@ func _play_current_intensity() -> void:
 		return
 		
 	_music_player.stream = target_stream
+	_music_player.volume_db = -12.0
 	_music_player.play()
 
 func stop_music() -> void:

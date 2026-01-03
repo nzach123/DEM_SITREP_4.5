@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b74ltasqu7ps5"]
+[gd_scene load_steps=40 format=3 uid="uid://b74ltasqu7ps5"]
 
 [ext_resource type="Theme" uid="uid://dmi3jf6jonyoq" path="res://content/resources/themes/title_theme.tres" id="1_c7ybq"]
 [ext_resource type="Script" uid="uid://bokrq0rpvdy4v" path="res://src/scripts/GameSession.gd" id="1_yjr3o"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://caspgfmtl7keh" path="res://assets/audio/sfx/ClickSFX/confirmation_002.ogg" id="6_jfjul"]
 [ext_resource type="AudioStream" uid="uid://c2unp3p60uc4n" path="res://assets/audio/sfx/ClickSFX/error_001.ogg" id="7_ijcxg"]
 [ext_resource type="Texture2D" uid="uid://d0cmt6i5ydt5q" path="res://assets/ui/images/alarm/BackgroundAlarm05.jpg" id="7_ko4k8"]
-[ext_resource type="AudioStream" uid="uid://c1uv7ad2goehn" path="res://assets/audio/music/Background/Pixel Parade.ogg" id="8_21hr1"]
 [ext_resource type="PackedScene" uid="uid://b8x7y201a3c4d" path="res://src/scenes/RemediationPopup.tscn" id="10_popup"]
 [ext_resource type="AudioStream" uid="uid://dqcdk7o2k8l0o" path="res://assets/audio/sfx/Beeps/mixkit-data-scaner-2847.wav" id="10_xgaly"]
 [ext_resource type="Theme" uid="uid://fioyouh4dvig" path="res://content/resources/themes/Raj_button_theme.tres" id="12_lv0df"]
@@ -530,7 +529,8 @@ volume_db = -15.0
 stream = ExtResource("31_i88oe")
 volume_db = -6.0
 
-
 [node name="RoundTimer" type="Timer" parent="."]
 wait_time = 60.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

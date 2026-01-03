@@ -36,6 +36,7 @@ func play_music(stream: AudioStream) -> void:
 		return
 		
 	_music_player.stream = stream
+	_music_player.volume_db = -12.0
 	_music_player.play()
 
 func play_sfx(stream: AudioStream) -> void:
