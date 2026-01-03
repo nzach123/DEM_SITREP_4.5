@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b74ltasqu7ps5"]
+[gd_scene load_steps=41 format=3 uid="uid://b74ltasqu7ps5"]
 
 [ext_resource type="Theme" uid="uid://dmi3jf6jonyoq" path="res://content/resources/themes/title_theme.tres" id="1_c7ybq"]
 [ext_resource type="Script" uid="uid://bokrq0rpvdy4v" path="res://src/scripts/GameSession.gd" id="1_yjr3o"]
@@ -27,6 +27,9 @@
 [ext_resource type="AudioStream" uid="uid://bq57sut8fwkj3" path="res://assets/audio/sfx/type-on_sfx_03.ogg" id="26_i88oe"]
 [ext_resource type="AudioStream" uid="uid://c8cgfq0c6al8f" path="res://assets/audio/sfx/loops/Computers_Lights_Hum_loop.ogg" id="30_faugf"]
 [ext_resource type="AudioStream" uid="uid://dr6rkjq7uyvxk" path="res://assets/audio/sfx/incoming_alert_sfx.ogg" id="31_i88oe"]
+[ext_resource type="AudioStream" uid="uid://byx1178bo3lbr" path="res://assets/audio/music/Loops/background_music_low_loop.ogg" id="32_xrjgh"]
+[ext_resource type="AudioStream" uid="uid://bkj3s7inro1i7" path="res://assets/audio/music/Loops/background_music_med_loop.ogg" id="33_h2eqd"]
+[ext_resource type="AudioStream" uid="uid://dayeswcajusgp" path="res://assets/audio/music/Loops/background_music_max_loop.ogg" id="34_5w6rn"]
 [ext_resource type="Script" uid="uid://cdfd2urify3r6" path="res://src/components/QuizAudio.gd" id="Comp_Audio"]
 [ext_resource type="Script" uid="uid://cno7l45c4w7n3" path="res://src/components/QuizCamera.gd" id="Comp_Cam"]
 [ext_resource type="Script" uid="uid://03hbla8pu4cl" path="res://src/components/BackgroundPulse.gd" id="Comp_Pulse"]
@@ -485,20 +488,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("sfx_room_tone", "sfx_ambience", "sfx_incoming_alert", "sfx_typewriter_pool", "sfx_correct", "sfx_wrong", "sfx_click", "sfx_alarm")]
+[node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("sfx_room_tone", "sfx_incoming_alert", "sfx_typewriter_pool", "sfx_correct", "sfx_wrong", "sfx_click", "sfx_alarm")]
 script = ExtResource("Comp_Audio")
 sfx_room_tone = NodePath("SFX_RoomTone")
-sfx_ambience = NodePath("SFX_BackgroundMusic")
+stream_low = ExtResource("32_xrjgh")
+stream_med = ExtResource("33_h2eqd")
+stream_high = ExtResource("34_5w6rn")
 sfx_incoming_alert = NodePath("SFX_Incoming")
 sfx_typewriter_pool = [NodePath("SFX_typeon01"), NodePath("SFX_typeon02"), NodePath("SFX_typeon03")]
 sfx_correct = NodePath("SFX_Correct")
 sfx_wrong = NodePath("SFX_Wrong")
 sfx_click = NodePath("SFX_Click")
 sfx_alarm = NodePath("SFX_Alarm")
-
-[node name="SFX_BackgroundMusic" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("8_21hr1")
-volume_db = -12.0
 
 [node name="SFX_Click" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("5_ijcxg")
@@ -528,6 +529,7 @@ volume_db = -15.0
 [node name="SFX_Incoming" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("31_i88oe")
 volume_db = -6.0
+
 
 [node name="RoundTimer" type="Timer" parent="."]
 wait_time = 60.0

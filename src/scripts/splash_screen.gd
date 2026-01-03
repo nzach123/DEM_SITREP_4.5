@@ -11,7 +11,7 @@ const LOAD_SCENE = preload("res://src/scenes/MainMenu.tscn")
 @export var click_to_start_label: Control
 
 var _is_changing_scene: bool = false
-var is_web_mode_override: bool = true # For testing
+var is_web_mode_override: bool = false # For testing
 var is_waiting_for_web_input: bool = false
 
 func _ready() -> void:

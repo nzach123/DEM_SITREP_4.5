@@ -7,6 +7,7 @@ class_name AARAudioManager
 @export var sfx_tally: AudioStreamPlayer # For counting up score
 @export var sfx_pop: AudioStreamPlayer # For card entry animations
 @export var sfx_ambience: AudioStreamPlayer # Background Loop
+@export var mus_background: AudioStreamPlayer
 
 @export_group("Music")
 @export var music_victory: AudioStreamPlayer
@@ -15,7 +16,6 @@ class_name AARAudioManager
 # Preload resources to ensure correct audio
 const MUSIC_VICTORY_STREAM = preload("res://assets/audio/music/Loops/Retro Polka.ogg")
 const MUSIC_FAIL_STREAM = preload("res://assets/audio/music/Loops/computerNoise_003.ogg")
-const AMBIENCE_STREAM = preload("res://assets/audio/sfx/loops/Computers_Lights_Hum_loop.ogg")
 
 func _ready() -> void:
 	# Fallback: Find children if exports are not assigned
@@ -40,15 +40,15 @@ func _ready() -> void:
 			#music_fail.stream = MUSIC_FAIL_STREAM
 			
 	if sfx_ambience:
-		if sfx_ambience.stream != AMBIENCE_STREAM:
-			sfx_ambience.stream = AMBIENCE_STREAM
+		if sfx_ambience.stream != sfx_ambience:
+			return
 		if not sfx_ambience.playing:
 			sfx_ambience.play()
 	else:
 		# Auto-create if missing (Robustness)
 		var amb = AudioStreamPlayer.new()
 		amb.name = "SFX_Ambience"
-		amb.stream = AMBIENCE_STREAM
+		amb.stream = sfx_ambience
 		amb.bus = "SFX"
 		amb.autoplay = true
 		add_child(amb)

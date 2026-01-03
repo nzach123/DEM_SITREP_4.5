@@ -19,7 +19,7 @@ extends Control
 @export var settings_overlay: Control
 @export var credits_overlay: Control
 
-@onready var audio: MenuAudioManager = $AudioManager
+@onready var audio = $AudioManager
 
 # Footer Buttons
 @export var settings_btn: Button
@@ -30,7 +30,7 @@ const COURSE_CARD_SCENE: PackedScene = preload("res://src/scenes/CourseCard.tscn
 
 var available_courses: Array[String] = []
 var pending_course_id: String = ""
-var is_web_mode_override: bool = true # For testing
+var is_web_mode_override: bool = false # For testing
 
 func _ready() -> void:
 	add_to_group("main_menu")
@@ -82,10 +82,6 @@ func connect_footer_buttons() -> void:
 		quit_btn.pressed.connect(_on_quit_pressed)
 
 func _on_clock_in_pressed() -> void:
-	if audio:
-		# Temporarily override click sound if needed, or just play standard
-		# For now we use standard click as per new audio manager simplicity
-		audio.play_click()
 
 	# CRT "Boot" Flash
 	var crt = find_child("CRTScreen")
@@ -135,7 +131,6 @@ func create_menu_buttons() -> void:
 		buttons_container.add_child(card)
 
 func _on_category_selected(course_id: String) -> void:
-	if audio: audio.play_click()
 	pending_course_id = course_id
 
 	var type = GameManager.get_course_type(course_id)
@@ -148,7 +143,6 @@ func _on_category_selected(course_id: String) -> void:
 # --- NEW POPUP LOGIC ---
 
 func _start_quiz_with_difficulty(difficulty: int) -> void:
-	if audio: audio.play_click()
 
 	# Load Data First to Determine Mode
 	if GameManager.load_course_data(pending_course_id):
@@ -160,13 +154,11 @@ func _start_quiz_with_difficulty(difficulty: int) -> void:
 		if difficulty_popup: difficulty_popup.hide()
 
 func _on_settings_pressed() -> void:
-	if audio: audio.play_click()
 	var settings = settings_overlay as SettingsOverlay
 	if settings:
 		settings.open_menu()
 
 func _on_credits_pressed() -> void:
-	if audio: audio.play_click()
 	var credits = credits_overlay as CreditsOverlay
 	if credits:
 		credits.open_menu()
@@ -180,7 +172,6 @@ func _on_credits_closed() -> void:
 		credits_btn.grab_focus()
 
 func _on_quit_pressed() -> void:
-	if audio: audio.play_click()
 	# Ensure this doesn't accidentally trigger if we are in a popup or something
 	if difficulty_popup and difficulty_popup.visible:
 		difficulty_popup.hide()

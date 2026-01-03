@@ -32,6 +32,7 @@ layout_mode = 2
 theme = ExtResource("3_4vm7d")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.19607843)
 theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 28
 text = "Question text..."
 autowrap_mode = 3
 
@@ -40,5 +41,6 @@ layout_mode = 2
 theme = ExtResource("3_4vm7d")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.19607843)
 theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 28
 text = ">> Feedback..."
 autowrap_mode = 3

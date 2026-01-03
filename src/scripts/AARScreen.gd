@@ -17,7 +17,9 @@ signal report_finished
 
 const MONTSERRAT_BUTTON_THEME = preload("res://content/resources/themes/Montserrat_button_theme.tres")
 @export_group("Audio")
-@export var audio_manager: AARAudioManager
+@export var audio_manager: Node
+@export var victory_music: AudioStream
+@export var fail_music: AudioStream
 @onready var sfx_tick: AudioStreamPlayer = $SfxTick
 @onready var sfx_stamp: AudioStreamPlayer = $SfxStamp
 
@@ -153,9 +155,9 @@ func _finish_printing():
 
 	if percent < 0.7: # Using 70% threshold for music too? Or stick to simple pass/fail?
 		# Original code used 0.5. Let's align with "Critical Failure" being < 70
-		if audio_manager: audio_manager.play_fail_music()
+		if audio_manager and fail_music: audio_manager.play_music(fail_music)
 	else:
-		if audio_manager: audio_manager.play_victory_music()
+		if audio_manager and victory_music: audio_manager.play_music(victory_music)
 
 func _input(event):
 	# Allow user to skip the typing animation
@@ -184,15 +186,9 @@ func _populate_log() -> void:
 				card.call("setup", entry)
 
 func _on_retry_pressed() -> void:
-	await play_click()
+	await get_tree().create_timer(0.1).timeout
 	GameManager.change_scene("res://src/scenes/quiz_scene.tscn")
 
 func _on_menu_pressed() -> void:
-	await play_click()
+	await get_tree().create_timer(0.1).timeout
 	GameManager.change_scene("res://src/scenes/MainMenu.tscn")
-
-func play_click() -> void:
-	if audio_manager:
-		audio_manager.play_click()
-		# Small delay for SFX
-		await get_tree().create_timer(0.1).timeout

@@ -6,15 +6,15 @@
 - [x] Task: Conductor - User Manual Verification 'Infrastructure & Testing Setup' (Protocol in workflow.md)
 
 ## Phase 2: Static Loops (Generic System)
-- [ ] Task: Implement `SceneAudioManager.gd` as a reusable component (exports `music_stream`).
-- [ ] Task: Integrate `SceneAudioManager` into `MainMenu.tscn` (Assign Menu Loop).
-- [ ] Task: Integrate `SceneAudioManager` into `AARScreen.tscn` (Assign AAR Loop).
+- [x] Task: Implement `SceneAudioManager.gd` as a reusable component (exports `music_stream`).
+- [x] Task: Integrate `SceneAudioManager` into `MainMenu.tscn` (Assign Menu Loop).
+- [x] Task: Integrate `SceneAudioManager` into `AARScreen.tscn` (Assign AAR Loop).
 - [ ] Task: Conductor - User Manual Verification 'Static Loops' (Protocol in workflow.md)
 
 ## Phase 3: Adaptive Quiz Audio
-- [ ] Task: Write failing unit tests for `QuizAudioController` state transitions (High/Med/Low) based on Trust signal.
-- [ ] Task: Implement `QuizAudioController.gd` with signal-driven horizontal resequencing.
-- [ ] Task: Integrate `Quiz_Audio_Controller` node into `quiz_scene.tscn`.
+- [x] Task: Write failing unit tests for `QuizAudioController` state transitions (High/Med/Low) based on Trust signal.
+- [x] Task: Implement `QuizAudioController.gd` with signal-driven horizontal resequencing.
+- [x] Task: Integrate `Quiz_Audio_Controller` node into `quiz_scene.tscn`.
 - [ ] Task: Conductor - User Manual Verification 'Adaptive Quiz Audio' (Protocol in workflow.md)
 
 ## Phase 4: Legacy Cleanup & Final Audit

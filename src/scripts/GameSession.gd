@@ -45,10 +45,11 @@ func _ready() -> void:
 
 	# Initial Setup
 	if background_pulse: background_pulse.update_pulse(0)
-	if audio_manager: audio_manager.stop_ambience()
 
 	if trust_system:
 		trust_system.trust_depleted.connect(_on_trust_depleted)
+		if audio_manager:
+			audio_manager.setup(trust_system)
 
 	# Load Data and Start
 	if GameManager.questions_pool.size() > 0:
@@ -108,9 +109,6 @@ func start_game() -> void:
 	# Setup UI
 	update_rescue_ui()
 	update_score_ui()
-
-	if audio_manager and audio_manager.sfx_ambience:
-		audio_manager.sfx_ambience.play()
 
 	current_state = State.PLAYING
 	load_question(0)
@@ -346,7 +344,6 @@ func finish_game() -> void:
 	current_state = State.END
 	question_timer.stop()
 	round_timer.stop()
-	if audio_manager: audio_manager.stop_ambience()
 
 	# Save Logic
 	var total_attempted: int = GameManager.correct_answers_count + GameManager.session_log.size()

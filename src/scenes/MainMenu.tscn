@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8j7k5m2p1q4n"]
+[gd_scene load_steps=16 format=3 uid="uid://c8j7k5m2p1q4n"]
 
 [ext_resource type="Script" uid="uid://bet0vs3tt2bki" path="res://src/scripts/MainMenu.gd" id="1_menu"]
-[ext_resource type="Script" path="res://src/components/MenuAudio.gd" id="13_audio"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="2_b83k2"]
 [ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="2_cbw1n"]
 [ext_resource type="Texture2D" uid="uid://dh8aeudaycobc" path="res://assets/ui/backgrounds/Gemini_Generated_Image_skrc7zskrc7zskrc.png" id="2_rh4h2"]
@@ -13,6 +12,8 @@
 [ext_resource type="Script" uid="uid://dldl6e841cg0e" path="res://src/scripts/class/animation_componet.gd" id="7_anim"]
 [ext_resource type="AudioStream" uid="uid://bw5vc22obuemp" path="res://assets/audio/sfx/ClickSFX/select_001.ogg" id="8_hover"]
 [ext_resource type="AudioStream" uid="uid://c8cgfq0c6al8f" path="res://assets/audio/sfx/loops/Computers_Lights_Hum_loop.ogg" id="12_igwvp"]
+[ext_resource type="Script" uid="uid://c2eulkuurpalb" path="res://src/components/SceneAudioManager.gd" id="13_audio"]
+[ext_resource type="AudioStream" uid="uid://byx1178bo3lbr" path="res://assets/audio/music/Loops/background_music_low_loop.ogg" id="13_mxvdg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
 shader = ExtResource("2_shader")
@@ -38,7 +39,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("login_view", "dashboard_view", "clock_in_btn", "buttons_container", "difficulty_popup", "settings_overlay", "credits_overlay", "sfx_click", "sfx_background_loop", "settings_btn", "credits_btn", "quit_btn")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("login_view", "dashboard_view", "clock_in_btn", "buttons_container", "difficulty_popup", "settings_overlay", "credits_overlay", "settings_btn", "credits_btn", "quit_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,8 +56,6 @@ buttons_container = NodePath("MainLayout/DashboardView/MarginContainer_Board/Scr
 difficulty_popup = NodePath("DifficultyPopup")
 settings_overlay = NodePath("SettingsOverlay")
 credits_overlay = NodePath("CreditsOverlay")
-sfx_click = NodePath("AudioManager/SFX_Click")
-sfx_background_loop = NodePath("AudioManager/SFX_Background_Loop")
 settings_btn = NodePath("MainLayout/MarginContainer_Footer/HBoxContainer/SettingsButton")
 credits_btn = NodePath("MainLayout/MarginContainer_Footer/HBoxContainer/CreditsButton")
 quit_btn = NodePath("MainLayout/MarginContainer_Footer/HBoxContainer/QuitButton")
@@ -247,14 +246,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("music_player", "sfx_click")]
+[node name="AudioManager" type="Node" parent="."]
 script = ExtResource("13_audio")
-music_player = NodePath("SFX_Background_Loop")
-sfx_click = NodePath("SFX_Click")
-
-[node name="SFX_Click" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("3_sfx")
-
-[node name="SFX_Background_Loop" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("12_igwvp")
-volume_db = 2.0
+sfx_stream = ExtResource("12_igwvp")
+music_stream = ExtResource("13_mxvdg")
