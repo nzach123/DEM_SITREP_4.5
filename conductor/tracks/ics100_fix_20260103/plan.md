@@ -23,4 +23,4 @@
     - Select "ICS100" -> Difficulty -> Start.
     - Confirm first question loads.
     - (Optional) Create a dummy corrupt file in `assets/questions/` and verify it's excluded from the menu.
-- [ ] Task: Conductor - User Manual Verification 'Final Integration Check' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Final Integration Check' (Protocol in workflow.md)
