@@ -1,9 +1,9 @@
 # Implementation Plan: Audio System Overhaul & Adaptive Music
 
-## Phase 1: Infrastructure & Testing Setup
+## Phase 1: Infrastructure & Testing Setup [checkpoint: 924396c]
 - [x] Task: Create `tests/unit/test_audio_logic.gd` to verify adaptive threshold logic (State-based assertions).
 - [x] Task: Configure `.import` settings for all background music files to `Loop: On`.
-- [ ] Task: Conductor - User Manual Verification 'Infrastructure & Testing Setup' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Infrastructure & Testing Setup' (Protocol in workflow.md)
 
 ## Phase 2: Static Loops (Generic System)
 - [ ] Task: Implement `SceneAudioManager.gd` as a reusable component (exports `music_stream`).
