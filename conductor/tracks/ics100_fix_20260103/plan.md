@@ -17,7 +17,7 @@
     - Add the console warning for "unknown" types.
 - [x] Task: Conductor - User Manual Verification 'Logic Hardening (Test Driven)' (Protocol in workflow.md)
 
-## Phase 3: Final Integration Check
+## Phase 3: Final Integration Check [checkpoint: a7b2b5e]
 - [x] Task: Manual End-to-End Test a28a431
     - Run the game.
     - Select "ICS100" -> Difficulty -> Start.
