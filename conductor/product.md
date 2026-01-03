@@ -130,6 +130,10 @@ I want to implenet a settings scene and credits scene for the main menu. Use thi
     -   **Data Density:** Prioritizes information density and vertical stacking for immediate review of performance.
     -   **Vertical Scalability:** Log entries expand to fit content while maintaining a tight, tactical layout.
 
+- **Field Exercise (Matching Event):**
+    -   **Integration:** Randomly triggered mini-game during the quiz session.
+    -   **Visual Consistency:** Instantiated within the scene hierarchy *before* the CRT shader to ensure the retro aesthetic is applied uniformly.
+
 ## Design Philosophy
 - **Educational & Arcade Hybrid:** The UI must be immediately readable and "juicy" (responsive, satisfying) to keep students engaged, while maintaining the seriousness of the educational content.
 -   **Godot Native:** Leverage `Theme` resources, `HSlider`, `CheckButton`, and existing `SceneTransition` autoloads.

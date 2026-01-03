@@ -175,10 +175,9 @@ func _trigger_field_exercise() -> void:
 	round_timer.paused = true
 
 	var popup = MATCHING_POPUP_SCENE.instantiate()
+	add_child(popup)
 	if crt_screen:
-		crt_screen.add_child(popup)
-	else:
-		add_child(popup)
+		move_child(popup, crt_screen.get_index())
 		
 	if popup.has_signal("completed"):
 		popup.completed.connect(_on_field_exercise_completed.bind(popup))

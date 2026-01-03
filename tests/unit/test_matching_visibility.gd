@@ -33,11 +33,12 @@ func test_game_session_spawns_popup_under_crt():
 	assert_not_null(crt_screen, "QuizScene should have a CRTScreen")
 
 	var popup = null
-	for child in crt_screen.get_children():
+	for child in game_session.get_children():
 		if child.name.begins_with("MatchingEventPopup"):
 			popup = child
 			break
 	
-	assert_not_null(popup, "Popup should be instantiated as a child of CRTScreen")
+	assert_not_null(popup, "Popup should be instantiated")
 	
-	assert_eq(popup.get_parent(), crt_screen, "Popup should be a child of the CRTScreen node")
+	assert_eq(popup.get_parent(), game_session, "Popup should be a child of the QuizScene (GameSession)")
+	assert_lt(popup.get_index(), crt_screen.get_index(), "Popup should be drawn BEFORE CRTScreen (lower index)")
