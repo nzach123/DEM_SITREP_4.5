@@ -1,26 +1,41 @@
 extends GutTest
 
-func test_pause_menu_instantiated_on_demand():
-	# Ensure we have a scene
-	if get_tree().current_scene == null:
-		var dummy = Node2D.new()
-		dummy.name = "TestScene"
-		get_tree().root.add_child(dummy)
-		get_tree().current_scene = dummy
+var PauseMenuScript = load("res://src/scripts/PauseMenu.gd")
+var pause_menu_scene = load("res://src/scenes/PauseMenu.tscn")
+
+func test_resume_flow_clean():
+	var menu = pause_menu_scene.instantiate()
+	add_child(menu)
+
+	# Track signal emission
+	var resume_signal_fired = false
+	menu.resume_requested.connect(func(): resume_signal_fired = true)
+
+	# Mock the button press
+	menu._on_continue_pressed()
 	
-	var current_scene = get_tree().current_scene
-	var menu = current_scene.find_child("PauseMenu", true, false)
-	assert_null(menu, "Pause menu should not be in the tree initially")
+	# Verify IMMEDIATE signal emission (no delay)
+	assert_true(resume_signal_fired, "Signal should fire IMMEDIATELY upon press")
 	
-	GameManager.toggle_pause() # Pauses
-	assert_true(GameManager.game_paused)
+	# Verify menu is NOT killing itself yet
+	assert_false(menu.is_queued_for_deletion(), "Menu should wait for GameManager to dismiss it")
 	
-	menu = current_scene.find_child("PauseMenu", true, false)
-	assert_not_null(menu, "Pause menu should be instantiated and added to tree after toggle_pause")
+	# Verify close_menu triggers cleanup
+	menu.close_menu()
+
+	# Wait for animation (0.2s)
+	await wait_seconds(0.3)
+
+	# Verify cleanup
+	assert_true(menu.is_queued_for_deletion(), "Menu should be freeing after close_menu completes")
+
+func test_close_menu_is_idempotent():
+	var menu = pause_menu_scene.instantiate()
+	add_child(menu)
 	
-	GameManager.toggle_pause() # Unpauses
-	# Wait for animation
-	await wait_seconds(0.5)
+	menu.close_menu()
+	menu.close_menu() # Second call
 	
-	menu = current_scene.find_child("PauseMenu", true, false)
-	assert_null(menu, "Pause menu should be removed from tree and freed after unpausing")
+	# Should not crash and should still free
+	await wait_seconds(0.3)
+	assert_true(menu.is_queued_for_deletion())

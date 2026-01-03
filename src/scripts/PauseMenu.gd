@@ -6,75 +6,76 @@ signal restart_requested
 signal main_menu_requested
 signal quit_requested
 
-@onready var menu_root = $Panel/VBoxContainer
-@onready var click_sfx = $ClickSFX
-@onready var color_rect = $ColorRect
+@onready var menu_root: Control = $Panel/VBoxContainer
+@onready var click_sfx: AudioStreamPlayer = $ClickSFX
+@onready var color_rect: ColorRect = $ColorRect
 
 # Preload the SettingsOverlay
-const SETTINGS_SCENE = preload("res://src/scenes/SettingsOverlay.tscn")
+const SETTINGS_SCENE: PackedScene = preload("res://src/scenes/SettingsOverlay.tscn")
 
-var settings_instance = null
+var settings_instance: Control = null
+var is_closing: bool = false
 
-func _ready():
+func _ready() -> void:
 	hide()
 
-func _on_continue_pressed():
+func _on_continue_pressed() -> void:
 	if click_sfx: click_sfx.play()
-	_animate_hide(resume_requested)
+	resume_requested.emit()
 
-func _on_restart_pressed():
+func _on_restart_pressed() -> void:
 	if click_sfx: click_sfx.play()
-	_animate_hide(restart_requested)
+	restart_requested.emit()
 
-func _on_main_menu_pressed():
+func _on_main_menu_pressed() -> void:
 	if click_sfx: click_sfx.play()
-	_animate_hide(main_menu_requested)
+	main_menu_requested.emit()
 
-func _on_quit_pressed():
+func _on_quit_pressed() -> void:
 	if click_sfx: click_sfx.play()
-	_animate_hide(quit_requested)
+	quit_requested.emit()
 
-func _on_settings_pressed():
+func _on_settings_pressed() -> void:
 	if click_sfx: click_sfx.play()
 
 	if settings_instance == null:
 		settings_instance = SETTINGS_SCENE.instantiate()
 		add_child(settings_instance)
-		settings_instance.close_requested.connect(_on_settings_closed)
+		if settings_instance.has_signal("close_requested"):
+			settings_instance.close_requested.connect(_on_settings_closed)
 
 	menu_root.hide()
-	settings_instance.open_menu()
+	if settings_instance.has_method("open_menu"):
+		settings_instance.open_menu()
+	else:
+		settings_instance.show()
 
-func _on_settings_closed():
+func _on_settings_closed() -> void:
 	menu_root.show()
 	if settings_instance:
 		settings_instance.hide()
 
-func _animate_hide(signal_to_emit: Signal) -> void:
-	var tween = create_tween()
-	tween.tween_property(color_rect, "color:a", 0.0, 0.2)
-	tween.tween_callback(func():
-		signal_to_emit.emit()
-		queue_free()
-	)
-
 func open_menu() -> void:
 	show()
+	is_closing = false
 	if color_rect:
 		color_rect.color.a = 0.0
-		var tween = create_tween()
+		var tween: Tween = create_tween()
 		tween.tween_property(color_rect, "color:a", 0.7, 0.2)
 	
 	# Focus the first button for keyboard/gamepad navigation
 	if menu_root:
-		var first_btn = menu_root.get_node("Continue")
-		if first_btn:
+		var first_btn = menu_root.get_node_or_null("Continue")
+		if first_btn and first_btn is Control:
 			first_btn.grab_focus()
 
 func close_menu() -> void:
-	_animate_hide_no_signal()
+	if is_closing: return
+	is_closing = true
 
-func _animate_hide_no_signal() -> void:
-	var tween = create_tween()
-	tween.tween_property(color_rect, "color:a", 0.0, 0.2)
-	tween.tween_callback(queue_free)
+	if color_rect:
+		var tween: Tween = create_tween()
+		tween.tween_property(color_rect, "color:a", 0.0, 0.2)
+		tween.tween_callback(queue_free)
+	else:
+		queue_free()
