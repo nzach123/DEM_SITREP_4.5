@@ -2,7 +2,7 @@ class_name SceneAudioManager
 extends Node
 @export var sfx_stream: AudioStream
 @export var music_stream: AudioStream
-@export var play_music_on_start: bool = false
+@export var play_music_on_start: bool = true
 @export var play_sfx_on_start: bool = true
 var _music_player: AudioStreamPlayer
 var _sfx_player: AudioStreamPlayer

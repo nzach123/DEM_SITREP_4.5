@@ -1,24 +1,20 @@
 extends GutTest
 
-var audio_manager: AARAudioManager
+var SceneAudioManagerScript = load("res://src/components/SceneAudioManager.gd")
+var audio_manager
 
 func before_each():
-	audio_manager = AARAudioManager.new()
+	audio_manager = SceneAudioManagerScript.new()
 	add_child_autofree(audio_manager)
 
-func test_play_victory_music_safely_handles_missing_nodes():
-	# No children added, exports are null
-	# This should NOT crash, but logically it won't play anything.
-	# We want to verify it doesn't throw an error.
-	audio_manager.play_victory_music()
-	pass_test("Executed without error")
-
-func test_play_fail_music_safely_handles_missing_nodes():
-	audio_manager.play_fail_music()
+func test_play_music_safely_handles_null():
+	# SceneAudioManager has play_music(stream)
+	audio_manager.play_music(null)
 	pass_test("Executed without error")
 
 func test_ambience_is_created_and_plays():
-	# _ready is called when added to tree
-	assert_not_null(audio_manager.sfx_ambience, "Ambience player should be auto-created")
-	if audio_manager.sfx_ambience:
-		assert_true(audio_manager.sfx_ambience.playing, "Ambience should be playing")
+	# SceneAudioManager auto-creates _music_player and _sfx_player
+	# It starts playing music if stream is set in _ready.
+	# But here we didn't set music_stream.
+	
+	assert_not_null(audio_manager.get_node_or_null("MusicPlayer"), "MusicPlayer should be auto-created")

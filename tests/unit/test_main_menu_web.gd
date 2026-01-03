@@ -6,7 +6,7 @@ var SettingsOverlayScript = load("res://src/scripts/SettingsOverlay.gd")
 var _main_menu
 var _settings_overlay
 
-var MenuAudioScript = load("res://src/components/MenuAudio.gd")
+var SceneAudioManagerScript = load("res://src/components/SceneAudioManager.gd")
 
 func before_each():
 	# Mock MainMenu
@@ -16,11 +16,8 @@ func before_each():
 	_main_menu.add_child(mock_quit)
 	
 	# Mock AudioManager
-	var mock_audio = MenuAudioScript.new()
+	var mock_audio = SceneAudioManagerScript.new()
 	mock_audio.name = "AudioManager"
-	# We don't need to add a dummy script if we instantiate the real class, 
-	# as long as we don't trigger logic that requires further dependencies.
-	# MenuAudio.gd likely extends Node and has play_click.
 	
 	_main_menu.add_child(mock_audio)
 	_main_menu.audio = mock_audio 
