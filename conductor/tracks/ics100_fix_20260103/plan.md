@@ -7,11 +7,11 @@
 - [x] Task: Conductor - User Manual Verification 'Data Sanitation and Verification' (Protocol in workflow.md)
 
 ## Phase 2: Logic Hardening (Test Driven)
-- [ ] Task: Create Test for Menu Filtering
+- [x] Task: Create Test for Menu Filtering 4e5ea6e
     - Create `tests/unit/test_main_menu_filtering.gd`.
     - Test Case 1: `test_scan_valid_course` - Mock a valid "quiz" JSON and ensure it is added.
     - Test Case 2: `test_scan_invalid_course` - Mock a corrupt/invalid JSON and ensure it is NOT added.
-- [ ] Task: Implement Strict Filtering in `MainMenu.gd`
+- [x] Task: Implement Strict Filtering in `MainMenu.gd` 4e5ea6e
     - Modify `scan_courses()` to use `GameManager.get_course_type()`.
     - Implement the `if type == "quiz"` check.
     - Add the console warning for "unknown" types.
