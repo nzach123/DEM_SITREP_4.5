@@ -106,9 +106,13 @@ func scan_courses() -> void:
 		while file_name != "":
 			if !dir.current_is_dir() and file_name.ends_with(".json"):
 				var course_id: String = file_name.replace(".json", "")
-				# Filter out matching types
-				if GameManager.get_course_type(course_id) != "matching":
+				var type = GameManager.get_course_type(course_id)
+				
+				# STRICTER CHECK: Only allow 'quiz'
+				if type == "quiz":
 					available_courses.append(course_id)
+				elif type == "unknown":
+					print("Warning: Skipped invalid or corrupt course file: ", file_name)
 			file_name = dir.get_next()
 		available_courses.sort() # Ensure consistent order
 
