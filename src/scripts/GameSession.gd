@@ -174,6 +174,8 @@ func _trigger_field_exercise() -> void:
 	round_timer.paused = true
 
 	var popup = MATCHING_POPUP_SCENE.instantiate()
+	if audio_manager and "audio_manager" in popup:
+		popup.audio_manager = audio_manager
 	add_child(popup)
 	# CRT is now a global CanvasLayer, no sibling ordering needed
 		

@@ -11,7 +11,9 @@ const BUTTON_THEME = preload("res://content/resources/themes/Montserrat_button_t
 const HOVER_SOUND = preload("res://assets/audio/sfx/ClickSFX/select_001.ogg")
 
 var time_left: float = 60.0
+
 var is_active: bool = false
+var audio_manager: QuizAudioManager
 var definitions_deck: Array = []
 var current_target: Dictionary = {}
 var terms_list: Array = []
@@ -93,10 +95,12 @@ func _on_term_selected(selected_id: String, btn_ref: Button) -> void:
 	if not is_active: return
 
 	if selected_id == current_target["id"]:
+		if audio_manager: audio_manager.play_correct()
 		btn_ref.disabled = true # Disable the used term
 		btn_ref.modulate = Color(0, 1, 0) # Green
 		_next_round()
 	else:
+		if audio_manager: audio_manager.play_wrong()
 		time_left -= 5.0
 		timer_label.modulate = Color(1, 0, 0)
 
