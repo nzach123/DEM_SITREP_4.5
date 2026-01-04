@@ -82,13 +82,8 @@ func connect_footer_buttons() -> void:
 		quit_btn.pressed.connect(_on_quit_pressed)
 
 func _on_clock_in_pressed() -> void:
-
-	# CRT "Boot" Flash
-	var crt = find_child("CRTScreen")
-	if crt and crt.material:
-		var tween = create_tween()
-		tween.tween_property(crt.material, "shader_parameter/brightness", 5.0, 0.1)
-		tween.tween_property(crt.material, "shader_parameter/brightness", 1.4, 0.2)
+	# CRT "Boot" Flash via global overlay
+	CRTOverlay.flash_brightness(5.0, 0.3)
 
 	if login_view: login_view.hide()
 	if dashboard_view: dashboard_view.show()

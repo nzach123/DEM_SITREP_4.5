@@ -1,6 +1,8 @@
 extends Node
 const SessionContextScript = preload("res://src/resources/SessionContext.gd")
 
+signal pause_toggled(is_paused: bool)
+
 enum Difficulty { LOW, MEDIUM, HIGH }
 
 var current_difficulty: Difficulty = Difficulty.LOW
@@ -40,6 +42,8 @@ var matching_rounds_count: int = 3 # Default to 3 rounds
 # Session Data - delegated to SessionContext resource
 var session = SessionContextScript.new()
 
+# Dependencies (Injectable for testing)
+var scene_transition_provider
 
 func start_new_session() -> void:
 	session = SessionContextScript.new()
@@ -49,10 +53,13 @@ var player_progress: Dictionary = {}
 var save_path: String = "user://savegame.save"
 
 var game_paused: bool = false
-var pause_menu_scene: PackedScene = preload("res://src/scenes/PauseMenu.tscn")
-var _active_pause_menu: PauseMenu = null
 
 func _ready() -> void:
+	# Initialize dependency here to ensure SceneTransition autoload is ready
+	# if it loads after GameManager
+	if not scene_transition_provider:
+		scene_transition_provider = SceneTransition
+		
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	load_game()
 	load_all_matching_data()
@@ -67,63 +74,29 @@ func _unhandled_input(event: InputEvent) -> void:
 func toggle_pause() -> void:
 	game_paused = !game_paused
 	get_tree().paused = game_paused
-
+	pause_toggled.emit(game_paused)
 	if game_paused:
-		_summon_pause_menu()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	else:
-		_dismiss_pause_menu()
-
-func _summon_pause_menu() -> void:
-	if _active_pause_menu != null:
-		return
-		
-	_active_pause_menu = pause_menu_scene.instantiate() as PauseMenu
-	
-	# Connect signals
-	_active_pause_menu.resume_requested.connect(toggle_pause)
-	_active_pause_menu.restart_requested.connect(restart_level)
-	_active_pause_menu.main_menu_requested.connect(quit_to_main)
-	_active_pause_menu.quit_requested.connect(func(): get_tree().quit())
-	
-	var current_scene = get_tree().current_scene
-	if current_scene:
-		var crt = current_scene.find_child("CRTScreen", true, false)
-		if crt:
-			current_scene.add_child(_active_pause_menu)
-			# Position it just before the CRT shader node so the shader applies to it
-			current_scene.move_child(_active_pause_menu, crt.get_index())
-		else:
-			current_scene.add_child(_active_pause_menu)
-	
-	_active_pause_menu.open_menu()
-
-func _dismiss_pause_menu() -> void:
-	if _active_pause_menu:
-		_active_pause_menu.close_menu()
-		_active_pause_menu = null # Reference will be freed by its own queue_free (Phase 3) or we do it here?
-		# Actually Phase 3 says PauseMenu does queue_free. 
-		# But for now I'll ensure it's removed if Phase 3 isn't done yet.
-		# Wait, if I set it to null, I lose reference.
 
 func restart_level() -> void:
 	if game_paused:
 		toggle_pause() # Unpause first
 
 	# Cover screen, wait for obscured, then swap
-	SceneTransition.cover_screen()
-	await SceneTransition.transition_halfway
+	# Cover screen, wait for obscured, then swap
+	scene_transition_provider.cover_screen()
+	await scene_transition_provider.transition_halfway
 	get_tree().reload_current_scene()
 	await get_tree().process_frame  # Wait for new scene to render
-	SceneTransition.play_boot_sequence()
+	scene_transition_provider.play_boot_sequence()
 
 func change_scene(path: String) -> void:
 	# Cover screen, wait for obscured, then swap
-	SceneTransition.cover_screen()
-	await SceneTransition.transition_halfway
+	scene_transition_provider.cover_screen()
+	await scene_transition_provider.transition_halfway
 	get_tree().change_scene_to_file(path)
 	await get_tree().process_frame  # Wait for new scene to render
-	SceneTransition.play_boot_sequence()
+	scene_transition_provider.play_boot_sequence()
 
 func quit_to_main() -> void:
 	if game_paused:

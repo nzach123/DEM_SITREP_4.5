@@ -52,30 +52,6 @@ bg_color = Color(0.258824, 0.709804, 0.270588, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijcxg"]
 bg_color = Color(5.29438e-06, 0.577399, 0.773026, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndxw5"]
-shader = ExtResource("3_vk6e3")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.2
-shader_parameter/scanlines_width = 0.25
-shader_parameter/grille_opacity = 0.15
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = true
-shader_parameter/roll = true
-shader_parameter/roll_speed = 0.0
-shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.0
-shader_parameter/noise_opacity = 0.0
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.02
-shader_parameter/aberration = 0.00500005
-shader_parameter/brightness = 1.4
-shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.11
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.3
-shader_parameter/vignette_opacity = 0.5
-
 [node name="QuizScene" type="Control" node_paths=PackedStringArray("audio_manager", "game_camera", "background_pulse", "trust_system", "question_label", "round_time_label", "rescued_value_label", "casualties_value_label", "timer_label", "timer_bar", "rescue_bar", "feedback_label", "remediation_popup", "answer_buttons", "question_timer", "round_timer")]
 layout_mode = 3
 anchors_preset = 15
@@ -258,7 +234,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("16_i6oeq")
 theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 38
 text = "MISSION TIME"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -278,7 +254,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("16_i6oeq")
 theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 38
 text = "RESCUED"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -299,7 +275,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("16_i6oeq")
 theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 38
 text = "CASUALTIES"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -314,6 +290,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RescueBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer/LeftMarginContainer/PanelContaner/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -476,16 +453,6 @@ autowrap_mode = 3
 [node name="RemediationPopup" parent="." instance=ExtResource("10_popup")]
 visible = false
 layout_mode = 1
-
-[node name="CRTScreen" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_ndxw5")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="AudioManager" type="Node" parent="." node_paths=PackedStringArray("sfx_room_tone", "sfx_incoming_alert", "sfx_typewriter_pool", "sfx_correct", "sfx_wrong", "sfx_click", "sfx_alarm")]
 script = ExtResource("Comp_Audio")

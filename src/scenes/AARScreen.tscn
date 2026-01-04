@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://befnihtjxwy32"]
+[gd_scene load_steps=14 format=3 uid="uid://befnihtjxwy32"]
 
 [ext_resource type="Script" uid="uid://cenn0lxa0jbxw" path="res://src/scripts/AARScreen.gd" id="1_ytt3w"]
 [ext_resource type="Texture2D" uid="uid://dkfi1nd6y77ee" path="res://assets/ui/backgrounds/Gemini_Generated_Image_f71n1cf71n1cf71n.png" id="2_oc4gb"]
-[ext_resource type="Shader" uid="uid://catxjmc45pfvr" path="res://content/resources/shaders/crt_screen.gdshader" id="3_bddxc"]
 [ext_resource type="Theme" uid="uid://cedod47tl1ktv" path="res://content/resources/themes/Bebas_button_theme.tres" id="3_frbb8"]
 [ext_resource type="Theme" uid="uid://b152vv4v1kumc" path="res://content/resources/themes/Montserrat_button_theme.tres" id="3_i88ay"]
 [ext_resource type="AudioStream" uid="uid://cwi8tg0tp5a6h" path="res://assets/audio/sfx/ClickSFX/click_003.ogg" id="4_mtiue"]
@@ -14,30 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://d0k1fxlhs1dn0" path="res://assets/audio/sfx/ClickSFX/tick_001.ogg" id="13_tick"]
 [ext_resource type="AudioStream" uid="uid://ds61nk7k0v0oi" path="res://assets/audio/sfx/ClickSFX/bong_001.ogg" id="14_stamp"]
 [ext_resource type="FontFile" uid="uid://csm1r2nmfyeeo" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="15_font"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_luru2"]
-shader = ExtResource("3_bddxc")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.2
-shader_parameter/scanlines_width = 0.25
-shader_parameter/grille_opacity = 0.15
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = true
-shader_parameter/roll = true
-shader_parameter/roll_speed = 0.0
-shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.0
-shader_parameter/noise_opacity = 0.0
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.02
-shader_parameter/aberration = 0.00500005
-shader_parameter/brightness = 1.4
-shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.11
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.3
-shader_parameter/vignette_opacity = 0.5
 
 [node name="AarScreen" type="Control" node_paths=PackedStringArray("mistake_container", "no_data_label")]
 layout_mode = 3
@@ -198,16 +173,6 @@ hover_scale = Vector2(1.05, 1.05)
 hover_sfx = ExtResource("7_hover")
 click_sfx = ExtResource("4_mtiue")
 metadata/_custom_type_script = "uid://dldl6e841cg0e"
-
-[node name="CRTScreen" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_luru2")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="AudioManager" type="Node" parent="."]
 script = ExtResource("10_aar_audio")
