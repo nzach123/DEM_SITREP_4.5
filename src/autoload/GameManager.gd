@@ -110,25 +110,19 @@ func restart_level() -> void:
 	if game_paused:
 		toggle_pause() # Unpause first
 
-	if SceneTransition.has_method("set_pixel_size"):
-		SceneTransition.set_pixel_size(8.0)
-	SceneTransition.visible = true
-	
-	await get_tree().process_frame
+	# Cover screen, wait for obscured, then swap
+	SceneTransition.cover_screen()
+	await SceneTransition.transition_halfway
 	get_tree().reload_current_scene()
-
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().process_frame  # Wait for new scene to render
 	SceneTransition.play_boot_sequence()
 
 func change_scene(path: String) -> void:
-	if SceneTransition.has_method("set_pixel_size"):
-		SceneTransition.set_pixel_size(8.0)
-	SceneTransition.visible = true
-	
-	await get_tree().process_frame
+	# Cover screen, wait for obscured, then swap
+	SceneTransition.cover_screen()
+	await SceneTransition.transition_halfway
 	get_tree().change_scene_to_file(path)
-
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().process_frame  # Wait for new scene to render
 	SceneTransition.play_boot_sequence()
 
 func quit_to_main() -> void:
