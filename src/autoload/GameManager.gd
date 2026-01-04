@@ -1,4 +1,5 @@
 extends Node
+const SessionContextScript = preload("res://src/resources/SessionContext.gd")
 
 enum Difficulty { LOW, MEDIUM, HIGH }
 
@@ -36,16 +37,12 @@ var current_course_id: String = ""
 var is_matching_mode: bool = false
 var matching_rounds_count: int = 3 # Default to 3 rounds
 
-# Session Data
-var current_score: int = 0
-var correct_answers_count: int = 0
-var total_population: int = 0
-var citizens_saved: int = 0
-var casualties_count: int = 0
-var rescue_multiplier: float = 1.0
+# Session Data - delegated to SessionContext resource
+var session = SessionContextScript.new()
 
-# Stores dictionary of { "question": "", "user_choice": "", "correct_answer": "", "is_correct": bool }
-var session_log: Array[Dictionary] = []
+
+func start_new_session() -> void:
+	session = SessionContextScript.new()
 
 # Persistent Data
 var player_progress: Dictionary = {}
@@ -256,17 +253,11 @@ func get_matching_round_data() -> Array[Dictionary]:
 	return selected_items
 
 func reset_stats() -> void:
-	current_score = 0
-	correct_answers_count = 0
-	citizens_saved = 0
-	total_population = 0
-	casualties_count = 0
-	rescue_multiplier = 1.0
-	session_log.clear()
+	session.reset()
+
 
 func add_correct_answer() -> void:
-	correct_answers_count += 1
-	# Score calculation deprecated in favor of citizens_saved
+	session.add_correct_answer()
 
 func save_game() -> void:
 	var file: FileAccess = FileAccess.open(save_path, FileAccess.WRITE)
@@ -289,9 +280,4 @@ func load_game() -> void:
 		file.close()
 
 func log_attempt(question_text: String, user_choice: String, correct_answer: String, is_correct: bool) -> void:
-	session_log.append({
-		"question": question_text,
-		"user_choice": user_choice,
-		"correct_answer": correct_answer,
-		"is_correct": is_correct
-	})
+	session.log_attempt(question_text, user_choice, correct_answer, is_correct)

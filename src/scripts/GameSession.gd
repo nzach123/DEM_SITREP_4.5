@@ -92,10 +92,10 @@ func start_game() -> void:
 
 	# Calculate Population (Fixed for Session)
 	var pop_range: Dictionary = settings["population_range"]
-	GameManager.total_population = rng.randi_range(pop_range["min"], pop_range["max"])
+	GameManager.session.total_population = rng.randi_range(pop_range["min"], pop_range["max"])
 
 	if actual_count > 0:
-		save_weight = int(ceil(float(GameManager.total_population) / float(actual_count)))
+		save_weight = int(ceil(float(GameManager.session.total_population) / float(actual_count)))
 	else:
 		save_weight = 100
 
@@ -190,7 +190,7 @@ func _on_field_exercise_completed(success: bool, popup: Node) -> void:
 
 	feedback_label.visible = true
 	if success:
-		GameManager.rescue_multiplier *= 1.25 # Multiplicative Stacking
+		GameManager.session.rescue_multiplier *= 1.25 # Multiplicative Stacking
 		feedback_label.text = "FIELD EXERCISE COMPLETE: EFFICIENCY BOOSTED"
 		feedback_label.modulate = Color.CYAN
 		if audio_manager: audio_manager.play_correct()
@@ -243,8 +243,8 @@ func _handle_correct(idx: int) -> void:
 	var user_choice_text: String = answer_buttons[idx].text
 	GameManager.log_attempt(q_data["question"], user_choice_text, user_choice_text, true)
 
-	var actual_saved = int(save_weight * GameManager.rescue_multiplier)
-	GameManager.citizens_saved += actual_saved
+	var actual_saved = int(save_weight * GameManager.session.rescue_multiplier)
+	GameManager.session.citizens_saved += actual_saved
 	# Cap removed because we check for >= total_population
 
 	feedback_label.text = "INTEL VERIFIED (+%d)" % actual_saved
@@ -260,7 +260,7 @@ func _handle_correct(idx: int) -> void:
 	if idx >= 0 and idx < answer_buttons.size():
 		answer_buttons[idx].modulate = Color.GREEN
 
-	if GameManager.citizens_saved >= GameManager.total_population:
+	if GameManager.session.citizens_saved >= GameManager.session.total_population:
 		_trigger_victory()
 		return
 
@@ -274,7 +274,7 @@ func _handle_wrong(selected_idx: int, correct_idx: int, q_data: Dictionary, user
 	if background_pulse: background_pulse.update_pulse(1) # Generic pulse for damage
 
 	var penalty: int = int(settings["casualty_penalty"])
-	GameManager.casualties_count += penalty
+	GameManager.session.casualties_count += penalty
 
 	feedback_label.text = "SIGNAL LOST: %d CASUALTIES" % penalty
 	feedback_label.modulate = Color.ORANGE
@@ -345,10 +345,10 @@ func finish_game() -> void:
 	round_timer.stop()
 
 	# Save Logic
-	var total_attempted: int = GameManager.correct_answers_count + GameManager.session_log.size()
+	var total_attempted: int = GameManager.session.correct_answers_count + GameManager.session.session_log.size()
 	var mastery_percent: float = 0.0
 	if total_attempted > 0:
-		mastery_percent = (float(GameManager.correct_answers_count) / total_attempted) * 100.0
+		mastery_percent = (float(GameManager.session.correct_answers_count) / total_attempted) * 100.0
 
 	var course_id: String = GameManager.current_course_id
 	if not GameManager.player_progress.has(course_id):
@@ -358,8 +358,8 @@ func finish_game() -> void:
 	if not progress.has("max_citizens_saved"): progress["max_citizens_saved"] = 0
 	if not progress.has("mastery_percent"): progress["mastery_percent"] = 0.0
 
-	if GameManager.citizens_saved > progress["max_citizens_saved"]:
-		progress["max_citizens_saved"] = GameManager.citizens_saved
+	if GameManager.session.citizens_saved > progress["max_citizens_saved"]:
+		progress["max_citizens_saved"] = GameManager.session.citizens_saved
 
 	if mastery_percent > progress["mastery_percent"]:
 		progress["mastery_percent"] = mastery_percent
@@ -368,15 +368,15 @@ func finish_game() -> void:
 
 	# Outcome Feedback
 	var rescue_percentage: float = 0.0
-	if GameManager.total_population > 0:
-		rescue_percentage = float(GameManager.citizens_saved) / float(GameManager.total_population)
+	if GameManager.session.total_population > 0:
+		rescue_percentage = float(GameManager.session.citizens_saved) / float(GameManager.session.total_population)
 
 	question_label.text = "OPERATION COMPLETE"
 
 	if trust_system and trust_system.current_trust <= 0:
 		feedback_label.text = "MISSION FAILED: TRUST DEPLETED"
 		feedback_label.modulate = Color.RED
-	elif GameManager.citizens_saved >= GameManager.total_population:
+	elif GameManager.session.citizens_saved >= GameManager.session.total_population:
 		feedback_label.text = "SUCCESS: ALL CITIZENS SAVED"
 		feedback_label.modulate = Color.GREEN
 	elif rescue_percentage >= 0.5:
@@ -441,16 +441,16 @@ func _on_remediation_acknowledged() -> void:
 
 func update_score_ui() -> void:
 	if rescued_value_label:
-		rescued_value_label.text = str(GameManager.citizens_saved)
+		rescued_value_label.text = str(GameManager.session.citizens_saved)
 	if casualties_value_label:
-		casualties_value_label.text = str(GameManager.casualties_count)
+		casualties_value_label.text = str(GameManager.session.casualties_count)
 
 func update_rescue_ui() -> void:
 	rescue_bar.min_value = 0
-	rescue_bar.max_value = GameManager.total_population
+	rescue_bar.max_value = GameManager.session.total_population
 
 	var tween: Tween = create_tween()
-	tween.tween_property(rescue_bar, "value", GameManager.citizens_saved, 0.4).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(rescue_bar, "value", GameManager.session.citizens_saved, 0.4).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	rescue_bar.tooltip_text = "Civilian Status: Evacuation in Progress"
 
 func _reset_button_visuals() -> void:

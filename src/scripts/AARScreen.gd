@@ -50,8 +50,8 @@ func _ready() -> void:
 
 	# Setup Data
 	var score_pct: float = 0.0
-	if GameManager.total_population > 0:
-		score_pct = float(GameManager.citizens_saved) / float(GameManager.total_population)
+	if GameManager.session.total_population > 0:
+		score_pct = float(GameManager.session.citizens_saved) / float(GameManager.session.total_population)
 
 	# Generate Date String
 	var date_dict = Time.get_datetime_dict_from_system()
@@ -62,8 +62,8 @@ func _ready() -> void:
 func setup_aar(score_percent: float, date_str: String):
 	# 1. Generate the Report Text
 	var grade_status = _get_grade_status(score_percent)
-	var citizens_saved = GameManager.citizens_saved
-	var casualties = GameManager.casualties_count
+	var citizens_saved = GameManager.session.citizens_saved
+	var casualties = GameManager.session.casualties_count
 	var course_id = GameManager.current_course_id
 
 	_full_text = """[b]OFFICIAL INCIDENT INQUIRY[/b]
@@ -150,8 +150,8 @@ func _finish_printing():
 
 	# Play Result Music based on score
 	var percent = 0.0
-	if GameManager.total_population > 0:
-		percent = float(GameManager.citizens_saved) / float(GameManager.total_population)
+	if GameManager.session.total_population > 0:
+		percent = float(GameManager.session.citizens_saved) / float(GameManager.session.total_population)
 
 	if percent < 0.7: # Using 70% threshold for music too? Or stick to simple pass/fail?
 		# Original code used 0.5. Let's align with "Critical Failure" being < 70
@@ -173,13 +173,13 @@ func _populate_log() -> void:
 		if child != no_data_label:
 			child.queue_free()
 
-	var has_data = (GameManager.session_log.size() > 0)
+	var has_data = (GameManager.session.session_log.size() > 0)
 	if not has_data:
 		if no_data_label: no_data_label.show()
 	else:
 		if no_data_label: no_data_label.hide()
 		# Create cards
-		for entry in GameManager.session_log:
+		for entry in GameManager.session.session_log:
 			var card: Control = LOG_CARD_SCENE.instantiate()
 			mistake_container.add_child(card)
 			if card.has_method("setup"):
